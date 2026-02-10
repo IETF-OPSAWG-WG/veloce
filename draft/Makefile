@@ -28,7 +28,6 @@ idnits: $(next).txt
 	$(idnits) $<
 
 clean:
-	-rm -rf ../bin
 	-rm -f $(draft).txt $(draft).html index.html
 	-rm -f $(draft)-[0-9][0-9].*
 ifeq (md,$(draft_type))

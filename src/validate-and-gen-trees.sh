@@ -1,6 +1,29 @@
 #!/bin/sh
 
 #
+# If there are no YANG modules, exit now.
+#
+# Default to current directory if no argument is provided
+DIR="${1:-/src/yang}"
+
+# We use a loop that breaks immediately to check for existence
+# This avoids issues with large numbers of files and handles spaces safely
+found=0
+for f in "$DIR"/*.yang; do
+    if [ -e "$f" ]; then
+        found=1
+    fi
+    break
+done
+
+if [ "$found" -eq 1 ]; then
+    echo "Success: .yang files exist in $DIR."
+else
+    echo "Exiting: No .yang files found in $DIR."
+    exit 0
+fi
+
+#
 # Does the user have all the IETF published models.
 #
 if [ ! -d ../bin/yang-parameters ]; then

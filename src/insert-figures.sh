@@ -30,6 +30,6 @@ while ( grep INSERT_TEXT_FROM_FILE .tmp.new.txt >> /dev/null ); do
 done
 
 cat .tmp.new.txt
-rm .tmp.pre.txt .tmp.post.txt .tmp.new.txt
+rm -f .tmp.pre.txt .tmp.post.txt .tmp.new.txt
 
 

@@ -25,4 +25,5 @@ tag:
 	git push origin --tags
 
 clean:
+	rm -rf bin/
 	make -C draft clean
