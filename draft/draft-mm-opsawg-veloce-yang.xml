@@ -1,0 +1,245 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE rfc [
+  <!ENTITY nbsp    "&#160;">
+  <!ENTITY zwsp   "&#8203;">
+  <!ENTITY nbhy   "&#8209;">
+  <!ENTITY wj     "&#8288;">
+]>
+<?xml-stylesheet type="text/xsl" href="rfc2629.xslt" ?>
+<rfc
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    ipr="trust200902"
+    docName="draft-mm-opsawg-veloce-yang-latest"
+    category="exp"
+    consensus="true"
+    submissionType="IETF"
+    tocInclude="true"
+    sortRefs="true"
+    symRefs="true"
+    version="3">
+  <front>
+    <title abbrev="VELOCE">YANG deVELpment PrOCEss and maintenance (VELOCE)</title>
+    <seriesInfo name="Internet-Draft" value="draft-mm-opsawg-veloce-yang-latest"/>
+    <author fullname="Mohamed Boucadair">
+      <organization>Orange</organization>
+      <address>
+        <email>mohamed.boucadair@orange.com</email>
+      </address>
+    </author>
+    <author fullname="Mahesh Jethanandani">
+      <organization>Arrcus, Inc</organization>
+      <address>
+	<postal>
+	  <country>US</country>
+	</postal>
+        <email>mjethanandani@gmail.com</email>
+      </address>
+    </author>
+    
+    <date/>
+    <keyword>quick YANG modules</keyword>
+    <abstract>
+      <t>
+	This document describes a YANG deVELpment PrOCEss and
+	maintenance (VELOCE) that is more suitable for the development
+	of YANG modules or YANG modules update within the IETF.
+      </t>
+    </abstract>
+    <note removeInRFC="true">
+      <name>Discussion Venues</name>
+      <t>
+	Source for this draft and an issue tracker can be found at
+	<eref target="https://github.com/mjethanandani/veloce"/>.
+      </t>
+    </note>
+  </front>
+  <middle>
+
+    <section anchor="introduction" title="Introduction">
+      <t>
+	IETF has used RFCs to publish its documents. However, RFCs,
+	which are text documents, are not well-suited for the
+	iterative development of YANG modules that come in the form of
+	source code.
+      </t>
+      <t>
+	This document proposes a new approach for documenting and
+	publishing IETF YANG modules.  While this document mainly
+	focuses on IETF modules, IANA modules that are included in
+	drafts, and removed ultimately on publication, can follow a
+	similar process during the development of the draft.
+      </t>
+      <t>
+	This document proposes that publishing of a YANG module should
+	be split into two parts: the text portion, hereby referred to
+	as the document, and the YANG module. The document SHOULD
+	continue to be used for describing the model, defining IANA
+	Considerations, defining the Security Considerations,
+	describing any Operational Considerations, capturing the
+	Normative and the Informative References etc. The YANG module
+	should be developed and maintained in a separate Source Code
+	Mechanism (SCM) repository such as GitHub. The SCM SHOULD
+	provide a stable link to the YANG module, that should then be
+	included as a reference in the document.
+      </t>
+      <t>
+	There are several reasons to develop the YANG module in a
+	SCM. SCM provides version control and improves traceability of
+	changes. Modern SCM provide the ability for Continious
+	Integration/Continious Developement (CI/CD). YANG modules can
+	be fully validated before they are published. Changes to the
+	module can be submitted by providing changes to the affected
+	portions of the source code instead of the entire
+	module. Reviews and comments can be gathered on the changes
+	being proposed. This iterative approach lends itself to faster
+	development and fixing of issues.
+      </t>
+      <t>
+	Guidance for writing YANG modules are discussed in <xref
+	target="I-D.ietf-netmod-rfc8407bis"/>. Guidelines related to
+	code components (<xref section="3.2" sectionFormat="of"
+	target="I-D.ietf-netmod-rfc8407bis"/>) or citations to
+	references listed in the YANG module do not apply for VELOCE.
+      </t>
+      <section anchor="conventions-and-definitions" title="Conventions and Definitions">
+	<t>
+	  The key words "<bcp14>MUST</bcp14>", "<bcp14>MUST
+	  NOT</bcp14>", "<bcp14>REQUIRED</bcp14>",
+	  "<bcp14>SHALL</bcp14>", "<bcp14>SHALL NOT</bcp14>",
+	  "<bcp14>SHOULD</bcp14>", "<bcp14>SHOULD NOT</bcp14>",
+	  "<bcp14>RECOMMENDED</bcp14>", "<bcp14>NOT
+	  RECOMMENDED</bcp14>", "<bcp14>MAY</bcp14>", and
+	  "<bcp14>OPTIONAL</bcp14>" in this document are to be
+	  interpreted as described in BCP 14 <xref target="RFC2119"/>
+	  <xref target="RFC8174"/> when, and only when, they appear in
+	  all capitals, as shown here.
+	</t>
+      </section>
+    </section>
+    <section anchor="veloce-procedure" title="VELOCE Procedure">
+      <t>
+	The following practices should provide the necessary guidance
+	in how a WG decides on developing a new YANG module or an
+	update to an existing YANG module:
+      </t>
+      <t>
+	It is <bcp14>RECOMMENDED</bcp14> that IETF hosted repositories
+	be used. See <xref section="1.3" sectionFormat="of"
+	target="RFC8874">Working Group GitHub Usage
+	Guidance</xref>. Integration using third-party hosted
+	repositories <bcp14>MAY</bcp14> be used for experimentation
+	purposes.
+      </t>
+      <t>
+	A new repository <bcp14>MUST</bcp14> be created by the WG
+	Chairs following the procedure in <xref section="3.2"
+	sectionFormat="of" target="RFC8874">Working Group GitHub Usage
+	Guidance</xref> to develop or maintain a YANG Module. For a
+	new module this <bcp14>SHOULD</bcp14> happen when the module
+	is adopted as a WG item. It <bcp14>MAY</bcp14> happen for
+	individual drafts and that is left to discretion of the
+	chairs. However, once the document is adopted as a WG item,
+	the repository <bcp14>SHOULD</bcp14> reside under the WG. The
+	name of the repository <bcp14>SHOULD</bcp14> reflect
+	the name of the draft. In addition, the chairs
+	<bcp14>MAY</bcp14> make sure that an appropriate CI/CD YANG
+	validation is in place.
+      </t>
+      <t>
+	The procedure for managing WG documents (e.g., assign editors)
+	applies for managing YANG modules (<xref section="6.1"
+	sectionFormat="of" target="RFC2418">IETF Working Group
+	Guidelines and Procedures</xref>). For considerations related
+	to granting editors write and administrators right refer to
+	<xref section="3.3" sectionFormat="of"
+	target="RFC8874">Working Group GitHub Usage Guidance</xref>.
+      </t>
+      <t>
+	Other administrative policies as they relate to migration,
+	personal change or the WG closing are defined in <xref
+	target="RFC8875">Working Group GitHub Administration</xref>.
+      </t>
+      <t>
+	A release tagging mechanism should be defined to track the
+	intermediate versions referenced by WG I-Ds and by the RFC,
+	once published. This can come in the form of a 'git tag' or by
+	having a branch that corresponds to the version of the draft.
+      </t>
+      <t>
+	Contribution methods for the YANG module are similar to those
+	defined in <xref section="4" sectionFormat="of"
+	target="RFC8874">Working Group GitHub Usage
+	Guidance</xref>. This includes the use of Issues to track open
+	issues regarding the module. They along with corresponding
+	links to the Pull Request (PR) are a useful way to record
+	decisions made by the WG.
+      </t>
+      <t>
+	PR allow for a user to request a change to the repository. A
+	user does not need to have write access to the repository. A
+	fork of the repository allows the user to make changes,
+	validate them, and post the changes as a PR against the WG
+	repository. Editors of the YANG module are encouraged to not
+	accept changes into the "main" or "master" branch of the
+	repository. Instead they should be directed to a branch.
+      </t>
+      <t>
+	A procedure to assessing consensus is discussed in <xref
+	section="7" sectionFormat="of" target="RFC8874">Working Group
+	GitHub Usage Guidance</xref> and <bcp14>SHOULD</bcp14> be
+	followed when accepting changes to the module.
+      </t>
+      <t>
+	The YANG module <bcp14>MUST NOT</bcp14> be inserted in the
+	document; instead a link to the above repository
+	<bcp14>MUST</bcp14> be included in the document.
+      </t>
+      <t>
+	A bis versions of the initial RFC <bcp14>MAY</bcp14> be
+	considered if a major change needs to be added in the
+	document. Such a decision is left to the WG. WG may
+	decide to update an adopted YANG module in the IETF
+	repository and only update the RFC to change the reference
+	to the YANG module.
+      </t>
+    </section>
+    <section anchor="operational-considerations" title="Operational Considerations">
+      <t>
+	TBD.
+      </t>
+    </section>
+    <section anchor="security-considerations" title="Security Considerations">
+      <t>
+	The security considerations discussed in <xref section="10"
+	sectionFormat="of" target="RFC8874"/> apply here.
+      </t>
+    </section>
+    <section anchor="iana-considerations" title="IANA Considerations">
+      <t>This document has no IANA actions.</t>
+    </section>
+  </middle>
+  <back>
+    <references anchor="references" title="References">
+      <references anchor="normative-references" title="Normative References">
+	<?rfc include='reference.I-D.ietf-netmod-rfc8407bis.xml'?>
+        <xi:include href="https://bib.ietf.org/public/rfc/bibxml/reference.RFC.2119.xml"/>
+        <xi:include href="https://bib.ietf.org/public/rfc/bibxml/reference.RFC.2418.xml"/>
+        <xi:include href="https://bib.ietf.org/public/rfc/bibxml/reference.RFC.8174.xml"/>
+        <xi:include href="https://bib.ietf.org/public/rfc/bibxml/reference.RFC.8874.xml"/>
+        <xi:include href="https://bib.ietf.org/public/rfc/bibxml/reference.RFC.8875.xml"/>
+      </references>
+      <references anchor="informative-references" title="Informative References">
+      </references>
+    </references>
+
+    <section numbered="false" anchor="acknowledgments" title="Acknowledgments">
+      <t>
+	This draft is triggered by the discussion in NEMOPS IAB workshop.
+      </t>
+      <t>
+	Thanks to the participants of OPSAWG for their comments that
+	have helped shape this draft.
+      </t>
+    </section>
+  </back>
+</rfc>
