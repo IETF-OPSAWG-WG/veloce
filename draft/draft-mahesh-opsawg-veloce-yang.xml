@@ -19,7 +19,7 @@
     version="3">
   <front>
     <title abbrev="VELOCE">YANG deVELpment PrOCEss and maintenance (VELOCE)</title>
-    <seriesInfo name="Internet-Draft" value="draft-mahesh-opsawg-veloce-yang-00"/>
+    <seriesInfo name="Internet-Draft" value="draft-mahesh-opsawg-veloce-yang"/>
     <author fullname="Mahesh Jethanandani">
       <organization>Arrcus, Inc</organization>
       <address>
@@ -66,11 +66,12 @@
       <t>
 	This document proposes that the publishing of a YANG module
 	should be split into two parts: the text portion, hereby
-	referred to as the document, and the YANG module. The document
+	referred to as the prose, and the YANG module. The prose
 	SHOULD continue to be used for describing the model, defining
 	IANA Considerations, defining the Security Considerations,
 	describing any Operational Considerations, capturing the
-	Normative and the Informative References, etc. The YANG module
+	Normative and the Informative References, etc. The YANG module,
+	along with any related files such as YANG SID files,
 	should be developed and maintained in a separate Source Code
 	Mechanism (SCM) repository such as GitHub. The SCM SHOULD
 	provide a stable link to the YANG module, which should then be
@@ -86,7 +87,7 @@
 	portions of the source code instead of the entire
 	module. Reviews and comments can be gathered on the changes
 	being proposed. This iterative approach lends itself to faster
-	development and fixing of issues.
+	development and fixing of issues in YANG modules.
       </t>
       <t>
 	Guidance for writing YANG modules is discussed in <xref
@@ -133,7 +134,8 @@
 	is adopted as a WG item. It <bcp14>MAY</bcp14> happen for
 	individual drafts, and that is left to the discretion of the
 	chairs. However, once the document is adopted as a WG item,
-	the repository <bcp14>SHOULD</bcp14> reside under the WG. The
+	the repository <bcp14>SHOULD</bcp14> reside under the auspecies
+	of IETF controlled repository and managed by the WG. The
 	name of the repository <bcp14>SHOULD</bcp14> reflect the name
 	of the draft. In addition, the chairs <bcp14>MAY</bcp14> make
 	sure that an appropriate CI/CD YANG validation is in place.  It
@@ -179,7 +181,12 @@
 	validate them, and post the changes as a PR against the WG
 	repository. Editors of the YANG module are encouraged not to
 	accept changes into the "main" or "master" branch of the
-	repository. Instead, they should be directed to a branch.
+	repository. Instead, they should be directed to a branch
+	that is used for development. This allows the editors to review
+	the changes and make sure that they are in line with the WG
+	consensus before they are merged into the main branch. 
+	This also allows the editors to make sure that the changes are properly
+	validated before they are merged into the main branch.
       </t>
       <t>
 	A procedure for assessing consensus is discussed in <xref
@@ -220,12 +227,22 @@
       </t>
       <section anchor="what-is-the-goal" title="What is the goal">
 	<t>
-	  The goal of the experiment is to determine how the YANG
-	  modules can be developed outside of an RFC, while making
-	  sure that all the IETF processes are followed, including
-	  making sure that the WG is involved in the development of
-	  the module, and it has the rough consensus of the WG, and
-	  the IETF as a whole, before it is "published".
+	  The goal of the experiment is to determine how YANG modules
+	  can be developed outside of an RFC, while making sure that
+	  all IETF processes are followed, including WG involvement in
+	  the development of the module, and rough consensus of the WG
+	  and the IETF as a whole, before it is "published".
+	</t>
+	<t>
+	  A key objective is to balance speed, quality, and community
+	  contribution.  The experiment should demonstrate a faster
+	  path to delivering well-formed YANG modules, while not
+	  sacrificing the quality and the community involvement that
+	  the IETF process requires.  In particular, the experiment
+	  aims to address the pain point of the -bis revision process,
+	  where re-publishing a large document just to update a small
+	  portion of the YANG module creates unnecessary delays due to
+	  review comments on otherwise unchanged sections.
 	</t>
       </section>
       <section anchor="how-will-the-experiment-be-conducted" title="How will the experiment be conducted">
@@ -239,12 +256,31 @@
 	  covers all the IETF processes related to the development of
 	  YANG modules.
 	</t>
+	<t>
+	  Participants in the experiment are encouraged to document
+	  their overall experience, including whether the SCM-based
+	  approach genuinely improved participation and velocity, or
+	  whether observed speed gains were attributable to other
+	  factors such as low contention on a specific module.  This
+	  qualitative feedback is as important to the experiment as
+	  the publication outcome itself.
+	</t>
       </section>
       <section anchor="how-will-success-be-determined" title="How will success be determined">
 	<t>
-	  The "exit criteria" for the experiment will be successful
-	  publication of the modules that are identified as part of
-	  the experiment.
+	  The primary "exit criteria" for the experiment will be
+	  successful publication of the YANG modules identified as
+	  part of the experiment, within the timelines defined in
+	  <xref target="what-is-the-anticipated-timeline"/>.
+	</t>
+	<t>
+	  Beyond publication, success will also be evaluated based on
+	  whether the process improved community participation in YANG
+	  module development, and whether participants found the SCM-
+	  based workflow reduced friction compared to the traditional
+	  RFC-embedded approach.  A report documenting the overall
+	  experience and outcomes of the experiment SHOULD be produced
+	  at the conclusion of the experiment.
 	</t>
       </section>
       <section anchor="what-is-the-anticipated-timeline" title="What is the anticipated timeline">
@@ -253,13 +289,20 @@
 	  sometimes taking over four years. However, for the purpose
 	  of this experiment, and since the idea is to demonstrate a
 	  faster way for a new YANG module to be developed, the
-	  experiment should not take more than two years to develop.
+	  timelines for the experiment are as follows:
 	</t>
+	<ul>
+	  <li>A new YANG module should be published within two years
+	  of the start of the experiment.</li>
+	  <li>A "bis" version of an existing YANG module, where the
+	  primary motivation is incremental updates rather than a
+	  ground-up redesign, should be published within one year.</li>
+	</ul>
 	<t>
-	  If the experiment takes longer than that, the experiment
-	  should be deemed to have failed. At that time, an analysis
-	  can be done as to why it failed and determine if the
-	  experiment should be repeated.
+	  If the experiment takes longer than these timelines, the
+	  experiment should be deemed to have failed.  At that time,
+	  an analysis can be done as to why it failed and determine
+	  if the experiment should be repeated.
 	</t>
 	<t>
 	  If the experiment succeeds, then this document can be
@@ -317,7 +360,9 @@
       </t>
       <t>
 	Thanks to the participants of OPSAWG for their comments that
-	have helped shape this draft.
+	have helped shape this draft.  In particular, thanks to
+	Jeffrey Haas, Joe Clarke, Italo Busi, and Mohamed Boucadair
+	for their feedback during IETF 125.
       </t>
     </section>
   </back>
