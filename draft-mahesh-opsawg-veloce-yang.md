@@ -166,7 +166,7 @@ accept changes into the "main" or "master" branch of the
 repository. Instead, they should be directed to a branch
 that is used for development. This allows the editors to review
 the changes and make sure that they are in line with the WG
-consensus before they are merged into the main branch. 
+consensus before they are merged into the main branch.
 This also allows the editors to make sure that the changes are properly
 validated before they are merged into the main branch.
 
