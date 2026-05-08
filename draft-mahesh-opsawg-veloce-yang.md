@@ -52,7 +52,7 @@ Discussion Venues
    This note is to be removed before publishing as an RFC.
 
    Source for this draft and an issue tracker can be found at
-   https://github.com/mjethanandani/veloce.
+   https://github.com/mjethanandani/veloce/tree/main.
 
 --- middle
 
