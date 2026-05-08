@@ -99,8 +99,101 @@ or citations to references listed in the YANG module do not apply to VELOCE.
 
 # Conventions and Definitions
 
-{::boilerplate bcp14-tagged}
+The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
+"SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and
+"OPTIONAL" in this document are to be interpreted as described in
+BCP 14 {{!RFC2119}} {{!RFC8174}} when, and only when, they appear in all
+capitals, as shown here.
 
+# VELOCE Procedure {#sec-procedure}
+
+The following practices should provide the necessary guidance
+on how a WG develops a new YANG module or updates an existing
+YANG module:
+
+It is RECOMMENDED that IETF-hosted repositories
+be used. See section 1.3 of {{RFC8874}} for Working Group GitHub Usage
+Guidance. Integration using third-party hosted
+repositories MAY be used for experimentation
+purposes.
+
+A new repository MUST be created by the WG
+Chairs following the procedure in section 3.2 of {{?RFC8874}} for
+Working Group GitHub Usage Guidance to develop or maintain a YANG
+Module. For a new module, this SHOULD happen when
+the module is adopted as a WG item. It MAY happen for
+individual drafts, and that is left to the discretion of the
+chairs. However, once the document is adopted as a WG item,
+the repository SHOULD reside under the auspecies
+of IETF controlled repository and managed by the WG. The
+name of the repository SHOULD reflect the name
+of the draft. In addition, the chairs MAY make
+sure that an appropriate CI/CD YANG validation is in place.  It
+is RECOMMENDED that a containerized build
+environment be provided in the repository to enable local
+validation of YANG modules (e.g., via yanglint) independently of
+the CI/CD pipeline, and to ensure a consistent development
+environment across all contributors.
+
+The procedure for managing WG documents (e.g., assign editors)
+applies for managing YANG modules (section 6.1 of {{?RFC2418}}
+for IETF Working Group Guidelines and Procedures. For considerations
+related to granting editors write and administrators' right refer to
+section 3.3 of {{?RFC8874}} for Working Group GitHub Usage Guidance.
+
+Other administrative policies as they relate to migration,
+personal change or the WG closing is defined in the {{?RFC8875}} Working
+Group GitHub Administration.
+
+A release tagging mechanism should be defined to track the
+intermediate versions referenced by WG I-Ds and by the RFC,
+once published. This can come in the form of a 'git tag' or by
+having a branch that corresponds to the version of the draft.
+
+Contribution methods for the YANG module are similar to those
+defined in section 4 of {{?RFC8874}} for Working Group GitHub Usage
+Guidance. This includes the use of Issues to track open
+issues regarding the module. They, along with corresponding
+links to the Pull Request (PR), are a useful way to record
+decisions made by the WG.
+
+PR allow for a user to request a change to the repository. A
+user does not need to have write access to the repository. A
+fork of the repository allows the user to make changes,
+validate them, and post the changes as a PR against the WG
+repository. Editors of the YANG module are encouraged not to
+accept changes into the "main" or "master" branch of the
+repository. Instead, they should be directed to a branch
+that is used for development. This allows the editors to review
+the changes and make sure that they are in line with the WG
+consensus before they are merged into the main branch. 
+This also allows the editors to make sure that the changes are properly
+validated before they are merged into the main branch.
+
+A procedure for assessing consensus is discussed in section 7 of {{?RFC8874}}
+for Working Group GitHub Usage Guidance</xref> and SHOULD be
+followed when accepting changes to the module.
+
+The YANG module MUST NOT be inserted in the
+document; instead, a link to the above repository
+MUST be included in the document.  The link
+MUST point to a specific tagged version of the
+YANG module (e.g., a git tag or commit hash), not to the HEAD of
+a branch, so that the module's contents at RFC publication time
+are permanently retrievable and verifiable.
+
+YANG SID files {{?RFC9595}}, when applicable (e.g.,
+for YANG/CBOR encoding), <bcp14>SHOULD</bcp14> reside in the
+SCM repository rather than in the document.  The use of RFC 8792
+folding for SID files in Internet-Drafts is discouraged, as it
+is not compatible with current YANG Doctor tooling.
+
+A bis version of the initial RFC MAY be
+considered if a major change needs to be added in the
+document. Such a decision is left to the WG. WG may
+decide to update an adopted YANG module in the IETF
+repository and only update the RFC to change the reference
+to the YANG module.
 
 # Security Considerations
 
