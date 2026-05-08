@@ -43,7 +43,7 @@ informative:
 
 --- abstract
 
-This document describes a YANG deVELpment PrOCEss and
+This document describes a YANG deVELopment PrOCEss and
 maintenance (VELOCE) that is more suitable for the development
 of YANG modules or YANG modules update within the IETF.
 
