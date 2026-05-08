@@ -24,6 +24,7 @@ venue:
   latest: "https://mjethanandani.github.io/veloce/draft-mahesh-opsawg-veloce-yang.html"
 
 author:
+
  -
    fullname: "Mahesh Jethanandani"
    organization: Arrcus
