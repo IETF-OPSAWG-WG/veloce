@@ -171,7 +171,7 @@ This also allows the editors to make sure that the changes are properly
 validated before they are merged into the main branch.
 
 A procedure for assessing consensus is discussed in section 7 of {{?RFC8874}}
-for Working Group GitHub Usage Guidance</xref> and SHOULD be
+for Working Group GitHub Usage Guidance and SHOULD be
 followed when accepting changes to the module.
 
 The YANG module MUST NOT be inserted in the
@@ -243,7 +243,7 @@ the publication outcome itself.
 The primary "exit criteria" for the experiment will be
 successful publication of the YANG modules identified as
 part of the experiment, within the timelines defined in
-{{#sec-timeline}}.
+{{sec-timeline}}.
 
 Beyond publication, success will also be evaluated based on
 whether the process improved community participation in YANG
