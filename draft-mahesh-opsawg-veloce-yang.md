@@ -195,6 +195,87 @@ decide to update an adopted YANG module in the IETF
 repository and only update the RFC to change the reference
 to the YANG module.
 
+# Experimental Plan {#sec-experiment}
+
+Much like other experimental documents, this document tries to
+answer the following four questions as they relate to
+experimental documents.
+
+## What is the goal {#sec-goal}
+
+The goal of the experiment is to determine how YANG modules
+can be developed outside of an RFC, while making sure that
+all IETF processes are followed, including WG involvement in
+the development of the module, and rough consensus of the WG
+and the IETF as a whole, before it is "published".
+
+A key objective is to balance speed, quality, and community
+contribution.  The experiment should demonstrate a faster
+path to delivering well-formed YANG modules, while not
+sacrificing the quality and the community involvement that
+the IETF process requires.  In particular, the experiment
+aims to address the pain point of the -bis revision process,
+where re-publishing a large document just to update a small
+portion of the YANG module creates unnecessary delays due to
+review comments on otherwise unchanged sections.
+
+## How will the experiment be conducted {#sec-how}
+
+YANG modules developed in the IETF fall broadly into two
+categories. They can be new modules, or they can be a "bis"
+version of the module. The experiment will consist of two or
+more YANG modules, such that at least one of them is a new
+YANG module, and the other is a "bis" version of the YANG
+module. This is being done to make sure that the experiment
+covers all the IETF processes related to the development of
+YANG modules.
+
+Participants in the experiment are encouraged to document
+their overall experience, including whether the SCM-based
+approach genuinely improved participation and velocity, or
+whether observed speed gains were attributable to other
+factors such as low contention on a specific module.  This
+qualitative feedback is as important to the experiment as
+the publication outcome itself.
+
+## How will success be determined {#sec-determine}
+
+The primary "exit criteria" for the experiment will be
+successful publication of the YANG modules identified as
+part of the experiment, within the timelines defined in
+{{#sec-timeline}}.
+
+Beyond publication, success will also be evaluated based on
+whether the process improved community participation in YANG
+module development, and whether participants found the SCM-
+based workflow reduced friction compared to the traditional
+RFC-embedded approach.  A report documenting the overall
+experience and outcomes of the experiment SHOULD be produced
+at the conclusion of the experiment.
+
+## What is the anticipated timeline {#sec-timeline}
+
+YANG modules have traditionally taken a long time to develop,
+sometimes taking over four years. However, for the purpose
+of this experiment, and since the idea is to demonstrate a
+faster way for a new YANG module to be developed, the
+timelines for the experiment are as follows:
+
+A new YANG module should be published within two years
+of the start of the experiment.
+A "bis" version of an existing YANG module, where the
+primary motivation is incremental updates rather than a
+ground-up redesign, should be published within one year.
+
+If the experiment takes longer than these timelines, the
+experiment should be deemed to have failed.  At that time,
+an analysis can be done as to why it failed and determine
+if the experiment should be repeated.
+
+If the experiment succeeds, then this document can be
+classified as a BCP, and the process be followed for all
+YANG modules developed in IETF.
+
 # Security Considerations
 
 TODO Security
