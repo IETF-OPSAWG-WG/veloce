@@ -84,11 +84,12 @@ Table of Contents
      4.2.  How will the experiment be conducted
      4.3.  How will success be determined
      4.4.  What is the anticipated timeline
-   5.  Security Considerations
-   6.  IANA Considerations
-   7.  References
-     7.1.  Normative References
-     7.2.  Informative References
+   5.  Operational Considerations
+   6.  Security Considerations
+   7.  IANA Considerations
+   8.  References
+     8.1.  Normative References
+     8.2.  Informative References
    Acknowledgments
    Authors' Addresses
 
@@ -295,17 +296,33 @@ Table of Contents
    BCP, and the process be followed for all YANG modules developed in
    IETF.
 
-5.  Security Considerations
+5.  Operational Considerations
 
-   TODO Security
+   The separation of YANG modules from their companion documents has
+   implications for the YANG review process.  YANG Doctors SHOULD review
+   the YANG module at the specific tagged version referenced by the
+   document, using tooling that can retrieve and validate modules
+   directly from the SCM repository.
 
-6.  IANA Considerations
+   Working Groups adopting VELOCE are encouraged to define milestone-
+   based development targets for YANG modules.  A phased approach, where
+   an initial version covering core functionality is published within a
+   defined timeframe, with subsequent updates published as needed, is
+   preferable to indefinitely delaying publication while pursuing
+   completeness.
+
+6.  Security Considerations
+
+   The security considerations discussed in Section 10 of [RFC8874]
+   apply here.
+
+7.  IANA Considerations
 
    This document has no IANA actions.
 
-7.  References
+8.  References
 
-7.1.  Normative References
+8.1.  Normative References
 
    [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
               Requirement Levels", BCP 14, RFC 2119,
@@ -316,7 +333,7 @@ Table of Contents
               2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
               May 2017, <https://www.rfc-editor.org/rfc/rfc8174>.
 
-7.2.  Informative References
+8.2.  Informative References
 
    [RFC2418]  Bradner, S., "IETF Working Group Guidelines and
               Procedures", BCP 25, RFC 2418, DOI 10.17487/RFC2418,
