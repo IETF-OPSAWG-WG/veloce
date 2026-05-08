@@ -276,9 +276,26 @@ If the experiment succeeds, then this document can be
 classified as a BCP, and the process be followed for all
 YANG modules developed in IETF.
 
+# Operational Considerations {#sec-operational}
+
+The separation of YANG modules from their companion documents has
+implications for the YANG review process.  YANG Doctors
+SHOULD review the YANG module at the specific
+tagged version referenced by the document, using tooling that
+can retrieve and validate modules directly from the SCM
+repository.
+
+Working Groups adopting VELOCE are encouraged to define
+milestone-based development targets for YANG modules.  A phased
+approach, where an initial version covering core functionality is
+published within a defined timeframe, with subsequent updates
+published as needed, is preferable to indefinitely delaying
+publication while pursuing completeness.
+
 # Security Considerations
 
-TODO Security
+The security considerations discussed in Section 10 of
+{{?RFC8874}} apply here.
 
 
 # IANA Considerations
