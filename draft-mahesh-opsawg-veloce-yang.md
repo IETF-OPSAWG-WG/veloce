@@ -310,5 +310,5 @@ This draft is triggered by the discussion in NEMOPS IAB workshop.
 
 Thanks to the participants of OPSAWG for their comments that
 have helped shape this draft.  In particular, thanks to
-Jeffrey Haas, Joe Clarke, Dhruv Dhody, Italo Busi, and Mohamed Boucadair
-for their feedback during IETF 125.
+Jeffrey Haas, Joe Clarke, Dhruv Dhody, Per Andersson，Italo Busi,
+and Mohamed Boucadair for their feedback during IETF 125.
