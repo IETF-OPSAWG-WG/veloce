@@ -12,9 +12,9 @@ v: 3
 area: "Operations and Management"
 workgroup: "Operations and Management Area Working Group"
 keyword:
- - next generation
- - unicorn
- - sparkling distributed ledger
+ - yang
+ - development process
+ - maintenance
 venue:
   group: "Operations and Management Area Working Group"
   type: "Working Group"
@@ -112,14 +112,13 @@ on how a WG develops a new YANG module or updates an existing
 YANG module:
 
 It is RECOMMENDED that IETF-hosted repositories
-be used. See section 1.3 of {{!RFC8874}} for Working Group GitHub Usage
-Guidance. Integration using third-party hosted
-repositories MAY be used for experimentation
-purposes.
+be used. See section 1.3 of Working Group GitHub Usage
+Guidance {{!RFC8874}}. Integration using third-party hosted
+repositories MAY be used for experimentation purposes.
 
 A new repository MUST be created by the WG
-Chairs following the procedure in section 3.2 of {{!RFC8874}} for
-Working Group GitHub Usage Guidance to develop or maintain a YANG
+Chairs following the procedure in section 3.2 of Working Group
+GitHub Usage Guidance {{!RFC8874}} for to develop or maintain a YANG
 Module. For a new module, this SHOULD happen when
 the module is adopted as a WG item. It MAY happen for
 individual drafts, and that is left to the discretion of the
@@ -136,14 +135,14 @@ the CI/CD pipeline, and to ensure a consistent development
 environment across all contributors.
 
 The procedure for managing WG documents (e.g., assign editors)
-applies for managing YANG modules (section 6.1 of {{!RFC2418}}
-for IETF Working Group Guidelines and Procedures. For considerations
+applies for managing YANG modules (section 6.1 of IETF Working
+Group Guidelines and Procedures {{!RFC2418}}. For considerations
 related to granting editors write and administrators' right refer to
-section 3.3 of {{!RFC8874}} for Working Group GitHub Usage Guidance.
+section 3.3 of Working Group GitHub Usage Guidance {{!RFC8874}}.
 
 Other administrative policies as they relate to migration,
-personal change or the WG closing is defined in the {{!RFC8875}} Working
-Group GitHub Administration.
+personal change or the WG closing is defined in the Working
+Group GitHub Administration {{!RFC8875}}.
 
 A release tagging mechanism should be defined to track the
 intermediate versions referenced by WG I-Ds and by the RFC,
@@ -151,8 +150,8 @@ once published. This can come in the form of a 'git tag' or by
 having a branch that corresponds to the version of the draft.
 
 Contribution methods for the YANG module are similar to those
-defined in section 4 of {{!RFC8874}} for Working Group GitHub Usage
-Guidance. This includes the use of Issues to track open
+defined in section 4 of Working Group GitHub Usage
+Guidance {{!RFC8874}}. This includes the use of Issues to track open
 issues regarding the module. They, along with corresponding
 links to the Pull Request (PR), are a useful way to record
 decisions made by the WG.
@@ -170,8 +169,8 @@ consensus before they are merged into the main branch.
 This also allows the editors to make sure that the changes are properly
 validated before they are merged into the main branch.
 
-A procedure for assessing consensus is discussed in section 7 of {{!RFC8874}}
-for Working Group GitHub Usage Guidance and SHOULD be
+A procedure for assessing consensus is discussed in section 7 of Working
+Group GitHub Usage Guidance {{!RFC8874}} and SHOULD be
 followed when accepting changes to the module.
 
 The YANG module MUST NOT be inserted in the
@@ -311,5 +310,5 @@ This draft is triggered by the discussion in NEMOPS IAB workshop.
 
 Thanks to the participants of OPSAWG for their comments that
 have helped shape this draft.  In particular, thanks to
-Jeffrey Haas, Joe Clarke, Italo Busi, and Mohamed Boucadair
+Jeffrey Haas, Joe Clarke, Dhruv Dhody, Italo Busi, and Mohamed Boucadair
 for their feedback during IETF 125.
