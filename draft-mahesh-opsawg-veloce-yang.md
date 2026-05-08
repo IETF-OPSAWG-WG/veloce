@@ -26,7 +26,7 @@ venue:
 author:
  -
    fullname: "Mahesh Jethanandani"
-   organization:"Arrcus"
+   organization: Arrcus
    email: "mjethanandani@gmail.com"
 
  -
