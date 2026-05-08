@@ -14,7 +14,7 @@ Expires: 9 November 2026                                          Huawei
 
 Abstract
 
-   This document describes a YANG deVELpment PrOCEss and maintenance
+   This document describes a YANG deVELopment PrOCEss and maintenance
    (VELOCE) that is more suitable for the development of YANG modules or
    YANG modules update within the IETF.
 
