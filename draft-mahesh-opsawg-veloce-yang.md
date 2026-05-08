@@ -183,7 +183,7 @@ a branch, so that the module's contents at RFC publication time
 are permanently retrievable and verifiable.
 
 YANG SID files {{?RFC9595}}, when applicable (e.g.,
-for YANG/CBOR encoding), <bcp14>SHOULD</bcp14> reside in the
+for YANG/CBOR encoding), SHOULD reside in the
 SCM repository rather than in the document.  The use of RFC 8792
 folding for SID files in Internet-Drafts is discouraged, as it
 is not compatible with current YANG Doctor tooling.
