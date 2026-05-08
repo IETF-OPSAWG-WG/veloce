@@ -31,9 +31,9 @@ author:
    email: "mjethanandani@gmail.com"
 
  -
-    fullname: "Qin Wu"
-    organization: Huawei
-    email: "bill.wu@huawei.com"
+   fullname: "Qin Wu"
+   organization: Huawei
+   email: "bill.wu@huawei.com"
 
 normative:
 
@@ -93,8 +93,8 @@ module. Reviews and comments can be gathered on the changes
 being proposed. This iterative approach lends itself to faster
 development and fixing of issues in YANG modules.
 
-Guidance for writing YANG modules is discussed in {{?RFC9907}}.
-Guidelines related to code components (section3.2 of {{?RFC9907}})
+Guidance for writing YANG modules is discussed in {{!RFC9907}}.
+Guidelines related to code components (section3.2 of {{!RFC9907}})
 or citations to references listed in the YANG module do not apply to VELOCE.
 
 # Conventions and Definitions
@@ -112,13 +112,13 @@ on how a WG develops a new YANG module or updates an existing
 YANG module:
 
 It is RECOMMENDED that IETF-hosted repositories
-be used. See section 1.3 of {{RFC8874}} for Working Group GitHub Usage
+be used. See section 1.3 of {{!RFC8874}} for Working Group GitHub Usage
 Guidance. Integration using third-party hosted
 repositories MAY be used for experimentation
 purposes.
 
 A new repository MUST be created by the WG
-Chairs following the procedure in section 3.2 of {{?RFC8874}} for
+Chairs following the procedure in section 3.2 of {{!RFC8874}} for
 Working Group GitHub Usage Guidance to develop or maintain a YANG
 Module. For a new module, this SHOULD happen when
 the module is adopted as a WG item. It MAY happen for
@@ -136,13 +136,13 @@ the CI/CD pipeline, and to ensure a consistent development
 environment across all contributors.
 
 The procedure for managing WG documents (e.g., assign editors)
-applies for managing YANG modules (section 6.1 of {{?RFC2418}}
+applies for managing YANG modules (section 6.1 of {{!RFC2418}}
 for IETF Working Group Guidelines and Procedures. For considerations
 related to granting editors write and administrators' right refer to
-section 3.3 of {{?RFC8874}} for Working Group GitHub Usage Guidance.
+section 3.3 of {{!RFC8874}} for Working Group GitHub Usage Guidance.
 
 Other administrative policies as they relate to migration,
-personal change or the WG closing is defined in the {{?RFC8875}} Working
+personal change or the WG closing is defined in the {{!RFC8875}} Working
 Group GitHub Administration.
 
 A release tagging mechanism should be defined to track the
@@ -151,7 +151,7 @@ once published. This can come in the form of a 'git tag' or by
 having a branch that corresponds to the version of the draft.
 
 Contribution methods for the YANG module are similar to those
-defined in section 4 of {{?RFC8874}} for Working Group GitHub Usage
+defined in section 4 of {{!RFC8874}} for Working Group GitHub Usage
 Guidance. This includes the use of Issues to track open
 issues regarding the module. They, along with corresponding
 links to the Pull Request (PR), are a useful way to record
@@ -170,7 +170,7 @@ consensus before they are merged into the main branch.
 This also allows the editors to make sure that the changes are properly
 validated before they are merged into the main branch.
 
-A procedure for assessing consensus is discussed in section 7 of {{?RFC8874}}
+A procedure for assessing consensus is discussed in section 7 of {{!RFC8874}}
 for Working Group GitHub Usage Guidance and SHOULD be
 followed when accepting changes to the module.
 
@@ -182,7 +182,7 @@ YANG module (e.g., a git tag or commit hash), not to the HEAD of
 a branch, so that the module's contents at RFC publication time
 are permanently retrievable and verifiable.
 
-YANG SID files {{?RFC9595}}, when applicable (e.g.,
+YANG SID files {{!RFC9595}}, when applicable (e.g.,
 for YANG/CBOR encoding), SHOULD reside in the
 SCM repository rather than in the document.  The use of RFC 8792
 folding for SID files in Internet-Drafts is discouraged, as it
@@ -295,17 +295,21 @@ publication while pursuing completeness.
 # Security Considerations
 
 The security considerations discussed in Section 10 of
-{{?RFC8874}} apply here.
+{{!RFC8874}} apply here.
 
 
 # IANA Considerations
 
 This document has no IANA actions.
 
-
 --- back
 
 # Acknowledgments
 {:numbered="false"}
 
-TODO acknowledge.
+This draft is triggered by the discussion in NEMOPS IAB workshop.
+
+Thanks to the participants of OPSAWG for their comments that
+have helped shape this draft.  In particular, thanks to
+Jeffrey Haas, Joe Clarke, Italo Busi, and Mohamed Boucadair
+for their feedback during IETF 125.
