@@ -136,9 +136,7 @@
 	the repository <bcp14>SHOULD</bcp14> reside under the auspecies
 	of IETF controlled repository and managed by the WG. The
 	name of the repository <bcp14>SHOULD</bcp14> reflect the name
-	of the draft. 
-		  
-	In addition, the chairs MAY make sure that an appropriate CI/CD
+	of the draft. In addition, the chairs MAY make sure that an appropriate CI/CD
 	YANG validation is in place.  It is RECOMMENDED that a real time
 	collaborative working environment be provided in the repository
     to enable online validation of YANG modules (e.g., via yanglint)
