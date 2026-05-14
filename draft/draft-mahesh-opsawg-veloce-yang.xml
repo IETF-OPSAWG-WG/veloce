@@ -136,9 +136,9 @@
 	the repository <bcp14>SHOULD</bcp14> reside under the auspecies
 	of IETF controlled repository and managed by the WG. The
 	name of the repository <bcp14>SHOULD</bcp14> reflect the name
-	of the draft. For an updated module, it is RECOMMENDED to use the
+	of the draft. When updating an existing module, it is RECOMMENDED to use the
 	same WG repository of the initial version of YANG module for the
-	updated module maintenance.In addition, the chairs <bcp14>MAY</bcp14> make
+	updated module maintenance. In addition, the chairs <bcp14>MAY</bcp14> make
 	sure that an appropriate CI/CD YANG validation is in place.  It
 	is <bcp14>RECOMMENDED</bcp14> that a containerized build
 	environment be provided in the repository to enable local
