@@ -272,6 +272,11 @@
 	  part of the experiment, within the timelines defined in
 	  <xref target="what-is-the-anticipated-timeline"/>.
 	</t>
+    <t>
+	 For an updated Module, If IETF YANG model can be updated using IETF
+     errata report and WG github without republishing as a new RFC, the
+     experiment should also be deemed as success.
+	</t>
 	<t>
 	  Beyond publication, success will also be evaluated based on
 	  whether the process improved community participation in YANG
