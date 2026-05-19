@@ -273,8 +273,8 @@
 	  <xref target="what-is-the-anticipated-timeline"/>.
 	</t>
     <t>
-	 For an updated Module, If IETF YANG model can be updated using IETF
-     errata report and WG github without republishing as a new RFC, the
+	 For an updated module, if IETF YANG model can be updated using an IETF WG consensus process (probably including an 
+     errata report) and WG github without republishing as a new RFC, the
      experiment should also be deemed as success.
 	</t>
 	<t>
