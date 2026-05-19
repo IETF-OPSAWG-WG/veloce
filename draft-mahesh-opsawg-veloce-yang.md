@@ -97,7 +97,7 @@ Guidance for writing YANG modules is discussed in {{!RFC9907}}.
 Guidelines related to code components (section3.2 of {{!RFC9907}})
 or citations to references listed in the YANG module do not apply to VELOCE.
 
-# Conventions and Definitions
+## Conventions and Definitions
 
 The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
 "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and
@@ -111,28 +111,23 @@ The following practices should provide the necessary guidance
 on how a WG develops a new YANG module or updates an existing
 YANG module:
 
-It is RECOMMENDED that IETF-hosted repositories
-be used. See section 1.3 of Working Group GitHub Usage
-Guidance {{!RFC8874}}. Integration using third-party hosted
-repositories MAY be used for experimentation purposes.
+It is RECOMMENDED that IETF-hosted repositories be used.
+See section 1.3 of Working Group GitHub Usage
+Guidance {{!RFC8874}}.
+Integration using third-party hosted repositories MAY be used for experimentation purposes.
 
 A new repository MUST be created by the WG
 Chairs following the procedure in section 3.2 of Working Group
 GitHub Usage Guidance {{!RFC8874}} for to develop or maintain a YANG
-Module. For a new module, this SHOULD happen when
-the module is adopted as a WG item. It MAY happen for
-individual drafts, and that is left to the discretion of the
-chairs. However, once the document is adopted as a WG item,
-the repository SHOULD reside under the auspecies
-of IETF controlled repository and managed by the WG. The
-name of the repository SHOULD reflect the name
-of the draft. In addition, the chairs MAY make
-sure that an appropriate CI/CD YANG validation is in place.  It
-is RECOMMENDED that a containerized build
-environment be provided in the repository to enable local
-validation of YANG modules (e.g., via yanglint) independently of
-the CI/CD pipeline, and to ensure a consistent development
-environment across all contributors.
+Module.
+For a new module, this SHOULD happen when the module is adopted as a WG item.
+It MAY happen for individual drafts, and that is left to the discretion of the chairs.
+However, once the document is adopted as a WG item, the repository SHOULD reside under the auspecies
+of IETF controlled repository and managed by the WG.
+The name of the repository SHOULD reflect the name of the draft.
+In addition, the chairs MAY make sure that an appropriate CI/CD YANG validation is in place.
+It is RECOMMENDED that a containerized build environment be provided in the repository to enable local
+validation of YANG modules (e.g., via yanglint) independently of the CI/CD pipeline, and to ensure a consistent development environment across all contributors.
 
 The procedure for managing WG documents (e.g., assign editors)
 applies for managing YANG modules (section 6.1 of IETF Working
@@ -260,9 +255,10 @@ of this experiment, and since the idea is to demonstrate a
 faster way for a new YANG module to be developed, the
 timelines for the experiment are as follows:
 
-A new YANG module should be published within two years
+* A new YANG module should be published within two years
 of the start of the experiment.
-A "bis" version of an existing YANG module, where the
+
+* A "bis" version of an existing YANG module, where the
 primary motivation is incremental updates rather than a
 ground-up redesign, should be published within one year.
 
@@ -310,5 +306,5 @@ This draft is triggered by the discussion in NEMOPS IAB workshop.
 
 Thanks to the participants of OPSAWG for their comments that
 have helped shape this draft.  In particular, thanks to
-Jeffrey Haas, Joe Clarke, Dhruv Dhody, Per Andersson，Italo Busi,
+Jeffrey Haas, Joe Clarke, Dhruv Dhody, Per Andersson, Italo Busi,
 and Mohamed Boucadair for their feedback during IETF 125.
