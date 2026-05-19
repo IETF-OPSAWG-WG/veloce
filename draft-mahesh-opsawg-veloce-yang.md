@@ -182,6 +182,13 @@ SCM repository rather than in the document.  The use of RFC 8792
 folding for SID files in Internet-Drafts is discouraged, as it
 is not compatible with current YANG Doctor tooling.
 
+When updating an existing, published module, IETF errata reports can
+be used to keep track of changes for both the YANG module and its
+corresponding RFC text. In the case the errata pertains to the YANG
+module, once the Area Director (AD) verifies the errata using the
+existing IETF process, a Pull Request (PR) is opened to merge the changes
+into the WG repository.
+
 A bis version of the initial RFC MAY be
 considered if a major change needs to be added in the
 document. Such a decision is left to the WG. WG may
