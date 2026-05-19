@@ -168,13 +168,15 @@ A procedure for assessing consensus is discussed in section 7 of Working
 Group GitHub Usage Guidance {{!RFC8874}} and SHOULD be
 followed when accepting changes to the module.
 
-The YANG module MUST NOT be inserted in the
-document; instead, a link to the above repository
-MUST be included in the document.  The link
-MUST point to a specific tagged version of the
-YANG module (e.g., a git tag or commit hash), not to the HEAD of
-a branch, so that the module's contents at RFC publication time
-are permanently retrievable and verifiable.
+When a RFC document is needed for a new module or an updated module,
+the YANG module <bcp14>MUST</bcp14> NOT be inserted in the document;
+tead, a link to a new module draft or updated module draft in the
+ve repository <bcp14>MUST</bcp14> be included in the document.
+ link <bcp14>MUST</bcp14> point to a specific tagged version of the
+G module (e.g., a git tag or commit hash), not to the HEAD of a branch
+ch is further maintained by IANA YANG module registry, so that the module's
+tents with specific tag version at RFC publication time are permanently
+retrievable and verifiable.
 
 YANG SID files {{!RFC9595}}, when applicable (e.g.,
 for YANG/CBOR encoding), SHOULD reside in the
