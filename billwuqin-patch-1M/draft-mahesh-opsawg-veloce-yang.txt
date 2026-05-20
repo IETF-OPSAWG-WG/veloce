@@ -291,7 +291,7 @@ Table of Contents
    as follows:
 
    *  A new YANG module should be published within two years since the
-      experiement starting.
+      experiement is starting.
 
    *  A "bis" version of an existing YANG module, where the primary
       motivation is incremental updates rather than a ground-up
