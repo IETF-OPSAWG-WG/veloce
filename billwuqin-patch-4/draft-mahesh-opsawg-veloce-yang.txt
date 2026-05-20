@@ -205,9 +205,9 @@ Table of Contents
    to a new module draft or updated module draft in the above repository
    MUST be included in the document.  link MUST point to a specific
    tagged version of the G module (e.g., a git tag or commit hash), not
-   to the HEAD of a branch ch is further maintained by IANA YANG module
-   registry, so that the module's tents with specific tag version at RFC
-   publication time are permanently retrievable and verifiable.
+   to the HEAD of a branch which is further maintained by IANA YANG
+   module registry, so that the module's tents with specific tag version
+   at RFC publication time are permanently retrievable and verifiable.
 
    YANG SID files [RFC9595], when applicable (e.g., for YANG/CBOR
    encoding), SHOULD reside in the SCM repository rather than in the
