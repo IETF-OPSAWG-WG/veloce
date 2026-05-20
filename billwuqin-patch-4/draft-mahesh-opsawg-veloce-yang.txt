@@ -5,8 +5,8 @@
 Operations and Management Area Working Group             M. Jethanandani
 Internet-Draft                                                    Arrcus
 Intended status: Informational                                     Q. Wu
-Expires: 20 November 2026                                         Huawei
-                                                             19 May 2026
+Expires: 21 November 2026                                         Huawei
+                                                             20 May 2026
 
 
            YANG deVELopment PrOCEss and maintenance (VELOCE)
@@ -58,7 +58,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 20 November 2026.
+   This Internet-Draft will expire on 21 November 2026.
 
 Copyright Notice
 
@@ -201,11 +201,11 @@ Table of Contents
    when accepting changes to the module.
 
    When a RFC document is needed for a new module or an updated module,
-   the YANG module MUST NOT be inserted in the document; tead, a link to
-   a new module draft or updated module draft in the ve repository MUST
-   be included in the document.  link MUST point to a specific tagged
-   version of the G module (e.g., a git tag or commit hash), not to the
-   HEAD of a branch ch is further maintained by IANA YANG module
+   the YANG module MUST NOT be inserted in the document; Instead, a link
+   to a new module draft or updated module draft in the ve repository
+   MUST be included in the document.  link MUST point to a specific
+   tagged version of the G module (e.g., a git tag or commit hash), not
+   to the HEAD of a branch ch is further maintained by IANA YANG module
    registry, so that the module's tents with specific tag version at RFC
    publication time are permanently retrievable and verifiable.
 
