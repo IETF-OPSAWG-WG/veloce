@@ -265,7 +265,7 @@ timelines for the experiment are as follows:
 - A new YANG module should be published within two years
 of the start of the experiment.
 
-* A "bis" version of an existing YANG module, where the
+- A "bis" version of an existing YANG module, where the
 primary motivation is incremental updates rather than a
 ground-up redesign, should be published within one year.
 
