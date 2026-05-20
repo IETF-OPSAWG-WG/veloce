@@ -126,6 +126,7 @@ However, once the document is adopted as a WG item, the repository SHOULD reside
 of IETF controlled repository and managed by the WG.
 The name of the repository SHOULD reflect the name of the draft.
 For an updated module, the repository for the original module SHOULD be reused to keep track of updates of the original module.
+If no existing repository exists, then a new one SHOULD be created, initialized with the last approved YANG module, so that proposed changes are traceable.
 In addition, the chairs MAY make sure that an appropriate CI/CD YANG validation is in place.
 It is RECOMMENDED that a containerized build environment be provided in the repository to enable local
 validation of YANG modules (e.g., via yanglint) independently of the CI/CD pipeline, and to ensure a consistent development environment across all contributors.
