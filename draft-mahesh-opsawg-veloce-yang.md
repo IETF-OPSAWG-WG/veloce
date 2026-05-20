@@ -263,7 +263,7 @@ faster way for a new YANG module to be developed, the
 timelines for the experiment are as follows:
 
 * A new YANG module should be published within two years
-since the experiement starting.
+since the experiement is starting.
 
 * A "bis" version of an existing YANG module, where the
 primary motivation is incremental updates rather than a
