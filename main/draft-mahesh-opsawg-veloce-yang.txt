@@ -5,8 +5,8 @@
 Operations and Management Area Working Group             M. Jethanandani
 Internet-Draft                                                    Arrcus
 Intended status: Informational                                     Q. Wu
-Expires: 9 November 2026                                          Huawei
-                                                              8 May 2026
+Expires: 30 November 2026                                         Huawei
+                                                             29 May 2026
 
 
            YANG deVELopment PrOCEss and maintenance (VELOCE)
@@ -58,7 +58,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 9 November 2026.
+   This Internet-Draft will expire on 30 November 2026.
 
 Copyright Notice
 
@@ -264,6 +264,11 @@ Table of Contents
    The primary "exit criteria" for the experiment will be successful
    publication of the YANG modules identified as part of the experiment,
    within the timelines defined in Section 4.4.
+
+   For an updated module, if IETF YANG model can be updated using an
+   IETF WG consensus process (probably including an errata report) and
+   WG github without republishing as a new RFC, the experiment should
+   also be deemed as success.
 
    Beyond publication, success will also be evaluated based on whether
    the process improved community participation in YANG module
