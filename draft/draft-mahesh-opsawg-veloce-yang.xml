@@ -169,8 +169,10 @@
 	defined in <xref section="4" sectionFormat="of"
 	target="RFC8874">Working Group GitHub Usage
 	Guidance</xref>. This includes the use of Issues to track open
-	issues regarding the module. They, along with corresponding
-	links to the Pull Request (PR), are a useful way to record
+	issues regarding the module,,email notifications of activity on working group repositories,
+    reporting or change log about the changes to the document (refer to
+	to <xref section="4.3" sectionFormat="of" target="RFC8874"> for monitoring activity ).
+	They, along with corresponding links to the Pull Request (PR), are a useful way to record
 	decisions made by the WG.
       </t>
       <t>
