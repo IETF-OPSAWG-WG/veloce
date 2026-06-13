@@ -5,8 +5,8 @@
 Operations and Management Area Working Group             M. Jethanandani
 Internet-Draft                                                    Arrcus
 Intended status: Informational                                     Q. Wu
-Expires: 21 November 2026                                         Huawei
-                                                             20 May 2026
+Expires: 15 December 2026                                         Huawei
+                                                            13 June 2026
 
 
            YANG deVELopment PrOCEss and maintenance (VELOCE)
@@ -58,7 +58,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 21 November 2026.
+   This Internet-Draft will expire on 15 December 2026.
 
 Copyright Notice
 
@@ -77,17 +77,17 @@ Copyright Notice
 Table of Contents
 
    1.  Introduction
-     1.1.  Conventions and Definitions
-   2.  VELOCE Procedure
-   3.  Experimental Plan
-     3.1.  What is the goal
-     3.2.  How will the experiment be conducted
-     3.3.  How will success be determined
-     3.4.  What is the anticipated timeline
-   4.  Operational Considerations
-   5.  Security Considerations
-   6.  IANA Considerations
-   7.  Normative References
+   2.  Conventions and Definitions
+   3.  VELOCE Procedure
+   4.  Experimental Plan
+     4.1.  What is the goal
+     4.2.  How will the experiment be conducted
+     4.3.  How will success be determined
+     4.4.  What is the anticipated timeline
+   5.  Operational Considerations
+   6.  Security Considerations
+   7.  IANA Considerations
+   8.  Normative References
    Acknowledgments
    Authors' Addresses
 
@@ -130,7 +130,7 @@ Table of Contents
    citations to references listed in the YANG module do not apply to
    VELOCE.
 
-1.1.  Conventions and Definitions
+2.  Conventions and Definitions
 
    The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
    "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and
@@ -138,7 +138,7 @@ Table of Contents
    14 [RFC2119] [RFC8174] when, and only when, they appear in all
    capitals, as shown here.
 
-2.  VELOCE Procedure
+3.  VELOCE Procedure
 
    The following practices should provide the necessary guidance on how
    a WG develops a new YANG module or updates an existing YANG module:
@@ -222,13 +222,13 @@ Table of Contents
    repository and only update the RFC to change the reference to the
    YANG module.
 
-3.  Experimental Plan
+4.  Experimental Plan
 
    Much like other experimental documents, this document tries to answer
    the following four questions as they relate to experimental
    documents.
 
-3.1.  What is the goal
+4.1.  What is the goal
 
    The goal of the experiment is to determine how YANG modules can be
    developed outside of an RFC, while making sure that all IETF
@@ -245,7 +245,7 @@ Table of Contents
    update a small portion of the YANG module creates unnecessary delays
    due to review comments on otherwise unchanged sections.
 
-3.2.  How will the experiment be conducted
+4.2.  How will the experiment be conducted
 
    YANG modules developed in the IETF fall broadly into two categories.
    They can be new modules, or they can be a "bis" version of the
@@ -262,16 +262,11 @@ Table of Contents
    on a specific module.  This qualitative feedback is as important to
    the experiment as the publication outcome itself.
 
-3.3.  How will success be determined
+4.3.  How will success be determined
 
    The primary "exit criteria" for the experiment will be successful
    publication of the YANG modules identified as part of the experiment,
-   within the timelines defined in Section 3.4.
-
-   For an updated module, if IETF YANG model can be updated using an
-   IETF WG consensus process (probably including an errata report) and
-   WG github without republishing as a new RFC, the experiment should
-   also be deemed as success.
+   within the timelines defined in Section 4.4.
 
    Beyond publication, success will also be evaluated based on whether
    the process improved community participation in YANG module
@@ -280,7 +275,7 @@ Table of Contents
    A report documenting the overall experience and outcomes of the
    experiment SHOULD be produced at the conclusion of the experiment.
 
-3.4.  What is the anticipated timeline
+4.4.  What is the anticipated timeline
 
    YANG modules have traditionally taken a long time to develop,
    sometimes taking over four years.  However, for the purpose of this
@@ -304,7 +299,7 @@ Table of Contents
    BCP, and the process be followed for all YANG modules developed in
    IETF.
 
-4.  Operational Considerations
+5.  Operational Considerations
 
    The separation of YANG modules from their companion documents has
    implications for the YANG review process.  YANG Doctors SHOULD review
@@ -319,16 +314,16 @@ Table of Contents
    preferable to indefinitely delaying publication while pursuing
    completeness.
 
-5.  Security Considerations
+6.  Security Considerations
 
    The security considerations discussed in Section 10 of [RFC8874]
    apply here.
 
-6.  IANA Considerations
+7.  IANA Considerations
 
    This document has no IANA actions.
 
-7.  Normative References
+8.  Normative References
 
    [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
               Requirement Levels", BCP 14, RFC 2119,
