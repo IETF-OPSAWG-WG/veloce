@@ -209,6 +209,14 @@
 	folding for SID files in Internet-Drafts is discouraged, as it
 	is not compatible with current YANG Doctor tooling.
       </t>
+	  <t>
+   When updating an existing, published module, IETF errata reports can
+   be used to keep track of changes for both the YANG module and its
+   corresponding RFC text. In the case the errata pertains to the YANG
+   module, once the Area Director (AD) verifies the errata using the
+   existing IETF process, a Pull Request (PR) is opened to merge the changes
+   into the WG repository.
+	  </t>
       <t>
 	A bis version of the initial RFC <bcp14>MAY</bcp14> be
 	considered if a major change needs to be added in the
@@ -273,7 +281,8 @@
 	  <xref target="what-is-the-anticipated-timeline"/>.
 	</t>
     <t>
-	 For an updated module, if IETF YANG model can be updated using an IETF WG consensus process (probably including an 
+	 For an updated module, if IETF YANG model can be updated using an
+	 IETF WG consensus process (probably including an 
      errata report) and WG github without republishing as a new RFC, the
      experiment should also be deemed as success.
 	</t>
