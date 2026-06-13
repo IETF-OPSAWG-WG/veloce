@@ -97,7 +97,7 @@ Guidance for writing YANG modules is discussed in {{!RFC9907}}.
 Guidelines related to code components (section3.2 of {{!RFC9907}})
 or citations to references listed in the YANG module do not apply to VELOCE.
 
-## Conventions and Definitions
+# Conventions and Definitions
 
 The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
 "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and
@@ -240,11 +240,6 @@ The primary "exit criteria" for the experiment will be
 successful publication of the YANG modules identified as
 part of the experiment, within the timelines defined in
 {{sec-timeline}}.
-
-For an updated module, if IETF YANG model can be updated using an
-IETF WG consensus process (probably including an errata report) and
-WG github without republishing as a new RFC, the experiment should
-also be deemed as success.
 
 Beyond publication, success will also be evaluated based on
 whether the process improved community participation in YANG
