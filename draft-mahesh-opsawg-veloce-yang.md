@@ -173,7 +173,7 @@ the YANG module <bcp14>MUST</bcp14> NOT be inserted in the document;
 Instead, a link to a new module draft or updated module draft in the
 above repository <bcp14>MUST</bcp14> be included in the document.
  link <bcp14>MUST</bcp14> point to a specific tagged version of the
-G module (e.g., a git tag or commit hash), not to the HEAD of a branch
+YANG module (e.g., a git tag or commit hash), not to the HEAD of a branch
 which is further maintained by IANA YANG module registry, so that the module's
 contents with specific tag version at RFC publication time are permanently
 retrievable and verifiable.
