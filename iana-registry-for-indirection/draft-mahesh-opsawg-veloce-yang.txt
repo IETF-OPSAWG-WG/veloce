@@ -1,0 +1,601 @@
+
+
+
+
+Operations and Management Area Working Group             M. Jethanandani
+Internet-Draft                                                    Arrcus
+Intended status: Informational                                     Q. Wu
+Expires: 17 December 2026                                         Huawei
+                                                            15 June 2026
+
+
+           YANG deVELopment PrOCEss and maintenance (VELOCE)
+                 draft-mahesh-opsawg-veloce-yang-latest
+
+Abstract
+
+   This document describes a YANG deVELopment PrOCEss and maintenance
+   (VELOCE) that is more suitable for the development of YANG modules or
+   YANG modules update within the IETF.
+
+   Discussion Venues
+
+   This note is to be removed before publishing as an RFC.
+
+   Source for this draft and an issue tracker can be found at
+   https://github.com/mjethanandani/veloce/tree/main.
+
+About This Document
+
+   This note is to be removed before publishing as an RFC.
+
+   The latest revision of this draft can be found at
+   https://mjethanandani.github.io/veloce/draft-mahesh-opsawg-veloce-
+   yang.html.  Status information for this document may be found at
+   https://datatracker.ietf.org/doc/draft-mahesh-opsawg-veloce-yang/.
+
+   Discussion of this document takes place on the Operations and
+   Management Area Working Group Working Group mailing list
+   (mailto:opsawg@ietf.org), which is archived at
+   https://mailarchive.ietf.org/arch/browse/opsawg/.  Subscribe at
+   https://www.ietf.org/mailman/listinfo/opsawg/.
+
+   Source for this draft and an issue tracker can be found at
+   https://github.com/mjethanandani/veloce.
+
+Status of This Memo
+
+   This Internet-Draft is submitted in full conformance with the
+   provisions of BCP 78 and BCP 79.
+
+   Internet-Drafts are working documents of the Internet Engineering
+   Task Force (IETF).  Note that other groups may also distribute
+   working documents as Internet-Drafts.  The list of current Internet-
+   Drafts is at https://datatracker.ietf.org/drafts/current/.
+
+   Internet-Drafts are draft documents valid for a maximum of six months
+   and may be updated, replaced, or obsoleted by other documents at any
+   time.  It is inappropriate to use Internet-Drafts as reference
+   material or to cite them other than as "work in progress."
+
+   This Internet-Draft will expire on 17 December 2026.
+
+Copyright Notice
+
+   Copyright (c) 2026 IETF Trust and the persons identified as the
+   document authors.  All rights reserved.
+
+   This document is subject to BCP 78 and the IETF Trust's Legal
+   Provisions Relating to IETF Documents (https://trustee.ietf.org/
+   license-info) in effect on the date of publication of this document.
+   Please review these documents carefully, as they describe your rights
+   and restrictions with respect to this document.  Code Components
+   extracted from this document must include Revised BSD License text as
+   described in Section 4.e of the Trust Legal Provisions and are
+   provided without warranty as described in the Revised BSD License.
+
+Table of Contents
+
+   1.  Introduction
+   2.  Conventions and Definitions
+   3.  VELOCE Procedure
+   4.  Experimental Plan
+     4.1.  What is the goal
+     4.2.  How will the experiment be conducted
+     4.3.  How will success be determined
+     4.4.  What is the anticipated timeline
+   5.  Operational Considerations
+     5.1.  Operation and Use of the File Indirection Registry
+       5.1.1.  Revision of a Module
+       5.1.2.  Registration the new proposed module
+       5.1.3.  Official Revision of the module
+     5.2.  Referencing Files
+   6.  Security Considerations
+   7.  IANA Considerations
+     7.1.  File Indirection Registry
+       7.1.1.  File Indirection Registry Update Policy
+   8.  References
+     8.1.  Normative References
+     8.2.  Informative References
+   Acknowledgments
+   Authors' Addresses
+
+1.  Introduction
+
+   IETF has used RFCs to publish its documents.  However, RFCs, which
+   are text documents, are not well-suited for iterative development of
+   YANG modules that come in the form of source code.
+
+   This document proposes a new approach for documenting and publishing
+   IETF YANG modules.  While this document mainly focuses on the IETF
+   modules, IANA modules that are included in drafts, and removed
+   ultimately on publication, can follow a similar process during the
+   development of the IANA module.
+
+   This document proposes that the publishing of a YANG module should be
+   split into two parts: the text portion, hereby referred to as the
+   prose, and the YANG module.  The prose SHOULD continue to be used for
+   describing the model, defining IANA Considerations, defining the
+   Security Considerations, describing any Operational Considerations,
+   capturing the Normative and the Informative References, etc.  The
+   YANG module, along with any related files such as YANG SID files,
+   should be developed and maintained in a separate Source Code
+   Mechanism (SCM) repository such as GitHub.  The SCM SHOULD provide a
+   stable link to the YANG module, which should then be included as a
+   reference in the document.
+
+   There are several reasons to develop the YANG module in an SCM.  SCM
+   provides version control and improves traceability of changes.
+   Modern SCM provides the ability for Continuous Integration/Continuous
+   Development (CI/CD).  YANG modules can be fully validated before they
+   are published.  Changes to the module can be submitted by providing
+   changes to the affected portions of the source code instead of the
+   entire module.  Reviews and comments can be gathered on the changes
+   being proposed.  This iterative approach lends itself to faster
+   development and fixing of issues in YANG modules.
+
+   Guidance for writing YANG modules is discussed in [RFC9907].
+   Guidelines related to code components (section3.2 of [RFC9907]) or
+   citations to references listed in the YANG module do not apply to
+   VELOCE.
+
+2.  Conventions and Definitions
+
+   The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
+   "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and
+   "OPTIONAL" in this document are to be interpreted as described in BCP
+   14 [RFC2119] [RFC8174] when, and only when, they appear in all
+   capitals, as shown here.
+
+3.  VELOCE Procedure
+
+   The following practices should provide the necessary guidance on how
+   a WG develops a new YANG module or updates an existing YANG module:
+
+   It is RECOMMENDED that IETF-hosted repositories be used.  See section
+   1.3 of Working Group GitHub Usage Guidance [RFC8874].  Integration
+   using third-party hosted repositories MAY be used for experimentation
+   purposes.
+
+   A new repository MUST be created by the WG Chairs following the
+   procedure in section 3.2 of Working Group GitHub Usage Guidance
+   [RFC8874] for to develop or maintain a YANG Module.  For a new
+   module, this SHOULD happen when the module is adopted as a WG item.
+   It MAY happen for individual drafts, and that is left to the
+   discretion of the chairs.  However, once the document is adopted as a
+   WG item, the repository SHOULD reside under the auspecies of IETF
+   controlled repository and managed by the WG.  The name of the
+   repository SHOULD reflect the name of the draft.  In addition, the
+   chairs MAY make sure that an appropriate CI/CD YANG validation is in
+   place.  It is RECOMMENDED that a containerized build environment be
+   provided in the repository to enable local validation of YANG modules
+   (e.g., via yanglint) independently of the CI/CD pipeline, and to
+   ensure a consistent development environment across all contributors.
+
+   The procedure for managing WG documents (e.g., assign editors)
+   applies for managing YANG modules (section 6.1 of IETF Working Group
+   Guidelines and Procedures [RFC2418].  For considerations related to
+   granting editors write and administrators' right refer to section 3.3
+   of Working Group GitHub Usage Guidance [RFC8874].
+
+   Other administrative policies as they relate to migration, personal
+   change or the WG closing is defined in the Working Group GitHub
+   Administration [RFC8875].
+
+   A release tagging mechanism should be defined to track the
+   intermediate versions referenced by WG I-Ds and by the RFC, once
+   published.  This can come in the form of a 'git tag' or by having a
+   branch that corresponds to the version of the draft.
+
+   Contribution methods for the YANG module are similar to those defined
+   in section 4 of Working Group GitHub Usage Guidance [RFC8874].  This
+   includes the use of Issues to track open issues regarding the module.
+   They, along with corresponding links to the Pull Request (PR), are a
+   useful way to record decisions made by the WG.
+
+   PR allow for a user to request a change to the repository.  A user
+   does not need to have write access to the repository.  A fork of the
+   repository allows the user to make changes, validate them, and post
+   the changes as a PR against the WG repository.  Editors of the YANG
+   module are encouraged not to accept changes into the "main" or
+   "master" branch of the repository.  Instead, they should be directed
+   to a branch that is used for development.  This allows the editors to
+   review the changes and make sure that they are in line with the WG
+   consensus before they are merged into the main branch.  This also
+   allows the editors to make sure that the changes are properly
+   validated before they are merged into the main branch.
+
+   A procedure for assessing consensus is discussed in section 7 of
+   Working Group GitHub Usage Guidance [RFC8874] and SHOULD be followed
+   when accepting changes to the module.
+
+   The YANG module MUST NOT be inserted in the document; instead, a link
+   to the above repository MUST be included in the document.  The link
+   MUST point to a specific tagged version of the YANG module (e.g., a
+   git tag or commit hash), not to the HEAD of a branch, so that the
+   module's contents at RFC publication time are permanently retrievable
+   and verifiable.
+
+   YANG SID files [RFC9595], when applicable (e.g., for YANG/CBOR
+   encoding), SHOULD reside in the SCM repository rather than in the
+   document.  The use of RFC 8792 folding for SID files in Internet-
+   Drafts is discouraged, as it is not compatible with current YANG
+   Doctor tooling.
+
+   A bis version of the initial RFC MAY be considered if a major change
+   needs to be added in the document.  Such a decision is left to the
+   WG.  WG may decide to update an adopted YANG module in the IETF
+   repository and only update the RFC to change the reference to the
+   YANG module.
+
+4.  Experimental Plan
+
+   Much like other experimental documents, this document tries to answer
+   the following four questions as they relate to experimental
+   documents.
+
+   At a high-level the plan is to include YANG module files (and related
+   SID files) by reference rather than by value.  This requires that
+   files be referenced through a layer of indirection.  To do this an
+   IANA registry is created to maintain and control this indirection, as
+   explained in Section 7.1.
+
+4.1.  What is the goal
+
+   The goal of the experiment is to determine how YANG modules can be
+   developed outside of an RFC, while making sure that all IETF
+   processes are followed, including WG involvement in the development
+   of the module, and rough consensus of the WG and the IETF as a whole,
+   before it is "published".
+
+   A key objective is to balance speed, quality, and community
+   contribution.  The experiment should demonstrate a faster path to
+   delivering well-formed YANG modules, while not sacrificing the
+   quality and the community involvement that the IETF process requires.
+   In particular, the experiment aims to address the pain point of the
+   -bis revision process, where re-publishing a large document just to
+   update a small portion of the YANG module creates unnecessary delays
+   due to review comments on otherwise unchanged sections.
+
+4.2.  How will the experiment be conducted
+
+   YANG modules developed in the IETF fall broadly into two categories.
+   They can be new modules, or they can be a "bis" version of the
+   module.  The experiment will consist of two or more YANG modules,
+   such that at least one of them is a new YANG module, and the other is
+   a "bis" version of the YANG module.  This is being done to make sure
+   that the experiment covers all the IETF processes related to the
+   development of YANG modules.
+
+   Participants in the experiment are encouraged to document their
+   overall experience, including whether the SCM-based approach
+   genuinely improved participation and velocity, or whether observed
+   speed gains were attributable to other factors such as low contention
+   on a specific module.  This qualitative feedback is as important to
+   the experiment as the publication outcome itself.
+
+4.3.  How will success be determined
+
+   The primary "exit criteria" for the experiment will be successful
+   publication of the YANG modules identified as part of the experiment,
+   within the timelines defined in Section 4.4.
+
+   For an updated module, if IETF YANG model can be updated using an
+   IETF WG consensus process (probably including an errata report) and
+   WG github without republishing as a new RFC, the experiment should
+   also be deemed as success.
+
+   Beyond publication, success will also be evaluated based on whether
+   the process improved community participation in YANG module
+   development, and whether participants found the SCM- based workflow
+   reduced friction compared to the traditional RFC-embedded approach.
+   A report documenting the overall experience and outcomes of the
+   experiment SHOULD be produced at the conclusion of the experiment.
+
+4.4.  What is the anticipated timeline
+
+   YANG modules have traditionally taken a long time to develop,
+   sometimes taking over four years.  However, for the purpose of this
+   experiment, and since the idea is to demonstrate a faster way for a
+   new YANG module to be developed, the timelines for the experiment are
+   as follows:
+
+   A new YANG module should be published within two years of the start
+   of the experiment.  A "bis" version of an existing YANG module, where
+   the primary motivation is incremental updates rather than a ground-up
+   redesign, should be published within one year.
+
+   If the experiment takes longer than these timelines, the experiment
+   should be deemed to have failed.  At that time, an analysis can be
+   done as to why it failed and determine if the experiment should be
+   repeated.
+
+   If the experiment succeeds, then this document can be classified as a
+   BCP, and the process be followed for all YANG modules developed in
+   IETF.
+
+5.  Operational Considerations
+
+   The separation of YANG modules from their companion documents has
+   implications for the YANG review process.  YANG Doctors SHOULD review
+   the YANG module at the specific tagged version referenced by the
+   document, using tooling that can retrieve and validate modules
+   directly from the SCM repository.
+
+   Working Groups adopting VELOCE are encouraged to define milestone-
+   based development targets for YANG modules.  A phased approach, where
+   an initial version covering core functionality is published within a
+   defined timeframe, with subsequent updates published as needed, is
+   preferable to indefinitely delaying publication while pursuing
+   completeness.
+
+5.1.  Operation and Use of the File Indirection Registry
+
+   In place of including a YANG module, SID file or YANG Tree diagram
+   into an Internet-Draft or RFC by value (via CDATA in the XML, for
+   instance), an indirection is added that indirects through the IANA
+   maintained table.
+
+   (XXX: YANG Tree diagrams are quite instructive, and compact give a
+   very good overview of the structure of a module.  There are strong
+   reasons to include them by value in a document.  On the other Hand:
+   they depend directly on the module and would change with the module.
+   The recommendation here is to include the current version by value,
+   marked non-normative, and include the reference to the tree file via
+   the registry as an inline normative reference)
+
+   The Lifecycle of the references is detailed below.  In order to
+   provide the best introduction to the life cycle, the process will be
+   started from the state of a published RFC with a published MODULE,
+   and then follow the update process through a life cycle of updates.
+   Following that, the process for a new module is explained.
+
+5.1.1.  Revision of a Module
+
+   An individual (or an individual given an action by a WG) goes to the
+   repository given by the "latest" entry for the module revision.  The
+   module and related files are forked to a new git repository, on a new
+   branch.  The files are edited as desired and then an annotated
+   (possibly signed) git tag is created, creating a new stable
+   reference.
+
+5.1.2.  Registration the new proposed module
+
+   IANA will be contacted, and a template (TBD below) is filled out to
+   add a new entry.  The filetag and filetype will be the same as in the
+   module that is being updated.
+
+   For versions of the form YYYY-MM-DD, then a new entry of the form
+   YYYY-MM-DD.xx will be proposed, where xx is an integer.  For Semantic
+   Version X.Y.Z, then a new X.Y.VV will be proposed with identical X
+   and Y, and VV >= Z+1.  Note that many revisions might require a
+   higher X or Y when published, but that decision is deferred.
+
+   (XXX: the form of the revision, and whether Semantic Version strings
+   should be used at all here is open to debate.  Perhaps a new column
+   would be better)
+
+   The entrytype is set to PROPOSED.  The URL is the new stable
+   reference from above.  The controllingcontact is set by IANA to the
+   proposer.  The sha256hash SHOULD be included by the proposer, but
+   IANA is expected to retrieve the document and recalculate the hash.
+
+5.1.3.  Official Revision of the module
+
+   When a YANG module is related to an RFC, then updates to it are
+   controlled by a WG Consensus Call.  The rational for the changes to
+   the YANG module are to be described in a regular internet-draft, and
+   the WG SHOULD adopt that internet-draft like any other I-D.  (The
+   intended status of the internet-draft MAY be set to Experimental, but
+   ideally, a new status will be added: "For IESG Approval
+   Consideration")
+
+   The I-D SHOULD reference the YANG module, SID file, and tree diagram
+   using the proposed syntax below.  A normative reference
+
+   The WG process continues as for any I-D: reviews, WGLC, AD
+   evaluation.  Reviewers need to understand that they are reviewing the
+   YANG modules (and SID files), not the contents of the I-D itself.
+
+   When it reaches the IESG, the I-D serves as the request to update the
+   module entry, in the same way that a Proposed Standard may be
+   advanced to Internet Standard without publishing a new RFC.  (See,
+   for example: [I-D.palet-v6ops-nat64-std] )
+
+5.2.  Referencing Files
+
+   (XXX: should we register a new URN for this?  Seems like a good
+   idea?)
+
+   Files should be referenced in a document via the syntax:
+
+   yangfile/_filetag_/_filerevision_/_filetype_
+
+   for instance,
+
+   yangfile/ietf-voucher/2018-05-09/module
+   yangfile/ietf-voucher/2018-05-09/sid
+
+   or for a work-in-progress:
+
+   yangfile/I-D.anima-vouher/2018-05-09.02/sid
+
+   Informative references to this document and to the IANA Registry be
+   SHOULD included for readers new to this process.
+
+   XXX: Potentially IANA will operate some API/indirection interface.
+
+6.  Security Considerations
+
+   The security considerations discussed in Section 10 of [RFC8874]
+   apply here.
+
+7.  IANA Considerations
+
+7.1.  File Indirection Registry
+
+   IANA is asked to create a new registry, probably within the YANG
+   Module Tags grouping: https://www.iana.org/assignments/yang-module-
+   tags/yang-module-tags.xhtml
+
+   This new Registry is to updated according to details of each entry,
+   explained below.
+
+   This new registry is to be called the _YANG File/Module References_
+   registry.  The primary key for this registry is the composite key
+   (filetag,filerevision,filetype).  (Should a composite key be a
+   problem for IANA, then a new, arbitrary index for each line would
+   need to be added, maintained by IANA)
+
+   (XXX: filerevision or fileversion ?)
+
+   It shall include the following columns:
+
+   filetag:  The filetag is a unique slug, allocated per YANG module
+      file.  It will usually be related to the YANG Module Name, but not
+      exclusively.  The use of an internet-draft file name is
+      appropriate as well.
+
+   filerevision:  The filerevision is a string in one of two formats:
+      YYYY-MM-DD as is used by YANG, or as a Semantic Version string.
+      (It is noted that a simple integer ("24") is a valid Semantic
+      Version).  A hybrid of "YYYY-MM-DD.patchlevel" will also be used.
+      Exceptionally, the string "latest" may also be used as part of a
+      query, but not as a literal entry in the table.  Entries of type
+      "PROPOSED" MUST change only the last component (the "patchlevel").
+
+   entrytype:  An entry may be PERMANENT if it has been approved by the
+      appropriate change controller.  An entry is otherwise PROPOSED.
+      Assumed meta for this entry will show the data when a proposed
+      entry was made, which is required to know when to sunset the
+      entry.
+
+   relateddocument:  A document to which this module is attached.  RFCs
+      may just list the RFC number.  All other documents will specify a
+      full, revision specific, URL.  The page referenced should include
+      information as to document status, and whether or not it is
+      current.
+
+   filetype:  The filetype is one of "MODULE", "SID", or "TREE"
+
+   url:  The URL is an HTTP, HTTPS, or GIT URL that uniquely identifies
+      the file.  The URL should return the raw file, with no HTML or
+      other mark up around it.
+
+   sha256hash:  A SHA2-256 hash of the contents of the file.
+
+   controllingcontact:  The entity who has the right to update this
+      entry.  For YANG modules published as part of a standards track,
+      BCP or Informational RFC, this will be the IESG.  For YANG modules
+      being processed in a WG (as Internet-Drafts), it will be the WG
+      chairs.  For YANG modules attached to RFCs published through the
+      Independant Stream, it will be the original submitters, with the
+      ISE having rights to update it as well.  For YANG modules part of
+      an individual I-D submission or a vendor proprietary module, then
+      it will be the original requestor.
+
+7.1.1.  File Indirection Registry Update Policy
+
+   Entries with entrytype PERMANENT may be made only by IESG Approval
+   [RFC8126], Section 4.10 when then relateddocument is an IETF Stream
+   document.  For ISE stream documents, then it is the ISE editor.  For
+   all other PERMANENT submissions it would be up to the
+   controllingcontact, in consultation with Designated Experts.
+
+   For new modules processed as part an IETF Stream RFC, then there is
+   already an RFC associated with this process.  As the point of the
+   VELOCE experiment is to free YANG module update from having to have a
+   new RFC, it will most often be motivated by a WG Consensus document.
+
+   Entries with entrytype PROPOSED are made according to the [BCP100] an
+   Early Allocation-like process.  They are to be performed according to
+   the Expert Review policy.  As such, these are not really Early
+   Allocations.  Like Early Allocations, they come with a limited time,
+   in this case 3 years.  Unlike actual Early Allocations, they do not
+   require AD approval.
+
+   Once made, PROPOSED entries may update the URL (and sha256hash) of
+   the entries without further approval.  Each such update resets the
+   3yr timer.  Once a PROPOSED entry of one filetype has been approved,
+   entries with additional filetypes are also implicitely approved.
+   When a WG adopts a proposed entry, then the file name of the
+   internet-draft will change, and it is appropriate to update the
+   entry's filetag: no history is needed in this case, as these are
+   works-in-progress.
+
+8.  References
+
+8.1.  Normative References
+
+   [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
+              Requirement Levels", BCP 14, RFC 2119,
+              DOI 10.17487/RFC2119, March 1997,
+              <https://www.rfc-editor.org/rfc/rfc2119>.
+
+   [RFC2418]  Bradner, S., "IETF Working Group Guidelines and
+              Procedures", BCP 25, RFC 2418, DOI 10.17487/RFC2418,
+              September 1998, <https://www.rfc-editor.org/rfc/rfc2418>.
+
+   [RFC8174]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC
+              2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
+              May 2017, <https://www.rfc-editor.org/rfc/rfc8174>.
+
+   [RFC8874]  Thomson, M. and B. Stark, "Working Group GitHub Usage
+              Guidance", RFC 8874, DOI 10.17487/RFC8874, August 2020,
+              <https://www.rfc-editor.org/rfc/rfc8874>.
+
+   [RFC8875]  Cooper, A. and P. Hoffman, "Working Group GitHub
+              Administration", RFC 8875, DOI 10.17487/RFC8875, August
+              2020, <https://www.rfc-editor.org/rfc/rfc8875>.
+
+   [RFC9595]  Veillette, M., Ed., Pelov, A., Ed., Petrov, I., Ed.,
+              Bormann, C., and M. Richardson, "YANG Schema Item
+              iDentifier (YANG SID)", RFC 9595, DOI 10.17487/RFC9595,
+              July 2024, <https://www.rfc-editor.org/rfc/rfc9595>.
+
+   [RFC9907]  Bierman, A., Boucadair, M., Ed., and Q. Wu, "Guidelines
+              for Authors and Reviewers of Documents Containing YANG
+              Data Models", BCP 216, RFC 9907, DOI 10.17487/RFC9907,
+              March 2026, <https://www.rfc-editor.org/rfc/rfc9907>.
+
+8.2.  Informative References
+
+   [BCP100]   Best Current Practice 100,
+              <https://www.rfc-editor.org/info/bcp100>.
+              At the time of writing, this BCP comprises the following:
+
+              Cotton, M., "Early IANA Allocation of Standards Track Code
+              Points", BCP 100, RFC 7120, DOI 10.17487/RFC7120, January
+              2014, <https://www.rfc-editor.org/info/rfc7120>.
+
+   [I-D.palet-v6ops-nat64-std]
+              Martinez, J. P., "Reclassifying NAT64 (RFC6146) to
+              Internet Standard", Work in Progress, Internet-Draft,
+              draft-palet-v6ops-nat64-std-00, 7 July 2025,
+              <https://datatracker.ietf.org/doc/html/draft-palet-v6ops-
+              nat64-std-00>.
+
+   [RFC8126]  Cotton, M., Leiba, B., and T. Narten, "Guidelines for
+              Writing an IANA Considerations Section in RFCs", BCP 26,
+              RFC 8126, DOI 10.17487/RFC8126, June 2017,
+              <https://www.rfc-editor.org/rfc/rfc8126>.
+
+Acknowledgments
+
+   This draft is triggered by the discussion in NEMOPS IAB workshop.
+
+   Thanks to the participants of OPSAWG for their comments that have
+   helped shape this draft.  In particular, thanks to Jeffrey Haas, Joe
+   Clarke, Dhruv Dhody, Per Andersson，Italo Busi, and Mohamed Boucadair
+   for their feedback during IETF 125.
+
+Authors' Addresses
+
+   Mahesh Jethanandani
+   Arrcus
+   Email: mjethanandani@gmail.com
+
+
+   Qin Wu
+   Huawei
+   Email: bill.wu@huawei.com
