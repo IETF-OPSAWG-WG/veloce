@@ -350,22 +350,26 @@ When it reaches the IESG, the I-D serves as the request to update the module ent
 in the same way that a Proposed Standard may be advanced to Internet Standard without
 publishing a new RFC.  (See, for example: {{?I-D.palet-v6ops-nat64-std}} )
 
+### Initiating new work
+
+TBD
+
 ## Referencing Files
 
 (XXX: should we register a new URN for this?  Seems like a good idea?)
 
 Files should be referenced in a document via the syntax:
 
-    yangfile/_filetag_/_filerevision_/_filetype_
+    yangfile/_filetag_/_filetype_/_filerevision_
 
 for instance,
 
-    yangfile/ietf-voucher/2018-05-09/module
-    yangfile/ietf-voucher/2018-05-09/sid
+    yangfile/ietf-voucher/module/latest
+    yangfile/ietf-voucher/sid/2018-05-09
 
 or for a work-in-progress:
 
-    yangfile/I-D.anima-vouher/2018-05-09.02/sid
+    yangfile/I-D.anima-voucher/sid/2018-05-09.02
 
 Informative references to this document and to the IANA Registry be SHOULD included for readers new to this process.
 
