@@ -116,7 +116,7 @@ be used. See Section 1.3 of Working Group GitHub Usage
 Guidance {{!RFC8874}}. Integration using third-party hosted
 repositories MAY be used for experimentation purposes.
 
-A new repository MUST be created by the WG
+An IETF-hosted repository MUST be created by the WG
 Chairs following the procedure in section 3.2 of Working Group
 GitHub Usage Guidance {{!RFC8874}} for to develop or maintain a YANG
 Module. For a new module, this SHOULD happen when the module is adopted as a WG item.
@@ -124,7 +124,8 @@ It MAY happen for individual drafts, and that is left to the discretion of the c
 However, once the document is adopted as a WG item, the repository SHOULD reside under the auspecies
 of IETF controlled repository and managed by the WG.
 The name of the repository SHOULD reflect the name of the draft.
-When updating an existing module, it is RECOMMENDED to use the same WG repository of the initial version of YANG module for the updated module maintenance.
+For an updated module, the repository for the original module SHOULD be reused to keep track of updates of the original module.
+If no existing repository exists, then a new one SHOULD be created, initialized with the last approved YANG module, so that proposed changes are traceable.
 In addition, the chairs MAY make sure that an appropriate CI/CD YANG validation is in place.
 It is RECOMMENDED that a containerized build environment be provided in the repository to enable local
 validation of YANG modules (e.g., via yanglint) independently of the CI/CD pipeline, and to ensure a consistent development environment across all contributors.
@@ -135,8 +136,8 @@ Group Guidelines and Procedures {{!RFC2418}}). For considerations
 related to granting editors write and administrators' right refer to
 Section 3.3 of Working Group GitHub Usage Guidance {{!RFC8874}}.
 
-Other administrative policies as they relate to migration,
-personal change or the WG closing is defined in the Working
+Other administrative policies such as ones related to migration,
+personnel changes or the WG closing are defined in the Working
 Group GitHub Administration {{!RFC8875}}.
 
 A release tagging mechanism should be defined to track the
@@ -151,12 +152,12 @@ issues regarding the module. They, along with corresponding
 links to the Pull Request (PR), are a useful way to record
 decisions made by the WG.
 
-PR allow for a user to request a change to the repository. A
+PRs allow for a user to request a change to the repository. A
 user does not need to have write access to the repository. A
 fork of the repository allows the user to make changes,
 validate them, and post the changes as a PR against the WG
 repository. Editors of the YANG module are encouraged not to
-accept changes into the "main" or "master" branch of the
+accept changes into the "main" branch of the
 repository. Instead, they should be directed to a branch
 that is used for development. This allows the editors to review
 the changes and make sure that they are in line with the WG
@@ -218,9 +219,9 @@ review comments on otherwise unchanged sections.
 YANG modules developed in the IETF fall broadly into two
 categories. They can be new modules, or they can be a "bis"
 version of the module. The experiment will consist of two or
-more YANG modules, such that at least one of them is a new
-YANG module, and the other is a "bis" version of the YANG
-module. This is being done to make sure that the experiment
+more YANG module work, such that at least one of them is a new
+YANG module work, and the other is a "bis" version of the YANG
+module work. This is being done to make sure that the experiment
 covers all the IETF processes related to the development of
 YANG modules.
 
@@ -261,7 +262,7 @@ faster way for a new YANG module to be developed, the
 timelines for the experiment are as follows:
 
 * A new YANG module should be published within two years
-of the start of the experiment.
+since the experiement is starting.
 
 * A "bis" version of an existing YANG module, where the
 primary motivation is incremental updates rather than a
