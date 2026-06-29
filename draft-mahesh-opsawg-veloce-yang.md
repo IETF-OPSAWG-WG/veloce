@@ -1,5 +1,5 @@
 ---
-title: "YANG deVELopment PrOCEss and maintenance (VELOCE)"
+title: "YANG deVELpment PrOCEss and maintenance (VELOCE)"
 abbrev: "VELOCE"
 category: info
 
@@ -94,7 +94,7 @@ being proposed. This iterative approach lends itself to faster
 development and fixing of issues in YANG modules.
 
 Guidance for writing YANG modules is discussed in {{!RFC9907}}.
-Guidelines related to code components (section3.2 of {{!RFC9907}})
+Guidelines related to code components (Section3.2 of {{!RFC9907}})
 or citations to references listed in the YANG module do not apply to VELOCE.
 
 ## Conventions and Definitions
@@ -111,12 +111,12 @@ The following practices should provide the necessary guidance
 on how a WG develops a new YANG module or updates an existing
 YANG module:
 
-It is RECOMMENDED that IETF-hosted repositories be used.
-See section 1.3 of Working Group GitHub Usage
-Guidance {{!RFC8874}}.
-Integration using third-party hosted repositories MAY be used for experimentation purposes.
+It is RECOMMENDED that IETF-hosted repositories
+be used. See Section 1.3 of Working Group GitHub Usage
+Guidance {{!RFC8874}}. Integration using third-party hosted
+repositories MAY be used for experimentation purposes.
 
-A new repository MUST be created by the WG
+An IETF-hosted repository MUST be created by the WG
 Chairs following the procedure in section 3.2 of Working Group
 GitHub Usage Guidance {{!RFC8874}} for to develop or maintain a YANG
 Module. For a new module, this SHOULD happen when the module is adopted as a WG item.
@@ -124,19 +124,24 @@ It MAY happen for individual drafts, and that is left to the discretion of the c
 However, once the document is adopted as a WG item, the repository SHOULD reside under the auspecies
 of IETF controlled repository and managed by the WG.
 The name of the repository SHOULD reflect the name of the draft.
+For an updated module, the repository for the original module SHOULD be reused to keep track of updates of the original module.
+If no existing repository exists, then a new one SHOULD be created, initialized with the last approved YANG module, so that proposed changes are traceable.
 In addition, the chairs MAY make sure that an appropriate CI/CD YANG validation is in place.
-It is RECOMMENDED that a containerized build environment be provided in the repository to enable local
-validation of YANG modules (e.g., via yanglint) independently of the CI/CD pipeline, and to ensure a
-consistent development environment across all contributors.
+It is RECOMMENDED that a real time collaborative working environment be provided in the repository
+to enable online validation of YANG modules (e.g., via yanglint)
+using the CI/CD pipeline, and to ensure a consistent development
+environment across all contributors.
+In addition, a containerized environment for local validation of YANG modules <bcp14>MAY</bcp14>
+also be provided in the repository as a backup.
 
 The procedure for managing WG documents (e.g., assign editors)
-applies for managing YANG modules (section 6.1 of IETF Working
-Group Guidelines and Procedures {{!RFC2418}}. For considerations
+applies for managing YANG modules (Section 6.1 of IETF Working
+Group Guidelines and Procedures {{!RFC2418}}). For considerations
 related to granting editors write and administrators' right refer to
-section 3.3 of Working Group GitHub Usage Guidance {{!RFC8874}}.
+Section 3.3 of Working Group GitHub Usage Guidance {{!RFC8874}}.
 
-Other administrative policies as they relate to migration,
-personal change or the WG closing is defined in the Working
+Other administrative policies such as ones related to migration,
+personnel changes or the WG closing are defined in the Working
 Group GitHub Administration {{!RFC8875}}.
 
 A release tagging mechanism should be defined to track the
@@ -145,18 +150,18 @@ once published. This can come in the form of a 'git tag' or by
 having a branch that corresponds to the version of the draft.
 
 Contribution methods for the YANG module are similar to those
-defined in section 4 of Working Group GitHub Usage
+defined in Section 4 of Working Group GitHub Usage
 Guidance {{!RFC8874}}. This includes the use of Issues to track open
 issues regarding the module. They, along with corresponding
 links to the Pull Request (PR), are a useful way to record
 decisions made by the WG.
 
-PR allow for a user to request a change to the repository. A
+PRs allow for a user to request a change to the repository. A
 user does not need to have write access to the repository. A
 fork of the repository allows the user to make changes,
 validate them, and post the changes as a PR against the WG
 repository. Editors of the YANG module are encouraged not to
-accept changes into the "main" or "master" branch of the
+accept changes into the "main" branch of the
 repository. Instead, they should be directed to a branch
 that is used for development. This allows the editors to review
 the changes and make sure that they are in line with the WG
@@ -164,7 +169,7 @@ consensus before they are merged into the main branch.
 This also allows the editors to make sure that the changes are properly
 validated before they are merged into the main branch.
 
-A procedure for assessing consensus is discussed in section 7 of Working
+A procedure for assessing consensus is discussed in Section 7 of Working
 Group GitHub Usage Guidance {{!RFC8874}} and SHOULD be
 followed when accepting changes to the module.
 
@@ -218,9 +223,9 @@ review comments on otherwise unchanged sections.
 YANG modules developed in the IETF fall broadly into two
 categories. They can be new modules, or they can be a "bis"
 version of the module. The experiment will consist of two or
-more YANG modules, such that at least one of them is a new
-YANG module, and the other is a "bis" version of the YANG
-module. This is being done to make sure that the experiment
+more YANG module work, such that at least one of them is a new
+YANG module work, and the other is a "bis" version of the YANG
+module work. This is being done to make sure that the experiment
 covers all the IETF processes related to the development of
 YANG modules.
 
@@ -261,7 +266,7 @@ faster way for a new YANG module to be developed, the
 timelines for the experiment are as follows:
 
 * A new YANG module should be published within two years
-of the start of the experiment.
+since the experiement is starting.
 
 * A "bis" version of an existing YANG module, where the
 primary motivation is incremental updates rather than a
