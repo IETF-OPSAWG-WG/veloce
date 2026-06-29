@@ -119,8 +119,7 @@ repositories MAY be used for experimentation purposes.
 A new repository MUST be created by the WG
 Chairs following the procedure in section 3.2 of Working Group
 GitHub Usage Guidance {{!RFC8874}} for to develop or maintain a YANG
-Module.
-For a new module, this SHOULD happen when the module is adopted as a WG item. 
+Module. For a new module, this SHOULD happen when the module is adopted as a WG item.
 It MAY happen for individual drafts, and that is left to the discretion of the chairs.
 However, once the document is adopted as a WG item, the repository SHOULD reside under the auspecies
 of IETF controlled repository and managed by the WG.
