@@ -119,20 +119,20 @@ repositories MAY be used for experimentation purposes.
 An IETF-hosted repository MUST be created by the WG
 Chairs following the procedure in section 3.2 of Working Group
 GitHub Usage Guidance {{!RFC8874}} for to develop or maintain a YANG
-Module. For a new module, this SHOULD happen when the module is adopted as a WG item.
-It MAY happen for individual drafts, and that is left to the discretion of the chairs.
-However, once the document is adopted as a WG item, the repository SHOULD reside under the auspecies
-of IETF controlled repository and managed by the WG.
-The name of the repository SHOULD reflect the name of the draft.
-For an updated module, the repository for the original module SHOULD be reused to keep track of updates of the original module.
-If no existing repository exists, then a new one SHOULD be created, initialized with the last approved YANG module, so that proposed changes are traceable.
-In addition, the chairs MAY make sure that an appropriate CI/CD YANG validation is in place.
-It is RECOMMENDED that a real time collaborative working environment be provided in the repository
-to enable online validation of YANG modules (e.g., via yanglint)
-using the CI/CD pipeline, and to ensure a consistent development
+Module. For a new module, this SHOULD happen when
+the module is adopted as a WG item. It MAY happen for
+individual drafts, and that is left to the discretion of the
+chairs. However, once the document is adopted as a WG item,
+the repository SHOULD reside under the auspecies
+of IETF controlled repository and managed by the WG. The
+name of the repository SHOULD reflect the name
+of the draft. In addition, the chairs MAY make
+sure that an appropriate CI/CD YANG validation is in place.  It
+is RECOMMENDED that a containerized build
+environment be provided in the repository to enable local
+validation of YANG modules (e.g., via yanglint) independently of
+the CI/CD pipeline, and to ensure a consistent development
 environment across all contributors.
-In addition, a containerized environment for local validation of YANG modules <bcp14>MAY</bcp14>
-also be provided in the repository as a backup.
 
 The procedure for managing WG documents (e.g., assign editors)
 applies for managing YANG modules (Section 6.1 of IETF Working
