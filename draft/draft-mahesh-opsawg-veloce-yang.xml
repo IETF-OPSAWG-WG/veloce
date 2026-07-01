@@ -18,7 +18,7 @@
     symRefs="true"
     version="3">
   <front>
-    <title abbrev="VELOCE">YANG deVELpment PrOCEss and maintenance (VELOCE)</title>
+    <title abbrev="VELOCE">YANG deVELopment prOCEss and maintenance (VELOCE)</title>
     <author fullname="Mahesh Jethanandani">
       <organization>Arrcus, Inc</organization>
       <address>
@@ -33,7 +33,7 @@
     <keyword>YANG GitHub</keyword>
     <abstract>
       <t>
-	This document describes a YANG deVELpment PrOCEss and
+	This document describes a YANG deVELopment prOCEss and
 	maintenance (VELOCE) that is more suitable for the development
 	of YANG modules or YANG modules update within the IETF.
       </t>
