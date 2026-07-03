@@ -138,7 +138,7 @@
 	name of the repository <bcp14>SHOULD</bcp14> reflect the name
 	of the draft. When updating an existing module, it is RECOMMENDED to use the
 	same WG repository of the initial version of YANG module for the
-	updated module maintenance. If no existing repository exists, then a new one SHOULD
+	updated module maintenance. If no existing repository exists, then a new one MUST
 	be created, initialized with the last approved YANG module, so that
 	proposed changes are traceable. In addition, the chairs <bcp14>MAY</bcp14> make
 	sure that an appropriate CI/CD YANG validation is in place.  It
