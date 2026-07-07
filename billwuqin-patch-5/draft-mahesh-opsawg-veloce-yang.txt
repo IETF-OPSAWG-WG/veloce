@@ -5,11 +5,11 @@
 Operations and Management Area Working Group             M. Jethanandani
 Internet-Draft                                                    Arrcus
 Intended status: Informational                                     Q. Wu
-Expires: 15 December 2026                                         Huawei
-                                                            13 June 2026
+Expires: 8 January 2027                                           Huawei
+                                                             7 July 2026
 
 
-           YANG deVELopment PrOCEss and maintenance (VELOCE)
+            YANG deVELpment PrOCEss and maintenance (VELOCE)
                  draft-mahesh-opsawg-veloce-yang-latest
 
 Abstract
@@ -58,7 +58,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 15 December 2026.
+   This Internet-Draft will expire on 8 January 2027.
 
 Copyright Notice
 
@@ -77,17 +77,17 @@ Copyright Notice
 Table of Contents
 
    1.  Introduction
-   2.  Conventions and Definitions
-   3.  VELOCE Procedure
-   4.  Experimental Plan
-     4.1.  What is the goal
-     4.2.  How will the experiment be conducted
-     4.3.  How will success be determined
-     4.4.  What is the anticipated timeline
-   5.  Operational Considerations
-   6.  Security Considerations
-   7.  IANA Considerations
-   8.  Normative References
+     1.1.  Conventions and Definitions
+   2.  VELOCE Procedure
+   3.  Experimental Plan
+     3.1.  What is the goal
+     3.2.  How will the experiment be conducted
+     3.3.  How will success be determined
+     3.4.  What is the anticipated timeline
+   4.  Operational Considerations
+   5.  Security Considerations
+   6.  IANA Considerations
+   7.  Normative References
    Acknowledgments
    Authors' Addresses
 
@@ -126,11 +126,11 @@ Table of Contents
    development and fixing of issues in YANG modules.
 
    Guidance for writing YANG modules is discussed in [RFC9907].
-   Guidelines related to code components (section3.2 of [RFC9907]) or
+   Guidelines related to code components (Section3.2 of [RFC9907]) or
    citations to references listed in the YANG module do not apply to
    VELOCE.
 
-2.  Conventions and Definitions
+1.1.  Conventions and Definitions
 
    The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
    "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and
@@ -138,36 +138,37 @@ Table of Contents
    14 [RFC2119] [RFC8174] when, and only when, they appear in all
    capitals, as shown here.
 
-3.  VELOCE Procedure
+2.  VELOCE Procedure
 
    The following practices should provide the necessary guidance on how
    a WG develops a new YANG module or updates an existing YANG module:
 
-   It is RECOMMENDED that IETF-hosted repositories be used.  See section
-   1.3 of Working Group GitHub Usage Guidance [RFC8874].  Integration
-   using third-party hosted repositories MAY be used for experimentation
-   purposes.
+   It is RECOMMENDED that IETF-hosted repositories be used.  See
+   Section 1.3 of Working Group GitHub Usage Guidance [RFC8874].
+   Integration using third-party hosted repositories MAY be used for
+   experimentation purposes.
 
    A new repository MUST be created by the WG Chairs following the
-   procedure in section 3.2 of Working Group GitHub Usage Guidance
-   [RFC8874] for to develop or maintain a YANG Module.
-
-   For a new module, this SHOULD happen when the module is adopted as a
-   WG item.  It MAY happen for individual drafts, and that is left to
-   the discretion of the chairs.  However, once the document is adopted
-   as a WG item, the repository SHOULD reside under the auspecies of
-   IETF controlled repository and managed by the WG.  The name of the
-   repository SHOULD reflect the name of the draft.  In addition, the
-   chairs MAY make sure that an appropriate CI/CD YANG validation is in
-   place.  It is RECOMMENDED that a containerized build environment be
-   provided in the repository to enable local validation of YANG modules
-   (e.g., via yanglint) independently of the CI/CD pipeline, and to
-   ensure a consistent development environment across all contributors.
+   procedure in Section 3.2 of Working Group GitHub Usage Guidance
+   [RFC8874] to develop or maintain a YANG Module.  For a new module,
+   this SHOULD happen when the module is adopted as a WG item.  It MAY
+   happen for individual drafts, and that is left to the discretion of
+   the chairs.  However, once the document is adopted as a WG item, the
+   repository SHOULD reside under the auspecies of IETF controlled
+   repository and managed by the WG.  The name of the repository SHOULD
+   reflect the name of the draft.  In addition, the chairs MAY make sure
+   that an appropriate CI/CD YANG validation is in place.  It is
+   RECOMMENDED that a real time collaborative working environment be
+   provided in the repository to enable online validation of YANG
+   modules (e.g., via yanglint) using the CI/CD pipeline, and to ensure
+   a consistent development environment across all contributors.  In
+   addition, a containerized build environment for local validation of
+   YANG modules MAY also be provided in the repository as a backup.
 
    The procedure for managing WG documents (e.g., assign editors)
-   applies for managing YANG modules (section 6.1 of IETF Working Group
-   Guidelines and Procedures [RFC2418].  For considerations related to
-   granting editors write and administrators' right refer to section 3.3
+   applies for managing YANG modules (Section 6.1 of IETF Working Group
+   Guidelines and Procedures [RFC2418]).  For considerations related to
+   granting editors write and administrators' right refer to Section 3.3
    of Working Group GitHub Usage Guidance [RFC8874].
 
    Other administrative policies as they relate to migration, personal
@@ -180,7 +181,7 @@ Table of Contents
    branch that corresponds to the version of the draft.
 
    Contribution methods for the YANG module are similar to those defined
-   in section 4 of Working Group GitHub Usage Guidance [RFC8874].  This
+   in Section 4 of Working Group GitHub Usage Guidance [RFC8874].  This
    includes the use of Issues to track open issues regarding the module.
    They, along with corresponding links to the Pull Request (PR), are a
    useful way to record decisions made by the WG.
@@ -197,7 +198,7 @@ Table of Contents
    allows the editors to make sure that the changes are properly
    validated before they are merged into the main branch.
 
-   A procedure for assessing consensus is discussed in section 7 of
+   A procedure for assessing consensus is discussed in Section 7 of
    Working Group GitHub Usage Guidance [RFC8874] and SHOULD be followed
    when accepting changes to the module.
 
@@ -214,26 +215,19 @@ Table of Contents
    Drafts is discouraged, as it is not compatible with current YANG
    Doctor tooling.
 
-   When updating an existing, published module, IETF errata reports can
-   be used to keep track of changes for both the YANG module and its
-   corresponding RFC text.  In the case the errata pertains to the YANG
-   module, once the Area Director (AD) verifies the errata using the
-   existing IETF process, a Pull Request (PR) is opened to merge the
-   changes into the WG repository.
-
    A bis version of the initial RFC MAY be considered if a major change
    needs to be added in the document.  Such a decision is left to the
    WG.  WG may decide to update an adopted YANG module in the IETF
    repository and only update the RFC to change the reference to the
    YANG module.
 
-4.  Experimental Plan
+3.  Experimental Plan
 
    Much like other experimental documents, this document tries to answer
    the following four questions as they relate to experimental
    documents.
 
-4.1.  What is the goal
+3.1.  What is the goal
 
    The goal of the experiment is to determine how YANG modules can be
    developed outside of an RFC, while making sure that all IETF
@@ -250,7 +244,7 @@ Table of Contents
    update a small portion of the YANG module creates unnecessary delays
    due to review comments on otherwise unchanged sections.
 
-4.2.  How will the experiment be conducted
+3.2.  How will the experiment be conducted
 
    YANG modules developed in the IETF fall broadly into two categories.
    They can be new modules, or they can be a "bis" version of the
@@ -267,11 +261,11 @@ Table of Contents
    on a specific module.  This qualitative feedback is as important to
    the experiment as the publication outcome itself.
 
-4.3.  How will success be determined
+3.3.  How will success be determined
 
    The primary "exit criteria" for the experiment will be successful
    publication of the YANG modules identified as part of the experiment,
-   within the timelines defined in Section 4.4.
+   within the timelines defined in Section 3.4.
 
    For an updated module, if IETF YANG model can be updated using an
    IETF WG consensus process (probably including an errata report) and
@@ -285,7 +279,7 @@ Table of Contents
    A report documenting the overall experience and outcomes of the
    experiment SHOULD be produced at the conclusion of the experiment.
 
-4.4.  What is the anticipated timeline
+3.4.  What is the anticipated timeline
 
    YANG modules have traditionally taken a long time to develop,
    sometimes taking over four years.  However, for the purpose of this
@@ -293,12 +287,10 @@ Table of Contents
    new YANG module to be developed, the timelines for the experiment are
    as follows:
 
-   *  A new YANG module should be published within two years of the
-      start of the experiment.
-
-   *  A "bis" version of an existing YANG module, where the primary
-      motivation is incremental updates rather than a ground-up
-      redesign, should be published within one year.
+   A new YANG module should be published within two years of the start
+   of the experiment.  A "bis" version of an existing YANG module, where
+   the primary motivation is incremental updates rather than a ground-up
+   redesign, should be published within one year.
 
    If the experiment takes longer than these timelines, the experiment
    should be deemed to have failed.  At that time, an analysis can be
@@ -309,7 +301,7 @@ Table of Contents
    BCP, and the process be followed for all YANG modules developed in
    IETF.
 
-5.  Operational Considerations
+4.  Operational Considerations
 
    The separation of YANG modules from their companion documents has
    implications for the YANG review process.  YANG Doctors SHOULD review
@@ -324,16 +316,16 @@ Table of Contents
    preferable to indefinitely delaying publication while pursuing
    completeness.
 
-6.  Security Considerations
+5.  Security Considerations
 
    The security considerations discussed in Section 10 of [RFC8874]
    apply here.
 
-7.  IANA Considerations
+6.  IANA Considerations
 
    This document has no IANA actions.
 
-8.  Normative References
+7.  Normative References
 
    [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
               Requirement Levels", BCP 14, RFC 2119,
@@ -372,8 +364,8 @@ Acknowledgments
 
    Thanks to the participants of OPSAWG for their comments that have
    helped shape this draft.  In particular, thanks to Jeffrey Haas, Joe
-   Clarke, Dhruv Dhody, Per Andersson，Italo Busi, and Mohamed Boucadair
-   for their feedback during IETF 125.
+   Clarke, Italo Busi, and Mohamed Boucadair for their feedback during
+   IETF 125.
 
 Authors' Addresses
 
