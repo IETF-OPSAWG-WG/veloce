@@ -128,11 +128,13 @@ of IETF controlled repository and managed by the WG. The
 name of the repository SHOULD reflect the name
 of the draft. In addition, the chairs MAY make
 sure that an appropriate CI/CD YANG validation is in place.  It
-is RECOMMENDED that a containerized build
-environment be provided in the repository to enable local
-validation of YANG modules (e.g., via yanglint) independently of
-the CI/CD pipeline, and to ensure a consistent development
-environment across all contributors.
+is RECOMMENDED that a real time collaborative working
+	environment be provided in the repository to enable online
+	validation of YANG modules (e.g., via yanglint) using the CI/CD
+	pipeline, and to ensure a consistent development environment across
+	all contributors. In addition, a containerized build
+environment for local validation of YANG modules MAY also be provided
+in the repository as a backup.
 
 The procedure for managing WG documents (e.g., assign editors)
 applies for managing YANG modules (Section 6.1 of IETF Working
