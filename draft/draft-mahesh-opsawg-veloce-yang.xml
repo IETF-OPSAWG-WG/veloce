@@ -203,7 +203,7 @@
 	or user that open those issues. If any consensus decisions is
 	not respected, the chairs SHOULD involve area directors to
 	withhold merging or reopen the issue until working group consensus
-	has been assessed.
+Working group chairs should be involved to make sure the consensus has been reached when Editors summarize the issues to the WG to prepare for a new release.
       </t>
       <t>
 	The YANG module <bcp14>MUST NOT</bcp14> be inserted in the
