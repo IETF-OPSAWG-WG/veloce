@@ -117,8 +117,8 @@ Guidance {{!RFC8874}}. Integration using third-party hosted
 repositories MAY be used for experimentation purposes.
 
 A new repository MUST be created by the WG
-Chairs following the procedure in section 3.2 of Working Group
-GitHub Usage Guidance {{!RFC8874}} for to develop or maintain a YANG
+Chairs following the procedure in Section 3.2 of Working Group
+GitHub Usage Guidance {{!RFC8874}} to develop or maintain a YANG
 Module. For a new module, this SHOULD happen when
 the module is adopted as a WG item. It MAY happen for
 individual drafts, and that is left to the discretion of the
