@@ -156,22 +156,32 @@ issues regarding the module. They, along with corresponding
 links to the Pull Request (PR), are a useful way to record
 decisions made by the WG.
 
-PR allow for a user to request a change to the repository. A
+PRs allow for a user to request a change to the repository. A
 user does not need to have write access to the repository. A
 fork of the repository allows the user to make changes,
 validate them, and post the changes as a PR against the WG
-repository. Editors of the YANG module are encouraged not to
+repository. The editor team for regular contributors can be
+set up by the working group. Editors or editor team of the YANG module are encouraged not to
 accept changes into the "main" or "master" branch of the
 repository. Instead, they should be directed to a branch
-that is used for development. This allows the editors to review
+that is used for development. This allows the editors or editor team to review
 the changes and make sure that they are in line with the WG
 consensus before they are merged into the main branch.
 This also allows the editors to make sure that the changes are properly
-validated before they are merged into the main branch.
+validated before they are merged into the main branch,e.g., one editor
+	create a pull request and another merge it (refer to Section 4.2 of {{!RFC8874}}.
 
 A procedure for assessing consensus is discussed in Section 7 of Working
 Group GitHub Usage Guidance {{!RFC8874}} and SHOULD be
-followed when accepting changes to the module.
+followed when accepting changes to the module in the ongoing
+working group document. This include approving and merging
+changes by document editors appointed by the Working group
+at the discretion of the editor team, making decision on
+consensus regarding changes to document, recording details of
+decisions in issue comments, closing issues by document editor
+or user that open those issues. Working group chairs should be involved to
+make sure the consensus has been reached when Editors summarize the issues
+to the WG to prepare for a new release.
 
 The YANG module MUST NOT be inserted in the
 document; instead, a link to the above repository
