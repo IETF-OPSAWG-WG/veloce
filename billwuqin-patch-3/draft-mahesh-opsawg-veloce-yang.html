@@ -1,0 +1,1569 @@
+<!DOCTYPE html>
+<html lang="en" class="Internet-Draft">
+<head>
+<meta charset="utf-8">
+<meta content="Common,Latin" name="scripts">
+<meta content="initial-scale=1.0" name="viewport">
+<title>YANG deVELpment PrOCEss and maintenance (VELOCE)</title>
+<meta content="Mahesh Jethanandani" name="author">
+<meta content="Qin Wu" name="author">
+<meta content="
+       This document describes a YANG deVELopment PrOCEss and
+maintenance (VELOCE) that is more suitable for the development
+of YANG modules or YANG modules update within the IETF. 
+       Discussion Venues 
+       This note is to be removed before publishing as an RFC. 
+       Source for this draft and an issue tracker can be found at
+   https://github.com/mjethanandani/veloce/tree/main. 
+    " name="description">
+<meta content="xml2rfc 3.34.0" name="generator">
+<meta content="yang" name="keyword">
+<meta content="development process" name="keyword">
+<meta content="maintenance" name="keyword">
+<meta content="draft-mahesh-opsawg-veloce-yang-latest" name="ietf.draft">
+<!-- Generator version information:
+  xml2rfc 3.34.0
+    Python 3.14.5
+    ConfigArgParse 1.7.5
+    google-i18n-address 3.1.1
+    intervaltree 3.2.1
+    Jinja2 3.1.6
+    lxml 6.1.1
+    natsort 8.4.0
+    platformdirs 4.10.0
+    pycountry 24.6.1
+    PyYAML 6.0.3
+    requests 2.33.1
+    wcwidth 0.8.2
+-->
+<link href="draft-mahesh-opsawg-veloce-yang.xml" rel="alternate" type="application/rfc+xml">
+<link href="#copyright" rel="license">
+<style type="text/css">@font-face {
+  font-family: 'Lora';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Lora Italic'), local('Lora-Italic'), url('https://martinthomson.github.io/rfc-css/fonts/lora-italic-cyrillic-ext.woff2') format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Lora Italic'), local('Lora-Italic'), url('https://martinthomson.github.io/rfc-css/fonts/lora-italic-cyrillic-ext.woff2') format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Lora Italic'), local('Lora-Italic'), url('https://martinthomson.github.io/rfc-css/fonts/lora-italic-vietnamese.woff2') format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Lora Italic'), local('Lora-Italic'), url('https://martinthomson.github.io/rfc-css/fonts/lora-italic-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: 'Lora';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Lora Italic'), local('Lora-Italic'), url('https://martinthomson.github.io/rfc-css/fonts/lora-italic-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Lora Regular'), local('Lora-Regular'), url('https://martinthomson.github.io/rfc-css/fonts/lora-regular-cyrillic-ext.woff2') format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Lora Regular'), local('Lora-Regular'), url('https://martinthomson.github.io/rfc-css/fonts/lora-regular-cyrillic.woff2') format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Lora Regular'), local('Lora-Regular'), url('https://martinthomson.github.io/rfc-css/fonts/lora-regular-vietnamese.woff2') format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Lora Regular'), local('Lora-Regular'), url('https://martinthomson.github.io/rfc-css/fonts/lora-regular-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Lora Regular'), local('Lora-Regular'), url('https://martinthomson.github.io/rfc-css/fonts/lora-regular-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Lora Bold'), local('Lora-Bold'), url('https://martinthomson.github.io/rfc-css/fonts/lora-bold-cyrillic-ext.woff2') format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Lora Bold'), local('Lora-Bold'), url('https://martinthomson.github.io/rfc-css/fonts/lora-bold-cyrillic.woff2') format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Lora Bold'), local('Lora-Bold'), url('https://martinthomson.github.io/rfc-css/fonts/lora-bold-vietnamese.woff2') format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Lora Bold'), local('Lora-Bold'), url('https://martinthomson.github.io/rfc-css/fonts/lora-bold-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Lora Bold'), local('Lora-Bold'), url('https://martinthomson.github.io/rfc-css/fonts/lora-bold-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: local('Lora SemiBold'), local('Lora-SemiBold'), url('https://martinthomson.github.io/rfc-css/fonts/lora-semibold-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Oxygen Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Oxygen Mono'), local('OxygenMono-Regular'), url('https://martinthomson.github.io/rfc-css/fonts/oxygenmono-regular-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Oxygen Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Oxygen Mono'), local('OxygenMono-Regular'), url('https://martinthomson.github.io/rfc-css/fonts/oxygenmono-regular-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+}
+
+@font-face {
+  font-family: 'Sofia Sans Semi Condensed';
+  font-style: italic;
+  font-weight: 1 1000;
+  src: url('https://martinthomson.github.io/rfc-css/fonts/sofiasanssemicondensed-italic-cyrillic-ext.woff2') format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+@font-face {
+  font-family: 'Sofia Sans Semi Condensed';
+  font-style: italic;
+  font-weight: 1 1000;
+  src: url('https://martinthomson.github.io/rfc-css/fonts/sofiasanssemicondensed-italic-cyrillic.woff2') format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: 'Sofia Sans Semi Condensed';
+  font-style: italic;
+  font-weight: 1 1000;
+  src: url('https://martinthomson.github.io/rfc-css/fonts/sofiasanssemicondensed-italic-greek.woff2') format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+@font-face {
+  font-family: 'Sofia Sans Semi Condensed';
+  font-style: italic;
+  font-weight: 1 1000;
+  src: url('https://martinthomson.github.io/rfc-css/fonts/sofiasanssemicondensed-italic-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Sofia Sans Semi Condensed';
+  font-style: italic;
+  font-weight: 1 1000;
+  src: url('https://martinthomson.github.io/rfc-css/fonts/sofiasanssemicondensed-italic-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Sofia Sans Semi Condensed';
+  font-style: normal;
+  font-weight: 1 1000;
+  src: url('https://martinthomson.github.io/rfc-css/fonts/sofiasanssemicondensed-regular-cyrillic-ext.woff2') format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+@font-face {
+  font-family: 'Sofia Sans Semi Condensed';
+  font-style: normal;
+  font-weight: 1 1000;
+  src: url('https://martinthomson.github.io/rfc-css/fonts/sofiasanssemicondensed-regular-cyrillic.woff2') format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: 'Sofia Sans Semi Condensed';
+  font-style: normal;
+  font-weight: 1 1000;
+  src: url('https://martinthomson.github.io/rfc-css/fonts/sofiasanssemicondensed-regular-greek.woff2') format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+@font-face {
+  font-family: 'Sofia Sans Semi Condensed';
+  font-style: normal;
+  font-weight: 1 1000;
+  src: url('https://martinthomson.github.io/rfc-css/fonts/sofiasanssemicondensed-regular-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Sofia Sans Semi Condensed';
+  font-style: normal;
+  font-weight: 1 1000;
+  src: url('https://martinthomson.github.io/rfc-css/fonts/sofiasanssemicondensed-regular-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+:root {
+  color-scheme: light dark;
+  --background-color: #fff;
+  --text-color: #222;
+  --title-color: #191919;
+  --link-color: #2a6496;
+  --highlight-color: #f9f9f9;
+  --line-color: #eee;
+  --pilcrow-weak: #ddd;
+  --pilcrow-strong: #bbb;
+  --small-font-size: 14.5px;
+  --font-mono: 'Oxygen Mono', monospace;
+  --font-title: "Sofia Sans Semi Condensed", sans-serif;
+  scrollbar-color: #bbb #eee;
+}
+body {
+  max-width: 600px;
+  margin: 75px auto;
+  padding: 0 5px;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  font: 16px/22px "Lora", serif;
+  scroll-behavior: smooth;
+}
+
+.ears {
+  display: none;
+}
+
+/* headings */
+section {
+  clear: both;
+}
+.section-number {
+  padding-right: 0.5em;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-title);
+  font-weight: 680;
+  margin: 0.8em 0 0.3em;
+  font-size-adjust: 0.5;
+  color: var(--title-color);
+}
+h1 {
+  &#title {
+    font-size: 32px;
+    line-height: 40px;
+    clear: both;
+    margin: 1.5em 0 0.2em;
+  }
+  &#rfcnum {
+    margin: 1.5em 0 0.2em;
+    & + h1#title {
+      margin: 0.2em 0;
+    }
+  }
+}
+
+h1, h2, h3 {
+  font-size: 22px;
+  line-height: 27px;
+}
+h4, h5, h6 {
+  font-size: 20px;
+  line-height: 24px;
+}
+
+/* general structure */
+.author {
+  padding-bottom: 0.3em;
+  vertical-align: top;
+}
+#abstract+p {
+  font-size: 18px;
+  line-height: 24px;
+  & code, & samp, & tt {
+    font-size: 16px;
+    line-height: 0;
+  }
+}
+
+p {
+  padding: 0;
+  margin: 0.5em 0;
+  text-align: left;
+}
+div {
+  margin: 0;
+}
+.alignRight {
+  margin: 1em 0;
+  &.art-text {
+    background-color: var(--highlight-color);
+    border: 1px solid var(--line-color);
+    border-radius: 3px;
+    padding: 0.5em 1em 0;
+    margin-bottom: 0.5em;
+    & pre {
+      padding: 0;
+      width: auto;
+    }
+  }
+  & > *:first-child {
+    border: none;
+    margin: 0;
+    float: right;
+    clear: both;
+  }
+  & > *:nth-child(2) {
+    clear: both;
+    display: block;
+    border: none;
+  }
+}
+svg {
+  display: block;
+  /* font-family isn't space-separated, but =~ will have to do */
+  &[font-family~="monospace" i], & [font-family~="monospace" i] {
+    font-family: var(--font-mono);
+  }
+}
+.alignCenter {
+  margin: 1em 0;
+  &.art-text {
+    background-color: var(--highlight-color);
+    border: 1px solid var(--line-color);
+    border-radius: 3px;
+    padding: 0.5em 1em 0;
+    margin-bottom: 0.5em;
+    & pre {
+      padding: 0;
+      width: auto;
+    }
+  }
+  & > *:first-child {
+    border: none;
+    /* this isn't optimal, but it's an existence proof.  PrinceXML doesn't
+       support flexbox yet.
+    */
+    display: table;
+    margin: 0 auto;
+  }
+}
+
+/* lists */
+ol, ul {
+  padding: 0;
+  margin: 0 0 0.5em 2em;
+  & :is(ol, ul) {
+    margin-left: 1em;
+  }
+}
+li {
+  margin: 0 0 0.25em 0;
+}
+ul.empty, .ulEmpty {
+  list-style-type: none;
+  & li {
+    margin-top: 0.5em;
+  }
+}
+:is(ul, ol).compact, .ulCompact, .olCompact {
+  margin: 0 0 0 2em;
+  & li {
+    margin: 0;
+    & :first-child { margin-top: 0; }
+    & :last-child { margin-bottom: 0; }
+  }
+}
+
+/* definition lists */
+dl {
+  clear: left;
+  --indent: 3ch;
+  /* --indent: attr(indent ch); not supported in any browser, but we can dream */
+  &.olPercent {
+    --indent: 5ch;
+    & > dt {
+      min-width: calc(var(--indent) - 2ch);
+      float: none;
+    }
+  }
+
+  dl > dd > & {
+    margin-top: 0.5em;
+    margin-bottom: 0;
+  }
+
+  &:not(.dlNewline) > dt {
+    float: left;
+    margin-right: 2ch;
+    min-width: 8ch;
+  }
+  & > dd {
+    margin-bottom: .8em;
+    margin-left: var(--indent) !important; /* stupid element overrides */
+    min-height: 2ex;
+  }
+}
+:is(dl.compact, .dlCompact) > dd {
+  margin-bottom: 0;
+  & > :is(:first-child, .break:first-child + *) {
+    margin-top: 0;
+  }
+  & > :is(:last-child) {
+    margin-bottom: 0;
+  }
+}
+:is(dd, span).break {
+  display: none;
+}
+
+/* links */
+a {
+  text-decoration: none;
+  &[href] {
+    color: var(--link-color);
+    &:hover { text-decoration: underline; }
+    &.selfRef {
+      color: var(--text-color);
+      &:hover {
+        text-decoration: none;
+        background-color: var(--highlight-color);
+      }
+    }
+  }
+}
+.iref + a[href].internal {
+  color: var(--text-color);
+}
+a.xref:is(.cite, .auto), :is(#status-of-memo, #copyright) a {
+  white-space: nowrap;
+}
+
+/* Figures */
+tt, code, pre {
+  background-color: var(--highlight-color);
+  font: 14px/22px var(--font-mono);
+}
+tt, code {
+  /* changing the font for inline elements leads to different ascender
+     and descender heights; as we want to retain baseline alignment,
+     remove leading to avoid altering the final height of lines
+     note: this fails if these blocks take an entire line,
+     a different solution would be great */
+  line-height: 0;
+}
+:is(h1, h2, h3, h4, h5, h6) :is(tt, code) {
+  font-size: 84%;
+}
+pre {
+  border: 1px solid var(--line-color);
+  font-size: 13.5px;
+  line-height: 16px;
+  letter-spacing: -0.2px;
+  margin: 5px;
+  padding: 5px;
+}
+img {
+  max-width: 100%;
+}
+figure {
+  margin: 0.5em 0;
+  padding: 0;
+  & blockquote {
+    margin: 0.8em 0.4em 0.4em;
+  }
+}
+figcaption, caption {
+  font-style: italic;
+  margin: 0.5em 1.5em;
+  text-align: left;
+  caption-side: bottom;
+}
+@media screen {
+  /* Auto-collapse boilerplate. */
+  :is(#status-of-memo, #copyright) {
+    & p {
+      margin: -2px 0;
+      max-height: 0;
+      transition: max-height 2s ease, margin 0.5s ease 0.5s;
+      overflow: hidden;
+    }
+    &:hover p,
+    & h2:target ~ p {
+      margin: 0.5em 0;
+      max-height: 500px;
+      overflow: auto;
+    }
+  }
+  pre, svg {
+    display: inline-block;
+    /* In the horizontal direction, sometimes people make over-sized figures.
+       Scrollbars for those is therefore necessary: auto adds them as necessary..
+       In the vertical direction, the line-height can combine with the font
+       asender/descender height to produce scrollbars: hidden avoids that. */
+    overflow: auto hidden;
+  }
+  pre {
+    max-width: 100%;
+    width: calc(100% - 22px - 1em);
+  }
+  svg {
+    max-width: calc(100% - 22px - 1em);
+  }
+  figure pre {
+    display: block;
+    width: calc(100% - 25px);
+  }
+  :is(pre, svg) + .pilcrow {
+    display: inline-block;
+    vertical-align: text-bottom;
+    padding-bottom: 8px;
+  }
+}
+
+/* aside, blockquote */
+aside, blockquote {
+  margin-left: 0;
+  padding: 0 2em;
+  font-style: italic;
+}
+blockquote {
+  margin: 1em 0;
+  border-left: 2px var(--pilcrow-strong) solid;
+}
+cite {
+  display: block;
+  text-align: right;
+  font-style: italic;
+}
+
+/* tables */
+table {
+  width: auto;
+  max-width: 100%;
+  margin: 0 0 1em;
+  border-collapse: collapse;
+  &.right { margin-left: auto; }
+  &.center { margin-left: auto; margin-right: auto; }
+  &.left { margin-right: auto; }
+  & .text-left { text-align: left; }
+  & .text-center { text-align: center; }
+  & .text-right { text-align: right; }
+  & caption {
+    margin: 0;
+    padding: 3px 0 3px 1em;
+  }
+  & p { margin: 0; }
+}
+
+thead, tbody {
+  border: 1px solid var(--line-color);
+}
+th, td {
+  text-align: left;
+  vertical-align: top;
+  padding: 5px 10px;
+}
+th {
+  background-color: var(--line-color);
+}
+:is(tr:nth-child(2n), thead+tbody > tr:nth-child(2n+1)) > td {
+  background-color: var(--background-color);
+}
+:is(tr:nth-child(2n+1), thead+tbody > tr:nth-child(2n)) > td {
+  background-color: var(--highlight-color);
+}
+
+/* pilcrow */
+a.pilcrow {
+  margin-left: 3px;
+  opacity: 0.2;
+  user-select: none;
+  &[href] {
+    color: var(--pilcrow-weak);
+    &:hover { text-decoration: none; }
+  }
+  @media not print {
+    :hover > &, &:focus {
+      opacity: 1;
+    }
+    &[href]:hover {
+      color: var(--pilcrow-strong);
+      background-color: transparent;
+    }
+  }
+  @media print {
+    display: none;
+  }
+}
+
+/* misc */
+hr {
+  border: 0;
+  border-top: 1px solid var(--line-color);
+}
+.bcp14 {
+  font-variant: small-caps;
+  font-weight: 600;
+  font-size: var(--small-font-size);
+}
+.role {
+  font-variant: all-small-caps;
+}
+sub, sup {
+  line-height: 1;
+  font-size: 80%;
+}
+
+/* info block */
+#identifiers {
+  margin: 0;
+  font-size: var(--small-font-size);
+  line-height: 18px;
+  --identifier-width: 15ch;
+  & dt {
+    width: var(--identifier-width);
+    min-width: var(--identifier-width);
+    clear: left;
+    float: left;
+    text-align: right;
+    margin-right: 1ch;
+  }
+  & dd {
+    margin: 0;
+    margin-left: calc(1em + var(--identifier-width)) !important;
+    min-width: 5em;
+  }
+  & .authors {
+    & .author {
+      display: inline-block;
+      margin-right: 1.5em;
+    }
+    & .org {
+      font-style: italic;
+    }
+  }
+}
+
+/* The prepared/rendered info at the very bottom of the page */
+.docInfo {
+  color: #999;
+  font-size: 0.9em;
+  font-style: italic;
+  margin-top: 2em;
+  & .prepared {
+    float: right;
+  }
+}
+
+/* table of contents */
+#toc {
+  padding: 0.75em 0 2em 0;
+  margin-bottom: 1em;
+
+  & nav {
+    & ul {
+      margin: 0 0.5em 0 0;
+      padding: 0;
+      list-style: none;
+    }
+    & li {
+      line-height: 1.3em;
+      margin: 2px 0;
+      padding-left: 1.2em;
+      text-indent: -1.2em;
+    }
+  }
+  & a.xref {
+    white-space: normal;
+  }
+}
+
+.references {
+  & > dt {
+    text-align: right;
+    font-weight: bold;
+    min-width: 10ch;
+    margin-right: 1.5ch;
+    &:target::before {
+      content: "⇒";
+      margin: 0 10px 0 -25px;
+    }
+  }
+  & > dd {
+    margin-left: 12ch !important;
+    overflow: visible;
+    & .refInstance {
+      margin-bottom: 0.8em;
+    }
+    & .ascii {
+      margin-bottom: 0.25em;
+    }
+  }
+}
+
+#rfc\.index\.index + ul {
+  margin-left: 0;
+}
+
+/* authors */
+address.vcard {
+  font-style: normal;
+  max-width: 20em;
+  margin: 1em auto 1em 0;
+
+  & .nameRole {
+    font-weight: 700;
+    margin-left: 0;
+  }
+  & .label {
+    margin: 0.5em 0;
+  }
+  & .type {
+    display: none;
+  }
+  & .alternative-contact {
+    margin: 0.5em 0 0.25em 0;
+  }
+  & .non-ascii {
+    margin: 0 0 0 2em;
+  }
+  & div.left {
+    text-align: left;
+  }
+  & div.right {
+    text-align: right;
+  }
+}
+
+hr.addr {
+  border-top: 1px dashed;
+  margin: 0;
+  color: #ddd;
+  max-width: calc(100% - 16px);
+}
+@media (min-width: 500px) {
+  #authors-addresses {
+    & > section {
+      column-count: 2;
+      column-gap: 20px;
+    }
+    & > section > h2 {
+      column-span: all;
+    }
+    /* hack for break-inside: avoid-column */
+    & address {
+      display: inline-block;
+      break-inside: avoid-column;
+    }
+  }
+}
+
+/* Comments */
+.rfcEditorRemove {
+  & p:first-of-type {
+    font-style: italic;
+  }
+}
+.cref {
+  background-color: rgba(249, 232, 105, 0.3);
+  padding: 2px 4px;
+}
+.crefSource {
+  font-style: italic;
+}
+
+@media screen {
+  #toc {
+    & nav {
+      font-family: var(--font-title);
+      font-weight: 360;
+      & > ul { margin-bottom: 2em; }
+      & ul {
+        margin: 0 0 0 4px;
+        & :is(p, li) {
+          margin: 2px 0;
+        }
+      }
+    }
+    & a.toplink {
+      float: right;
+    }
+  }
+}
+@media not screen {
+  #toc a.toplink {
+    display: none;
+  }
+}
+
+
+/* TOC layout for smaller screens */
+@media screen and (max-width: 929px) {
+  #toc {
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    right: 0;
+    padding: 1px 0 0 0;
+    margin: 0;
+    border-bottom: 1px solid #ccc;
+    opacity: 0.6;
+    & h2 {
+      margin: 0;
+      padding: 2px 0 2px 6px;
+      padding-right: 1em;
+      font-size: 18px;
+      line-height: 24px;
+      min-width: 190px;
+      text-align: right;
+      background-color: #444;
+      color: white;
+      cursor: pointer;
+      &::before { /* css hamburger */
+        float: right;
+        position: relative;
+        width: 1em;
+        height: 1px;
+        left: -164px;
+        margin: 8px 0 0 0;
+        background: white none repeat scroll 0 0;
+        box-shadow: 0 4px 0 0 white, 0 8px 0 0 white;
+        content: "";
+      }
+    }
+    & nav {
+      display: none;
+      background-color: var(--background-color);
+      padding: 0.5em 1em 1em;
+      overflow: auto;
+      overscroll-behavior: contain;
+      height: calc(100vh - 48px);
+      border-left: 1px solid #ddd;
+    }
+    &.active {
+      opacity: 1;
+      & nav { display: block; }
+    }
+    /* Make the collapsed ToC header render white on gray also when it's a link */
+    & h2 a,
+    & h2 a:is(:link, :focus, :hover),
+    & a.toplink,
+    & a.toplink:hover {
+      color: white;
+      background-color: #444;
+      text-decoration: none;
+    }
+    & a.toplink {
+      margin: 2px 0.5em 0;
+    }
+  }
+}
+
+/* TOC layout for wide screens */
+@media screen and (min-width: 930px) {
+  body {
+    padding-right: 360px;
+    padding-right: calc(min(180px + 20%, 500px));
+  }
+  #toc {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    right: calc(50vw - 480px);
+    width: 312px;
+    margin: 0;
+    padding: 0;
+    z-index: 1;
+    & h2 {
+      margin: 0;
+      padding: 0.25em 1em 1em 0;
+    }
+    & nav {
+      display: block;
+      height: calc(90vh - 84px);
+      bottom: 0;
+      padding: 0.5em 0 2em;
+      overflow: auto;
+      overscroll-behavior: contain;
+      scrollbar-width: thin;
+    }
+    & a.toplink {
+      margin: 8px 0.5em 0;
+    }
+  }
+  img { /* future proofing */
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* pagination */
+@media print {
+  body {
+    width: 100%;
+  }
+  p {
+    orphans: 3;
+    widows: 3;
+  }
+  #n-copyright-notice {
+    border-bottom: none;
+  }
+  #toc {
+    page-break-before: always;
+    border-top: none;
+    padding-top: 0;
+  }
+  #n-introduction {
+    page-break-before: always;
+  }
+  figure, pre, .vcard {
+    page-break-inside: avoid;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    page-break-after: avoid;
+  }
+  :is(h2, h3, h4, h5, h6)+*, dd {
+    page-break-before: avoid;
+  }
+  pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-size: 10pt;
+  }
+  table {
+    border: 1px solid #ddd;
+  }
+  td {
+    border-top: 1px solid #ddd;
+  }
+}
+
+@page :first {
+  padding-top: 0;
+  @top-left {
+    content: normal;
+    border: none;
+  }
+  @top-center {
+    content: normal;
+    border: none;
+  }
+  @top-right {
+    content: normal;
+    border: none;
+  }
+}
+
+@page {
+  size: A4;
+  margin-bottom: 45mm;
+  padding-top: 20px;
+}
+
+/* Dark mode. */
+@media (prefers-color-scheme: dark) {
+:root {
+  --background-color: #121212;
+  --text-color: #f0f0f0;
+  --title-color: #fff;
+  --link-color: #4da4f0;
+  --highlight-color: #282828;
+  --line-color: #444;
+  --pilcrow-weak: #444;
+  --pilcrow-strong: #666;
+  scrollbar-color: #777 #333;
+}
+}
+
+/* SVG Trick: a prefix match works because only black and white are allowed */
+svg {
+  & :is([stroke="black"], [stroke^="#000"]) {
+    stroke: var(--text-color);
+  }
+  & :is([stroke="white"], [stroke^="#fff"]) {
+    stroke: var(--background-color);
+  }
+  & :is([fill="black"], [fill^="#000"], :not([fill])) {
+    fill: var(--text-color);
+  }
+  & :is([fill="white"], [fill^="#fff"]) {
+    fill: var(--background-color);
+  }
+}
+</style>
+
+</head>
+<body class="xml2rfc">
+<table class="ears">
+<thead><tr>
+<td class="left">Internet-Draft</td>
+<td class="center">VELOCE</td>
+<td class="right">July 2026</td>
+</tr></thead>
+<tfoot><tr>
+<td class="left">Jethanandani &amp; Wu</td>
+<td class="center">Expires 8 January 2027</td>
+<td class="right">[Page]</td>
+</tr></tfoot>
+</table>
+<div id="external-metadata" class="document-information"></div>
+<div id="internal-metadata" class="document-information">
+<dl id="identifiers">
+<dt class="label-workgroup">Workgroup:</dt>
+<dd class="workgroup">Operations and Management Area Working Group</dd>
+<dt class="label-internet-draft">Internet-Draft:</dt>
+<dd class="internet-draft">draft-mahesh-opsawg-veloce-yang-latest</dd>
+<dt class="label-published">Published:</dt>
+<dd class="published">
+<time datetime="2026-07-07" class="published">7 July 2026</time>
+    </dd>
+<dt class="label-intended-status">Intended Status:</dt>
+<dd class="intended-status">Informational</dd>
+<dt class="label-expires">Expires:</dt>
+<dd class="expires"><time datetime="2027-01-08">8 January 2027</time></dd>
+<dt class="label-authors">Authors:</dt>
+<dd class="authors">
+<div class="author">
+      <div class="author-name">M. Jethanandani</div>
+<div class="org">Arrcus</div>
+</div>
+<div class="author">
+      <div class="author-name">Q. Wu</div>
+<div class="org">Huawei</div>
+</div>
+</dd>
+</dl>
+</div>
+<h1 id="title">YANG deVELpment PrOCEss and maintenance (VELOCE)</h1>
+<section id="section-abstract">
+      <h2 id="abstract"><a href="#abstract" class="selfRef">Abstract</a></h2>
+<p id="section-abstract-1">This document describes a YANG deVELopment PrOCEss and
+maintenance (VELOCE) that is more suitable for the development
+of YANG modules or YANG modules update within the IETF.<a href="#section-abstract-1" class="pilcrow">¶</a></p>
+<p id="section-abstract-2">Discussion Venues<a href="#section-abstract-2" class="pilcrow">¶</a></p>
+<p id="section-abstract-3">This note is to be removed before publishing as an RFC.<a href="#section-abstract-3" class="pilcrow">¶</a></p>
+<p id="section-abstract-4">Source for this draft and an issue tracker can be found at
+   https://github.com/mjethanandani/veloce/tree/main.<a href="#section-abstract-4" class="pilcrow">¶</a></p>
+</section>
+<section class="note rfcEditorRemove" id="section-note.1">
+      <h2 id="name-about-this-document">
+<a href="#name-about-this-document" class="section-name selfRef">About This Document</a>
+      </h2>
+<p id="section-note.1-1">This note is to be removed before publishing as an RFC.<a href="#section-note.1-1" class="pilcrow">¶</a></p>
+<p id="section-note.1-2">
+        The latest revision of this draft can be found at <span><a href="https://mjethanandani.github.io/veloce/draft-mahesh-opsawg-veloce-yang.html">https://mjethanandani.github.io/veloce/draft-mahesh-opsawg-veloce-yang.html</a></span>.
+        Status information for this document may be found at <span><a href="https://datatracker.ietf.org/doc/draft-mahesh-opsawg-veloce-yang/">https://datatracker.ietf.org/doc/draft-mahesh-opsawg-veloce-yang/</a></span>.<a href="#section-note.1-2" class="pilcrow">¶</a></p>
+<p id="section-note.1-3">
+        Discussion of this document takes place on the
+        Operations and Management Area Working Group Working Group mailing list (<span><a href="mailto:opsawg@ietf.org">mailto:opsawg@ietf.org</a></span>),
+        which is archived at <span><a href="https://mailarchive.ietf.org/arch/browse/opsawg/">https://mailarchive.ietf.org/arch/browse/opsawg/</a></span>.
+        Subscribe at <span><a href="https://www.ietf.org/mailman/listinfo/opsawg/">https://www.ietf.org/mailman/listinfo/opsawg/</a></span>.<a href="#section-note.1-3" class="pilcrow">¶</a></p>
+<p id="section-note.1-4">Source for this draft and an issue tracker can be found at
+        <span><a href="https://github.com/mjethanandani/veloce">https://github.com/mjethanandani/veloce</a></span>.<a href="#section-note.1-4" class="pilcrow">¶</a></p>
+</section>
+<div id="status-of-memo">
+<section id="section-boilerplate.1">
+        <h2 id="name-status-of-this-memo">
+<a href="#name-status-of-this-memo" class="section-name selfRef">Status of This Memo</a>
+        </h2>
+<p id="section-boilerplate.1-1">
+        This Internet-Draft is submitted in full conformance with the
+        provisions of BCP 78 and BCP 79.<a href="#section-boilerplate.1-1" class="pilcrow">¶</a></p>
+<p id="section-boilerplate.1-2">
+        Internet-Drafts are working documents of the Internet Engineering Task
+        Force (IETF). Note that other groups may also distribute working
+        documents as Internet-Drafts. The list of current Internet-Drafts is
+        at <span><a href="https://datatracker.ietf.org/drafts/current/">https://datatracker.ietf.org/drafts/current/</a></span>.<a href="#section-boilerplate.1-2" class="pilcrow">¶</a></p>
+<p id="section-boilerplate.1-3">
+        Internet-Drafts are draft documents valid for a maximum of six months
+        and may be updated, replaced, or obsoleted by other documents at any
+        time. It is inappropriate to use Internet-Drafts as reference
+        material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
+<p id="section-boilerplate.1-4">
+        This Internet-Draft will expire on 8 January 2027.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="copyright">
+<section id="section-boilerplate.2">
+        <h2 id="name-copyright-notice">
+<a href="#name-copyright-notice" class="section-name selfRef">Copyright Notice</a>
+        </h2>
+<p id="section-boilerplate.2-1">
+            Copyright (c) 2026 IETF Trust and the persons identified as the
+            document authors. All rights reserved.<a href="#section-boilerplate.2-1" class="pilcrow">¶</a></p>
+<p id="section-boilerplate.2-2">
+            This document is subject to BCP 78 and the IETF Trust's Legal
+            Provisions Relating to IETF Documents
+            (<span><a href="https://trustee.ietf.org/license-info">https://trustee.ietf.org/license-info</a></span>) in effect on the date of
+            publication of this document. Please review these documents
+            carefully, as they describe your rights and restrictions with
+            respect to this document. Code Components extracted from this
+            document must include Revised BSD License text as described in
+            Section 4.e of the Trust Legal Provisions and are provided without
+            warranty as described in the Revised BSD License.<a href="#section-boilerplate.2-2" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="toc">
+<section id="section-toc.1">
+        <a href="#" onclick="scroll(0,0)" class="toplink">▲</a><h2 id="name-table-of-contents">
+<a href="#name-table-of-contents" class="section-name selfRef">Table of Contents</a>
+        </h2>
+<nav class="toc"><ul class="compact toc ulBare ulEmpty">
+<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.1">
+            <p id="section-toc.1-1.1.1" class="keepWithNext"><a href="#section-1" class="auto internal xref">1</a>.  <a href="#name-introduction" class="internal xref">Introduction</a></p>
+<ul class="compact toc ulBare ulEmpty">
+<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.1.2.1">
+                <p id="section-toc.1-1.1.2.1.1" class="keepWithNext"><a href="#section-1.1" class="auto internal xref">1.1</a>.  <a href="#name-conventions-and-definitions" class="internal xref">Conventions and Definitions</a></p>
+</li>
+            </ul>
+</li>
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.2">
+            <p id="section-toc.1-1.2.1" class="keepWithNext"><a href="#section-2" class="auto internal xref">2</a>.  <a href="#name-veloce-procedure" class="internal xref">VELOCE Procedure</a></p>
+</li>
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3">
+            <p id="section-toc.1-1.3.1"><a href="#section-3" class="auto internal xref">3</a>.  <a href="#name-experimental-plan" class="internal xref">Experimental Plan</a></p>
+<ul class="compact toc ulBare ulEmpty">
+<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3.2.1">
+                <p id="section-toc.1-1.3.2.1.1"><a href="#section-3.1" class="auto internal xref">3.1</a>.  <a href="#name-what-is-the-goal" class="internal xref">What is the goal</a></p>
+</li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3.2.2">
+                <p id="section-toc.1-1.3.2.2.1"><a href="#section-3.2" class="auto internal xref">3.2</a>.  <a href="#name-how-will-the-experiment-be-" class="internal xref">How will the experiment be conducted</a></p>
+</li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3.2.3">
+                <p id="section-toc.1-1.3.2.3.1"><a href="#section-3.3" class="auto internal xref">3.3</a>.  <a href="#name-how-will-success-be-determi" class="internal xref">How will success be determined</a></p>
+</li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3.2.4">
+                <p id="section-toc.1-1.3.2.4.1"><a href="#section-3.4" class="auto internal xref">3.4</a>.  <a href="#name-what-is-the-anticipated-tim" class="internal xref">What is the anticipated timeline</a></p>
+</li>
+            </ul>
+</li>
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4">
+            <p id="section-toc.1-1.4.1"><a href="#section-4" class="auto internal xref">4</a>.  <a href="#name-operational-considerations" class="internal xref">Operational Considerations</a></p>
+</li>
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5">
+            <p id="section-toc.1-1.5.1"><a href="#section-5" class="auto internal xref">5</a>.  <a href="#name-security-considerations" class="internal xref">Security Considerations</a></p>
+</li>
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.6">
+            <p id="section-toc.1-1.6.1"><a href="#section-6" class="auto internal xref">6</a>.  <a href="#name-iana-considerations" class="internal xref">IANA Considerations</a></p>
+</li>
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.7">
+            <p id="section-toc.1-1.7.1"><a href="#section-7" class="auto internal xref">7</a>.  <a href="#name-normative-references" class="internal xref">Normative References</a></p>
+</li>
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.8">
+            <p id="section-toc.1-1.8.1"><a href="#appendix-A" class="auto internal xref"></a><a href="#name-acknowledgments" class="internal xref">Acknowledgments</a></p>
+</li>
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.9">
+            <p id="section-toc.1-1.9.1"><a href="#appendix-B" class="auto internal xref"></a><a href="#name-authors-addresses" class="internal xref">Authors' Addresses</a></p>
+</li>
+        </ul>
+</nav>
+</section>
+</div>
+<div id="introduction">
+<section id="section-1">
+      <h2 id="name-introduction">
+<a href="#section-1" class="section-number selfRef">1. </a><a href="#name-introduction" class="section-name selfRef">Introduction</a>
+      </h2>
+<p id="section-1-1">IETF has used RFCs to publish its documents. However, RFCs,
+which are text documents, are not well-suited for iterative
+development of YANG modules that come in the form of source
+code.<a href="#section-1-1" class="pilcrow">¶</a></p>
+<p id="section-1-2">This document proposes a new approach for documenting and
+publishing IETF YANG modules.  While this document mainly
+focuses on the IETF modules, IANA modules that are included in
+drafts, and removed ultimately on publication, can follow a
+similar process during the development of the IANA module.<a href="#section-1-2" class="pilcrow">¶</a></p>
+<p id="section-1-3">This document proposes that the publishing of a YANG module
+should be split into two parts: the text portion, hereby
+referred to as the prose, and the YANG module. The prose
+SHOULD continue to be used for describing the model, defining
+IANA Considerations, defining the Security Considerations,
+describing any Operational Considerations, capturing the
+Normative and the Informative References, etc. The YANG module,
+along with any related files such as YANG SID files,
+should be developed and maintained in a separate Source Code
+Mechanism (SCM) repository such as GitHub. The SCM SHOULD
+provide a stable link to the YANG module, which should then be
+included as a reference in the document.<a href="#section-1-3" class="pilcrow">¶</a></p>
+<p id="section-1-4">There are several reasons to develop the YANG module in an
+SCM. SCM provides version control and improves traceability of
+changes. Modern SCM provides the ability for Continuous
+Integration/Continuous Development (CI/CD). YANG modules can
+be fully validated before they are published. Changes to the
+module can be submitted by providing changes to the affected
+portions of the source code instead of the entire
+module. Reviews and comments can be gathered on the changes
+being proposed. This iterative approach lends itself to faster
+development and fixing of issues in YANG modules.<a href="#section-1-4" class="pilcrow">¶</a></p>
+<p id="section-1-5">Guidance for writing YANG modules is discussed in <span>[<a href="#RFC9907" class="cite xref">RFC9907</a>]</span>.
+Guidelines related to code components (Section3.2 of <span>[<a href="#RFC9907" class="cite xref">RFC9907</a>]</span>)
+or citations to references listed in the YANG module do not apply to VELOCE.<a href="#section-1-5" class="pilcrow">¶</a></p>
+<div id="conventions-and-definitions">
+<section id="section-1.1">
+        <h3 id="name-conventions-and-definitions">
+<a href="#section-1.1" class="section-number selfRef">1.1. </a><a href="#name-conventions-and-definitions" class="section-name selfRef">Conventions and Definitions</a>
+        </h3>
+<p id="section-1.1-1">The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
+"SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and
+"OPTIONAL" in this document are to be interpreted as described in
+BCP 14 <span>[<a href="#RFC2119" class="cite xref">RFC2119</a>]</span> <span>[<a href="#RFC8174" class="cite xref">RFC8174</a>]</span> when, and only when, they appear in all
+capitals, as shown here.<a href="#section-1.1-1" class="pilcrow">¶</a></p>
+</section>
+</div>
+</section>
+</div>
+<div id="sec-procedure">
+<section id="section-2">
+      <h2 id="name-veloce-procedure">
+<a href="#section-2" class="section-number selfRef">2. </a><a href="#name-veloce-procedure" class="section-name selfRef">VELOCE Procedure</a>
+      </h2>
+<p id="section-2-1">The following practices should provide the necessary guidance
+on how a WG develops a new YANG module or updates an existing
+YANG module:<a href="#section-2-1" class="pilcrow">¶</a></p>
+<p id="section-2-2">It is RECOMMENDED that IETF-hosted repositories
+be used. See Section 1.3 of Working Group GitHub Usage
+Guidance <span>[<a href="#RFC8874" class="cite xref">RFC8874</a>]</span>. Integration using third-party hosted
+repositories MAY be used for experimentation purposes.<a href="#section-2-2" class="pilcrow">¶</a></p>
+<p id="section-2-3">A new repository MUST be created by the WG
+Chairs following the procedure in Section 3.2 of Working Group
+GitHub Usage Guidance <span>[<a href="#RFC8874" class="cite xref">RFC8874</a>]</span> to develop or maintain a YANG
+Module. For a new module, this SHOULD happen when
+the module is adopted as a WG item. It MAY happen for
+individual drafts, and that is left to the discretion of the
+chairs. However, once the document is adopted as a WG item,
+the repository SHOULD reside under the auspecies
+of IETF controlled repository and managed by the WG. The
+name of the repository SHOULD reflect the name
+of the draft. In addition, the chairs MAY make
+sure that an appropriate CI/CD YANG validation is in place.  It
+is RECOMMENDED that a containerized build
+environment be provided in the repository to enable local
+validation of YANG modules (e.g., via yanglint) independently of
+the CI/CD pipeline, and to ensure a consistent development
+environment across all contributors.<a href="#section-2-3" class="pilcrow">¶</a></p>
+<p id="section-2-4">The procedure for managing WG documents (e.g., assign editors)
+applies for managing YANG modules (Section 6.1 of IETF Working
+Group Guidelines and Procedures <span>[<a href="#RFC2418" class="cite xref">RFC2418</a>]</span>). For considerations
+related to granting editors write and administrators' right refer to
+Section 3.3 of Working Group GitHub Usage Guidance <span>[<a href="#RFC8874" class="cite xref">RFC8874</a>]</span>.<a href="#section-2-4" class="pilcrow">¶</a></p>
+<p id="section-2-5">Other administrative policies as they relate to migration,
+personal change or the WG closing is defined in the Working
+Group GitHub Administration <span>[<a href="#RFC8875" class="cite xref">RFC8875</a>]</span>.<a href="#section-2-5" class="pilcrow">¶</a></p>
+<p id="section-2-6">A release tagging mechanism should be defined to track the
+intermediate versions referenced by WG I-Ds and by the RFC,
+once published. This can come in the form of a 'git tag' or by
+having a branch that corresponds to the version of the draft.<a href="#section-2-6" class="pilcrow">¶</a></p>
+<p id="section-2-7">Contribution methods for the YANG module are similar to those
+defined in Section 4 of Working Group GitHub Usage
+Guidance <span>[<a href="#RFC8874" class="cite xref">RFC8874</a>]</span>. This includes the use of Issues to track open
+issues regarding the module, email notifications of activity on working group repositories,
+ Editor's reporting or change log about the changes to the document (refer to
+        to Section 4.3 of <span>[<a href="#RFC8874" class="cite xref">RFC8874</a>]</span> for monitoring activity ). They, along with corresponding
+links to the Pull Request (PR), are a useful way to record decisions made by the WG.<a href="#section-2-7" class="pilcrow">¶</a></p>
+<p id="section-2-8">PR allow for a user to request a change to the repository. A
+user does not need to have write access to the repository. A
+fork of the repository allows the user to make changes,
+validate them, and post the changes as a PR against the WG
+repository. Editors of the YANG module are encouraged not to
+accept changes into the "main" or "master" branch of the
+repository. Instead, they should be directed to a branch
+that is used for development. This allows the editors to review
+the changes and make sure that they are in line with the WG
+consensus before they are merged into the main branch.
+This also allows the editors to make sure that the changes are properly
+validated before they are merged into the main branch.<a href="#section-2-8" class="pilcrow">¶</a></p>
+<p id="section-2-9">A procedure for assessing consensus is discussed in Section 7 of Working
+Group GitHub Usage Guidance <span>[<a href="#RFC8874" class="cite xref">RFC8874</a>]</span> and SHOULD be
+followed when accepting changes to the module.<a href="#section-2-9" class="pilcrow">¶</a></p>
+<p id="section-2-10">The YANG module MUST NOT be inserted in the
+document; instead, a link to the above repository
+MUST be included in the document.  The link
+MUST point to a specific tagged version of the
+YANG module (e.g., a git tag or commit hash), not to the HEAD of
+a branch, so that the module's contents at RFC publication time
+are permanently retrievable and verifiable.<a href="#section-2-10" class="pilcrow">¶</a></p>
+<p id="section-2-11">YANG SID files <span>[<a href="#RFC9595" class="cite xref">RFC9595</a>]</span>, when applicable (e.g.,
+for YANG/CBOR encoding), SHOULD reside in the
+SCM repository rather than in the document.  The use of RFC 8792
+folding for SID files in Internet-Drafts is discouraged, as it
+is not compatible with current YANG Doctor tooling.<a href="#section-2-11" class="pilcrow">¶</a></p>
+<p id="section-2-12">A bis version of the initial RFC MAY be
+considered if a major change needs to be added in the
+document. Such a decision is left to the WG. WG may
+decide to update an adopted YANG module in the IETF
+repository and only update the RFC to change the reference
+to the YANG module.<a href="#section-2-12" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="sec-experiment">
+<section id="section-3">
+      <h2 id="name-experimental-plan">
+<a href="#section-3" class="section-number selfRef">3. </a><a href="#name-experimental-plan" class="section-name selfRef">Experimental Plan</a>
+      </h2>
+<p id="section-3-1">Much like other experimental documents, this document tries to
+answer the following four questions as they relate to
+experimental documents.<a href="#section-3-1" class="pilcrow">¶</a></p>
+<div id="sec-goal">
+<section id="section-3.1">
+        <h3 id="name-what-is-the-goal">
+<a href="#section-3.1" class="section-number selfRef">3.1. </a><a href="#name-what-is-the-goal" class="section-name selfRef">What is the goal</a>
+        </h3>
+<p id="section-3.1-1">The goal of the experiment is to determine how YANG modules
+can be developed outside of an RFC, while making sure that
+all IETF processes are followed, including WG involvement in
+the development of the module, and rough consensus of the WG
+and the IETF as a whole, before it is "published".<a href="#section-3.1-1" class="pilcrow">¶</a></p>
+<p id="section-3.1-2">A key objective is to balance speed, quality, and community
+contribution.  The experiment should demonstrate a faster
+path to delivering well-formed YANG modules, while not
+sacrificing the quality and the community involvement that
+the IETF process requires.  In particular, the experiment
+aims to address the pain point of the -bis revision process,
+where re-publishing a large document just to update a small
+portion of the YANG module creates unnecessary delays due to
+review comments on otherwise unchanged sections.<a href="#section-3.1-2" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="sec-how">
+<section id="section-3.2">
+        <h3 id="name-how-will-the-experiment-be-">
+<a href="#section-3.2" class="section-number selfRef">3.2. </a><a href="#name-how-will-the-experiment-be-" class="section-name selfRef">How will the experiment be conducted</a>
+        </h3>
+<p id="section-3.2-1">YANG modules developed in the IETF fall broadly into two
+categories. They can be new modules, or they can be a "bis"
+version of the module. The experiment will consist of two or
+more YANG modules, such that at least one of them is a new
+YANG module, and the other is a "bis" version of the YANG
+module. This is being done to make sure that the experiment
+covers all the IETF processes related to the development of
+YANG modules.<a href="#section-3.2-1" class="pilcrow">¶</a></p>
+<p id="section-3.2-2">Participants in the experiment are encouraged to document
+their overall experience, including whether the SCM-based
+approach genuinely improved participation and velocity, or
+whether observed speed gains were attributable to other
+factors such as low contention on a specific module.  This
+qualitative feedback is as important to the experiment as
+the publication outcome itself.<a href="#section-3.2-2" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="sec-determine">
+<section id="section-3.3">
+        <h3 id="name-how-will-success-be-determi">
+<a href="#section-3.3" class="section-number selfRef">3.3. </a><a href="#name-how-will-success-be-determi" class="section-name selfRef">How will success be determined</a>
+        </h3>
+<p id="section-3.3-1">The primary "exit criteria" for the experiment will be
+successful publication of the YANG modules identified as
+part of the experiment, within the timelines defined in
+<a href="#sec-timeline" class="auto internal xref">Section 3.4</a>.<a href="#section-3.3-1" class="pilcrow">¶</a></p>
+<p id="section-3.3-2">For an updated module, if IETF YANG model can be updated using an
+IETF WG consensus process (probably including an errata report) and
+WG github without republishing as a new RFC, the experiment should
+also be deemed as success.<a href="#section-3.3-2" class="pilcrow">¶</a></p>
+<p id="section-3.3-3">Beyond publication, success will also be evaluated based on
+whether the process improved community participation in YANG
+module development, and whether participants found the SCM-
+based workflow reduced friction compared to the traditional
+RFC-embedded approach.  A report documenting the overall
+experience and outcomes of the experiment SHOULD be produced
+at the conclusion of the experiment.<a href="#section-3.3-3" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="sec-timeline">
+<section id="section-3.4">
+        <h3 id="name-what-is-the-anticipated-tim">
+<a href="#section-3.4" class="section-number selfRef">3.4. </a><a href="#name-what-is-the-anticipated-tim" class="section-name selfRef">What is the anticipated timeline</a>
+        </h3>
+<p id="section-3.4-1">YANG modules have traditionally taken a long time to develop,
+sometimes taking over four years. However, for the purpose
+of this experiment, and since the idea is to demonstrate a
+faster way for a new YANG module to be developed, the
+timelines for the experiment are as follows:<a href="#section-3.4-1" class="pilcrow">¶</a></p>
+<p id="section-3.4-2">A new YANG module should be published within two years
+of the start of the experiment.
+A "bis" version of an existing YANG module, where the
+primary motivation is incremental updates rather than a
+ground-up redesign, should be published within one year.<a href="#section-3.4-2" class="pilcrow">¶</a></p>
+<p id="section-3.4-3">If the experiment takes longer than these timelines, the
+experiment should be deemed to have failed.  At that time,
+an analysis can be done as to why it failed and determine
+if the experiment should be repeated.<a href="#section-3.4-3" class="pilcrow">¶</a></p>
+<p id="section-3.4-4">If the experiment succeeds, then this document can be
+classified as a BCP, and the process be followed for all
+YANG modules developed in IETF.<a href="#section-3.4-4" class="pilcrow">¶</a></p>
+</section>
+</div>
+</section>
+</div>
+<div id="sec-operational">
+<section id="section-4">
+      <h2 id="name-operational-considerations">
+<a href="#section-4" class="section-number selfRef">4. </a><a href="#name-operational-considerations" class="section-name selfRef">Operational Considerations</a>
+      </h2>
+<p id="section-4-1">The separation of YANG modules from their companion documents has
+implications for the YANG review process.  YANG Doctors
+SHOULD review the YANG module at the specific
+tagged version referenced by the document, using tooling that
+can retrieve and validate modules directly from the SCM
+repository.<a href="#section-4-1" class="pilcrow">¶</a></p>
+<p id="section-4-2">Working Groups adopting VELOCE are encouraged to define
+milestone-based development targets for YANG modules.  A phased
+approach, where an initial version covering core functionality is
+published within a defined timeframe, with subsequent updates
+published as needed, is preferable to indefinitely delaying
+publication while pursuing completeness.<a href="#section-4-2" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="security-considerations">
+<section id="section-5">
+      <h2 id="name-security-considerations">
+<a href="#section-5" class="section-number selfRef">5. </a><a href="#name-security-considerations" class="section-name selfRef">Security Considerations</a>
+      </h2>
+<p id="section-5-1">The security considerations discussed in Section 10 of
+<span>[<a href="#RFC8874" class="cite xref">RFC8874</a>]</span> apply here.<a href="#section-5-1" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="iana-considerations">
+<section id="section-6">
+      <h2 id="name-iana-considerations">
+<a href="#section-6" class="section-number selfRef">6. </a><a href="#name-iana-considerations" class="section-name selfRef">IANA Considerations</a>
+      </h2>
+<p id="section-6-1">This document has no IANA actions.<a href="#section-6-1" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="sec-normative-references">
+<section id="section-7">
+      <h2 id="name-normative-references">
+<a href="#section-7" class="section-number selfRef">7. </a><a href="#name-normative-references" class="section-name selfRef">Normative References</a>
+      </h2>
+<dl class="references">
+<dt id="RFC2119">[RFC2119]</dt>
+      <dd>
+<span class="refAuthor">Bradner, S.</span>, <span class="refTitle">"Key words for use in RFCs to Indicate Requirement Levels"</span>, <span class="seriesInfo">BCP 14</span>, <span class="seriesInfo">RFC 2119</span>, <span class="seriesInfo">DOI 10.17487/RFC2119</span>, <time datetime="1997-03" class="refDate">March 1997</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc2119">https://www.rfc-editor.org/rfc/rfc2119</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC2418">[RFC2418]</dt>
+      <dd>
+<span class="refAuthor">Bradner, S.</span>, <span class="refTitle">"IETF Working Group Guidelines and Procedures"</span>, <span class="seriesInfo">BCP 25</span>, <span class="seriesInfo">RFC 2418</span>, <span class="seriesInfo">DOI 10.17487/RFC2418</span>, <time datetime="1998-09" class="refDate">September 1998</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc2418">https://www.rfc-editor.org/rfc/rfc2418</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC8174">[RFC8174]</dt>
+      <dd>
+<span class="refAuthor">Leiba, B.</span>, <span class="refTitle">"Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words"</span>, <span class="seriesInfo">BCP 14</span>, <span class="seriesInfo">RFC 8174</span>, <span class="seriesInfo">DOI 10.17487/RFC8174</span>, <time datetime="2017-05" class="refDate">May 2017</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc8174">https://www.rfc-editor.org/rfc/rfc8174</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC8874">[RFC8874]</dt>
+      <dd>
+<span class="refAuthor">Thomson, M.</span> and <span class="refAuthor">B. Stark</span>, <span class="refTitle">"Working Group GitHub Usage Guidance"</span>, <span class="seriesInfo">RFC 8874</span>, <span class="seriesInfo">DOI 10.17487/RFC8874</span>, <time datetime="2020-08" class="refDate">August 2020</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc8874">https://www.rfc-editor.org/rfc/rfc8874</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC8875">[RFC8875]</dt>
+      <dd>
+<span class="refAuthor">Cooper, A.</span> and <span class="refAuthor">P. Hoffman</span>, <span class="refTitle">"Working Group GitHub Administration"</span>, <span class="seriesInfo">RFC 8875</span>, <span class="seriesInfo">DOI 10.17487/RFC8875</span>, <time datetime="2020-08" class="refDate">August 2020</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc8875">https://www.rfc-editor.org/rfc/rfc8875</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC9595">[RFC9595]</dt>
+      <dd>
+<span class="refAuthor">Veillette, M., Ed.</span>, <span class="refAuthor">Pelov, A., Ed.</span>, <span class="refAuthor">Petrov, I., Ed.</span>, <span class="refAuthor">Bormann, C.</span>, and <span class="refAuthor">M. Richardson</span>, <span class="refTitle">"YANG Schema Item iDentifier (YANG SID)"</span>, <span class="seriesInfo">RFC 9595</span>, <span class="seriesInfo">DOI 10.17487/RFC9595</span>, <time datetime="2024-07" class="refDate">July 2024</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc9595">https://www.rfc-editor.org/rfc/rfc9595</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC9907">[RFC9907]</dt>
+    <dd>
+<span class="refAuthor">Bierman, A.</span>, <span class="refAuthor">Boucadair, M., Ed.</span>, and <span class="refAuthor">Q. Wu</span>, <span class="refTitle">"Guidelines for Authors and Reviewers of Documents Containing YANG Data Models"</span>, <span class="seriesInfo">BCP 216</span>, <span class="seriesInfo">RFC 9907</span>, <span class="seriesInfo">DOI 10.17487/RFC9907</span>, <time datetime="2026-03" class="refDate">March 2026</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc9907">https://www.rfc-editor.org/rfc/rfc9907</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+</dl>
+</section>
+</div>
+<div id="acknowledgments">
+<section id="appendix-A">
+      <h2 id="name-acknowledgments">
+<a href="#name-acknowledgments" class="section-name selfRef">Acknowledgments</a>
+      </h2>
+<p id="appendix-A-1">This draft is triggered by the discussion in NEMOPS IAB workshop.<a href="#appendix-A-1" class="pilcrow">¶</a></p>
+<p id="appendix-A-2">Thanks to the participants of OPSAWG for their comments that
+have helped shape this draft.  In particular, thanks to
+Jeffrey Haas, Joe Clarke, Italo Busi, and Mohamed Boucadair
+for their feedback during IETF 125.<a href="#appendix-A-2" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="authors-addresses">
+<section id="appendix-B">
+      <h2 id="name-authors-addresses">
+<a href="#name-authors-addresses" class="section-name selfRef">Authors' Addresses</a>
+      </h2>
+<address class="vcard">
+        <div dir="auto" class="left"><span class="fn nameRole">Mahesh Jethanandani</span></div>
+<div dir="auto" class="left"><span class="org">Arrcus</span></div>
+<div class="email">
+<span>Email:</span>
+<a href="mailto:mjethanandani@gmail.com" class="email">mjethanandani@gmail.com</a>
+</div>
+</address>
+<address class="vcard">
+        <div dir="auto" class="left"><span class="fn nameRole">Qin Wu</span></div>
+<div dir="auto" class="left"><span class="org">Huawei</span></div>
+<div class="email">
+<span>Email:</span>
+<a href="mailto:bill.wu@huawei.com" class="email">bill.wu@huawei.com</a>
+</div>
+</address>
+</section>
+</div>
+<script>const toc = document.getElementById("toc");
+toc.querySelector("h2").addEventListener("click", e => {
+  toc.classList.toggle("active");
+});
+toc.querySelector("nav").addEventListener("click", e => {
+  toc.classList.remove("active");
+});
+</script>
+</body>
+</html>
