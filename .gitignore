@@ -1,6 +1,7 @@
 # Emacs tmp files
 *~
 #*#
+.claude
 
 # tmp draft files
 draft/draft-mahesh-opsawg-veloce-yang-*.*
