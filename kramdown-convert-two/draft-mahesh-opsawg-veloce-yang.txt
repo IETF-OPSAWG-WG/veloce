@@ -6,8 +6,6 @@ Operations and Management Area Working Group             M. Jethanandani
 Internet-Draft                                                    Arrcus
 Intended status: Informational                                     Q. Wu
 Expires: 12 February 2027                                         Huawei
-                                                           M. Richardson
-                                                Sandelman Software Works
                                                           11 August 2026
 
 
@@ -379,8 +377,3 @@ Authors' Addresses
    Qin Wu
    Huawei
    Email: bill.wu@huawei.com
-
-
-   Michael Richardson
-   Sandelman Software Works
-   Email: mcr+ietf@sandelman.ca
