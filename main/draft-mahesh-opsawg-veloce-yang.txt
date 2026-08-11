@@ -4,7 +4,7 @@
 
 Operations and Management Area Working Group             M. Jethanandani
 Internet-Draft                                                    Arrcus
-Intended status: Informational                                     Q. Wu
+Intended status: Experimental                                      Q. Wu
 Expires: 12 February 2027                                         Huawei
                                                            M. Richardson
                                                 Sandelman Software Works
