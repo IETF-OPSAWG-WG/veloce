@@ -1,7 +1,7 @@
 ---
 title: "YANG deVELpment PrOCEss and maintenance (VELOCE)"
 abbrev: "VELOCE"
-category: info
+category: exp
 
 docname: draft-mahesh-opsawg-veloce-yang-latest
 submissiontype: IETF  # also: "independent", "editorial", "IAB", or "IRTF"
@@ -34,6 +34,11 @@ author:
    fullname: "Qin Wu"
    organization: Huawei
    email: "bill.wu@huawei.com"
+
+ -
+   fullname: "Michael Richardson"
+   organization: Sandelman Software Works
+   email: "mcr+ietf@sandelman.ca"
 
 normative:
 
@@ -126,13 +131,20 @@ chairs. However, once the document is adopted as a WG item,
 the repository SHOULD reside under the auspecies
 of IETF controlled repository and managed by the WG. The
 name of the repository SHOULD reflect the name
-of the draft. In addition, the chairs MAY make
+of the draft. When updating an existing module, it is RECOMMENDED to use the
+	same WG repository of the initial version of YANG module for the
+	updated module maintenance. If no existing repository exists, then a new one MUST
+	be created, initialized with the last approved YANG module, so that
+	proposed changes are traceable. In addition, the chairs MAY make
 sure that an appropriate CI/CD YANG validation is in place.  It
-is RECOMMENDED that a containerized build
-environment be provided in the repository to enable local
-validation of YANG modules (e.g., via yanglint) independently of
-the CI/CD pipeline, and to ensure a consistent development
-environment across all contributors.
+is RECOMMENDED that a real time collaborative working environment
+be provided in the repository to enable online validation of YANG
+modules (e.g., via yanglint) using the YANG template with the CI/CD
+pipeline (e.g., https://github.com/IETF-OPS-AD/I-D-with-yang-template),
+and to ensure a consistent development environment across all
+contributors. In addition, a containerized build environment for local
+validation of YANG modules MAY also be provided in the repository as
+a backup.
 
 The procedure for managing WG documents (e.g., assign editors)
 applies for managing YANG modules (Section 6.1 of IETF Working
@@ -152,26 +164,37 @@ having a branch that corresponds to the version of the draft.
 Contribution methods for the YANG module are similar to those
 defined in Section 4 of Working Group GitHub Usage
 Guidance {{!RFC8874}}. This includes the use of Issues to track open
-issues regarding the module. They, along with corresponding
-links to the Pull Request (PR), are a useful way to record
-decisions made by the WG.
+issues regarding the module, email notifications of activity on working group repositories,
+ Editor's reporting or change log about the changes to the document (refer to
+to Section 4.3 of {{!RFC8874}} for monitoring activity). They, along with corresponding
+links to the Pull Request (PR), are a useful way to record decisions made by the WG.
 
 PRs allow for a user to request a change to the repository. A
 user does not need to have write access to the repository. A
 fork of the repository allows the user to make changes,
 validate them, and post the changes as a PR against the WG
-repository. Editors of the YANG module are encouraged not to
+repository. The editor team for regular contributors can be
+set up by the working group. Editors or editor team of the YANG module are encouraged not to
 accept changes into the "main" branch of the
 repository. Instead, they should be directed to a branch
-that is used for development. This allows the editors to review
+that is used for development. This allows the editors or editor team to review
 the changes and make sure that they are in line with the WG
 consensus before they are merged into the main branch.
 This also allows the editors to make sure that the changes are properly
-validated before they are merged into the main branch.
+validated before they are merged into the main branch,e.g., one editor
+	create a pull request and another merge it (refer to Section 4.2 of {{!RFC8874}}.
 
 A procedure for assessing consensus is discussed in Section 7 of Working
 Group GitHub Usage Guidance {{!RFC8874}} and SHOULD be
-followed when accepting changes to the module.
+followed when accepting changes to the module in the ongoing
+working group document. This include approving and merging
+changes by document editors appointed by the Working group
+at the discretion of the editor team, making decision on
+consensus regarding changes to document, recording details of
+decisions in issue comments, closing issues by document editor
+or user that open those issues. Working group chairs should be involved to
+make sure the consensus has been reached when Editors summarize the issues
+to the WG to prepare for a new release.
 
 The YANG module MUST NOT be inserted in the
 document; instead, a link to the above repository
@@ -186,6 +209,13 @@ for YANG/CBOR encoding), SHOULD reside in the
 SCM repository rather than in the document.  The use of RFC 8792
 folding for SID files in Internet-Drafts is discouraged, as it
 is not compatible with current YANG Doctor tooling.
+
+When updating an existing, published module, IETF errata reports can
+be used to keep track of changes for both the YANG module and its
+corresponding RFC text. In the case the errata pertains to the YANG
+module, once the Area Director (AD) verifies the errata using the
+existing IETF process, a Pull Request (PR) is opened to merge the changes
+into the WG repository.
 
 A bis version of the initial RFC MAY be
 considered if a major change needs to be added in the
