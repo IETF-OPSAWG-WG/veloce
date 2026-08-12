@@ -4,10 +4,10 @@
 
 This is the working area for the individual Internet-Draft, "YANG deVELopment PrOCEss and maintenance (VELOCE)".
 
-* [Editor's Copy](https://mjethanandani.github.io/veloce/#go.draft-mahesh-opsawg-veloce-yang.html)
+* [Editor's Copy](https://ietf-opsawg-wg.github.io/veloce/#go.draft-mahesh-opsawg-veloce-yang.html)
 * [Datatracker Page](https://datatracker.ietf.org/doc/draft-mahesh-opsawg-veloce-yang)
 * [Individual Draft](https://datatracker.ietf.org/doc/html/draft-mahesh-opsawg-veloce-yang)
-* [Compare Editor's Copy to Individual Draft](https://author-tools.ietf.org/api/iddiff?doc_1=draft-mahesh-opsawg-veloce-yang&url_2=https://mjethanandani.github.io/veloce/main/draft-mahesh-opsawg-veloce-yang.txt)
+* [Compare Editor's Copy to Individual Draft](https://author-tools.ietf.org/api/iddiff?doc_1=draft-mahesh-opsawg-veloce-yang&url_2=https://ietf-opsawg-wg.github.io/veloce/main/draft-mahesh-opsawg-veloce-yang.txt)
 
 
 ## Contributing
