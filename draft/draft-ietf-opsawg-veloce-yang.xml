@@ -18,7 +18,7 @@
     symRefs="true"
     version="3">
   <front>
-    <title abbrev="VELOCE">YANG deVELpment PrOCEss and maintenance (VELOCE)</title>
+    <title abbrev="VELOCE">YANG deVELopment prOCEss and maintenance (VELOCE)</title>
     <author fullname="Mahesh Jethanandani">
       <organization>Arrcus, Inc</organization>
       <address>
@@ -33,7 +33,7 @@
     <keyword>YANG GitHub</keyword>
     <abstract>
       <t>
-	This document describes a YANG deVELpment PrOCEss and
+	This document describes a YANG deVELopment prOCEss and
 	maintenance (VELOCE) that is more suitable for the development
 	of YANG modules or YANG modules update within the IETF.
       </t>
@@ -271,6 +271,11 @@
 	  successful publication of the YANG modules identified as
 	  part of the experiment, within the timelines defined in
 	  <xref target="what-is-the-anticipated-timeline"/>.
+	</t>
+    <t>
+	 For an updated module, if IETF YANG model can be updated using an IETF WG consensus process (probably including an 
+     errata report) and WG github without republishing as a new RFC, the
+     experiment should also be deemed as success.
 	</t>
 	<t>
 	  Beyond publication, success will also be evaluated based on
