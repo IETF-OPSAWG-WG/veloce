@@ -203,6 +203,17 @@
 	are permanently retrievable and verifiable.
       </t>
       <t>
+	VELOCE does not mandate which version of a YANG module
+	implementations must support. The link in the published RFC
+	identifies the module version current at the time of
+	publication, but implementations <bcp14>MAY</bcp14> track a
+	later, backward-compatible version at their discretion.
+	Conformance to the module <bcp14>SHOULD</bcp14> be indicated by
+	citing the specific module version (e.g., its revision-date or
+	release tag) rather than the RFC number alone, since the module
+	may evolve independently of the RFC text.
+      </t>
+      <t>
 	YANG SID files <xref target="RFC9595"/>, when applicable (e.g.,
 	for YANG/CBOR encoding), <bcp14>SHOULD</bcp14> reside in the
 	SCM repository rather than in the document.  The use of RFC 8792
