@@ -37,13 +37,17 @@ To build the draft, type make in the root of the repository
 
 # Fixing and tracking issues
 
-Before proposing any change to the draft, open an issue under the GitHub Issues tab describing the problem or suggestion. All technical discussion should happen there. Once the draft has been adopted as a working group item, discussion should also take place on the WG mailing list, with a pointer to the GitHub issue for tracking.
+As part of proposing any change to the draft, open an issue under the GitHub Issues tab describing the problem or suggestion. At the same time, if you are ready to propose text for the draft, open a PR.
 
-Only after there has been sufficient discussion and rough consensus on the issue should a PR be created. Create the PR from a branch named `issue-xx`, where `xx` is the GitHub issue number, e.g.:
+The issue can be discussed and the PR updated in the biweekly VELOCE process. Once the text has been agreed up, a summary of it will be posted to the the WG mailing list, with a pointer to the GitHub issue or PR. Unless there is an objection, the PR will be merged after a period of two weeks.
+
+Create the PR from a branch named `issue-xx`, where `xx` is the GitHub issue number, e.g.:
 
 	`git checkout -b issue-42`
 
 Link the PR to the issue using the Development panel on the PR page (or by including `Closes #42` in the PR description) so that the issue is automatically closed when the PR is merged. Make sure the PR is targeted at the correct version branch.
+
+All authors are currently deemed to be editors, therefore any of the authors can pick up an issue and propose text in a PR related to the issue.
 
 # Publishing the draft
 
