@@ -35,11 +35,6 @@ author:
    organization: Huawei
    email: "bill.wu@huawei.com"
 
- -
-   fullname: "Michael Richardson"
-   organization: Sandelman Software Works
-   email: "mcr+ietf@sandelman.ca"
-
 normative:
 
 informative:
@@ -57,7 +52,7 @@ Discussion Venues
    This note is to be removed before publishing as an RFC.
 
    Source for this draft and an issue tracker can be found at
-   https://github.com/mjethanandani/veloce/tree/main.
+   https://github.com/ietf-opsawg-wg/veloce/tree/main.
 
 --- middle
 
