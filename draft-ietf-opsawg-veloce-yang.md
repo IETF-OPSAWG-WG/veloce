@@ -34,6 +34,7 @@ author:
    fullname: "Qin Wu"
    organization: Huawei
    email: "bill.wu@huawei.com"
+
 -
   fullname: "Michael Richardson"
   organization: Sandelman Software Works
