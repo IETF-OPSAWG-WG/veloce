@@ -40,6 +40,18 @@ author:
   organization: Sandelman Software Works
   email: "mcr+ietf@sandelman.ca"
 
+ -
+  fullname: "Dhruv Dhody"
+  organization: Huawei
+  email: "dd@dhruvdhody.com"
+
+contributor:
+
+ -
+  fullname: Italo Busi
+  organization: Huawei
+  email: Italo.Busi@huawei.com
+
 normative:
 
 informative:
