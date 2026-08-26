@@ -3,7 +3,7 @@ title: "YANG deVELopment PrOCEss and maintenance (VELOCE)"
 abbrev: "VELOCE"
 category: info
 
-docname: draft-mahesh-opsawg-veloce-yang-latest
+docname: draft-ietf-opsawg-veloce-yang-latest
 submissiontype: IETF  # also: "independent", "editorial", "IAB", or "IRTF"
 number:
 date:
