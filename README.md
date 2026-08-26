@@ -7,7 +7,7 @@ This is the working area for the individual Internet-Draft, "YANG deVELopment Pr
 * [Editor's Copy](https://ietf-opsawg-wg.github.io/veloce/#go.draft-ietf-opsawg-veloce-yang.html)
 * [Datatracker Page](https://datatracker.ietf.org/doc/draft-ietf-opsawg-veloce-yang)
 * [Working Group Draft](https://datatracker.ietf.org/doc/html/draft-ietf-opsawg-veloce-yang)
-* [Compare Editor's Copy to WG Draft](https://author-tools.ietf.org/api/iddiff?doc_1=draft-ietf-opsawg-veloce-yang&url_2=https://ietf-opsawg-wg.github.io/veloce/main/draft-ietf-opsawg-veloce-yang.txt)
+* [Compare Editor's Copy to WG Draft](https://author-tools.ietf.org/api/iddiff?doc_1=draft-ietf-opsawg-veloce-yang&url_2=https://ietf-opsawg-wg.github.io/veloce/draft-ietf-opsawg-veloce-yang.txt)
 
 
 ## Contributing
