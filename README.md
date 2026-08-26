@@ -4,16 +4,18 @@
 
 This is the working area for the individual Internet-Draft, "YANG deVELopment PrOCEss and maintenance (VELOCE)".
 
-* [Editor's Copy](https://mjethanandani.github.io/veloce/#go.draft-mahesh-opsawg-veloce-yang.html)
-* [Datatracker Page](https://datatracker.ietf.org/doc/draft-mahesh-opsawg-veloce-yang)
-* [Individual Draft](https://datatracker.ietf.org/doc/html/draft-mahesh-opsawg-veloce-yang)
-* [Compare Editor's Copy to Individual Draft](https://mjethanandani.github.io/veloce/#go.draft-mahesh-opsawg-veloce-yang.diff)
+* [Editor's Copy](https://ietf-opsawg-wg.github.io/veloce/#go.draft-ietf-opsawg-veloce-yang.html)
+* [Datatracker Page](https://datatracker.ietf.org/doc/draft-ietf-opsawg-veloce-yang)
+* [Working Group Draft](https://datatracker.ietf.org/doc/html/draft-ietf-opsawg-veloce-yang)
+* [Compare Editor's Copy to WG Draft](https://author-tools.ietf.org/api/iddiff?doc_1=draft-ietf-opsawg-veloce-yang&url_2=https://ietf-opsawg-wg.github.io/veloce/draft-ietf-opsawg-veloce-yang.txt)
 
+## Working method
+See the [The proposed working flow on VELOCE work development](https://github.com/IETF-OPSAWG-WG/veloce/blob/v02/README.md)
 
 ## Contributing
 
 See the
-[guidelines for contributions](https://github.com/mjethanandani/veloce/blob/v02/CONTRIBUTING.md).
+[guidelines for contributions](https://github.com/ietf-opsawg-wg/veloce/blob/main/CONTRIBUTING.md).
 
 The contributing file also has tips on how to make contributions, if you
 don't already know how to do that.

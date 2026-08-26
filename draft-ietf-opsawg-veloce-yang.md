@@ -1,7 +1,7 @@
 ---
 title: "YANG deVELopment PrOCEss and maintenance (VELOCE)"
 abbrev: "VELOCE"
-category: info
+category: exp
 
 docname: draft-ietf-opsawg-veloce-yang-latest
 submissiontype: IETF  # also: "independent", "editorial", "IAB", or "IRTF"
@@ -94,10 +94,10 @@ being proposed. This iterative approach lends itself to faster
 development and fixing of issues in YANG modules.
 
 Guidance for writing YANG modules is discussed in {{!RFC9907}}.
-Guidelines related to code components (section3.2 of {{!RFC9907}})
+Guidelines related to code components (Section3.2 of {{!RFC9907}})
 or citations to references listed in the YANG module do not apply to VELOCE.
 
-# Conventions and Definitions
+## Conventions and Definitions
 
 The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
 "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and
@@ -112,13 +112,13 @@ on how a WG develops a new YANG module or updates an existing
 YANG module:
 
 It is RECOMMENDED that IETF-hosted repositories
-be used. See section 1.3 of Working Group GitHub Usage
+be used. See Section 1.3 of Working Group GitHub Usage
 Guidance {{!RFC8874}}. Integration using third-party hosted
 repositories MAY be used for experimentation purposes.
 
 A new repository MUST be created by the WG
-Chairs following the procedure in section 3.2 of Working Group
-GitHub Usage Guidance {{!RFC8874}} for to develop or maintain a YANG
+Chairs following the procedure in Section 3.2 of Working Group
+GitHub Usage Guidance {{!RFC8874}} to develop or maintain a YANG
 Module. For a new module, this SHOULD happen when
 the module is adopted as a WG item. It MAY happen for
 individual drafts, and that is left to the discretion of the
@@ -126,19 +126,26 @@ chairs. However, once the document is adopted as a WG item,
 the repository SHOULD reside under the auspecies
 of IETF controlled repository and managed by the WG. The
 name of the repository SHOULD reflect the name
-of the draft. In addition, the chairs MAY make
+of the draft. When updating an existing module, it is RECOMMENDED to use the
+	same WG repository of the initial version of YANG module for the
+	updated module maintenance. If no existing repository exists, then a new one MUST
+	be created, initialized with the last approved YANG module, so that
+	proposed changes are traceable. In addition, the chairs MAY make
 sure that an appropriate CI/CD YANG validation is in place.  It
-is RECOMMENDED that a containerized build
-environment be provided in the repository to enable local
-validation of YANG modules (e.g., via yanglint) independently of
-the CI/CD pipeline, and to ensure a consistent development
-environment across all contributors.
+is RECOMMENDED that a real time collaborative working environment
+be provided in the repository to enable online validation of YANG
+modules (e.g., via yanglint) using the YANG template with the CI/CD
+pipeline (e.g., https://github.com/IETF-OPS-AD/I-D-with-yang-template),
+and to ensure a consistent development environment across all
+contributors. In addition, a containerized build environment for local
+validation of YANG modules MAY also be provided in the repository as
+a backup.
 
 The procedure for managing WG documents (e.g., assign editors)
-applies for managing YANG modules (section 6.1 of IETF Working
-Group Guidelines and Procedures {{!RFC2418}}. For considerations
+applies for managing YANG modules (Section 6.1 of IETF Working
+Group Guidelines and Procedures {{!RFC2418}}). For considerations
 related to granting editors write and administrators' right refer to
-section 3.3 of Working Group GitHub Usage Guidance {{!RFC8874}}.
+Section 3.3 of Working Group GitHub Usage Guidance {{!RFC8874}}.
 
 Other administrative policies as they relate to migration,
 personal change or the WG closing is defined in the Working
@@ -150,28 +157,39 @@ once published. This can come in the form of a 'git tag' or by
 having a branch that corresponds to the version of the draft.
 
 Contribution methods for the YANG module are similar to those
-defined in section 4 of Working Group GitHub Usage
+defined in Section 4 of Working Group GitHub Usage
 Guidance {{!RFC8874}}. This includes the use of Issues to track open
-issues regarding the module. They, along with corresponding
-links to the Pull Request (PR), are a useful way to record
-decisions made by the WG.
+issues regarding the module, email notifications of activity on working group repositories,
+ Editor's reporting or change log about the changes to the document (refer to
+to Section 4.3 of {{!RFC8874}} for monitoring activity). They, along with corresponding
+links to the Pull Request (PR), are a useful way to record decisions made by the WG.
 
-PR allow for a user to request a change to the repository. A
+PRs allow for a user to request a change to the repository. A
 user does not need to have write access to the repository. A
 fork of the repository allows the user to make changes,
 validate them, and post the changes as a PR against the WG
-repository. Editors of the YANG module are encouraged not to
+repository. The editor team for regular contributors can be
+set up by the working group. Editors or editor team of the YANG module are encouraged not to
 accept changes into the "main" or "master" branch of the
 repository. Instead, they should be directed to a branch
-that is used for development. This allows the editors to review
+that is used for development. This allows the editors or editor team to review
 the changes and make sure that they are in line with the WG
 consensus before they are merged into the main branch.
 This also allows the editors to make sure that the changes are properly
-validated before they are merged into the main branch.
+validated before they are merged into the main branch,e.g., one editor
+	create a pull request and another merge it (refer to Section 4.2 of {{!RFC8874}}.
 
-A procedure for assessing consensus is discussed in section 7 of Working
+A procedure for assessing consensus is discussed in Section 7 of Working
 Group GitHub Usage Guidance {{!RFC8874}} and SHOULD be
-followed when accepting changes to the module.
+followed when accepting changes to the module in the ongoing
+working group document. This include approving and merging
+changes by document editors appointed by the Working group
+at the discretion of the editor team, making decision on
+consensus regarding changes to document, recording details of
+decisions in issue comments, closing issues by document editor
+or user that open those issues. Working group chairs should be involved to
+make sure the consensus has been reached when Editors summarize the issues
+to the WG to prepare for a new release.
 
 The YANG module MUST NOT be inserted in the
 document; instead, a link to the above repository
@@ -453,5 +471,5 @@ This draft is triggered by the discussion in NEMOPS IAB workshop.
 
 Thanks to the participants of OPSAWG for their comments that
 have helped shape this draft.  In particular, thanks to
-Jeffrey Haas, Joe Clarke, Dhruv Dhody, Per Andersson，Italo Busi,
-and Mohamed Boucadair for their feedback during IETF 125.
+Jeffrey Haas, Joe Clarke, Italo Busi, and Mohamed Boucadair
+for their feedback during IETF 125.
