@@ -331,7 +331,7 @@ In order to provide the best introduction to the life cycle, the process will be
 ### Revision of a Module
 
 An individual (or an individual given an action by a WG) goes to the repository given by the "latest" entry for the module revision.
-The module and related files are forked to a new git repository, on a new branch.
+A new branch created for the revisions.  (This may be in a new related repository, forked, depending upon permissions)
 The files are edited as desired and then an annotated (possibly signed) git tag is created, creating a new stable reference.
 
 ### Registration the new proposed module
