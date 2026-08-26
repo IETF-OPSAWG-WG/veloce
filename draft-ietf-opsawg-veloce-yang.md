@@ -121,7 +121,7 @@ be used. See Section 1.3 of Working Group GitHub Usage
 Guidance {{!RFC8874}}. Integration using third-party hosted
 repositories MAY be used for experimentation purposes.
 
-A new repository MUST be created by the WG
+An IETF-hosted repository MUST be created by the WG
 Chairs following the procedure in Section 3.2 of Working Group
 GitHub Usage Guidance {{!RFC8874}} to develop or maintain a YANG
 Module. For a new module, this SHOULD happen when
@@ -152,8 +152,8 @@ Group Guidelines and Procedures {{!RFC2418}}). For considerations
 related to granting editors write and administrators' right refer to
 Section 3.3 of Working Group GitHub Usage Guidance {{!RFC8874}}.
 
-Other administrative policies as they relate to migration,
-personal change or the WG closing is defined in the Working
+Other administrative policies such as ones relate to migration,
+personnel changes or the WG closing are defined in the Working
 Group GitHub Administration {{!RFC8875}}.
 
 A release tagging mechanism should be defined to track the
@@ -175,7 +175,7 @@ fork of the repository allows the user to make changes,
 validate them, and post the changes as a PR against the WG
 repository. The editor team for regular contributors can be
 set up by the working group. Editors or editor team of the YANG module are encouraged not to
-accept changes into the "main" or "master" branch of the
+accept changes into the "main" branch of the
 repository. Instead, they should be directed to a branch
 that is used for development. This allows the editors or editor team to review
 the changes and make sure that they are in line with the WG
@@ -253,9 +253,9 @@ review comments on otherwise unchanged sections.
 YANG modules developed in the IETF fall broadly into two
 categories. They can be new modules, or they can be a "bis"
 version of the module. The experiment will consist of two or
-more YANG modules, such that at least one of them is a new
+more YANG module work, such that at least one of them is a new
 YANG module, and the other is a "bis" version of the YANG
-module. This is being done to make sure that the experiment
+module work. This is being done to make sure that the experiment
 covers all the IETF processes related to the development of
 YANG modules.
 
@@ -295,9 +295,10 @@ of this experiment, and since the idea is to demonstrate a
 faster way for a new YANG module to be developed, the
 timelines for the experiment are as follows:
 
-A new YANG module should be published within two years
+- A new YANG module should be published within two years
 of the start of the experiment.
-A "bis" version of an existing YANG module, where the
+
+- A "bis" version of an existing YANG module, where the
 primary motivation is incremental updates rather than a
 ground-up redesign, should be published within one year.
 
@@ -345,5 +346,5 @@ This draft is triggered by the discussion in NEMOPS IAB workshop.
 
 Thanks to the participants of OPSAWG for their comments that
 have helped shape this draft.  In particular, thanks to
-Jeffrey Haas, Joe Clarke, Italo Busi, and Mohamed Boucadair
-for their feedback during IETF 125.
+Jeffrey Haas, Joe Clarke, Per Andersson, Italo Busi, and
+Mohamed Boucadair for their feedback during IETF 125.
