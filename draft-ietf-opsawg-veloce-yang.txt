@@ -6,8 +6,6 @@ Operations and Management Area Working Group             M. Jethanandani
 Internet-Draft                                                    Arrcus
 Intended status: Experimental                                      Q. Wu
 Expires: 27 February 2027                                         Huawei
-                                                           M. Richardson
-                                                Sandelman Software Works
                                                           26 August 2026
 
 
@@ -25,7 +23,7 @@ Abstract
    This note is to be removed before publishing as an RFC.
 
    Source for this draft and an issue tracker can be found at
-   https://github.com/mjethanandani/veloce/tree/main.
+   https://github.com/ietf-opsawg-wg/veloce/tree/main.
 
 About This Document
 
@@ -406,8 +404,3 @@ Authors' Addresses
    Qin Wu
    Huawei
    Email: bill.wu@huawei.com
-
-
-   Michael Richardson
-   Sandelman Software Works
-   Email: mcr+ietf@sandelman.ca
