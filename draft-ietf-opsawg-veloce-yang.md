@@ -3,7 +3,7 @@ title: "YANG deVELpment PrOCEss and maintenance (VELOCE)"
 abbrev: "VELOCE"
 category: exp
 
-docname: draft-mahesh-opsawg-veloce-yang-latest
+docname: draft-ietf-opsawg-veloce-yang-latest
 submissiontype: IETF  # also: "independent", "editorial", "IAB", or "IRTF"
 number:
 date:
@@ -20,8 +20,8 @@ venue:
   type: "Working Group"
   mail: "opsawg@ietf.org"
   arch: "https://mailarchive.ietf.org/arch/browse/opsawg/"
-  github: "mjethanandani/veloce"
-  latest: "https://mjethanandani.github.io/veloce/draft-mahesh-opsawg-veloce-yang.html"
+  github: "ietf-opsawg-wg/veloce"
+  latest: "https://ietf-opsawg-wg.github.io/veloce/draft-ietf-opsawg-veloce-yang.html"
 
 author:
 
