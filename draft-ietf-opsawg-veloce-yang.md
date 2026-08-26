@@ -182,7 +182,7 @@ the changes and make sure that they are in line with the WG
 consensus before they are merged into the main branch.
 This also allows the editors to make sure that the changes are properly
 validated before they are merged into the main branch,e.g., one editor
-create a pull request and another merge it (refer to Section 4.2 of {{!RFC8874}}.
+creates a pull request and another editor merges it (refer to Section 4.2 of {{!RFC8874}}.
 
 A procedure for assessing consensus is discussed in Section 7 of Working
 Group GitHub Usage Guidance {{!RFC8874}} and SHOULD be
