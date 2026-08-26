@@ -20,8 +20,8 @@ venue:
   type: "Working Group"
   mail: "opsawg@ietf.org"
   arch: "https://mailarchive.ietf.org/arch/browse/opsawg/"
-  github: "mjethanandani/veloce"
-  latest: "https://mjethanandani.github.io/veloce/draft-mahesh-opsawg-veloce-yang.html"
+  github: "ietf-opsawg-wg/veloce"
+  latest: "https://ietf-opsawg-wg.github.io/veloce/draft-ietf-opsawg-veloce-yang.html"
 
 author:
 
@@ -52,7 +52,7 @@ Discussion Venues
    This note is to be removed before publishing as an RFC.
 
    Source for this draft and an issue tracker can be found at
-   https://github.com/mjethanandani/veloce/tree/main.
+   https://github.com/ietf-opsawg-wg/veloce/tree/main.
 
 --- middle
 
