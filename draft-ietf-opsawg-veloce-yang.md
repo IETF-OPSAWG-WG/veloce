@@ -132,10 +132,10 @@ the repository SHOULD reside under the auspecies
 of IETF controlled repository and managed by the WG. The
 name of the repository SHOULD reflect the name
 of the draft. When updating an existing module, it is RECOMMENDED to use the
-	same WG repository of the initial version of YANG module for the
-	updated module maintenance. If no existing repository exists, then a new one MUST
-	be created, initialized with the last approved YANG module, so that
-	proposed changes are traceable. In addition, the chairs MAY make
+same WG repository of the initial version of YANG module for the
+updated module maintenance. If no existing repository exists, then a new one MUST
+be created, initialized with the last approved YANG module, so that
+proposed changes are traceable. In addition, the chairs MAY make
 sure that an appropriate CI/CD YANG validation is in place.  It
 is RECOMMENDED that a real time collaborative working environment
 be provided in the repository to enable online validation of YANG
@@ -182,7 +182,7 @@ the changes and make sure that they are in line with the WG
 consensus before they are merged into the main branch.
 This also allows the editors to make sure that the changes are properly
 validated before they are merged into the main branch,e.g., one editor
-	create a pull request and another merge it (refer to Section 4.2 of {{!RFC8874}}.
+creates a pull request and another editor merges it (refer to Section 4.2 of {{!RFC8874}}.
 
 A procedure for assessing consensus is discussed in Section 7 of Working
 Group GitHub Usage Guidance {{!RFC8874}} and SHOULD be
@@ -203,6 +203,16 @@ MUST point to a specific tagged version of the
 YANG module (e.g., a git tag or commit hash), not to the HEAD of
 a branch, so that the module's contents at RFC publication time
 are permanently retrievable and verifiable.
+
+VELOCE does not mandate which version of a YANG module
+implementations must support. The link in the published RFC
+identifies the module version current at the time of
+publication, but implementations MAY track a
+later, backward-compatible version at their discretion.
+Conformance to the module SHOULD be indicated by
+citing the specific module version (e.g., its revision-date or
+release tag) rather than the RFC number alone, since the module
+may evolve independently of the RFC text.
 
 YANG SID files {{!RFC9595}}, when applicable (e.g.,
 for YANG/CBOR encoding), SHOULD reside in the
