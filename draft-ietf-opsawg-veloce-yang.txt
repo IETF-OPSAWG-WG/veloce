@@ -8,6 +8,8 @@ Intended status: Experimental                                      Q. Wu
 Expires: 27 February 2027                                         Huawei
                                                            M. Richardson
                                                 Sandelman Software Works
+                                                                D. Dhody
+                                                                  Huawei
                                                           26 August 2026
 
 
@@ -91,6 +93,7 @@ Table of Contents
    6.  IANA Considerations
    7.  Normative References
    Acknowledgments
+   Contributors
    Authors' Addresses
 
 1.  Introduction
@@ -396,6 +399,13 @@ Acknowledgments
    Clarke, Italo Busi, and Mohamed Boucadair for their feedback during
    IETF 125.
 
+Contributors
+
+   Italo Busi
+   Huawei
+   Email: Italo.Busi@huawei.com
+
+
 Authors' Addresses
 
    Mahesh Jethanandani
@@ -411,3 +421,8 @@ Authors' Addresses
    Michael Richardson
    Sandelman Software Works
    Email: mcr+ietf@sandelman.ca
+
+
+   Dhruv Dhody
+   Huawei
+   Email: dd@dhruvdhody.com
