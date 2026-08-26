@@ -358,7 +358,7 @@ Consensus Call.
 The rational for the changes to the YANG module are to be described in a regular  internet-draft, and the WG SHOULD adopt that internet-draft like any other I-D.
 (The intended status of the internet-draft MAY be set to Experimental, but ideally, a new status will be added: "For IESG Approval Consideration")
 
-The I-D SHOULD reference the YANG module, SID file, and tree diagram using the proposed syntax below.   A normative reference
+The I-D SHOULD reference the YANG module, SID file, and tree diagram using the proposed syntax below, as a normative reference.
 
 The WG process continues as for any I-D: reviews, WGLC, AD evaluation.
 Reviewers need to understand that they are reviewing the YANG modules (and SID files),
