@@ -9,6 +9,8 @@ This is the working area for the individual Internet-Draft, "YANG deVELopment Pr
 * [Working Group Draft](https://datatracker.ietf.org/doc/html/draft-ietf-opsawg-veloce-yang)
 * [Compare Editor's Copy to WG Draft](https://author-tools.ietf.org/api/iddiff?doc_1=draft-ietf-opsawg-veloce-yang&url_2=https://ietf-opsawg-wg.github.io/veloce/draft-ietf-opsawg-veloce-yang.txt)
 
+## Working method
+See the [The proposed working flow on VELOCE work development](https://github.com/IETF-OPSAWG-WG/veloce/tree/v02)
 
 ## Contributing
 
