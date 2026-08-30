@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-08-27T07:26:02.931120+00:00",
+  "timestamp": "2026-08-30T03:47:27.278023+00:00",
   "repo": "IETF-OPSAWG-WG/veloce",
   "labels": [
     {
@@ -3402,7 +3402,7 @@
       "labels": [],
       "body": "Address issue #51 ",
       "createdAt": "2026-08-25T04:28:32Z",
-      "updatedAt": "2026-08-27T00:25:06Z",
+      "updatedAt": "2026-08-27T15:27:24Z",
       "baseRepository": "IETF-OPSAWG-WG/veloce",
       "baseRefName": "v02",
       "baseRefOid": "a527b777cde0819e721ba53f787da51bfa8764d4",
@@ -3420,6 +3420,13 @@
           "body": "> please rebase to kramdown.\r\n\r\nThis is about the update to the readme in v-02 branch, based on Tuesday meeting discussion, we can add meta data to new readme in the main branch, my proposal is to add anchor point which point to the readme in v-02, see\r\n\"\r\nWorking method\r\nSee the [The proposed working flow on VELOCE work development](https://github.com/IETF-OPSAWG-WG/veloce/blob/v02/README.md)\r\n\"\r\nor \r\nhttps://github.com/IETF-OPSAWG-WG/veloce/tree/main",
           "createdAt": "2026-08-27T00:10:52Z",
           "updatedAt": "2026-08-27T00:10:52Z"
+        },
+        {
+          "author": "mcr",
+          "authorAssociation": "COLLABORATOR",
+          "body": "--------\n\nQin Wu ***@***.***> wrote:\n    > Not sure it works well, why main branch as default is not sufficient,\n\n+10\n",
+          "createdAt": "2026-08-27T15:27:24Z",
+          "updatedAt": "2026-08-27T15:27:24Z"
         }
       ],
       "reviews": [
@@ -3565,6 +3572,26 @@
               "body": "Not sure it works well, why main branch as default is not sufficient,\r\n e.g.,  in this repo, we can see several examples:\r\nhttps://github.com/IETF-OPSAWG-WG/veloce/tree/issue-60\r\nhttps://github.com/IETF-OPSAWG-WG/veloce/tree/issue-51\r\nhttps://github.com/IETF-OPSAWG-WG/veloce/tree/issue-03\r\nwhich incorporate all the changes in each new branch with your proposed naming.\r\n\r\nHowever when we submit one new PR, it will automatically generate a temporay Branch with the name starting with your github account, this temporary branch needs to be cleaned up or deleted when the corresponding PR has been merged.\r\nI think using  PR title+ PR number is sufficient, since\r\nwe also can use development knob in the PR page to link this PR to specific issue ticket, No?\r\nHere is the example:\r\n<img width=\"430\" height=\"143\" alt=\"image\" src=\"https://github.com/user-attachments/assets/336fc056-e0b9-4edc-9285-ce8b37dcc243\" />\r\n",
               "createdAt": "2026-08-27T00:25:06Z",
               "updatedAt": "2026-08-27T00:26:23Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDORMlxH88AAAABLH9N8A",
+          "commit": {
+            "abbreviatedOid": "961dcf6"
+          },
+          "author": "xorrkaz",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2026-08-27T13:47:50Z",
+          "updatedAt": "2026-08-27T13:47:51Z",
+          "comments": [
+            {
+              "originalPosition": 10,
+              "body": "I went to issue 70 and clicked the \"Create a branch\" link.  I get presented with a default of \"70-treat-classes-of-changes-differently-with-different-level-scrutiny\".  I can change it, but this is a nice start and does follow the Issue ID - Issue Title format.  Yes, cleaning up these branches is a good thing once a PR merges, but that would be the case with any naming scheme.",
+              "createdAt": "2026-08-27T13:47:50Z",
+              "updatedAt": "2026-08-27T13:47:51Z"
             }
           ]
         }
@@ -3823,7 +3850,7 @@
       "labels": [],
       "body": "Close Michael's #33 \r\n\r\nThis updates Qin's markdown copy with changes from 2026-05-19.",
       "createdAt": "2026-08-26T01:51:17Z",
-      "updatedAt": "2026-08-27T06:51:09Z",
+      "updatedAt": "2026-08-28T14:01:30Z",
       "baseRepository": "IETF-OPSAWG-WG/veloce",
       "baseRefName": "main",
       "baseRefOid": "edbd6cbce2d460f7ae759a20e17801e716859ab1",
@@ -3937,6 +3964,86 @@
           "createdAt": "2026-08-27T06:51:09Z",
           "updatedAt": "2026-08-27T06:51:09Z",
           "comments": []
+        },
+        {
+          "id": "PRR_kwDORMlxH88AAAABLH7fuw",
+          "commit": {
+            "abbreviatedOid": "69bd520"
+          },
+          "author": "xorrkaz",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2026-08-27T13:45:00Z",
+          "updatedAt": "2026-08-27T13:45:01Z",
+          "comments": [
+            {
+              "originalPosition": 5,
+              "body": "Maybe a repository within a Secretariat-maintained organization?  All of the \"official\" GitHub orgs were created by the Secretariat IIRC.",
+              "createdAt": "2026-08-27T13:45:00Z",
+              "updatedAt": "2026-08-27T13:45:01Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDORMlxH88AAAABLOjZzA",
+          "commit": {
+            "abbreviatedOid": "69bd520"
+          },
+          "author": "billwuqin",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2026-08-28T06:22:06Z",
+          "updatedAt": "2026-08-28T06:22:07Z",
+          "comments": [
+            {
+              "originalPosition": 5,
+              "body": "it is true based on the current proactice, one confusion, is, it looks Secretariat in the secretariat-maintained organization can be IEEE Secretariat, 3GPP Secretariat, Do we limited to IETF only?",
+              "createdAt": "2026-08-28T06:22:07Z",
+              "updatedAt": "2026-08-28T06:22:07Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDORMlxH88AAAABLRgyPQ",
+          "commit": {
+            "abbreviatedOid": "69bd520"
+          },
+          "author": "xorrkaz",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2026-08-28T13:28:47Z",
+          "updatedAt": "2026-08-28T13:28:47Z",
+          "comments": [
+            {
+              "originalPosition": 5,
+              "body": "Isn't this experiment about the IETF YANG module development process?  ",
+              "createdAt": "2026-08-28T13:28:47Z",
+              "updatedAt": "2026-08-28T13:28:47Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDORMlxH88AAAABLRw96g",
+          "commit": {
+            "abbreviatedOid": "69bd520"
+          },
+          "author": "billwuqin",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2026-08-28T14:01:29Z",
+          "updatedAt": "2026-08-28T14:01:30Z",
+          "comments": [
+            {
+              "originalPosition": 5,
+              "body": "Thanks for kindly reminder, sounds like 'repository within a Secretariat-maintained organization' better than 'IETF controlled repository' propsed by Dhruv, if I hear no objection, I will make this change.",
+              "createdAt": "2026-08-28T14:01:29Z",
+              "updatedAt": "2026-08-28T14:01:30Z"
+            }
+          ]
         }
       ]
     },
@@ -3952,7 +4059,7 @@
       "labels": [],
       "body": "Replace Mahesh's PR #68 \r\n\r\nMotivation and Goal:\r\nCodifies the agreement from the 2026-08-08 VELOCE call:\r\n\r\nVELOCE does not dictate which version of a YANG module implementations must support (implementor's choice). Conformance should be indicated by citing the specific module version (revision-date/release tag) rather than the RFC number alone, since the module may evolve independently of the RFC text. \r\n\r\nCloses issue ticket #3.",
       "createdAt": "2026-08-26T02:05:20Z",
-      "updatedAt": "2026-08-26T16:31:45Z",
+      "updatedAt": "2026-08-27T12:56:39Z",
       "baseRepository": "IETF-OPSAWG-WG/veloce",
       "baseRefName": "main",
       "baseRefOid": "ba2f304be549e5c7e74f376a4131d87c1593eaf5",
@@ -4075,6 +4182,46 @@
           "createdAt": "2026-08-26T16:31:45Z",
           "updatedAt": "2026-08-26T16:31:45Z",
           "comments": []
+        },
+        {
+          "id": "PRR_kwDORMlxH88AAAABLHejFg",
+          "commit": {
+            "abbreviatedOid": "9c75010"
+          },
+          "author": "xorrkaz",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2026-08-27T12:56:11Z",
+          "updatedAt": "2026-08-27T12:56:11Z",
+          "comments": [
+            {
+              "originalPosition": 11,
+              "body": "I agree with you.  My comment was about the implication (at least to me) that git history of this module would be preserved.  That is not the case.",
+              "createdAt": "2026-08-27T12:56:11Z",
+              "updatedAt": "2026-08-27T12:56:12Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDORMlxH88AAAABLHezHQ",
+          "commit": {
+            "abbreviatedOid": "9c75010"
+          },
+          "author": "xorrkaz",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2026-08-27T12:56:39Z",
+          "updatedAt": "2026-08-27T12:56:39Z",
+          "comments": [
+            {
+              "originalPosition": 32,
+              "body": "Then maybe drop the \"backward-compatible\" text?",
+              "createdAt": "2026-08-27T12:56:39Z",
+              "updatedAt": "2026-08-27T12:56:39Z"
+            }
+          ]
         }
       ]
     }
