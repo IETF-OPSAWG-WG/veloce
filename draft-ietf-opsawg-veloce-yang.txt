@@ -5,12 +5,12 @@
 Operations and Management Area Working Group             M. Jethanandani
 Internet-Draft                                                    Arrcus
 Intended status: Experimental                                      Q. Wu
-Expires: 27 February 2027                                         Huawei
+Expires: 12 March 2027                                            Huawei
                                                            M. Richardson
                                                 Sandelman Software Works
                                                                 D. Dhody
                                                                   Huawei
-                                                          26 August 2026
+                                                        8 September 2026
 
 
             YANG deVELpment PrOCEss and maintenance (VELOCE)
@@ -62,7 +62,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 27 February 2027.
+   This Internet-Draft will expire on 12 March 2027.
 
 Copyright Notice
 
@@ -148,33 +148,34 @@ Table of Contents
    The following practices should provide the necessary guidance on how
    a WG develops a new YANG module or updates an existing YANG module:
 
-   It is RECOMMENDED that IETF-hosted repositories be used.  See
+   It is RECOMMENDED that IETF-controlled repositories be used.  See
    Section 1.3 of Working Group GitHub Usage Guidance [RFC8874].
    Integration using third-party hosted repositories MAY be used for
    experimentation purposes.
 
-   A new repository MUST be created by the WG Chairs following the
-   procedure in Section 3.2 of Working Group GitHub Usage Guidance
-   [RFC8874] to develop or maintain a YANG Module.  For a new module,
-   this SHOULD happen when the module is adopted as a WG item.  It MAY
-   happen for individual drafts, and that is left to the discretion of
-   the chairs.  However, once the document is adopted as a WG item, the
-   repository SHOULD reside under the auspecies of IETF controlled
-   repository and managed by the WG.  The name of the repository SHOULD
-   reflect the name of the draft.  When updating an existing module, it
-   is RECOMMENDED to use the same WG repository of the initial version
-   of YANG module for the updated module maintenance.  If no existing
-   repository exists, then a new one MUST be created, initialized with
-   the last approved YANG module, so that proposed changes are
-   traceable.  In addition, the chairs MAY make sure that an appropriate
-   CI/CD YANG validation is in place.  It is RECOMMENDED that a real
-   time collaborative working environment be provided in the repository
-   to enable online validation of YANG modules (e.g., via yanglint)
-   using the YANG template with the CI/CD pipeline (e.g.,
-   https://github.com/IETF-OPS-AD/I-D-with-yang-template), and to ensure
-   a consistent development environment across all contributors.  In
-   addition, a containerized build environment for local validation of
-   YANG modules MAY also be provided in the repository as a backup.
+   An IETF-controlled repository MUST be created by the WG Chairs
+   following the procedure in Section 3.2 of Working Group GitHub Usage
+   Guidance [RFC8874] to develop or maintain a YANG Module.  For a new
+   module, this SHOULD happen when the module is adopted as a WG item.
+   It MAY happen for individual drafts, and that is left to the
+   discretion of the chairs.  However, once the document is adopted as a
+   WG item, the repository SHOULD reside under the auspecies of IETF-
+   controlled repository and managed by the WG.  The name of the
+   repository SHOULD reflect the name of the draft.  When updating an
+   existing module, it is RECOMMENDED to use the same WG repository of
+   the initial version of YANG module for the updated module
+   maintenance.  If no existing repository exists, then a new one MUST
+   be created, initialized with the last approved YANG module, so that
+   proposed changes are traceable.  In addition, the chairs MAY make
+   sure that an appropriate CI/CD YANG validation is in place.  It is
+   RECOMMENDED that a real time collaborative working environment be
+   provided in the repository to enable online validation of YANG
+   modules (e.g., via yanglint) using the YANG template with the CI/CD
+   pipeline (e.g., https://github.com/IETF-OPS-AD/I-D-with-yang-
+   template), and to ensure a consistent development environment across
+   all contributors.  In addition, a containerized build environment for
+   local validation of YANG modules MAY also be provided in the
+   repository as a backup.
 
    The procedure for managing WG documents (e.g., assign editors)
    applies for managing YANG modules (Section 6.1 of IETF Working Group
@@ -182,9 +183,9 @@ Table of Contents
    granting editors write and administrators' right refer to Section 3.3
    of Working Group GitHub Usage Guidance [RFC8874].
 
-   Other administrative policies as they relate to migration, personal
-   change or the WG closing is defined in the Working Group GitHub
-   Administration [RFC8875].
+   Other administrative policies such as ones relate to migration,
+   personnel changes or the WG closing are defined in the Working Group
+   GitHub Administration [RFC8875].
 
    A release tagging mechanism should be defined to track the
    intermediate versions referenced by WG I-Ds and by the RFC, once
@@ -206,14 +207,14 @@ Table of Contents
    the changes as a PR against the WG repository.  The editor team for
    regular contributors can be set up by the working group.  Editors or
    editor team of the YANG module are encouraged not to accept changes
-   into the "main" or "master" branch of the repository.  Instead, they
-   should be directed to a branch that is used for development.  This
-   allows the editors or editor team to review the changes and make sure
-   that they are in line with the WG consensus before they are merged
-   into the main branch.  This also allows the editors to make sure that
-   the changes are properly validated before they are merged into the
-   main branch,e.g., one editor create a pull request and another merge
-   it (refer to Section 4.2 of [RFC8874].
+   into the "main" branch of the repository.  Instead, they should be
+   directed to a branch that is used for development.  This allows the
+   editors or editor team to review the changes and make sure that they
+   are in line with the WG consensus before they are merged into the
+   main branch.  This also allows the editors to make sure that the
+   changes are properly validated before they are merged into the main
+   branch,e.g., one editor create a pull request and another merge it
+   (refer to Section 4.2 of [RFC8874].
 
    A procedure for assessing consensus is discussed in Section 7 of
    Working Group GitHub Usage Guidance [RFC8874] and SHOULD be followed
@@ -280,10 +281,10 @@ Table of Contents
 
    YANG modules developed in the IETF fall broadly into two categories.
    They can be new modules, or they can be a "bis" version of the
-   module.  The experiment will consist of two or more YANG modules,
+   module.  The experiment will consist of two or more YANG module work,
    such that at least one of them is a new YANG module, and the other is
-   a "bis" version of the YANG module.  This is being done to make sure
-   that the experiment covers all the IETF processes related to the
+   a "bis" version of the YANG module work.  This is being done to make
+   sure that the experiment covers all the IETF processes related to the
    development of YANG modules.
 
    Participants in the experiment are encouraged to document their
@@ -319,10 +320,12 @@ Table of Contents
    new YANG module to be developed, the timelines for the experiment are
    as follows:
 
-   A new YANG module should be published within two years of the start
-   of the experiment.  A "bis" version of an existing YANG module, where
-   the primary motivation is incremental updates rather than a ground-up
-   redesign, should be published within one year.
+   *  A new YANG module should be published within two years of the
+      start of the experiment.
+
+   *  A "bis" version of an existing YANG module, where the primary
+      motivation is incremental updates rather than a ground-up
+      redesign, should be published within one year.
 
    If the experiment takes longer than these timelines, the experiment
    should be deemed to have failed.  At that time, an analysis can be
@@ -396,8 +399,8 @@ Acknowledgments
 
    Thanks to the participants of OPSAWG for their comments that have
    helped shape this draft.  In particular, thanks to Jeffrey Haas, Joe
-   Clarke, Italo Busi, and Mohamed Boucadair for their feedback during
-   IETF 125.
+   Clarke, Per Andersson, Italo Busi, and Mohamed Boucadair for their
+   feedback during IETF 125.
 
 Contributors
 
