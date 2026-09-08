@@ -121,7 +121,7 @@ be used. See Section 1.3 of Working Group GitHub Usage
 Guidance {{!RFC8874}}. Integration using third-party hosted
 repositories MAY be used for experimentation purposes.
 
-An IETF controlled repository within a Secretariat-maintained organization MUST be
+An IETF controlled repository MUST be
 created by the WG Chairs following the procedure in Section 3.2 of
 Working Group GitHub Usage Guidance {{!RFC8874}} to develop or
 maintain a YANG Module. For a new module, this SHOULD happen when
