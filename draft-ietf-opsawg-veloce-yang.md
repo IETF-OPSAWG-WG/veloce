@@ -207,12 +207,12 @@ are permanently retrievable and verifiable.
 VELOCE does not mandate which version of a YANG module
 implementations must support. The link in the published RFC
 identifies the module version current at the time of
-publication, but implementations MAY track a
-later, backward-compatible version at their discretion.
+publication in the IANA section, but implementations MAY track a
+later version at their discretion.
 Conformance to the module SHOULD be indicated by
 citing the specific module version (e.g., its revision-date or
-release tag) rather than the RFC number alone, since the module
-may evolve independently of the RFC text.
+YANG Semver {{?I-D.ietf-netmod-yang-semver}}) rather than the RFC
+number alone, since the module may evolve independently of the RFC text.
 
 YANG SID files {{!RFC9595}}, when applicable (e.g.,
 for YANG/CBOR encoding), SHOULD reside in the
