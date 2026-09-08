@@ -133,7 +133,7 @@ of IETF controlled repository and managed by the WG. The
 name of the repository SHOULD reflect the name
 of the draft. When updating an existing module, it is RECOMMENDED to use the
 same WG repository of the initial version of YANG module for the
-updated module maintenance, , so that proposed changes are traceable.
+updated module maintenance, so that proposed changes are traceable.
 If no existing repository exists, then a new one MUST
 be created, initialized with the last published YANG module. In addition,
 the chairs MAY make sure that an appropriate CI/CD YANG validation is in place.  It
