@@ -116,15 +116,15 @@ The following practices should provide the necessary guidance
 on how a WG develops a new YANG module or updates an existing
 YANG module:
 
-It is RECOMMENDED that IETF-controlled repositories
-be used. See Section 1.3 of Working Group GitHub Usage
+It is RECOMMENDED that a repository within a Secretariat-maintained
+organization be used. See Section 1.3 of Working Group GitHub Usage
 Guidance {{!RFC8874}}. Integration using third-party hosted
 repositories MAY be used for experimentation purposes.
 
-An IETF-controlled repository MUST be created by the WG
-Chairs following the procedure in Section 3.2 of Working Group
-GitHub Usage Guidance {{!RFC8874}} to develop or maintain a YANG
-Module. For a new module, this SHOULD happen when
+A repository within a Secretariat-maintained organization MUST be
+created by the WG Chairs following the procedure in Section 3.2 of
+Working Group GitHub Usage Guidance {{!RFC8874}} to develop or
+maintain a YANG Module. For a new module, this SHOULD happen when
 the module is adopted as a WG item. It MAY happen for
 individual drafts, and that is left to the discretion of the
 chairs. However, once the document is adopted as a WG item,
