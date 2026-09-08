@@ -5,10 +5,10 @@
 Operations and Management Area Working Group             M. Jethanandani
 Internet-Draft                                                    Arrcus
 Intended status: Experimental                                      Q. Wu
-Expires: 27 February 2027                                         Huawei
+Expires: 12 March 2027                                            Huawei
                                                            M. Richardson
                                                 Sandelman Software Works
-                                                          26 August 2026
+                                                        8 September 2026
 
 
             YANG deVELpment PrOCEss and maintenance (VELOCE)
@@ -60,7 +60,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 27 February 2027.
+   This Internet-Draft will expire on 12 March 2027.
 
 Copyright Notice
 
@@ -89,7 +89,9 @@ Table of Contents
    4.  Operational Considerations
    5.  Security Considerations
    6.  IANA Considerations
-   7.  Normative References
+   7.  References
+     7.1.  Normative References
+     7.2.  Informative References
    Acknowledgments
    Authors' Addresses
 
@@ -233,12 +235,12 @@ Table of Contents
 
    VELOCE does not mandate which version of a YANG module
    implementations must support.  The link in the published RFC
-   identifies the module version current at the time of publication, but
-   implementations MAY track a later, backward-compatible version at
+   identifies the module version current at the time of publication in
+   the IANA section, but implementations MAY track a later version at
    their discretion.  Conformance to the module SHOULD be indicated by
-   citing the specific module version (e.g., its revision-date or
-   release tag) rather than the RFC number alone, since the module may
-   evolve independently of the RFC text.
+   citing the specific module version (e.g., its revision-date or YANG
+   Semver [I-D.ietf-netmod-yang-semver]) rather than the RFC number
+   alone, since the module may evolve independently of the RFC text.
 
    YANG SID files [RFC9595], when applicable (e.g., for YANG/CBOR
    encoding), SHOULD reside in the SCM repository rather than in the
@@ -363,7 +365,9 @@ Table of Contents
 
    This document has no IANA actions.
 
-7.  Normative References
+7.  References
+
+7.1.  Normative References
 
    [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
               Requirement Levels", BCP 14, RFC 2119,
@@ -395,6 +399,15 @@ Table of Contents
               for Authors and Reviewers of Documents Containing YANG
               Data Models", BCP 216, RFC 9907, DOI 10.17487/RFC9907,
               March 2026, <https://www.rfc-editor.org/rfc/rfc9907>.
+
+7.2.  Informative References
+
+   [I-D.ietf-netmod-yang-semver]
+              Clarke, J., Wilton, R., Rahman, R., Lengyel, B., Sterne,
+              J., and B. Claise, "YANG Semantic Versioning", Work in
+              Progress, Internet-Draft, draft-ietf-netmod-yang-semver-
+              28, 21 July 2026, <https://datatracker.ietf.org/doc/html/
+              draft-ietf-netmod-yang-semver-28>.
 
 Acknowledgments
 
