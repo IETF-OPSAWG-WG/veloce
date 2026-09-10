@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-08-30T03:47:27.278023+00:00",
+  "timestamp": "2026-09-10T03:13:25.305574+00:00",
   "repo": "IETF-OPSAWG-WG/veloce",
   "labels": [
     {
@@ -108,7 +108,7 @@
       "id": "I_kwDORMlxH878iffz",
       "title": "Conformance requirements: RFC, stable release, etc.",
       "url": "https://github.com/IETF-OPSAWG-WG/veloce/issues/3",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "boucadair",
       "authorAssociation": "NONE",
       "assignees": [],
@@ -118,8 +118,8 @@
       ],
       "body": "From Andy Bierman:\n\n\"Developers and users rely on the RFCs for guidance and for dispute resolution.\nNormative text from RFCs gets pasted into support tickets.  The standards conformance\nrequirements and claims are based on RFC numbers.  I hope there will still be stable RFCs\nwith stable contents.\"\n",
       "createdAt": "2026-04-10T05:47:16Z",
-      "updatedAt": "2026-08-25T04:50:12Z",
-      "closedAt": null,
+      "updatedAt": "2026-09-09T23:07:07Z",
+      "closedAt": "2026-09-09T23:07:07Z",
       "comments": [
         {
           "author": "mjethanandani",
@@ -280,7 +280,7 @@
       "id": "I_kwDORMlxH8798bqE",
       "title": "IETF-hosted Repository",
       "url": "https://github.com/IETF-OPSAWG-WG/veloce/issues/8",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "boucadair",
       "authorAssociation": "NONE",
       "assignees": [],
@@ -289,8 +289,8 @@
       ],
       "body": "From Med: \n\n\n> \n> DISCUSSION: check whether to include a recommendation about the hosting. IANA or some IETF gitlab are examples of self-hosting. Example of third-part hosted facility is GitHub. See an example below:\n>\n> X. IETF-hosted Repository\n> It is RECOMMENDED that IETF self-hosted repositories are used. Integration using third-party hosted repositories MAY be used for experimentation purposes.\n\n\n\nFrom Andy Bierman:\n\n> A simple YANG file with a revision date in the name would be sufficient.\n> I am not a fan of so much github reliance just to read IETF documents.\n> I prefer to have all the files hosted on ietf.org\n> E.g. I-D submission form includes fields to upload YANG and/or YANG SID files.\n\n",
       "createdAt": "2026-04-14T08:03:24Z",
-      "updatedAt": "2026-07-01T02:50:24Z",
-      "closedAt": null,
+      "updatedAt": "2026-09-08T15:12:07Z",
+      "closedAt": "2026-09-08T15:12:07Z",
       "comments": [
         {
           "author": "mjethanandani",
@@ -343,7 +343,7 @@
       "id": "I_kwDORMlxH87-ftNX",
       "title": "Handling Errata",
       "url": "https://github.com/IETF-OPSAWG-WG/veloce/issues/10",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "boucadair",
       "authorAssociation": "NONE",
       "assignees": [],
@@ -353,8 +353,8 @@
       ],
       "body": "Check if VELOCE process can also cover handling of YANG errata",
       "createdAt": "2026-04-15T14:44:53Z",
-      "updatedAt": "2026-07-01T02:50:02Z",
-      "closedAt": null,
+      "updatedAt": "2026-09-08T15:12:38Z",
+      "closedAt": "2026-09-08T15:12:38Z",
       "comments": [
         {
           "author": "mjethanandani",
@@ -548,7 +548,7 @@
       "id": "I_kwDORMlxH88AAAABAy61_w",
       "title": "Update the repo to use https://github.com/martinthomson/internet-draft-template",
       "url": "https://github.com/IETF-OPSAWG-WG/veloce/issues/16",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "boucadair",
       "authorAssociation": "NONE",
       "assignees": [
@@ -559,8 +559,8 @@
       ],
       "body": "* Not easy to track the changes vs. published version\n* rendered version of PRs and their diff with main",
       "createdAt": "2026-04-29T06:18:40Z",
-      "updatedAt": "2026-07-01T02:50:26Z",
-      "closedAt": null,
+      "updatedAt": "2026-09-08T15:12:55Z",
+      "closedAt": "2026-09-08T15:12:55Z",
       "comments": [
         {
           "author": "billwuqin",
@@ -583,7 +583,7 @@
       "id": "I_kwDORMlxH88AAAABBIsgCg",
       "title": "Encourage to use weekly github digest to keep track of status update of Experimental work",
       "url": "https://github.com/IETF-OPSAWG-WG/veloce/issues/17",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "billwuqin",
       "authorAssociation": "COLLABORATOR",
       "assignees": [
@@ -594,8 +594,8 @@
       ],
       "body": "WG github has separate mechanism to keep track of open issues or issue tickets, which is transparent to WG mailing list.\nSuggest to Add responsible WG github repo to track the status of experimental work\nhttps://github.com/ietf-github-services/activity-summary/blob/main/mls.json\nas a rule",
       "createdAt": "2026-05-03T07:42:49Z",
-      "updatedAt": "2026-07-01T02:50:20Z",
-      "closedAt": null,
+      "updatedAt": "2026-09-08T15:13:08Z",
+      "closedAt": "2026-09-08T15:13:08Z",
       "comments": [
         {
           "author": "mjethanandani",
@@ -625,7 +625,7 @@
       "id": "I_kwDORMlxH88AAAABBItbgg",
       "title": "Who review and approve the PR changes in the new branch of WG github repo",
       "url": "https://github.com/IETF-OPSAWG-WG/veloce/issues/18",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "billwuqin",
       "authorAssociation": "COLLABORATOR",
       "assignees": [
@@ -636,8 +636,8 @@
       ],
       "body": "I think we should set the rule to the PR changes in the new branch of WG github repo,e.g.,\n1. How to make the proposed changes visible to the WG mailing list\n2. Who and how to review these changes\n3. Who approve these changes.\nIf we don't set rules about this, we might end up with random update merging into the main branch without visibility.\n",
       "createdAt": "2026-05-03T07:50:29Z",
-      "updatedAt": "2026-07-01T02:50:16Z",
-      "closedAt": null,
+      "updatedAt": "2026-09-08T15:13:31Z",
+      "closedAt": "2026-09-08T15:13:31Z",
       "comments": [
         {
           "author": "mjethanandani",
@@ -677,13 +677,15 @@
       "state": "OPEN",
       "author": "billwuqin",
       "authorAssociation": "COLLABORATOR",
-      "assignees": [],
+      "assignees": [
+        "billwuqin"
+      ],
       "labels": [
         "wg-operations"
       ],
       "body": "We may have extreme case where a short live WG fulfills its purpose and gets concluded, who and how to maintain the WG github for experimental work, is there any rule to set for this?",
       "createdAt": "2026-05-03T07:53:22Z",
-      "updatedAt": "2026-07-01T02:50:21Z",
+      "updatedAt": "2026-09-08T15:15:51Z",
       "closedAt": null,
       "comments": [
         {
@@ -699,6 +701,13 @@
           "body": "See relevant proposal to fix this\nhttps://github.com/mjethanandani/veloce/pull/26/changes",
           "createdAt": "2026-06-02T12:59:49Z",
           "updatedAt": "2026-06-02T12:59:49Z"
+        },
+        {
+          "author": "billwuqin",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Additional text is need to discuss when WG get concluded, besides PR #54 ",
+          "createdAt": "2026-09-08T15:15:51Z",
+          "updatedAt": "2026-09-08T15:15:51Z"
         }
       ]
     },
@@ -939,16 +948,38 @@
       "url": "https://github.com/IETF-OPSAWG-WG/veloce/issues/50",
       "state": "OPEN",
       "author": "italobusi",
-      "authorAssociation": "CONTRIBUTOR",
+      "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [
         "new-module-scope"
       ],
       "body": "In IETF protocols, adding TLVs after the base RFC (i.e., the RFC with the base protocol specification) it is possible, but not required, to publish an RFC-bis which obsoletes the base RFC. In many cases, an RFC which updates the base RFC (RFC-update) is published defining only the new TLVs.\n\nThe datatracker provides tagging to show whether an RFC has been update by one or more RFC-update or replaced by an RFC-bis.\n\nAlso bug fixing can be easily done with Errata and the datatracker provides tagging to show whether there are errata as well as to retrieve the text of the RFC with the verified errata inline.\n\nI am wondering whether we can rely as much as possible on this process and focus on the adjustments that are needed because of the nature of the YANG language which requires a new revision of the whole YANG module when something gets changed\n\nAfter the initial revision of a YANG module is published, there are three cases which might have an impact on that module:\n- a bug is discovered (bug fixing)\n- a new functionality needs to be added through a revision of that YANG module\n- a new functionality needs to be added in another YANG module which augments that YANG module\n\nI think that the decision about whether a new functionality needs to be added in a new revision or in an augmentation model is a design choice to be taken purely on the basis of technical considerations (e.g., modular design) and not being impacted by the process\n\nFrom a process point of view, defining a new YANG module which augments an existing YANG module is actually the design of the initial revision of a YANG module and outside the scope of this issue which focuses only on the process to update a YANG module after the publication of its initial revision\n\nA common assumption is that the base RFC will no longer contain the YANG module but a pointer to a stable repository (e.g., a github release)\n\nWe therefore have two cases left: bug fixing and new functionalities\n\n## Bug fixing\n\nA bug fix may impact the narrative text or the YANG module (or both)\n\nMy suggestion is to submit an errata for fixing bug\n\nIf the bug is affecting the narrative text, the proposed changes to the narrative text should be provided in the errata.\n\nIf the bug is affecting the YANG model:\n- the proposed changes to the YANG module shall be provided in a specific working repository (e.g., a github PR)\n- a link to that working repository (e.g., the github PR) shall be provided in the errata\n\nThe approval of the errata follows the existing process already in place for the approval of errata with some minor updates required to ensure that  the proposed changes to the YANG module, if any, have been reviewed and approved. The review of the YANG should only focus on the changes as marked in the working repository.\n\nWhen an errata proposing changes to the YANG module is verified:\n- the proposed changes to the YANG module in the working repository are merged into a stable repository (e.g., a github release tagged after the PR has been merged)\n- the verified text in the errata is updated to point to the stable repository\n- the verified text in the narrative sections, if any, are updated following existing errata process\n\nAn user of the base RFC can check the errata database (or the RFC with inline errata) to get the latest version of the YANG module(s) within that RFC.\n\n## New functionalities: RFC-update or RFC-bis\n\nThe home WG can decide whether the changes in the YANG module revision are significant enough to justify the development of an RFC-bis or an RFC-update is sufficient.\n\nWe therefore have three cases:\n1. RFC-update with no changes to the narrative text\n2. RFC-update with changes to the narrative text\n3. RFC-bis\n\n###  RFC-update\n\nAn RFC-update may impact the narrative text or the YANG module (or both)\n\nMy suggestion is to submit an I-D proposing an RFC-update\n\nIf the RFC-update requires some narrative text to describe the changes, this text can be provided in the narrative sections of the I-D.\n\nIf the RFC-update requires changes to the YANG model:\n- the proposed changes to the YANG module shall be provided in a specific working repository (e.g., a github PR)\n- a link to that working repository (e.g., the github PR) shall be provided in the I-D\n\nIf the RFC-update just requires changes to the YANG module, the I-D can be quite slim: an abstract and an introduction briefly summarizing the need for the change and a section pointing to the working repository (e.g., a github PR) with the updated YANG model\n\nThe approval of the RFC-update I-D follows the normal IETF process (including the IESG review), with some minor updates required to ensure that  the proposed changes to the YANG module, if any, have been reviewed and approved. The review of the YANG should only focus on the changes as marked in the working repository.\n\nNote: it is also possible to publish RFC-update to just update the narrative text of the base RFC (in case for example the narrative text of the base RFC has proven not to be clear or reduced to speed-up the publication of the initial revision of the YANG model). In this case, no YANG model changes are proposed and the RFC-update I-D will not provide any replacement to the pointer to the stable repository where the latest YANG model is available.\n\nWhen an RFC-update I-D proposing changes to the YANG module is approved by the IESG:\n- the proposed changes to the YANG module in the working repository are merged into a stable repository (e.g., a github release tagged after the PR has been merged)\n- the text in the published RFC-update points to the stable repository\n- the the narrative sections, if any, are edited in the published RFC-update\n\nAn user of the base RFC can check the RFCs updating the base RFC to get the latest version of the YANG module(s) within that RFC.\n\n### RFC-bis\n\nAn I-D which obsoletes the base RFC (and all the other RFCs updating it) is submitted to the WG and approved as RFC following the normal IETF process (no big changes to the current process for updating YANG modules)\n\n## Standard Conformance Considerations\n\nA side effect of this process, which keeps a 1:1 mapping between an RFC and a YANG module revision, would be to address the standard conformance issue highlighted in:\n\nhttps://mailarchive.ietf.org/arch/msg/opsawg/tDYaMcVe-RCzYccJMCV90su3cDo/\n\n## Items for future discussion\n\nThere are some open issues (e.g., which repository to use or how the PR in github are managed, considering also that github may be used by the editors during the development cycle). I think these issues are applicable to any other proposal and can be refined after the main direction is taken.\n\nWe can discuss at a later stage whether the stable repository is a github release or something else (e.g., an IANA hosted repository).\n\nWe can discuss at a later stage whether this working repository is a github PR or something else (e.g., an IANA hosted repository). IMHO, the key requirement is that this working repository should provide a diff compared with the latest revision of the YANG module to ensure that the revision is focused only on the proposed changes.\n\nWe can discuss at a later stage whether the initial revision or the revision in an RFC-bis should be embedded with an I-D (as in the current process) or a pointer to a working repository (e.g., a github PR) is preferable or allowed.\n",
       "createdAt": "2026-06-17T18:46:17Z",
-      "updatedAt": "2026-07-01T02:50:25Z",
+      "updatedAt": "2026-09-09T12:37:55Z",
       "closedAt": null,
-      "comments": []
+      "comments": [
+        {
+          "author": "xorrkaz",
+          "authorAssociation": "MEMBER",
+          "body": "I'd like to discuss an example that I _think_ would benefit from VELOCE without new propose, but was a bis process previously.  The ietf-yang-types module has rev'd three times in its life.  I would argue that beyond the initial RFC6021, no other prose was needed.  The module is well-contained and nicely self-describing.  Other \"types\" modules may be similar.  I'm willing to be told I'm wrong, but I feel that if a WG decides that, even larger, BC changes can happen without new prose, then VELOCE could be used for them.",
+          "createdAt": "2026-09-08T14:57:21Z",
+          "updatedAt": "2026-09-08T14:57:21Z"
+        },
+        {
+          "author": "italobusi",
+          "authorAssociation": "COLLABORATOR",
+          "body": "> I'd like to discuss an example that I _think_ would benefit from VELOCE without new propose, but was a bis process previously. The ietf-yang-types module has rev'd three times in its life. I would argue that beyond the initial RFC6021, no other prose was needed. The module is well-contained and nicely self-describing. Other \"types\" modules may be similar. I'm willing to be told I'm wrong, but I feel that if a WG decides that, even larger, BC changes can happen without new prose, then VELOCE could be used for them.\n\nI think that VELOCE should address also this case and almost all the proposals I have seen so far are considering it.\n\nIn my proposal above, this would be the case of \"RFC-update with no changes to the narrative text\": the RFC-update is only updating the pointer to the repository with the latest version of the YANG module:\n\n> If the RFC-update just requires changes to the YANG module, the I-D can be quite slim: an abstract and an introduction briefly summarizing the need for the change and a section pointing to the working repository (e.g., a github PR) with the updated YANG model\n\nIf we had applied my proposal to your example, we would have had:\n- RFC 6021 almost as is but pointing to the repository(repositories) where `ietf-yang-types@2010-09-24.yang` and `ietf-inet-types@2010-09-24.yang` are defined\n- RFC 6991 updating (not obsoleting) RFC 6021 to just replace the pointers to the repository(repositories) where `ietf-yang-types@2010-09-24.yang` and `ietf-inet-types@2010-09-24.yang` are defined with the pointers to the repository(repositories) where `ietf-yang-types@2013-07-15.yang` and `ietf-inet-types@2013-07-15.yang` are defined\n- RFC 9911 updating (not obsoleting) RFC 6991 to just replace the pointers to the repository(repositories) where `ietf-yang-types@2013-07-15.yang` and `ietf-inet-types@2013-07-15.yang` are defined with the pointers to the repository(repositories) where `ietf-yang-types@2025-12-22.yang` and `ietf-inet-types@2025-12-22.yang` are defined\n\nOther people prefer not to publish any RFC-update in this case and just tag a new revision of the YANG module in the GitHub repository. The issue with this approach, discussed also on the mailing list along with possible solutions, is that a reference to an RFC is no longer 1:1 matching a reference to a specific revision of the YANG module defined in that RFC\n\nIf we had applied those proposals to your example, we would have had:\n- RFC 6021 almost as is but pointing to the repository(repositories) where `ietf-yang-types@2010-09-24.yang` and `ietf-inet-types@2010-09-24.yang` are defined\n- No RFC 6991, but just a new version in the repository(repositories) defined in RFC 6021 where the `ietf-yang-types@2013-07-15.yang` and `ietf-inet-types@2013-07-15.yang` are defined\n- No RFC 9911 but just a new version in the repository(repositories) defined in RFC 6021 where the `ietf-yang-types@2025-12-22.yang` and `ietf-inet-types@2025-12-22.yang` are defined\n",
+          "createdAt": "2026-09-09T11:00:58Z",
+          "updatedAt": "2026-09-09T11:00:58Z"
+        },
+        {
+          "author": "xorrkaz",
+          "authorAssociation": "MEMBER",
+          "body": "Then you and I are on the same page.  I'd rather have this type of workflow that something that says things like BC changes _require_ a new RFC.  To me, that would defeat the VELOCE purpose.",
+          "createdAt": "2026-09-09T12:37:55Z",
+          "updatedAt": "2026-09-09T12:37:55Z"
+        }
+      ]
     },
     {
       "number": 51,
@@ -958,15 +989,25 @@
       "state": "OPEN",
       "author": "mjethanandani",
       "authorAssociation": "COLLABORATOR",
-      "assignees": [],
+      "assignees": [
+        "mjethanandani"
+      ],
       "labels": [
         "wg-operations"
       ],
       "body": "This workflow debates the discussion around \n- creating issues\n- creating PR\n- getting consensus\n- approval of the PR\n- closing the issue\n\nWhen an issue needs to be debated, an issue should be created first, much like this one is being done. The issue should be described in sufficient detail to enable a discussion. It can be discussed in the bi-weekly meeting. Once there is a rough consensus on how to proceed, a PR can be created to outline the changes that will be made.\n\nIf the next version of the draft is -01,  a branch called v01 would have been created by an admin and made the default branch. That branch is called the \"Version Branch\". To create a PR, a branch should be created off the Version Branch. For example, if the PR is going to be committed to update the -01 version of the draft, the branch should be created off of the v01 Version Branch.\n\nThe branch where the PR changes will be suggested is called the \"Issue Branch\". The branch itself should be named \"issue-xx\", where xx is the issue number assigned to the issue by GitHub. All the changes in the PR should reflect the consensus achieved as part of the issue. Two approvers have to approve the PR with no strong dissenters before the submitter of the PR can merge the changes into the version branch.\n\nBefore the PR can be merged, all conflicts with the Version Branch should be resolved, and the draft should \"build\" cleanly. Once the PR is merged, and because the PR is linked to the issue, it will result in the issue being closed. It is up to the submitter if they want to delete the \"Issue branch\" at this time.",
       "createdAt": "2026-06-22T17:22:09Z",
-      "updatedAt": "2026-07-01T02:50:22Z",
+      "updatedAt": "2026-09-08T11:42:23Z",
       "closedAt": null,
-      "comments": []
+      "comments": [
+        {
+          "author": "billwuqin",
+          "authorAssociation": "COLLABORATOR",
+          "body": "@mjethanandani \nSince we have move YANG data model devlopment in the IETF controlled github, RFC8874 has already defined workflow on how to create and track issues in such github, why are they not sufficient?\n\nIn addition, we have git release tag can be corresponding to each updated version of the same draft, the branch can always be default branch, why do we need to create each new branch corresponding to each updated version of the draft? ",
+          "createdAt": "2026-09-08T11:42:16Z",
+          "updatedAt": "2026-09-08T11:42:16Z"
+        }
+      ]
     },
     {
       "number": 52,
@@ -1036,9 +1077,9 @@
       "labels": [
         "documentation"
       ],
-      "body": "some IANA Consideration is a suggestion of how to use existing IANA, WG and IESG process to manage (and approve) updates to YANG modules (and related SID files)\n\nAt a high-level the plan is to include YANG module files (and related SID files) by reference rather than by value.\nThis requires that files be referenced through a layer of indirection.\n",
+      "body": "Michael said:\n\"\nsome IANA Consideration is a suggestion of how to use existing IANA, WG and IESG process to manage (and approve) updates to YANG modules (and related SID files)\n\nAt a high-level the plan is to include YANG module files (and related SID files) by reference rather than by value.\nThis requires that files be referenced through a layer of indirection.\n\"",
       "createdAt": "2026-08-11T07:57:15Z",
-      "updatedAt": "2026-08-11T11:45:40Z",
+      "updatedAt": "2026-09-08T11:02:30Z",
       "closedAt": null,
       "comments": []
     },
@@ -1084,9 +1125,17 @@
       ],
       "body": "Jeff haas said:\n\"\nThe second consideration is review.  Some classes of maintenance work are likely of interest only to YANG experts. (\"bugfixes\" as you note.)  Others are changes to semantics or additions to the module.  The question effectively is what is last call criteria to review such changes?\n\"",
       "createdAt": "2026-08-11T11:44:32Z",
-      "updatedAt": "2026-08-11T11:44:32Z",
+      "updatedAt": "2026-09-08T23:47:38Z",
       "closedAt": null,
-      "comments": []
+      "comments": [
+        {
+          "author": "billwuqin",
+          "authorAssociation": "COLLABORATOR",
+          "body": "This is a dupcliated issue, since we have already had\nhttps://github.com/IETF-OPSAWG-WG/veloce/issues/15\n",
+          "createdAt": "2026-09-08T23:47:38Z",
+          "updatedAt": "2026-09-08T23:47:38Z"
+        }
+      ]
     },
     {
       "number": 70,
@@ -2844,7 +2893,7 @@
       "labels": [],
       "body": "this chunk of text, including some IANA Consideration is a suggestion of how to use existing IANA, WG and IESG process to manage (and approve) updates to YANG modules (and related SID files)\r\n",
       "createdAt": "2026-06-15T19:02:56Z",
-      "updatedAt": "2026-08-26T16:34:02Z",
+      "updatedAt": "2026-09-08T12:09:28Z",
       "baseRepository": "IETF-OPSAWG-WG/veloce",
       "baseRefName": "main",
       "baseRefOid": "ba2f304be549e5c7e74f376a4131d87c1593eaf5",
@@ -2991,7 +3040,7 @@
       "labels": [],
       "body": "The same PR applied to markdown source file:\r\nhttps://github.com/mjethanandani/veloce/pull/26",
       "createdAt": "2026-07-07T10:47:12Z",
-      "updatedAt": "2026-08-11T14:06:06Z",
+      "updatedAt": "2026-09-08T23:35:40Z",
       "baseRepository": "IETF-OPSAWG-WG/veloce",
       "baseRefName": "main",
       "baseRefOid": "eebb804ff97a6d4503f9e9cb330f8b23c27c1be2",
@@ -3025,7 +3074,7 @@
             "abbreviatedOid": "cef63c0"
           },
           "author": "italobusi",
-          "authorAssociation": "CONTRIBUTOR",
+          "authorAssociation": "COLLABORATOR",
           "state": "APPROVED",
           "body": "Makes sense to me",
           "createdAt": "2026-07-11T18:39:24Z",
@@ -3402,7 +3451,7 @@
       "labels": [],
       "body": "Address issue #51 ",
       "createdAt": "2026-08-25T04:28:32Z",
-      "updatedAt": "2026-08-27T15:27:24Z",
+      "updatedAt": "2026-09-08T23:44:00Z",
       "baseRepository": "IETF-OPSAWG-WG/veloce",
       "baseRefName": "v02",
       "baseRefOid": "a527b777cde0819e721ba53f787da51bfa8764d4",
@@ -3427,6 +3476,13 @@
           "body": "--------\n\nQin Wu ***@***.***> wrote:\n    > Not sure it works well, why main branch as default is not sufficient,\n\n+10\n",
           "createdAt": "2026-08-27T15:27:24Z",
           "updatedAt": "2026-08-27T15:27:24Z"
+        },
+        {
+          "author": "billwuqin",
+          "authorAssociation": "COLLABORATOR",
+          "body": "> Not sure why this updates the .xml file.\r\n\r\nAs we discussed in yesterday'call, Joe suggested to rebase CONTRIUBTING.md in main branch and see what else is needed regarding the working method.\r\nIf that is the case, I will drop the link to https://github.com/IETF-OPSAWG-WG/veloce/blob/v02/README.md\r\n",
+          "createdAt": "2026-09-08T23:44:00Z",
+          "updatedAt": "2026-09-08T23:44:00Z"
         }
       ],
       "reviews": [
@@ -3594,6 +3650,59 @@
               "updatedAt": "2026-08-27T13:47:51Z"
             }
           ]
+        },
+        {
+          "id": "PRR_kwDORMlxH88AAAABMnszfA",
+          "commit": {
+            "abbreviatedOid": "961dcf6"
+          },
+          "author": "mjethanandani",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2026-09-08T12:52:10Z",
+          "updatedAt": "2026-09-08T12:52:10Z",
+          "comments": [
+            {
+              "originalPosition": 10,
+              "body": "I am fine with using the \"Create a branch\" link to create the PR. I will make that change.",
+              "createdAt": "2026-09-08T12:52:10Z",
+              "updatedAt": "2026-09-08T12:52:10Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDORMlxH88AAAABMnuN3g",
+          "commit": {
+            "abbreviatedOid": "961dcf6"
+          },
+          "author": "mjethanandani",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2026-09-08T12:54:08Z",
+          "updatedAt": "2026-09-08T12:54:08Z",
+          "comments": [
+            {
+              "originalPosition": 8,
+              "body": "Ok. Will drop the requirement of reaching an agreement in the biweekly calls.",
+              "createdAt": "2026-09-08T12:54:08Z",
+              "updatedAt": "2026-09-08T12:54:08Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDORMlxH88AAAABMsZOug",
+          "commit": {
+            "abbreviatedOid": "961dcf6"
+          },
+          "author": "mcr",
+          "authorAssociation": "COLLABORATOR",
+          "state": "CHANGES_REQUESTED",
+          "body": "Not sure why this updates the .xml file.\n",
+          "createdAt": "2026-09-08T20:44:42Z",
+          "updatedAt": "2026-09-08T20:44:42Z",
+          "comments": []
         }
       ]
     },
@@ -3843,24 +3952,26 @@
       "id": "PR_kwDORMlxH88AAAABBBJGMQ",
       "title": "Kramdown convert two",
       "url": "https://github.com/IETF-OPSAWG-WG/veloce/pull/72",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "billwuqin",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "Close Michael's #33 \r\n\r\nThis updates Qin's markdown copy with changes from 2026-05-19.",
       "createdAt": "2026-08-26T01:51:17Z",
-      "updatedAt": "2026-08-28T14:01:30Z",
+      "updatedAt": "2026-09-08T15:11:01Z",
       "baseRepository": "IETF-OPSAWG-WG/veloce",
       "baseRefName": "main",
       "baseRefOid": "edbd6cbce2d460f7ae759a20e17801e716859ab1",
       "headRepository": "IETF-OPSAWG-WG/veloce",
       "headRefName": "billwuqin-patch-12",
-      "headRefOid": "c3ca2398d263af3f8717b13fceb1c3f5361821e6",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "headRefOid": "f9536c8b7414008a493e24fb745b2ae9190a7447",
+      "closedAt": "2026-09-08T15:11:01Z",
+      "mergedAt": "2026-09-08T15:11:01Z",
+      "mergedBy": "billwuqin",
+      "mergeCommit": {
+        "oid": "f2eb1d504096eaac0aee8194760bdab7cf7ef4a9"
+      },
       "comments": [
         {
           "author": "dhruvdhody",
@@ -4052,25 +4163,35 @@
       "id": "PR_kwDORMlxH88AAAABBBM2Zg",
       "title": "Add version-target and conformance language",
       "url": "https://github.com/IETF-OPSAWG-WG/veloce/pull/73",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "billwuqin",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "Replace Mahesh's PR #68 \r\n\r\nMotivation and Goal:\r\nCodifies the agreement from the 2026-08-08 VELOCE call:\r\n\r\nVELOCE does not dictate which version of a YANG module implementations must support (implementor's choice). Conformance should be indicated by citing the specific module version (revision-date/release tag) rather than the RFC number alone, since the module may evolve independently of the RFC text. \r\n\r\nCloses issue ticket #3.",
       "createdAt": "2026-08-26T02:05:20Z",
-      "updatedAt": "2026-08-27T12:56:39Z",
+      "updatedAt": "2026-09-09T23:07:06Z",
       "baseRepository": "IETF-OPSAWG-WG/veloce",
       "baseRefName": "main",
       "baseRefOid": "ba2f304be549e5c7e74f376a4131d87c1593eaf5",
       "headRepository": "IETF-OPSAWG-WG/veloce",
       "headRefName": "billwuqin-patch-13",
-      "headRefOid": "da837bd2af5457640843401654dd6b31c2d65643",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
-      "comments": [],
+      "headRefOid": "a8dfa99c097a0426dd07db5f459f949255d26c43",
+      "closedAt": "2026-09-09T23:07:06Z",
+      "mergedAt": "2026-09-09T23:07:06Z",
+      "mergedBy": "billwuqin",
+      "mergeCommit": {
+        "oid": "86da8211141b16b2f9e5c0c9990a24d241034bf4"
+      },
+      "comments": [
+        {
+          "author": "billwuqin",
+          "authorAssociation": "COLLABORATOR",
+          "body": "@avtobiff @mjethanandani Please review the proposed change based on our discussion in yesterday biweekly VELOCE call.",
+          "createdAt": "2026-09-08T23:36:39Z",
+          "updatedAt": "2026-09-08T23:36:39Z"
+        }
+      ],
       "reviews": [
         {
           "id": "PRR_kwDORMlxH88AAAABK9eSLA",
@@ -4222,8 +4343,80 @@
               "updatedAt": "2026-08-27T12:56:39Z"
             }
           ]
+        },
+        {
+          "id": "PRR_kwDORMlxH88AAAABM0xn7g",
+          "commit": {
+            "abbreviatedOid": "d4add3f"
+          },
+          "author": "xorrkaz",
+          "authorAssociation": "MEMBER",
+          "state": "CHANGES_REQUESTED",
+          "body": "What do you think about this one change?  I'm good on the other text.",
+          "createdAt": "2026-09-09T14:20:56Z",
+          "updatedAt": "2026-09-09T14:21:14Z",
+          "comments": [
+            {
+              "originalPosition": 10,
+              "body": "```suggestion\nupdated module maintenance, so previous history is preserved as much as possible.\n```",
+              "createdAt": "2026-09-09T14:20:56Z",
+              "updatedAt": "2026-09-09T14:21:14Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDORMlxH88AAAABM05a1g",
+          "commit": {
+            "abbreviatedOid": "a8dfa99"
+          },
+          "author": "billwuqin",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "I like this change, have incorporated in, please review.",
+          "createdAt": "2026-09-09T14:31:27Z",
+          "updatedAt": "2026-09-09T14:31:27Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDORMlxH88AAAABM1YWtw",
+          "commit": {
+            "abbreviatedOid": "a8dfa99"
+          },
+          "author": "xorrkaz",
+          "authorAssociation": "MEMBER",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-09-09T15:13:18Z",
+          "updatedAt": "2026-09-09T15:13:18Z",
+          "comments": []
         }
       ]
+    },
+    {
+      "number": 74,
+      "id": "PR_kwDORMlxH88AAAABCwJxQA",
+      "title": "Address issue ticket #19",
+      "url": "https://github.com/IETF-OPSAWG-WG/veloce/pull/74",
+      "state": "OPEN",
+      "author": "billwuqin",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Focus on address #19: Who handle WG github when specific WG gets concluded, \r\nthis issue is also related to  another PR:\r\nhttps://github.com/IETF-OPSAWG-WG/veloce/pull/73\r\nand deal with 2 exceptional cases:\r\na. what if existing repo doesn't exist?\r\nb. what if existing repo exist but the responsible WG concluded\r\n",
+      "createdAt": "2026-09-09T00:04:32Z",
+      "updatedAt": "2026-09-09T00:11:40Z",
+      "baseRepository": "IETF-OPSAWG-WG/veloce",
+      "baseRefName": "main",
+      "baseRefOid": "f2eb1d504096eaac0aee8194760bdab7cf7ef4a9",
+      "headRepository": "IETF-OPSAWG-WG/veloce",
+      "headRefName": "billwuqin-patch-14",
+      "headRefOid": "4fdba8f885bbb4fdf1d5bce04bab5bc98399e5af",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
     }
   ]
 }
