@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-09-10T03:13:25.305574+00:00",
+  "timestamp": "2026-09-13T03:18:57.784184+00:00",
   "repo": "IETF-OPSAWG-WG/veloce",
   "labels": [
     {
@@ -4404,19 +4404,93 @@
       "labels": [],
       "body": "Focus on address #19: Who handle WG github when specific WG gets concluded, \r\nthis issue is also related to  another PR:\r\nhttps://github.com/IETF-OPSAWG-WG/veloce/pull/73\r\nand deal with 2 exceptional cases:\r\na. what if existing repo doesn't exist?\r\nb. what if existing repo exist but the responsible WG concluded\r\n",
       "createdAt": "2026-09-09T00:04:32Z",
-      "updatedAt": "2026-09-09T00:11:40Z",
+      "updatedAt": "2026-09-11T15:30:27Z",
       "baseRepository": "IETF-OPSAWG-WG/veloce",
       "baseRefName": "main",
-      "baseRefOid": "f2eb1d504096eaac0aee8194760bdab7cf7ef4a9",
+      "baseRefOid": "86da8211141b16b2f9e5c0c9990a24d241034bf4",
       "headRepository": "IETF-OPSAWG-WG/veloce",
       "headRefName": "billwuqin-patch-14",
-      "headRefOid": "4fdba8f885bbb4fdf1d5bce04bab5bc98399e5af",
+      "headRefOid": "e7fbf121974d4585ba3fccb40412d9146a73f46f",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
       "mergeCommit": null,
-      "comments": [],
-      "reviews": []
+      "comments": [
+        {
+          "author": "billwuqin",
+          "authorAssociation": "COLLABORATOR",
+          "body": "> I think this was addressed in another PR, right? This has merge conflicts now and uses older language.\r\n\r\nNo, this is relevant issue but slight different issue ticket\r\nhttps://github.com/IETF-OPSAWG-WG/veloce/issues/19\r\nI have resolved merge conflict, please review.",
+          "createdAt": "2026-09-11T13:38:55Z",
+          "updatedAt": "2026-09-11T13:38:55Z"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "PRR_kwDORMlxH88AAAABNKziow",
+          "commit": {
+            "abbreviatedOid": "4fdba8f"
+          },
+          "author": "xorrkaz",
+          "authorAssociation": "MEMBER",
+          "state": "CHANGES_REQUESTED",
+          "body": "I think this was addressed in another PR, right?  This has merge conflicts now and uses older language.",
+          "createdAt": "2026-09-11T12:40:17Z",
+          "updatedAt": "2026-09-11T12:40:17Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDORMlxH88AAAABNLz56A",
+          "commit": {
+            "abbreviatedOid": "a40b372"
+          },
+          "author": "xorrkaz",
+          "authorAssociation": "MEMBER",
+          "state": "CHANGES_REQUESTED",
+          "body": "",
+          "createdAt": "2026-09-11T14:23:33Z",
+          "updatedAt": "2026-09-11T14:24:46Z",
+          "comments": [
+            {
+              "originalPosition": 7,
+              "body": "```suggestion\nIf there is an existing repository but the responsible WG was concluded,\n```",
+              "createdAt": "2026-09-11T14:23:33Z",
+              "updatedAt": "2026-09-11T14:24:46Z"
+            },
+            {
+              "originalPosition": 8,
+              "body": "```suggestion\nthen a new repository MUST be created in the new responsible working group's GitHub organization with AD's guidance, initialized with\n```",
+              "createdAt": "2026-09-11T14:24:02Z",
+              "updatedAt": "2026-09-11T14:24:47Z"
+            },
+            {
+              "originalPosition": 9,
+              "body": "This may need some instructions like adding a new remote and pushing to it.",
+              "createdAt": "2026-09-11T14:24:42Z",
+              "updatedAt": "2026-09-11T14:24:47Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDORMlxH88AAAABNMdXTg",
+          "commit": {
+            "abbreviatedOid": "e7fbf12"
+          },
+          "author": "billwuqin",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "Have incorporated your proposed changes.",
+          "createdAt": "2026-09-11T15:29:07Z",
+          "updatedAt": "2026-09-11T15:29:50Z",
+          "comments": [
+            {
+              "originalPosition": 9,
+              "body": "I agree,  is there any proposed text change in this paragraph or leave this beyond scope? e..g., a wiki page needs to created to provide those instructions?",
+              "createdAt": "2026-09-11T15:29:07Z",
+              "updatedAt": "2026-09-11T15:29:50Z"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
