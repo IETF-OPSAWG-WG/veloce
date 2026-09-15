@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-09-13T03:18:57.784184+00:00",
+  "timestamp": "2026-09-15T03:31:56.571298+00:00",
   "repo": "IETF-OPSAWG-WG/veloce",
   "labels": [
     {
@@ -1023,9 +1023,17 @@
       ],
       "body": "I have a suggestion regarding the full term of \"VELOCE\", since \"maintenance\" is also one part of this process, I think the full term should be \"a YANG deVELpment and maintenance PrOCEss\", instead of \"a YANG deVELpment PrOCEss and maintenance\" . \nIn addition, for the abstract, I suggest to change it as follows,\n\nAbstract: \n   This document describes a YANG deVELpment and maintenance PrOCEss\n   (VELOCE) that is more suitable for the development of YANG modules or\n   YANG modules update within the IETF. Its purpose is to demonstrate faster\n   development and fixing of issues in YANG modules.\n",
       "createdAt": "2026-06-28T06:49:51Z",
-      "updatedAt": "2026-07-01T02:50:27Z",
+      "updatedAt": "2026-09-14T12:30:27Z",
       "closedAt": null,
-      "comments": []
+      "comments": [
+        {
+          "author": "billwuqin",
+          "authorAssociation": "COLLABORATOR",
+          "body": "I think bugfix in the YANG model, we may just take traditional Errata Fixing process. Regarding the purpose is to demonstrate faster development, this needs experiment, which we can not see or answer without completing experiment.\n\nRegarding make maintainance as part of the whole process, I think it is related to #32 , \nIn my understanding, the big difference between YANG model development process and maintainance is maintainance may not need publish a new RFC,e.g., bugfix of narrative text, I might be wrong. ",
+          "createdAt": "2026-09-14T09:50:53Z",
+          "updatedAt": "2026-09-14T12:30:27Z"
+        }
+      ]
     },
     {
       "number": 53,
@@ -4487,6 +4495,53 @@
               "body": "I agree,  is there any proposed text change in this paragraph or leave this beyond scope? e..g., a wiki page needs to created to provide those instructions?",
               "createdAt": "2026-09-11T15:29:07Z",
               "updatedAt": "2026-09-11T15:29:50Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 75,
+      "id": "PR_kwDORMlxH88AAAABDcAQDw",
+      "title": "Make summary report mandatory",
+      "url": "https://github.com/IETF-OPSAWG-WG/veloce/pull/75",
+      "state": "OPEN",
+      "author": "billwuqin",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2026-09-14T11:06:27Z",
+      "updatedAt": "2026-09-14T11:07:10Z",
+      "baseRepository": "IETF-OPSAWG-WG/veloce",
+      "baseRefName": "main",
+      "baseRefOid": "86da8211141b16b2f9e5c0c9990a24d241034bf4",
+      "headRepository": "IETF-OPSAWG-WG/veloce",
+      "headRefName": "billwuqin-patch-15",
+      "headRefOid": "1d3eb988e4f03afa0949f8e8001f6cfb6cc1600f",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDORMlxH88AAAABNcImHg",
+          "commit": {
+            "abbreviatedOid": "698448d"
+          },
+          "author": "github-actions",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2026-09-14T11:06:50Z",
+          "updatedAt": "2026-09-14T11:06:50Z",
+          "comments": [
+            {
+              "originalPosition": 8,
+              "body": "````suggestion\nlinks to the Pull Request (PR), are a useful way to record decisions made by the WG.\n````",
+              "createdAt": "2026-09-14T11:06:50Z",
+              "updatedAt": "2026-09-14T11:06:50Z"
             }
           ]
         }
