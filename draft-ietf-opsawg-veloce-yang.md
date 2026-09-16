@@ -146,9 +146,12 @@ of the draft. When updating an existing module, it is RECOMMENDED to use the
 same WG repository of the initial version of YANG module for the
 updated module maintenance, so previous history is preserved as much as possible.
 If no existing repository exists, then a new one MUST
-be created, initialized with the last published YANG module. In addition,
-the chairs MAY make sure that an appropriate CI/CD YANG validation is in place.  It
-is RECOMMENDED that a real time collaborative working environment
+be created, initialized with the last published YANG module.
+If there is an existing repository but the responsible WG was concluded,
+then such repository MUST be moved to the new responsible working group's GitHub,
+initialized with the last published YANG module and associated git history.
+In addition, the chairs MAY make sure that an appropriate CI/CD YANG validation is
+in place.  It is RECOMMENDED that a real time collaborative working environment
 be provided in the repository to enable online validation of YANG
 modules (e.g., via yanglint) using the YANG template with the CI/CD
 pipeline (e.g., https://github.com/IETF-OPS-AD/I-D-with-yang-template),
