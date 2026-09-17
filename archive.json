@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-09-15T03:31:56.571298+00:00",
+  "timestamp": "2026-09-17T03:33:34.874060+00:00",
   "repo": "IETF-OPSAWG-WG/veloce",
   "labels": [
     {
@@ -4412,13 +4412,13 @@
       "labels": [],
       "body": "Focus on address #19: Who handle WG github when specific WG gets concluded, \r\nthis issue is also related to  another PR:\r\nhttps://github.com/IETF-OPSAWG-WG/veloce/pull/73\r\nand deal with 2 exceptional cases:\r\na. what if existing repo doesn't exist?\r\nb. what if existing repo exist but the responsible WG concluded\r\n",
       "createdAt": "2026-09-09T00:04:32Z",
-      "updatedAt": "2026-09-11T15:30:27Z",
+      "updatedAt": "2026-09-16T08:30:51Z",
       "baseRepository": "IETF-OPSAWG-WG/veloce",
       "baseRefName": "main",
       "baseRefOid": "86da8211141b16b2f9e5c0c9990a24d241034bf4",
       "headRepository": "IETF-OPSAWG-WG/veloce",
       "headRefName": "billwuqin-patch-14",
-      "headRefOid": "e7fbf121974d4585ba3fccb40412d9146a73f46f",
+      "headRefOid": "22730ddb1d957819a499ddc4d196bc9518aae21c",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
@@ -4495,6 +4495,58 @@
               "body": "I agree,  is there any proposed text change in this paragraph or leave this beyond scope? e..g., a wiki page needs to created to provide those instructions?",
               "createdAt": "2026-09-11T15:29:07Z",
               "updatedAt": "2026-09-11T15:29:50Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDORMlxH88AAAABNxDlbA",
+          "commit": {
+            "abbreviatedOid": "e7fbf12"
+          },
+          "author": "dhruvdhody",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2026-09-16T05:28:49Z",
+          "updatedAt": "2026-09-16T05:30:27Z",
+          "comments": [
+            {
+              "originalPosition": 9,
+              "body": "In case of 'an existing repository but the responsible WG was concluded' why 'new repository MUST be created' , why not the existing repository be moved?",
+              "createdAt": "2026-09-16T05:28:50Z",
+              "updatedAt": "2026-09-16T05:30:27Z"
+            },
+            {
+              "originalPosition": 9,
+              "body": "since you are talking about history, maybe you meant 'move' but calling it 'a new repository MUST be created in the new responsible working group's GitHub'; which is not very clear in my reading of the text! ",
+              "createdAt": "2026-09-16T05:30:18Z",
+              "updatedAt": "2026-09-16T05:30:27Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDORMlxH88AAAABNyeTOA",
+          "commit": {
+            "abbreviatedOid": "22730dd"
+          },
+          "author": "billwuqin",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2026-09-16T08:25:42Z",
+          "updatedAt": "2026-09-16T08:30:50Z",
+          "comments": [
+            {
+              "originalPosition": 9,
+              "body": "> In case of 'an existing repository but the responsible WG was concluded' why 'new repository MUST be created' , why not the existing repository be moved?\nYou are right,\nCurrently, there is no such case in the past, e.g., L3SM is the case since L3SM has concluded and there is no repository for L3SM draft in the past.\nSuppose we have L3SM repository and want to move L3SM model update to ONSEN, we can move L3SM to ONSEN WG repository with all the history maintained.",
+              "createdAt": "2026-09-16T08:25:43Z",
+              "updatedAt": "2026-09-16T08:30:50Z"
+            },
+            {
+              "originalPosition": 9,
+              "body": "> since you are talking about history, maybe you meant 'move' but calling it 'a new repository MUST be created in the new responsible working group's GitHub'; which is not very clear in my reading of the text!\r\n\r\n@dhruvdhody  please review the update based on your suggestion\r\nhttps://github.com/IETF-OPSAWG-WG/veloce/pull/74/changes",
+              "createdAt": "2026-09-16T08:29:40Z",
+              "updatedAt": "2026-09-16T08:30:50Z"
             }
           ]
         }
