@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-09-17T03:33:34.874060+00:00",
+  "timestamp": "2026-09-20T03:32:46.285665+00:00",
   "repo": "IETF-OPSAWG-WG/veloce",
   "labels": [
     {
@@ -4412,7 +4412,7 @@
       "labels": [],
       "body": "Focus on address #19: Who handle WG github when specific WG gets concluded, \r\nthis issue is also related to  another PR:\r\nhttps://github.com/IETF-OPSAWG-WG/veloce/pull/73\r\nand deal with 2 exceptional cases:\r\na. what if existing repo doesn't exist?\r\nb. what if existing repo exist but the responsible WG concluded\r\n",
       "createdAt": "2026-09-09T00:04:32Z",
-      "updatedAt": "2026-09-16T08:30:51Z",
+      "updatedAt": "2026-09-17T12:10:51Z",
       "baseRepository": "IETF-OPSAWG-WG/veloce",
       "baseRefName": "main",
       "baseRefOid": "86da8211141b16b2f9e5c0c9990a24d241034bf4",
@@ -4549,6 +4549,19 @@
               "updatedAt": "2026-09-16T08:30:50Z"
             }
           ]
+        },
+        {
+          "id": "PRR_kwDORMlxH88AAAABOA4lew",
+          "commit": {
+            "abbreviatedOid": "22730dd"
+          },
+          "author": "dhruvdhody",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-09-17T12:10:50Z",
+          "updatedAt": "2026-09-17T12:10:50Z",
+          "comments": []
         }
       ]
     },
