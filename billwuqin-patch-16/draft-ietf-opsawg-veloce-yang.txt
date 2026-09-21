@@ -276,18 +276,18 @@ Table of Contents
    possible.  If no existing repository exists, then a new one MUST be
    created, initialized with the last published YANG module.
 
+   A bis version of the initial RFC MAY be considered if a major change
+   needs to be added in the document.  Such a decision is left to the
+   WG.  WG may decide to update an adopted YANG module in the IETF
+   repository and only update the RFC to change the reference to the
+   YANG module.
+
    When updating an existing, published module, IETF errata reports can
    be used to keep track of changes for both the YANG module and its
    corresponding RFC text.  In the case the errata pertains to the YANG
    module, once the Area Director (AD) verifies the errata using the
    existing IETF process, a Pull Request (PR) is opened to merge the
    changes into the WG repository.
-
-   A bis version of the initial RFC MAY be considered if a major change
-   needs to be added in the document.  Such a decision is left to the
-   WG.  WG may decide to update an adopted YANG module in the IETF
-   repository and only update the RFC to change the reference to the
-   YANG module.
 
 3.  Experimental Plan
 
