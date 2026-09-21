@@ -5,12 +5,12 @@
 Operations and Management Area Working Group             M. Jethanandani
 Internet-Draft                                                    Arrcus
 Intended status: Experimental                                      Q. Wu
-Expires: 18 March 2027                                            Huawei
+Expires: 25 March 2027                                            Huawei
                                                            M. Richardson
                                                 Sandelman Software Works
                                                                 D. Dhody
                                                                   Huawei
-                                                       14 September 2026
+                                                       21 September 2026
 
 
             YANG deVELpment PrOCEss and maintenance (VELOCE)
@@ -62,7 +62,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 18 March 2027.
+   This Internet-Draft will expire on 25 March 2027.
 
 Copyright Notice
 
@@ -202,8 +202,8 @@ Table of Contents
    document (refer to to Section 4.3 of [RFC8874] for monitoring
    activity).  They, along with corresponding links to the Pull Request
    (PR), are a useful way to record decisions made by the WG. please
-   note that Editor's summary report is mandatory for the VELOCE
-   experiement.
+   note that Editor's summary report SHOULD be posted to the WG list
+   perodically and is mandatory for the VELOCE experiement.
 
    PRs allow for a user to request a change to the repository.  A user
    does not need to have write access to the repository.  A fork of the
