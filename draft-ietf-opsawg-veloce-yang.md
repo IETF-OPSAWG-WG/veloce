@@ -245,7 +245,7 @@ When updating an existing module, it is RECOMMENDED to use the same WG
 repository of the initial version of YANG module for the updated module
 maintenance, so previous history is preserved as much as possible. If
 no existing repository exists, then a new one MUST be created,
-initialized with the last published YANG module. 
+initialized with the last published YANG module.
 
 When updating an existing, published module, IETF errata reports can
 be used to keep track of changes for both the YANG module and its
