@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-09-20T03:32:46.285665+00:00",
+  "timestamp": "2026-09-22T03:26:33.393259+00:00",
   "repo": "IETF-OPSAWG-WG/veloce",
   "labels": [
     {
@@ -872,13 +872,15 @@
       "state": "OPEN",
       "author": "dhruvdhody",
       "authorAssociation": "COLLABORATOR",
-      "assignees": [],
+      "assignees": [
+        "dhruvdhody"
+      ],
       "labels": [
         "post-publication"
       ],
       "body": "_V2: Made changes as per the feedback, changes in **bold**:BC/NBC/Semver etc_\n_V1: Here is a proposed workflow as I imagine it to work for updating YANG models post RFC publication via VELOCE_\n\n----\n# Post-Publication Maintenance of YANG Modules\n\nThis section defines how a YANG module evolves after the RFC that references it has been published. \nDevelopment of a module that is not yet published as an RFC is unchanged: it follows the procedure in Working Group GitHub Usage Guidance [RFC8874], and this section does not apply.\n\n## 1. Repository and File Model\n\nA published module is maintained as a single canonical file in the WG SCM repository. The module name and namespace MUST remain stable across revisions; a change MUST NOT be expressed by creating a new file for the module.\n\nEach change to a published module MUST add a new `revision` statement at the top of the module (Section 7.1.9 of [RFC7950]) following the revision-handling procedure of [I-D.ietf-netmod-yang-module-versioning], **carry a revision-label expressing its YANG semantic version [I-D.ietf-netmod-yang-semver], and describe the change. The revision date is the revision key; the revision-label carries the backward-compatibility signal (PATCH / MINOR / MAJOR).** Existing revision statements MUST NOT be modified.\n\nEach published revision MUST be marked with an **immutable git tag named for its YANG semantic version (e.g., 1.2.0)**, or an equivalent branch that is not subsequently rewritten.\n\n## 2. Publication and Locking\n\nAt RFC publication, the module is tagged and the RFC MUST reference that specific tag together with the revision date. The referenced revision is locked: the tag MUST NOT be moved or rewritten, and the revision it identifies MUST NOT be altered in any way. Any subsequent modification MUST be introduced as a new revision via the procedure below.\n\n**Example text in RFC:**\n> At the time of publication of this document, the \"ietf-foo\" YANG\n   module is at revision 2026-06-30 with YANG semantic version 1.0.0 at \n   <https://github.com/ietf-wg-bar/ietf-foo/tree/1.0.0>. \n\n> The module is maintained after publication of this document following\n   the procedure in [VELOCE].  Later revisions are published in the\n   same repository; such revisions do not alter the version referenced\n   by this document. The latest published revision and tracking can be \n   found in the  repository README at \n   <https://github.com/ietf-wg-bar/ietf-foo>\n\n## 3. Change Classification\n\n**This section is rewritten in V2**\n\nBefore a change is proposed, it MUST be classified on two questions: (a) does it require new normative prose, and (b) is it backward-compatible (BC) or non-backward-compatible (NBC) under [I-D.ietf-netmod-yang-semver]. The first question selects the path; the second sets the version increment and consensus rigor (Section 5).\n\nThree cases:\n- Editorial / defect, no new prose. A `description` fix, formatting, or a defect correction consistent with existing normative text. Handled in this flow as a base-module revision \u2014 typically a PATCH (no schema-contract change) or a BC fix.\n- Small addition self-contained in the model, no new prose. For example, adding a TLV value or enumeration that introduces no new normative semantics beyond what the base prose already establishes. Handled in this flow as a base-module revision, BC / MINOR increment. No new Internet-Draft and no augmentation module are required; several such additions MAY be combined into a single revision. This is the preferred way to make small extensions, to avoid a proliferation of single-feature augmentation modules.\n- Substantial capability requiring new normative prose. Functionality that needs new normative text and is independently useful as its own module. Introduced through a new Internet-Draft with its own module that augments the base, following the usual IETF process. VELOCE does not change this.\n\nThe deciding question for the in-model path versus a new Internet-Draft is whether the change requires new normative prose, not merely whether it is new functionality.**\n\nWhere classification is contested, the WG Chairs decide, escalating to the responsible AD if needed.\n\n## 4. Pull Request Procedure\n\nA maintenance change is submitted as a Pull Request (PR) against the latest published branch. The PR SHOULD be structured with the first commit adding a new `revision` statement (date and description only, no other change), the later commits containing the change itself.\n\nThe PR MUST be cross-posted to the WG mailing list. Discussion and the linked Issue record the rationale and decision.\n\n## 5. Consensus and Approval\n\n**This section is rewritten in V2**\n\nEvery PR that modifies a published module is posted in the Working Group mailing list before it is merged. The version increment under [I-D.ietf-netmod-yang-semver] determines the additional review and the strength of the consensus path: backward-compatible changes are the easy path, non-backward-compatible changes require a stronger one.\n\n- PATCH \u2014 Editorial. Changes that do not affect the schema contract (e.g., description and comment corrections, formatting, reference fixes). Required: Responsible AD approval. These MAY be handled with errata-like lightweight processing.\n- MINOR \u2014 Backward-compatible (BC) schema change. Additive changes that do not break existing implementations (new optional nodes, identities, features, TLV/enum values). Required: YANG Doctor review + WGLC + responsible AD approval + MGMT AD approval.\n- MAJOR \u2014 Non-backward-compatible (NBC) change. Any change that breaks existing implementations of the published module. Required: a stronger consensus path \u2014 YANG Doctor review + WGLC + responsible AD approval + MGMT AD approval, with the NBC nature and its justification explicitly called out in the Last Call and recorded in the revision. \n\n## 6. Merge, Tagging, and the Latest-Published Pointer\n\nOn successful completion of the required approvals, the PR is merged and the resulting revision MUST be tagged **with its YANG semantic version**. The new tag becomes a published revision; like all published revisions it is then locked.\n\nThe repository MUST maintain a single \"latest published revision\" pointer that identifies the most recent tag completed under Section 5. Because a change reaches the main branch only after completing that procedure, the main branch contains only published, tagged revisions.\n\n## 7. Repository Presentation (README)\n\nThe repository landing page (e.g., README) MUST clearly distinguish the following, so that an implementer who is not an IETF participant is served the correct artifact:\n\n- Published revisions \u2014 a table mapping each tag to its revision date, the referencing RFC, and status (e.g., \"frozen \u2014 RFC NNNN reference\").\n\n- Latest published revision \u2014 a direct pointer to the most recent tag that has completed Section 5. This is the revision an implementer building to the current standard SHOULD use.\n\n- Development status \u2014 an explicit notice that open PR branches MAY contain in-review changes that are NOT approved for implementation, with a link to open PRs. The main branch contains only published, tagged revisions.\n\n## 8. Ownership, WG Closure and Custody\n\nWG chairs assign maintainers, which otherwise defaults to the WG Chairs. When the WG closes, ownership of the repository transfers to a designated home WG (OPSAWG by default), which continues to maintain the module under the process defined in this document.\n\n\n----\n_Disclosure: The idea was mine, and I worked with Claude to refine it and describe it here_\n",
       "createdAt": "2026-06-07T13:01:30Z",
-      "updatedAt": "2026-07-01T02:50:07Z",
+      "updatedAt": "2026-09-21T03:59:11Z",
       "closedAt": null,
       "comments": [
         {
@@ -949,13 +951,15 @@
       "state": "OPEN",
       "author": "italobusi",
       "authorAssociation": "COLLABORATOR",
-      "assignees": [],
+      "assignees": [
+        "italobusi"
+      ],
       "labels": [
         "new-module-scope"
       ],
       "body": "In IETF protocols, adding TLVs after the base RFC (i.e., the RFC with the base protocol specification) it is possible, but not required, to publish an RFC-bis which obsoletes the base RFC. In many cases, an RFC which updates the base RFC (RFC-update) is published defining only the new TLVs.\n\nThe datatracker provides tagging to show whether an RFC has been update by one or more RFC-update or replaced by an RFC-bis.\n\nAlso bug fixing can be easily done with Errata and the datatracker provides tagging to show whether there are errata as well as to retrieve the text of the RFC with the verified errata inline.\n\nI am wondering whether we can rely as much as possible on this process and focus on the adjustments that are needed because of the nature of the YANG language which requires a new revision of the whole YANG module when something gets changed\n\nAfter the initial revision of a YANG module is published, there are three cases which might have an impact on that module:\n- a bug is discovered (bug fixing)\n- a new functionality needs to be added through a revision of that YANG module\n- a new functionality needs to be added in another YANG module which augments that YANG module\n\nI think that the decision about whether a new functionality needs to be added in a new revision or in an augmentation model is a design choice to be taken purely on the basis of technical considerations (e.g., modular design) and not being impacted by the process\n\nFrom a process point of view, defining a new YANG module which augments an existing YANG module is actually the design of the initial revision of a YANG module and outside the scope of this issue which focuses only on the process to update a YANG module after the publication of its initial revision\n\nA common assumption is that the base RFC will no longer contain the YANG module but a pointer to a stable repository (e.g., a github release)\n\nWe therefore have two cases left: bug fixing and new functionalities\n\n## Bug fixing\n\nA bug fix may impact the narrative text or the YANG module (or both)\n\nMy suggestion is to submit an errata for fixing bug\n\nIf the bug is affecting the narrative text, the proposed changes to the narrative text should be provided in the errata.\n\nIf the bug is affecting the YANG model:\n- the proposed changes to the YANG module shall be provided in a specific working repository (e.g., a github PR)\n- a link to that working repository (e.g., the github PR) shall be provided in the errata\n\nThe approval of the errata follows the existing process already in place for the approval of errata with some minor updates required to ensure that  the proposed changes to the YANG module, if any, have been reviewed and approved. The review of the YANG should only focus on the changes as marked in the working repository.\n\nWhen an errata proposing changes to the YANG module is verified:\n- the proposed changes to the YANG module in the working repository are merged into a stable repository (e.g., a github release tagged after the PR has been merged)\n- the verified text in the errata is updated to point to the stable repository\n- the verified text in the narrative sections, if any, are updated following existing errata process\n\nAn user of the base RFC can check the errata database (or the RFC with inline errata) to get the latest version of the YANG module(s) within that RFC.\n\n## New functionalities: RFC-update or RFC-bis\n\nThe home WG can decide whether the changes in the YANG module revision are significant enough to justify the development of an RFC-bis or an RFC-update is sufficient.\n\nWe therefore have three cases:\n1. RFC-update with no changes to the narrative text\n2. RFC-update with changes to the narrative text\n3. RFC-bis\n\n###  RFC-update\n\nAn RFC-update may impact the narrative text or the YANG module (or both)\n\nMy suggestion is to submit an I-D proposing an RFC-update\n\nIf the RFC-update requires some narrative text to describe the changes, this text can be provided in the narrative sections of the I-D.\n\nIf the RFC-update requires changes to the YANG model:\n- the proposed changes to the YANG module shall be provided in a specific working repository (e.g., a github PR)\n- a link to that working repository (e.g., the github PR) shall be provided in the I-D\n\nIf the RFC-update just requires changes to the YANG module, the I-D can be quite slim: an abstract and an introduction briefly summarizing the need for the change and a section pointing to the working repository (e.g., a github PR) with the updated YANG model\n\nThe approval of the RFC-update I-D follows the normal IETF process (including the IESG review), with some minor updates required to ensure that  the proposed changes to the YANG module, if any, have been reviewed and approved. The review of the YANG should only focus on the changes as marked in the working repository.\n\nNote: it is also possible to publish RFC-update to just update the narrative text of the base RFC (in case for example the narrative text of the base RFC has proven not to be clear or reduced to speed-up the publication of the initial revision of the YANG model). In this case, no YANG model changes are proposed and the RFC-update I-D will not provide any replacement to the pointer to the stable repository where the latest YANG model is available.\n\nWhen an RFC-update I-D proposing changes to the YANG module is approved by the IESG:\n- the proposed changes to the YANG module in the working repository are merged into a stable repository (e.g., a github release tagged after the PR has been merged)\n- the text in the published RFC-update points to the stable repository\n- the the narrative sections, if any, are edited in the published RFC-update\n\nAn user of the base RFC can check the RFCs updating the base RFC to get the latest version of the YANG module(s) within that RFC.\n\n### RFC-bis\n\nAn I-D which obsoletes the base RFC (and all the other RFCs updating it) is submitted to the WG and approved as RFC following the normal IETF process (no big changes to the current process for updating YANG modules)\n\n## Standard Conformance Considerations\n\nA side effect of this process, which keeps a 1:1 mapping between an RFC and a YANG module revision, would be to address the standard conformance issue highlighted in:\n\nhttps://mailarchive.ietf.org/arch/msg/opsawg/tDYaMcVe-RCzYccJMCV90su3cDo/\n\n## Items for future discussion\n\nThere are some open issues (e.g., which repository to use or how the PR in github are managed, considering also that github may be used by the editors during the development cycle). I think these issues are applicable to any other proposal and can be refined after the main direction is taken.\n\nWe can discuss at a later stage whether the stable repository is a github release or something else (e.g., an IANA hosted repository).\n\nWe can discuss at a later stage whether this working repository is a github PR or something else (e.g., an IANA hosted repository). IMHO, the key requirement is that this working repository should provide a diff compared with the latest revision of the YANG module to ensure that the revision is focused only on the proposed changes.\n\nWe can discuss at a later stage whether the initial revision or the revision in an RFC-bis should be embedded with an I-D (as in the current process) or a pointer to a working repository (e.g., a github PR) is preferable or allowed.\n",
       "createdAt": "2026-06-17T18:46:17Z",
-      "updatedAt": "2026-09-09T12:37:55Z",
+      "updatedAt": "2026-09-21T03:59:38Z",
       "closedAt": null,
       "comments": [
         {
@@ -4577,13 +4581,13 @@
       "labels": [],
       "body": "",
       "createdAt": "2026-09-14T11:06:27Z",
-      "updatedAt": "2026-09-14T11:07:10Z",
+      "updatedAt": "2026-09-21T03:45:05Z",
       "baseRepository": "IETF-OPSAWG-WG/veloce",
       "baseRefName": "main",
       "baseRefOid": "86da8211141b16b2f9e5c0c9990a24d241034bf4",
       "headRepository": "IETF-OPSAWG-WG/veloce",
       "headRefName": "billwuqin-patch-15",
-      "headRefOid": "1d3eb988e4f03afa0949f8e8001f6cfb6cc1600f",
+      "headRefOid": "a48c169639321f33a157aa02df7ae9cd6bc34f4b",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
@@ -4607,6 +4611,53 @@
               "body": "````suggestion\nlinks to the Pull Request (PR), are a useful way to record decisions made by the WG.\n````",
               "createdAt": "2026-09-14T11:06:50Z",
               "updatedAt": "2026-09-14T11:06:50Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 76,
+      "id": "PR_kwDORMlxH88AAAABEXNGRQ",
+      "title": "Break down VELOCE procedure into New YANG development and YANG Update",
+      "url": "https://github.com/IETF-OPSAWG-WG/veloce/pull/76",
+      "state": "OPEN",
+      "author": "billwuqin",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2026-09-21T03:52:50Z",
+      "updatedAt": "2026-09-21T06:42:27Z",
+      "baseRepository": "IETF-OPSAWG-WG/veloce",
+      "baseRefName": "main",
+      "baseRefOid": "86da8211141b16b2f9e5c0c9990a24d241034bf4",
+      "headRepository": "IETF-OPSAWG-WG/veloce",
+      "headRefName": "billwuqin-patch-16",
+      "headRefOid": "8b7572b9042241a7120f3898336526c339c79c75",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDORMlxH88AAAABObGlhw",
+          "commit": {
+            "abbreviatedOid": "6dcd15c"
+          },
+          "author": "github-actions",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2026-09-21T03:53:18Z",
+          "updatedAt": "2026-09-21T03:53:19Z",
+          "comments": [
+            {
+              "originalPosition": 96,
+              "body": "````suggestion\ninitialized with the last published YANG module.\n````",
+              "createdAt": "2026-09-21T03:53:18Z",
+              "updatedAt": "2026-09-21T03:53:19Z"
             }
           ]
         }
