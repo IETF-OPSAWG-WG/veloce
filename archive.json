@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-09-22T03:26:33.393259+00:00",
+  "timestamp": "2026-09-24T03:16:48.178049+00:00",
   "repo": "IETF-OPSAWG-WG/veloce",
   "labels": [
     {
@@ -4416,7 +4416,7 @@
       "labels": [],
       "body": "Focus on address #19: Who handle WG github when specific WG gets concluded, \r\nthis issue is also related to  another PR:\r\nhttps://github.com/IETF-OPSAWG-WG/veloce/pull/73\r\nand deal with 2 exceptional cases:\r\na. what if existing repo doesn't exist?\r\nb. what if existing repo exist but the responsible WG concluded\r\n",
       "createdAt": "2026-09-09T00:04:32Z",
-      "updatedAt": "2026-09-17T12:10:51Z",
+      "updatedAt": "2026-09-22T16:36:29Z",
       "baseRepository": "IETF-OPSAWG-WG/veloce",
       "baseRefName": "main",
       "baseRefOid": "86da8211141b16b2f9e5c0c9990a24d241034bf4",
@@ -4434,6 +4434,13 @@
           "body": "> I think this was addressed in another PR, right? This has merge conflicts now and uses older language.\r\n\r\nNo, this is relevant issue but slight different issue ticket\r\nhttps://github.com/IETF-OPSAWG-WG/veloce/issues/19\r\nI have resolved merge conflict, please review.",
           "createdAt": "2026-09-11T13:38:55Z",
           "updatedAt": "2026-09-11T13:38:55Z"
+        },
+        {
+          "author": "billwuqin",
+          "authorAssociation": "COLLABORATOR",
+          "body": "> The text is fine, but how one _moves_ a repo might need some guidance. My naive git-fu would suggest creating a new repo under the new WG, add a new remote to a checkout of the current repo, and then push to the new repo. Then, the old repo should be archived and a message added to the README pointing to the new repo.\r\n> \r\n> Would it make sense to add this text here or wait for others to comment?\r\n\r\nThe text is okay, I am wondering whether a reference or link to this guidance is sufficient since for some Geek or Gura, these guidance is obvious or not needed.",
+          "createdAt": "2026-09-22T16:36:29Z",
+          "updatedAt": "2026-09-22T16:36:29Z"
         }
       ],
       "reviews": [
@@ -4566,6 +4573,32 @@
           "createdAt": "2026-09-17T12:10:50Z",
           "updatedAt": "2026-09-17T12:10:50Z",
           "comments": []
+        },
+        {
+          "id": "PRR_kwDORMlxH88AAAABOqraTg",
+          "commit": {
+            "abbreviatedOid": "22730dd"
+          },
+          "author": "dhruvdhody",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-09-22T14:09:09Z",
+          "updatedAt": "2026-09-22T14:09:09Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDORMlxH88AAAABOqt27g",
+          "commit": {
+            "abbreviatedOid": "22730dd"
+          },
+          "author": "xorrkaz",
+          "authorAssociation": "MEMBER",
+          "state": "APPROVED",
+          "body": "The text is fine, but how one _moves_ a repo might need some guidance.  My naive git-fu would suggest creating a new repo under the new WG, add a new remote to a checkout of the current repo, and then push to the new repo.  Then, the old repo should be archived and a message added to the README pointing to the new repo.\n\nWould it make sense to add this text here or wait for others to comment?",
+          "createdAt": "2026-09-22T14:12:29Z",
+          "updatedAt": "2026-09-22T14:12:29Z",
+          "comments": []
         }
       ]
     },
@@ -4628,7 +4661,7 @@
       "labels": [],
       "body": "",
       "createdAt": "2026-09-21T03:52:50Z",
-      "updatedAt": "2026-09-21T06:42:27Z",
+      "updatedAt": "2026-09-22T16:18:52Z",
       "baseRepository": "IETF-OPSAWG-WG/veloce",
       "baseRefName": "main",
       "baseRefOid": "86da8211141b16b2f9e5c0c9990a24d241034bf4",
@@ -4639,7 +4672,36 @@
       "mergedAt": null,
       "mergedBy": null,
       "mergeCommit": null,
-      "comments": [],
+      "comments": [
+        {
+          "author": "dhruvdhody",
+          "authorAssociation": "COLLABORATOR",
+          "body": "@billwuqin - Could we change direction here and explicitly give the YANG module its own repository, separate from the draft\u2019s prose? One of the goals of VELOCE is to let the module evolve independently after the draft becomes an RFC. Naming the repository after the draft seems to carry the document-centric approach into the new process.\r\n\r\nI\u2019d suggest naming the repository after the module or better yet the module family and keeping it as the home for ongoing maintenance. The draft would reference a specific module release. Reusing that **module repository** for subsequent updates makes sense and preserves history\u2014we should make clear that this is what we mean, rather than reusing the draft repository. \r\n\r\nI wanted to check if this makes sense before suggesting any edits or review comments! ",
+          "createdAt": "2026-09-22T13:08:04Z",
+          "updatedAt": "2026-09-22T13:08:04Z"
+        },
+        {
+          "author": "xorrkaz",
+          "authorAssociation": "MEMBER",
+          "body": "I'm slightly more in alignment with Dhruv's approach to keep the YANG modules in a separate repo from the I-D.  this makes it cleaner for release tags and as a clear pointer destination from registries.  That said, Qin's points around added complexity are valid.  I think those inclined to use git for I-D development can make use of git submodules to link the YANG repo to the I-D repo.",
+          "createdAt": "2026-09-22T14:26:15Z",
+          "updatedAt": "2026-09-22T14:26:15Z"
+        },
+        {
+          "author": "billwuqin",
+          "authorAssociation": "COLLABORATOR",
+          "body": "> @billwuqin - Could we change direction here and explicitly give the YANG module its own repository, separate from the draft\u2019s prose? One of the goals of VELOCE is to let the module evolve independently after the draft becomes an RFC. Naming the repository after the draft seems to carry the document-centric approach into the new process.\r\n> \r\n> I\u2019d suggest naming the repository after the module or better yet the module family and keeping it as the home for ongoing maintenance. The draft would reference a specific module release. Reusing that **module repository** for subsequent updates makes sense and preserves history\u2014we should make clear that this is what we mean, rather than reusing the draft repository.\r\n> \r\n> I wanted to check if this makes sense before suggesting any edits or review comments!\r\n\r\nI think for YANG model update or maintenance,  making YANG model update repo separate from prose repo make sense, this decoupling may facilitate YANG model update without relying on prose's progress.\r\n\r\nIn addition, I think coupling yang model with prose in the same repo also brings convenience to authors if he doesn't care how faster YANG model can be progressed comparing with prose development, it can be optional choice? right?",
+          "createdAt": "2026-09-22T16:17:17Z",
+          "updatedAt": "2026-09-22T16:17:17Z"
+        },
+        {
+          "author": "billwuqin",
+          "authorAssociation": "COLLABORATOR",
+          "body": "> I'm slightly more in alignment with Dhruv's approach to keep the YANG modules in a separate repo from the I-D. this makes it cleaner for release tags and as a clear pointer destination from registries. That said, Qin's points around added complexity are valid. I think those inclined to use git for I-D development can make use of git submodules to link the YANG repo to the I-D repo.\r\n\r\nWe need to have automation tools to support this,  this may bring more advantage to authors or users.",
+          "createdAt": "2026-09-22T16:18:52Z",
+          "updatedAt": "2026-09-22T16:18:52Z"
+        }
+      ],
       "reviews": [
         {
           "id": "PRR_kwDORMlxH88AAAABObGlhw",
