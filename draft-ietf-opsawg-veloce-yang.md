@@ -176,9 +176,13 @@ Contribution methods for the YANG module are similar to those
 defined in Section 4 of Working Group GitHub Usage
 Guidance {{!RFC8874}}. This includes the use of Issues to track open
 issues regarding the module, email notifications of activity on working group repositories,
- Editor's reporting or change log about the changes to the document (refer to
+Editor's summary report or change log about the changes to the document (refer to
 to Section 4.3 of {{!RFC8874}} for monitoring activity). They, along with corresponding
 links to the Pull Request (PR), are a useful way to record decisions made by the WG.
+please note that Editor's summary report SHOULD be posted to the WG list perodically
+(e.g., use weekly github digest to report the status of issue tickets and PRs) and
+is mandatory for the VELOCE experiement. Alternatively, Editor's summary report can be
+reported by the Editor on demand to solicit inputs and comments on the key open issues.
 
 PRs allow for a user to request a change to the repository. A
 user does not need to have write access to the repository. A
