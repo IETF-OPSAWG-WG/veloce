@@ -150,6 +150,10 @@ be created, initialized with the last published YANG module.
 If there is an existing repository but the responsible WG was concluded,
 then such repository MUST be moved to the new responsible working group's GitHub,
 initialized with the last published YANG module and associated git history.
+In the latter case, a new repository should be created under the new WG, a new remote
+should be added to a checkout of the existing repository, and then pushed to the new
+repository. Then, the existing/old repository should be archived with a message added
+to the README pointing to the new repository.
 In addition, the chairs MAY make sure that an appropriate CI/CD YANG validation is
 in place.  It is RECOMMENDED that a real time collaborative working environment
 be provided in the repository to enable online validation of YANG
