@@ -5,12 +5,12 @@
 Operations and Management Area Working Group             M. Jethanandani
 Internet-Draft                                                    Arrcus
 Intended status: Experimental                                      Q. Wu
-Expires: 20 March 2027                                            Huawei
+Expires: 3 April 2027                                             Huawei
                                                            M. Richardson
                                                 Sandelman Software Works
                                                                 D. Dhody
                                                                   Huawei
-                                                       16 September 2026
+                                                       30 September 2026
 
 
             YANG deVELpment PrOCEss and maintenance (VELOCE)
@@ -62,7 +62,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 20 March 2027.
+   This Internet-Draft will expire on 3 April 2027.
 
 Copyright Notice
 
@@ -172,15 +172,20 @@ Table of Contents
    existing repository but the responsible WG was concluded, then such
    repository MUST be moved to the new responsible working group's
    GitHub, initialized with the last published YANG module and
-   associated git history.  In addition, the chairs MAY make sure that
-   an appropriate CI/CD YANG validation is in place.  It is RECOMMENDED
-   that a real time collaborative working environment be provided in the
-   repository to enable online validation of YANG modules (e.g., via
-   yanglint) using the YANG template with the CI/CD pipeline (e.g.,
-   https://github.com/IETF-OPS-AD/I-D-with-yang-template), and to ensure
-   a consistent development environment across all contributors.  In
-   addition, a containerized build environment for local validation of
-   YANG modules MAY also be provided in the repository as a backup.
+   associated git history.  In the latter case, a new repository should
+   be created under the new WG, a new remote should be added to a
+   checkout of the existing repository, and then pushed to the new
+   repository.  Then, the existing/old repository should be archived
+   with a message added to the README pointing to the new repository.
+   In addition, the chairs MAY make sure that an appropriate CI/CD YANG
+   validation is in place.  It is RECOMMENDED that a real time
+   collaborative working environment be provided in the repository to
+   enable online validation of YANG modules (e.g., via yanglint) using
+   the YANG template with the CI/CD pipeline (e.g., https://github.com/
+   IETF-OPS-AD/I-D-with-yang-template), and to ensure a consistent
+   development environment across all contributors.  In addition, a
+   containerized build environment for local validation of YANG modules
+   MAY also be provided in the repository as a backup.
 
    The procedure for managing WG documents (e.g., assign editors)
    applies for managing YANG modules (Section 6.1 of IETF Working Group
