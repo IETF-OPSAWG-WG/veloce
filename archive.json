@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-09-24T03:16:48.178049+00:00",
+  "timestamp": "2026-10-01T04:18:48.828772+00:00",
   "repo": "IETF-OPSAWG-WG/veloce",
   "labels": [
     {
@@ -4416,13 +4416,13 @@
       "labels": [],
       "body": "Focus on address #19: Who handle WG github when specific WG gets concluded, \r\nthis issue is also related to  another PR:\r\nhttps://github.com/IETF-OPSAWG-WG/veloce/pull/73\r\nand deal with 2 exceptional cases:\r\na. what if existing repo doesn't exist?\r\nb. what if existing repo exist but the responsible WG concluded\r\n",
       "createdAt": "2026-09-09T00:04:32Z",
-      "updatedAt": "2026-09-22T16:36:29Z",
+      "updatedAt": "2026-09-30T06:15:24Z",
       "baseRepository": "IETF-OPSAWG-WG/veloce",
       "baseRefName": "main",
       "baseRefOid": "86da8211141b16b2f9e5c0c9990a24d241034bf4",
       "headRepository": "IETF-OPSAWG-WG/veloce",
       "headRefName": "billwuqin-patch-14",
-      "headRefOid": "22730ddb1d957819a499ddc4d196bc9518aae21c",
+      "headRefOid": "4060f0898615920defc82d46ec809fbf95b3c3a0",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
@@ -4614,13 +4614,13 @@
       "labels": [],
       "body": "",
       "createdAt": "2026-09-14T11:06:27Z",
-      "updatedAt": "2026-09-21T03:45:05Z",
+      "updatedAt": "2026-09-30T06:33:24Z",
       "baseRepository": "IETF-OPSAWG-WG/veloce",
       "baseRefName": "main",
       "baseRefOid": "86da8211141b16b2f9e5c0c9990a24d241034bf4",
       "headRepository": "IETF-OPSAWG-WG/veloce",
       "headRefName": "billwuqin-patch-15",
-      "headRefOid": "a48c169639321f33a157aa02df7ae9cd6bc34f4b",
+      "headRefOid": "f29adf1ffcf6d799576ff7a01922fb066c44503c",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
@@ -4661,7 +4661,7 @@
       "labels": [],
       "body": "",
       "createdAt": "2026-09-21T03:52:50Z",
-      "updatedAt": "2026-09-22T16:18:52Z",
+      "updatedAt": "2026-09-30T08:11:13Z",
       "baseRepository": "IETF-OPSAWG-WG/veloce",
       "baseRefName": "main",
       "baseRefOid": "86da8211141b16b2f9e5c0c9990a24d241034bf4",
@@ -4720,6 +4720,70 @@
               "body": "````suggestion\ninitialized with the last published YANG module.\n````",
               "createdAt": "2026-09-21T03:53:18Z",
               "updatedAt": "2026-09-21T03:53:19Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDORMlxH88AAAABP6s4ag",
+          "commit": {
+            "abbreviatedOid": "8b7572b"
+          },
+          "author": "italobusi",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "I have missed the last calls: my review is assuming that the intention is still to allow publishing a YANG revision without publishing any RFC pointing to it\n\nOne item which is missing from the text is how to focus the review of YANG module updates only to the changes: from my experience, the main reasons which is making the RFC-bis process quite long is the huge amount of comments on the text and YANG module already existing in the base RFC",
+          "createdAt": "2026-09-30T07:50:39Z",
+          "updatedAt": "2026-09-30T08:03:32Z",
+          "comments": [
+            {
+              "originalPosition": 40,
+              "body": "The repository is not for the draft but for the YANG module:\n\n\n```suggestion\nthe WG. The name of the repository SHOULD reflect the name of the YANG module.\n```\n\nI am also wondering whether this should be a MUST",
+              "createdAt": "2026-09-30T07:50:39Z",
+              "updatedAt": "2026-09-30T08:03:32Z"
+            },
+            {
+              "originalPosition": 45,
+              "body": "I like the template in https://github.com/IETF-OPS-AD/I-D-with-yang-template but this is good for I-D which includes YANG\n\nIf the intention is to have a repository only for the YANG model, I would prefer a template for only YANG (reusing the tooling from https://github.com/IETF-OPS-AD/I-D-with-yang-template would be great)\n\nMy understanding is that people may end up with working with two repositories: one for the YANG module (which will be used also for module updates) and one for the development of the I-D with the narrative text for the first version of the YANG module (which does not include any YANG module but a pointer to the former github repository)",
+              "createdAt": "2026-09-30T07:52:39Z",
+              "updatedAt": "2026-09-30T08:03:32Z"
+            },
+            {
+              "originalPosition": 94,
+              "body": "I do prefer github tagging/release process to better track the changes and evolution of the YANG module",
+              "createdAt": "2026-09-30T07:55:58Z",
+              "updatedAt": "2026-09-30T08:03:32Z"
+            },
+            {
+              "originalPosition": 98,
+              "body": "I have missed the last calls but if the intention is still to allow publishing a YANG revision without publishing any RFC pointing to it, this requirement is MUST/REQUIRED, otherwise the pointer to the github repository from the RFC will no longer point to the latest version of the YANG module",
+              "createdAt": "2026-09-30T07:58:55Z",
+              "updatedAt": "2026-09-30T08:03:32Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDORMlxH88AAAABP66qcw",
+          "commit": {
+            "abbreviatedOid": "8b7572b"
+          },
+          "author": "italobusi",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2026-09-30T08:10:24Z",
+          "updatedAt": "2026-09-30T08:11:13Z",
+          "comments": [
+            {
+              "originalPosition": 110,
+              "body": "I think an errata is only for bug fixing not for updates",
+              "createdAt": "2026-09-30T08:10:24Z",
+              "updatedAt": "2026-09-30T08:11:13Z"
+            },
+            {
+              "originalPosition": 111,
+              "body": "If the YANG module is removed from the RFC text, I am not sure the errata can track changes to text which is not in the RFC but in a repository referenced by the RFC",
+              "createdAt": "2026-09-30T08:11:10Z",
+              "updatedAt": "2026-09-30T08:11:13Z"
             }
           ]
         }
