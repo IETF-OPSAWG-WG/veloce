@@ -415,7 +415,7 @@ TBD
 
 Files should be referenced in a document via the syntax:
 
-    yangfile/_filetag_/_filetype_/_filerevision_
+    yangfile/_filetag_/_filetype_/_fileversion_
 
 for instance,
 
@@ -457,10 +457,12 @@ misrepresent who actually maintains them.
 This new Registry is to updated according to details of each entry, explained below.
 
 This new registry is to be called the _YANG File/Module References_ registry.
-The primary key for this registry is the composite key (filetag,filerevision,filetype).
+The primary key for this registry is the composite key (filetag,fileversion,filetype).
 (Should a composite key be a problem for IANA, then a new, arbitrary index for each line would need to be added, maintained by IANA)
 
-(XXX: `filerevision` or `fileversion` ?)
+The field is named fileversion rather than filerevision, anticipating
+alignment with the terminology established once
+{{?I-D.ietf-netmod-yang-semver}} is approved by the RFC Editor.
 
 It shall include the following columns, as presented to the WG at the
 2026-09-22 interim call:
@@ -468,7 +470,7 @@ It shall include the following columns, as presented to the WG at the
 | Field | Purpose |
 |---|---|
 | filetag | Unique slug allocated per YANG module file. Usually related to the YANG module name, but not exclusively -- the use of an Internet-Draft file name is also appropriate. |
-| filerevision | `YYYY-MM-DD` (as used by YANG), a Semantic Version string, or a hybrid `YYYY-MM-DD.patchlevel`. A plain integer (e.g. "24") is a valid Semantic Version. The literal string "latest" MAY be used in a query, but not as a table entry. `PROPOSED` entries MUST change only the patchlevel component. |
+| fileversion | `YYYY-MM-DD` (as used by YANG), a Semantic Version string, or a hybrid `YYYY-MM-DD.patchlevel`. A plain integer (e.g. "24") is a valid Semantic Version. The literal string "latest" MAY be used in a query, but not as a table entry. `PROPOSED` entries MUST change only the patchlevel component. |
 | filetype | One of "MODULE" or "SID". |
 | url | An HTTP, HTTPS, or git URL that uniquely identifies the file. MUST return the raw file, with no HTML or other markup around it. |
 | sha256hash | A SHA2-256 hash of the file's contents. |
@@ -476,8 +478,6 @@ It shall include the following columns, as presented to the WG at the
 | relateddocument | The document this module is attached to. RFCs list just the RFC number; all other documents specify a full, revision-specific URL, whose page should indicate document status and currency. |
 | controllingcontact | The entity with the right to update the entry: the IESG (standards-track, BCP, or Informational RFC); WG chairs (Internet-Draft being processed by a WG); the original submitters, with the ISE also able to update (Independent Stream RFC); or the original requester (individual I-D submission or vendor-proprietary module). |
 {: title="YANG File/Module References Registry Fields"}
-
-(XXX: `filerevision` or `fileversion` ?)
 
 ### File Indirection Registry Update Policy
 
