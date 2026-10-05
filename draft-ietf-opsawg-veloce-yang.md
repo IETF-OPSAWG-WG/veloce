@@ -35,6 +35,23 @@ author:
    organization: Huawei
    email: "bill.wu@huawei.com"
 
+ -
+  fullname: "Michael Richardson"
+  organization: Sandelman Software Works
+  email: "mcr+ietf@sandelman.ca"
+
+ -
+  fullname: "Dhruv Dhody"
+  organization: Huawei
+  email: "dd@dhruvdhody.com"
+
+contributor:
+
+ -
+  fullname: Italo Busi
+  organization: Huawei
+  email: Italo.Busi@huawei.com
+
 normative:
 
 informative:
@@ -111,27 +128,26 @@ The following practices should provide the necessary guidance
 on how a WG develops a new YANG module or updates an existing
 YANG module:
 
-It is RECOMMENDED that IETF-hosted repositories
+It is RECOMMENDED that IETF-controlled repositories
 be used. See Section 1.3 of Working Group GitHub Usage
 Guidance {{!RFC8874}}. Integration using third-party hosted
 repositories MAY be used for experimentation purposes.
 
-A new repository MUST be created by the WG
-Chairs following the procedure in Section 3.2 of Working Group
-GitHub Usage Guidance {{!RFC8874}} to develop or maintain a YANG
-Module. For a new module, this SHOULD happen when
+An IETF-controlled repository MUST be created by the WG Chairs following
+the procedure in Section 3.2 of Working Group GitHub Usage Guidance {{!RFC8874}} to develop or
+maintain a YANG Module. For a new module, this SHOULD happen when
 the module is adopted as a WG item. It MAY happen for
 individual drafts, and that is left to the discretion of the
 chairs. However, once the document is adopted as a WG item,
 the repository SHOULD reside under the auspecies
-of IETF controlled repository and managed by the WG. The
+of IETF-controlled repository and managed by the WG. The
 name of the repository SHOULD reflect the name
 of the draft. When updating an existing module, it is RECOMMENDED to use the
-	same WG repository of the initial version of YANG module for the
-	updated module maintenance. If no existing repository exists, then a new one MUST
-	be created, initialized with the last approved YANG module, so that
-	proposed changes are traceable. In addition, the chairs MAY make
-sure that an appropriate CI/CD YANG validation is in place.  It
+same WG repository of the initial version of YANG module for the
+updated module maintenance, so previous history is preserved as much as possible.
+If no existing repository exists, then a new one MUST
+be created, initialized with the last published YANG module. In addition,
+the chairs MAY make sure that an appropriate CI/CD YANG validation is in place.  It
 is RECOMMENDED that a real time collaborative working environment
 be provided in the repository to enable online validation of YANG
 modules (e.g., via yanglint) using the YANG template with the CI/CD
@@ -147,8 +163,8 @@ Group Guidelines and Procedures {{!RFC2418}}). For considerations
 related to granting editors write and administrators' right refer to
 Section 3.3 of Working Group GitHub Usage Guidance {{!RFC8874}}.
 
-Other administrative policies as they relate to migration,
-personal change or the WG closing is defined in the Working
+Other administrative policies such as ones relate to migration,
+personnel changes or the WG closing are defined in the Working
 Group GitHub Administration {{!RFC8875}}.
 
 A release tagging mechanism should be defined to track the
@@ -170,14 +186,14 @@ fork of the repository allows the user to make changes,
 validate them, and post the changes as a PR against the WG
 repository. The editor team for regular contributors can be
 set up by the working group. Editors or editor team of the YANG module are encouraged not to
-accept changes into the "main" or "master" branch of the
+accept changes into the "main" branch of the
 repository. Instead, they should be directed to a branch
 that is used for development. This allows the editors or editor team to review
 the changes and make sure that they are in line with the WG
 consensus before they are merged into the main branch.
 This also allows the editors to make sure that the changes are properly
 validated before they are merged into the main branch,e.g., one editor
-	create a pull request and another merge it (refer to Section 4.2 of {{!RFC8874}}.
+creates a pull request and another editor merges it (refer to Section 4.2 of {{!RFC8874}}.
 
 A procedure for assessing consensus is discussed in Section 7 of Working
 Group GitHub Usage Guidance {{!RFC8874}} and SHOULD be
@@ -199,11 +215,28 @@ YANG module (e.g., a git tag or commit hash), not to the HEAD of
 a branch, so that the module's contents at RFC publication time
 are permanently retrievable and verifiable.
 
+VELOCE does not mandate which version of a YANG module
+implementations must support. The link in the published RFC
+identifies the module version current at the time of
+publication in the IANA section, but implementations MAY track a
+later version at their discretion.
+Conformance to the module SHOULD be indicated by
+citing the specific module version (e.g., its revision-date or
+YANG Semver {{?I-D.ietf-netmod-yang-semver}}) rather than the RFC
+number alone, since the module may evolve independently of the RFC text.
+
 YANG SID files {{!RFC9595}}, when applicable (e.g.,
 for YANG/CBOR encoding), SHOULD reside in the
 SCM repository rather than in the document.  The use of RFC 8792
 folding for SID files in Internet-Drafts is discouraged, as it
 is not compatible with current YANG Doctor tooling.
+
+When updating an existing, published module, IETF errata reports can
+be used to keep track of changes for both the YANG module and its
+corresponding RFC text. In the case the errata pertains to the YANG
+module, once the Area Director (AD) verifies the errata using the
+existing IETF process, a Pull Request (PR) is opened to merge the changes
+into the WG repository.
 
 A bis version of the initial RFC MAY be
 considered if a major change needs to be added in the
@@ -245,9 +278,9 @@ review comments on otherwise unchanged sections.
 YANG modules developed in the IETF fall broadly into two
 categories. They can be new modules, or they can be a "bis"
 version of the module. The experiment will consist of two or
-more YANG modules, such that at least one of them is a new
+more YANG module work, such that at least one of them is a new
 YANG module, and the other is a "bis" version of the YANG
-module. This is being done to make sure that the experiment
+module work. This is being done to make sure that the experiment
 covers all the IETF processes related to the development of
 YANG modules.
 
@@ -287,9 +320,10 @@ of this experiment, and since the idea is to demonstrate a
 faster way for a new YANG module to be developed, the
 timelines for the experiment are as follows:
 
-A new YANG module should be published within two years
+- A new YANG module should be published within two years
 of the start of the experiment.
-A "bis" version of an existing YANG module, where the
+
+- A "bis" version of an existing YANG module, where the
 primary motivation is incremental updates rather than a
 ground-up redesign, should be published within one year.
 
@@ -404,8 +438,18 @@ The security considerations discussed in Section 10 of
 
 ## File Indirection Registry {#filereferences}
 
-IANA is asked to create a new registry, probably within the YANG Module Tags grouping:
-https://www.iana.org/assignments/yang-module-tags/yang-module-tags.xhtml
+IANA is asked to create a new, standalone registry rather than extending the
+existing YANG Parameters registry
+(https://www.iana.org/assignments/yang-parameters), for two reasons. First,
+that registry's "YANG Module Names" table operates under an RFC-Required
+registration policy ({{!RFC6020}}, {{!RFC9907}}, {{!RFC9890}}); reusing it
+would mean every module revision under this experiment still needs a
+published RFC to register, which reimposes the exact overhead this
+experiment exists to remove. Second, that table's "Maintained by IANA?"
+flag specifically denotes modules IANA staff themselves author and publish
+(e.g. ietf-if-type); under this proposal the controlling party is always
+the WG or document authors, never IANA, and marking entries that way would
+misrepresent who actually maintains them.
 
 This new Registry is to updated according to details of each entry, explained below.
 
@@ -471,5 +515,5 @@ This draft is triggered by the discussion in NEMOPS IAB workshop.
 
 Thanks to the participants of OPSAWG for their comments that
 have helped shape this draft.  In particular, thanks to
-Jeffrey Haas, Joe Clarke, Italo Busi, and Mohamed Boucadair
-for their feedback during IETF 125.
+Jeffrey Haas, Joe Clarke, Per Andersson, Italo Busi, and
+Mohamed Boucadair for their feedback during IETF 125.
