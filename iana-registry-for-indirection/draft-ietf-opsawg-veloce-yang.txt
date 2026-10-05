@@ -461,7 +461,7 @@ Table of Contents
 
    Files should be referenced in a document via the syntax:
 
-   yangfile/_filetag_/_filetype_/_filerevision_
+   yangfile/_filetag_/_filetype_/_fileversion_
 
    for instance,
 
@@ -505,11 +505,13 @@ Table of Contents
 
    This new registry is to be called the _YANG File/Module References_
    registry.  The primary key for this registry is the composite key
-   (filetag,filerevision,filetype).  (Should a composite key be a
-   problem for IANA, then a new, arbitrary index for each line would
-   need to be added, maintained by IANA)
+   (filetag,fileversion,filetype).  (Should a composite key be a problem
+   for IANA, then a new, arbitrary index for each line would need to be
+   added, maintained by IANA)
 
-   (XXX: filerevision or fileversion ?)
+   The field is named fileversion rather than filerevision, anticipating
+   alignment with the terminology established once
+   [I-D.ietf-netmod-yang-semver] is approved by the RFC Editor.
 
    It shall include the following columns, as presented to the WG at the
    2026-09-22 interim call:
@@ -523,7 +525,7 @@ Table of Contents
    |                    | Internet-Draft file name is also            |
    |                    | appropriate.                                |
    +--------------------+---------------------------------------------+
-   | filerevision       | YYYY-MM-DD (as used by YANG), a Semantic    |
+   | fileversion        | YYYY-MM-DD (as used by YANG), a Semantic    |
    |                    | Version string, or a hybrid YYYY-MM-        |
    |                    | DD.patchlevel.  A plain integer (e.g. "24") |
    |                    | is a valid Semantic Version.  The literal   |
@@ -562,8 +564,6 @@ Table of Contents
    +--------------------+---------------------------------------------+
 
            Table 1: YANG File/Module References Registry Fields
-
-   (XXX: filerevision or fileversion ?)
 
 6.1.1.  File Indirection Registry Update Policy
 

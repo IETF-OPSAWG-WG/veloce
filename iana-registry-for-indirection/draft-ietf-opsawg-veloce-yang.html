@@ -1634,7 +1634,7 @@ publishing a new RFC.  (See, for example: <span>[<a href="#I-D.palet-v6ops-nat64
 <p id="section-4.2-2">Files should be referenced in a document via the syntax:<a href="#section-4.2-2" class="pilcrow">¶</a></p>
 <div class="alignLeft art-text artwork" id="section-4.2-3">
 <pre>
-yangfile/_filetag_/_filetype_/_filerevision_
+yangfile/_filetag_/_filetype_/_fileversion_
 </pre><a href="#section-4.2-3" class="pilcrow">¶</a>
 </div>
 <p id="section-4.2-4">for instance,<a href="#section-4.2-4" class="pilcrow">¶</a></p>
@@ -1689,9 +1689,11 @@ the WG or document authors, never IANA, and marking entries that way would
 misrepresent who actually maintains them.<a href="#section-6.1-1" class="pilcrow">¶</a></p>
 <p id="section-6.1-2">This new Registry is to updated according to details of each entry, explained below.<a href="#section-6.1-2" class="pilcrow">¶</a></p>
 <p id="section-6.1-3">This new registry is to be called the <em>YANG File/Module References</em> registry.
-The primary key for this registry is the composite key (filetag,filerevision,filetype).
+The primary key for this registry is the composite key (filetag,fileversion,filetype).
 (Should a composite key be a problem for IANA, then a new, arbitrary index for each line would need to be added, maintained by IANA)<a href="#section-6.1-3" class="pilcrow">¶</a></p>
-<p id="section-6.1-4">(XXX: <code>filerevision</code> or <code>fileversion</code> ?)<a href="#section-6.1-4" class="pilcrow">¶</a></p>
+<p id="section-6.1-4">The field is named fileversion rather than filerevision, anticipating
+alignment with the terminology established once
+<span>[<a href="#I-D.ietf-netmod-yang-semver" class="cite xref">I-D.ietf-netmod-yang-semver</a>]</span> is approved by the RFC Editor.<a href="#section-6.1-4" class="pilcrow">¶</a></p>
 <p id="section-6.1-5">It shall include the following columns, as presented to the WG at the
 2026-09-22 interim call:<a href="#section-6.1-5" class="pilcrow">¶</a></p>
 <span id="name-yang-file-module-references"></span><table class="center" id="table-1">
@@ -1711,7 +1713,7 @@ The primary key for this registry is the composite key (filetag,filerevision,fil
               <td class="text-left" rowspan="1" colspan="1">Unique slug allocated per YANG module file. Usually related to the YANG module name, but not exclusively -- the use of an Internet-Draft file name is also appropriate.</td>
             </tr>
             <tr>
-              <td class="text-left" rowspan="1" colspan="1">filerevision</td>
+              <td class="text-left" rowspan="1" colspan="1">fileversion</td>
               <td class="text-left" rowspan="1" colspan="1">
                 <code>YYYY-MM-DD</code> (as used by YANG), a Semantic Version string, or a hybrid <code>YYYY-MM-DD.patchlevel</code>. A plain integer (e.g. "24") is a valid Semantic Version. The literal string "latest" MAY be used in a query, but not as a table entry. <code>PROPOSED</code> entries MUST change only the patchlevel component.</td>
             </tr>
@@ -1742,7 +1744,6 @@ The primary key for this registry is the composite key (filetag,filerevision,fil
             </tr>
           </tbody>
         </table>
-<p id="section-6.1-7">(XXX: <code>filerevision</code> or <code>fileversion</code> ?)<a href="#section-6.1-7" class="pilcrow">¶</a></p>
 <div id="file-indirection-registry-update-policy">
 <section id="section-6.1.1">
           <h4 id="name-file-indirection-registry-u">
