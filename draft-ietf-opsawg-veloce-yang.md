@@ -1,5 +1,5 @@
 ---
-title: "YANG deVELpment PrOCEss and maintenance (VELOCE)"
+title: "YANG deVELopment PrOCEss and maintenance (VELOCE)"
 abbrev: "VELOCE"
 category: exp
 
@@ -258,6 +258,10 @@ Much like other experimental documents, this document tries to
 answer the following four questions as they relate to
 experimental documents.
 
+At a high-level the plan is to include YANG module files (and related SID files) by reference rather than by value.
+This requires that files be referenced through a layer of indirection.
+To do this an IANA registry is created to maintain and control this indirection, as explained in {{filereferences}}.
+
 ## What is the goal {#sec-goal}
 
 The goal of the experiment is to determine how YANG modules
@@ -355,6 +359,95 @@ published within a defined timeframe, with subsequent updates
 published as needed, is preferable to indefinitely delaying
 publication while pursuing completeness.
 
+## Operation and Use of the File Indirection Registry
+
+In place of including a YANG module or SID file into an Internet-Draft or RFC by value (via CDATA in the XML, for instance), an indirection is added that indirects through the IANA maintained table.
+
+YANG Tree diagrams are not managed through this indirection. They remain
+included by value directly in the document, marked non-normative, since
+they are quite instructive and give a compact, useful overview of the
+structure of a module. They are expected to be regenerated to match
+whichever module revision the document currently describes.
+
+The Lifecycle of the references is detailed below.
+In order to provide the best introduction to the life cycle, the process will be started from the state of a published RFC with a published MODULE, and then follow the update process through a life cycle of updates.  Following that, the process for a new module is explained.
+
+### Revision of a Module
+
+An individual (or an individual given an action by a WG) goes to the repository given by the "latest" entry for the module revision.
+A new branch created for the revisions.  (This may be in a new related repository, forked, depending upon permissions)
+The files are edited as desired and then an annotated (possibly signed) git tag is created, creating a new stable reference.
+
+### Registration the new proposed module
+
+IANA will be contacted, and the following template is filled out by the proposer to add a new entry:
+
+~~~
+   File Tag:              <same filetag as the entry being updated,
+                            or a new tag for a net-new module>
+   File Type:             <MODULE | SID>
+   Proposed File Version: <the new fileversion value being requested>
+   Related Document:      <RFC number, or a revision-specific URL
+                            for a non-RFC document>
+   URL:                   <stable reference to the tagged file,
+                            from the revision step above>
+   SHA-256 Hash:          <OPTIONAL -- IANA will retrieve the file
+                            and calculate this if omitted>
+   Requester:             <name and contact of the individual or
+                            WG making this request>
+~~~
+
+The filetag and filetype will be the same as in the module that is being updated.
+
+For a module with Semantic Version X.Y.Z, a new PROPOSED entry X.Y.VV will
+be proposed, with identical X and Y, and VV >= Z+1.  Note that many
+revisions might require a higher X or Y when published, but that decision
+is deferred to the WG consensus process described below.
+
+The entrytype is set to PROPOSED.
+The URL is the new stable reference from above.
+The controllingcontact is set by IANA to the proposer.
+The sha256hash SHOULD be included by the proposer, but IANA is expected to retrieve the document and recalculate the hash.
+
+### Official Revision of the module
+
+When a YANG module is related to an RFC, then updates to it are controlled by a WG
+Consensus Call.
+The rational for the changes to the YANG module are to be described in a regular  internet-draft, and the WG SHOULD adopt that internet-draft like any other I-D.
+(The intended status of the internet-draft MAY be set to Experimental, but ideally, a new status will be added: "For IESG Approval Consideration")
+
+The I-D SHOULD reference the YANG module and SID file using the proposed syntax below, as a normative reference. The tree diagram continues to be included by value, as described above, and is not referenced through this syntax.
+
+The WG process continues as for any I-D: reviews, WGLC, AD evaluation.
+Reviewers need to understand that they are reviewing the YANG modules (and SID files),
+not the contents of the I-D itself.
+
+When it reaches the IESG, the I-D serves as the request to update the module entry,
+in the same way that a Proposed Standard may be advanced to Internet Standard without
+publishing a new RFC.  (See, for example: {{?I-D.palet-v6ops-nat64-std}} )
+
+### Initiating new work
+
+TBD
+
+## Referencing Files
+
+Files should be referenced in a document via the syntax:
+
+    yangfile/_filetag_/_filetype_/_fileversion_
+
+for instance,
+
+    yangfile/ietf-voucher/module/latest
+    yangfile/ietf-voucher/sid/1.2.0
+
+or for a work-in-progress:
+
+    yangfile/I-D.anima-voucher/sid/1.2.1
+
+Informative references to this document and to the IANA Registry be SHOULD included for readers new to this process.
+
+
 # Security Considerations
 
 The security considerations discussed in Section 10 of
@@ -363,7 +456,69 @@ The security considerations discussed in Section 10 of
 
 # IANA Considerations
 
-This document has no IANA actions.
+## File Indirection Registry {#filereferences}
+
+IANA is asked to create a new, standalone registry rather than extending the
+existing YANG Parameters registry
+(https://www.iana.org/assignments/yang-parameters), for two reasons. First,
+that registry's "YANG Module Names" table operates under an RFC-Required
+registration policy ({{!RFC6020}}, {{!RFC9907}}, {{!RFC9890}}); reusing it
+would mean every module revision under this experiment still needs a
+published RFC to register, which reimposes the exact overhead this
+experiment exists to remove. Second, that table's "Maintained by IANA?"
+flag specifically denotes modules IANA staff themselves author and publish
+(e.g. ietf-if-type); under this proposal the controlling party is always
+the WG or document authors, never IANA, and marking entries that way would
+misrepresent who actually maintains them.
+
+This new Registry is to updated according to details of each entry, explained below.
+
+This new registry is to be called the _YANG File/Module References_ registry.
+The primary key for this registry is the composite key (filetag,fileversion,filetype).
+(Should a composite key be a problem for IANA, then a new, arbitrary index for each line would need to be added, maintained by IANA)
+
+The field is named fileversion rather than filerevision, matching the
+Semantic Versioning terminology established by
+{{?I-D.ietf-netmod-yang-semver}}, which this registry uses exclusively
+for the fileversion field rather than YANG's YYYY-MM-DD revision-date
+format.
+
+It shall include the following columns:
+
+| Field | Purpose |
+|---|---|
+| filetag | Unique slug allocated per YANG module file. Usually related to the YANG module name, but not exclusively -- the use of an Internet-Draft file name is also appropriate. |
+| fileversion | A Semantic Version string X.Y.Z (e.g. "1.4.2"). A plain integer (e.g. "24") is also a valid Semantic Version. The literal string "latest" MAY be used in a query, but not as a table entry. `PROPOSED` entries MUST change only the Z (patch) component. |
+| filetype | One of "MODULE" or "SID". |
+| url | An HTTP, HTTPS, or git URL that uniquely identifies the file. MUST return the raw file, with no HTML or other markup around it. |
+| sha256hash | A SHA2-256 hash of the file's contents. |
+| entrytype | `PERMANENT` once approved by the appropriate change controller; `PROPOSED` otherwise. The date an entry became `PROPOSED` is retained, to determine when it should be sunset. |
+| relateddocument | The document this module is attached to. RFCs list just the RFC number; all other documents specify a full, revision-specific URL, whose page should indicate document status and currency. |
+| controllingcontact | The entity with the right to update the entry: the IESG (standards-track, BCP, or Informational RFC); WG chairs (Internet-Draft being processed by a WG); the original submitters, with the ISE also able to update (Independent Stream RFC); or the original requester (individual I-D submission or vendor-proprietary module). |
+{: title="YANG File/Module References Registry Fields"}
+
+### File Indirection Registry Update Policy
+
+Entries with entrytype PERMANENT may be made only by IESG Approval {{?RFC8126, Section 4.10}} when then relateddocument is an IETF Stream document.  For ISE stream documents, then it is the ISE editor.
+For all other PERMANENT submissions it would be up to the controllingcontact,
+in consultation with Designated Experts.
+
+For new modules processed as part an IETF Stream RFC, then there is already an RFC associated with this process.
+As the point of the VELOCE experiment is to free YANG module update from having to have a new RFC, it will most often be motivated by a WG Consensus document.
+
+Entries with entrytype PROPOSED are made according to the {{?BCP100}} an Early Allocation-like process.
+They are to be performed according to the Expert Review policy, with the
+WG chairs involved in that review when appropriate. This is an
+explicit, structured process; it is deliberately not a first-come,
+first-served allocation.
+As such, these are not really Early Allocations.
+Like Early Allocations, they come with a limited time, in this case 3 years.
+Unlike actual Early Allocations, they do not require AD approval.
+
+Once made, PROPOSED entries may update the URL (and sha256hash) of the entries without further approval.   Each such update resets the 3yr timer.
+Once a PROPOSED entry of one filetype has been approved, entries with additional filetypes are also implicitely approved.
+When a WG adopts a proposed entry, then the file name of the internet-draft will change, and it is appropriate to update the entry's filetag: no history is needed in this case, as these are works-in-progress.
+
 
 --- back
 
