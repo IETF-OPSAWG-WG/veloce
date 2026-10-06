@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-10-01T04:18:48.828772+00:00",
+  "timestamp": "2026-10-06T05:00:54.495302+00:00",
   "repo": "IETF-OPSAWG-WG/veloce",
   "labels": [
     {
@@ -2905,13 +2905,13 @@
       "labels": [],
       "body": "this chunk of text, including some IANA Consideration is a suggestion of how to use existing IANA, WG and IESG process to manage (and approve) updates to YANG modules (and related SID files)\r\n",
       "createdAt": "2026-06-15T19:02:56Z",
-      "updatedAt": "2026-09-08T12:09:28Z",
+      "updatedAt": "2026-10-06T00:12:08Z",
       "baseRepository": "IETF-OPSAWG-WG/veloce",
       "baseRefName": "main",
-      "baseRefOid": "ba2f304be549e5c7e74f376a4131d87c1593eaf5",
+      "baseRefOid": "86da8211141b16b2f9e5c0c9990a24d241034bf4",
       "headRepository": "IETF-OPSAWG-WG/veloce",
       "headRefName": "iana-registry-for-indirection",
-      "headRefOid": "6c714e7809aab379c29374b417fb5f4e9d4540d3",
+      "headRefOid": "19b49da13fbfce4436b6d180484ac89a9f68db73",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
@@ -3454,7 +3454,7 @@
       "id": "PR_kwDORMlxH88AAAABA40Hnw",
       "title": "Proposed workflow on how to create and track issues.",
       "url": "https://github.com/IETF-OPSAWG-WG/veloce/pull/65",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "mjethanandani",
       "authorAssociation": "COLLABORATOR",
       "assignees": [
@@ -3463,14 +3463,14 @@
       "labels": [],
       "body": "Address issue #51 ",
       "createdAt": "2026-08-25T04:28:32Z",
-      "updatedAt": "2026-09-08T23:44:00Z",
+      "updatedAt": "2026-10-06T00:31:33Z",
       "baseRepository": "IETF-OPSAWG-WG/veloce",
       "baseRefName": "v02",
       "baseRefOid": "a527b777cde0819e721ba53f787da51bfa8764d4",
       "headRepository": "IETF-OPSAWG-WG/veloce",
       "headRefName": "issue-51",
       "headRefOid": "961dcf6bc21352177dcd814cbc8abecd903d4147",
-      "closedAt": null,
+      "closedAt": "2026-10-06T00:31:33Z",
       "mergedAt": null,
       "mergedBy": null,
       "mergeCommit": null,
@@ -3495,6 +3495,13 @@
           "body": "> Not sure why this updates the .xml file.\r\n\r\nAs we discussed in yesterday'call, Joe suggested to rebase CONTRIUBTING.md in main branch and see what else is needed regarding the working method.\r\nIf that is the case, I will drop the link to https://github.com/IETF-OPSAWG-WG/veloce/blob/v02/README.md\r\n",
           "createdAt": "2026-09-08T23:44:00Z",
           "updatedAt": "2026-09-08T23:44:00Z"
+        },
+        {
+          "author": "mjethanandani",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Abandoning this one -- it predates the template/markdown restructuring (still targets v02 and the old draft/*.xml path) and has unrelated git history from main at this point, so a merge isn't workable. The actual content -- and the substance of what was agreed on this topic at the 09-08 call (prioritize linking PRs to issues, no strict branch-naming requirement) -- has been rebuilt fresh on main in #77, which also closes issue #51.",
+          "createdAt": "2026-10-06T00:31:32Z",
+          "updatedAt": "2026-10-06T00:31:32Z"
         }
       ],
       "reviews": [
@@ -4788,6 +4795,32 @@
           ]
         }
       ]
+    },
+    {
+      "number": 77,
+      "id": "PR_kwDORMlxH88AAAABG0VhRg",
+      "title": "Refresh README/CONTRIBUTING workflow docs",
+      "url": "https://github.com/IETF-OPSAWG-WG/veloce/pull/77",
+      "state": "OPEN",
+      "author": "mjethanandani",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Refreshes the README's \"Working method\" section, which was a broken link to the old `v02` README describing a since-abandoned per-version-branch, XML-era workflow. Replaces it with the actual current process:\n\n- Open an issue and/or PR directly -- neither is required before the other.\n- Any listed author may pick up an open issue and propose text for it (the \"editors\" line from this issue's original discussion).\n- Use GitHub's \"Create a branch\" link from the issue page rather than a fixed naming convention.\n- Link PRs to issues via the Development panel or `Closes #N`.\n- 2 approvals required to merge (branch protection); no need to wait for the biweekly call once approved.\n- Pointer to the IANA registry process (PR #49) for YANG-module-specific changes.\n\nAlso adds a short cross-reference in CONTRIBUTING.md to the README's Working method section, per Joe Clarke's request (09-08 call) to keep the two files consistent.\n\nThis is a fresh PR rather than an update to #65, since that branch predates the template/markdown restructuring and has unrelated git history from `main` at this point -- a real merge wasn't possible. #65 is being closed as superseded.\n\nCloses #51.\n",
+      "createdAt": "2026-10-06T00:31:26Z",
+      "updatedAt": "2026-10-06T00:31:26Z",
+      "baseRepository": "IETF-OPSAWG-WG/veloce",
+      "baseRefName": "main",
+      "baseRefOid": "86da8211141b16b2f9e5c0c9990a24d241034bf4",
+      "headRepository": "IETF-OPSAWG-WG/veloce",
+      "headRefName": "readme-contributing-refresh",
+      "headRefOid": "293ce8dc184d516d366026fd9a562257a7220dcc",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
     }
   ]
 }
