@@ -252,6 +252,17 @@ decide to update an adopted YANG module in the IETF
 repository and only update the RFC to change the reference
 to the YANG module.
 
+# Revising existing YANG modules
+
+YANG modules already publishes (by value) in already published RFCs will not have any of the indirection text in the RFC.
+When revisions to those modules are desired (and no new RFC is waranteed), then there will need to be a way to document the existence of the new revisions.
+
+During the experiment, this will be done by adding a Note to the existing YANG
+Modules Parameters registry at:
+   https://www.iana.org/assignments/yang-parameters#yang-parameters-1
+
+Should this experiment prove successful, a new column may be added to this registry.
+
 # Experimental Plan {#sec-experiment}
 
 Much like other experimental documents, this document tries to
