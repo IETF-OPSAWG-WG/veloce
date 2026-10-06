@@ -38,6 +38,11 @@ Contributions can be made by creating pull requests, opening an issue, or
 posting to the working group mailing list. See above for the email address
 and a note about policy.
 
+For VELOCE-specific process details -- branch naming, linking PRs to
+issues, the number of approvals required, and when a registry entry is
+also needed for YANG module changes -- see the "Working method" section
+of the [README](README.md).
+
 Here are two ways to create a pull request ("PR"):
 
 - Copy the repository and make a pull request using the Git command-line
