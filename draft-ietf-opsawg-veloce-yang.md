@@ -373,15 +373,29 @@ The files are edited as desired and then an annotated (possibly signed) git tag 
 
 ### Registration the new proposed module
 
-IANA will be contacted, and a template (TBD below) is filled out to add a new entry.
+IANA will be contacted, and the following template is filled out by the proposer to add a new entry:
+
+~~~
+   File Tag:              <same filetag as the entry being updated,
+                            or a new tag for a net-new module>
+   File Type:             <MODULE | SID>
+   Proposed File Version: <the new fileversion value being requested>
+   Related Document:      <RFC number, or a revision-specific URL
+                            for a non-RFC document>
+   URL:                   <stable reference to the tagged file,
+                            from the revision step above>
+   SHA-256 Hash:          <OPTIONAL -- IANA will retrieve the file
+                            and calculate this if omitted>
+   Requester:             <name and contact of the individual or
+                            WG making this request>
+~~~
+
 The filetag and filetype will be the same as in the module that is being updated.
 
-For versions of the form YYYY-MM-DD, then a new entry of the form YYYY-MM-DD.xx
-will be proposed, where xx is an integer.  For Semantic Version X.Y.Z, then a new
-X.Y.VV will be proposed with identical X and Y, and VV >= Z+1.
-Note that many revisions might require a higher X or Y when published, but that decision is deferred.
-
-(XXX: the form of the revision, and whether Semantic Version strings should be used at all here is open to debate.  Perhaps a new column would be better)
+For a module with Semantic Version X.Y.Z, a new PROPOSED entry X.Y.VV will
+be proposed, with identical X and Y, and VV >= Z+1.  Note that many
+revisions might require a higher X or Y when published, but that decision
+is deferred to the WG consensus process described below.
 
 The entrytype is set to PROPOSED.
 The URL is the new stable reference from above.
@@ -411,8 +425,6 @@ TBD
 
 ## Referencing Files
 
-(XXX: should we register a new URN for this?  Seems like a good idea?)
-
 Files should be referenced in a document via the syntax:
 
     yangfile/_filetag_/_filetype_/_fileversion_
@@ -420,15 +432,13 @@ Files should be referenced in a document via the syntax:
 for instance,
 
     yangfile/ietf-voucher/module/latest
-    yangfile/ietf-voucher/sid/2018-05-09
+    yangfile/ietf-voucher/sid/1.2.0
 
 or for a work-in-progress:
 
-    yangfile/I-D.anima-voucher/sid/2018-05-09.02
+    yangfile/I-D.anima-voucher/sid/1.2.1
 
 Informative references to this document and to the IANA Registry be SHOULD included for readers new to this process.
-
-XXX: Potentially IANA will operate some API/indirection interface.
 
 
 # Security Considerations
@@ -460,17 +470,18 @@ This new registry is to be called the _YANG File/Module References_ registry.
 The primary key for this registry is the composite key (filetag,fileversion,filetype).
 (Should a composite key be a problem for IANA, then a new, arbitrary index for each line would need to be added, maintained by IANA)
 
-The field is named fileversion rather than filerevision, anticipating
-alignment with the terminology established once
-{{?I-D.ietf-netmod-yang-semver}} is approved by the RFC Editor.
+The field is named fileversion rather than filerevision, matching the
+Semantic Versioning terminology established by
+{{?I-D.ietf-netmod-yang-semver}}, which this registry uses exclusively
+for the fileversion field rather than YANG's YYYY-MM-DD revision-date
+format.
 
-It shall include the following columns, as presented to the WG at the
-2026-09-22 interim call:
+It shall include the following columns:
 
 | Field | Purpose |
 |---|---|
 | filetag | Unique slug allocated per YANG module file. Usually related to the YANG module name, but not exclusively -- the use of an Internet-Draft file name is also appropriate. |
-| fileversion | `YYYY-MM-DD` (as used by YANG), a Semantic Version string, or a hybrid `YYYY-MM-DD.patchlevel`. A plain integer (e.g. "24") is a valid Semantic Version. The literal string "latest" MAY be used in a query, but not as a table entry. `PROPOSED` entries MUST change only the patchlevel component. |
+| fileversion | A Semantic Version string X.Y.Z (e.g. "1.4.2"). A plain integer (e.g. "24") is also a valid Semantic Version. The literal string "latest" MAY be used in a query, but not as a table entry. `PROPOSED` entries MUST change only the Z (patch) component. |
 | filetype | One of "MODULE" or "SID". |
 | url | An HTTP, HTTPS, or git URL that uniquely identifies the file. MUST return the raw file, with no HTML or other markup around it. |
 | sha256hash | A SHA2-256 hash of the file's contents. |
@@ -489,7 +500,10 @@ For new modules processed as part an IETF Stream RFC, then there is already an R
 As the point of the VELOCE experiment is to free YANG module update from having to have a new RFC, it will most often be motivated by a WG Consensus document.
 
 Entries with entrytype PROPOSED are made according to the {{?BCP100}} an Early Allocation-like process.
-They are to be performed according to the Expert Review policy.
+They are to be performed according to the Expert Review policy, with the
+WG chairs involved in that review when appropriate. This is an
+explicit, structured process; it is deliberately not a first-come,
+first-served allocation.
 As such, these are not really Early Allocations.
 Like Early Allocations, they come with a limited time, in this case 3 years.
 Unlike actual Early Allocations, they do not require AD approval.
