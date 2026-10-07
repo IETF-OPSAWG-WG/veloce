@@ -24,7 +24,7 @@ original filer.
 ### Branches
 
 Work directly against `main`; there is no longer a per-version branch to
-target. Use GitHub's "Create a branch" link from the issue page (in the
+target. Use GitHub's "Create a branch" link and link an existing pull request from the issue page (in the
 issue's sidebar) to create your working branch -- this gives it a
 name tied to the issue automatically, so there's no fixed branch-naming
 convention to follow.
