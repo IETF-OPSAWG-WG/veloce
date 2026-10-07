@@ -5,12 +5,12 @@
 Operations and Management Area Working Group             M. Jethanandani
 Internet-Draft                                                    Arrcus
 Intended status: Experimental                                      Q. Wu
-Expires: 25 March 2027                                            Huawei
+Expires: 10 April 2027                                            Huawei
                                                            M. Richardson
                                                 Sandelman Software Works
                                                                 D. Dhody
                                                                   Huawei
-                                                       21 September 2026
+                                                          7 October 2026
 
 
             YANG deVELpment PrOCEss and maintenance (VELOCE)
@@ -62,7 +62,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 25 March 2027.
+   This Internet-Draft will expire on 10 April 2027.
 
 Copyright Notice
 
@@ -171,16 +171,29 @@ Table of Contents
    discretion of the chairs.  However, once the document is adopted as a
    WG item, the repository SHOULD reside under the auspecies of IETF-
    controlled repository and managed by the WG.  The name of the
-   repository SHOULD reflect the name of the draft.  In addition, the
-   chairs MAY make sure that an appropriate CI/CD YANG validation is in
-   place.  It is RECOMMENDED that a real time collaborative working
-   environment be provided in the repository to enable online validation
-   of YANG modules (e.g., via yanglint) using the YANG template with the
-   CI/CD pipeline (e.g., https://github.com/IETF-OPS-AD/I-D-with-yang-
-   template), and to ensure a consistent development environment across
-   all contributors.  In addition, a containerized build environment for
-   local validation of YANG modules MAY also be provided in the
-   repository as a backup.
+   repository SHOULD reflect the name of the draft.  When updating an
+   existing module, it is RECOMMENDED to use the same WG repository of
+   the initial version of YANG module for the updated module
+   maintenance, so previous history is preserved as much as possible.
+   If no existing repository exists, then a new one MUST be created,
+   initialized with the last published YANG module.  If there is an
+   existing repository but the responsible WG was concluded, then such
+   repository MUST be moved to the new responsible working group's
+   GitHub, initialized with the last published YANG module and
+   associated git history.  In the latter case, a new repository should
+   be created under the new WG, a new remote should be added to a
+   checkout of the existing repository, and then pushed to the new
+   repository.  Then, the existing/old repository should be archived
+   with a message added to the README pointing to the new repository.
+   In addition, the chairs MAY make sure that an appropriate CI/CD YANG
+   validation is in place.  It is RECOMMENDED that a real time
+   collaborative working environment be provided in the repository to
+   enable online validation of YANG modules (e.g., via yanglint) using
+   the YANG template with the CI/CD pipeline (e.g., https://github.com/
+   IETF-OPS-AD/I-D-with-yang-template), and to ensure a consistent
+   development environment across all contributors.  In addition, a
+   containerized build environment for local validation of YANG modules
+   MAY also be provided in the repository as a backup.
 
    The procedure for managing WG documents (e.g., assign editors)
    applies for managing YANG modules (Section 6.1 of IETF Working Group
@@ -436,8 +449,9 @@ Table of Contents
               Clarke, J., Wilton, R., Rahman, R., Lengyel, B., Sterne,
               J., and B. Claise, "YANG Semantic Versioning", Work in
               Progress, Internet-Draft, draft-ietf-netmod-yang-semver-
-              28, 21 July 2026, <https://datatracker.ietf.org/doc/html/
-              draft-ietf-netmod-yang-semver-28>.
+              29, 6 October 2026,
+              <https://datatracker.ietf.org/doc/html/draft-ietf-netmod-
+              yang-semver-29>.
 
 Acknowledgments
 
