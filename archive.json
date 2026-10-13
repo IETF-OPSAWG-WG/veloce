@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-10-08T04:38:49.239252+00:00",
+  "timestamp": "2026-10-13T05:35:43.026989+00:00",
   "repo": "IETF-OPSAWG-WG/veloce",
   "labels": [
     {
@@ -4923,13 +4923,13 @@
       "labels": [],
       "body": "Refreshes the README's \"Working method\" section, which was a broken link to the old `v02` README describing a since-abandoned per-version-branch, XML-era workflow. Replaces it with the actual current process:\n\n- Open an issue and/or PR directly -- neither is required before the other.\n- Any listed author may pick up an open issue and propose text for it (the \"editors\" line from this issue's original discussion).\n- Use GitHub's \"Create a branch\" link from the issue page rather than a fixed naming convention.\n- Link PRs to issues via the Development panel or `Closes #N`.\n- 2 approvals required to merge (branch protection); no need to wait for the biweekly call once approved.\n- Pointer to the IANA registry process (PR #49) for YANG-module-specific changes.\n\nAlso adds a short cross-reference in CONTRIBUTING.md to the README's Working method section, per Joe Clarke's request (09-08 call) to keep the two files consistent.\n\nThis is a fresh PR rather than an update to #65, since that branch predates the template/markdown restructuring and has unrelated git history from `main` at this point -- a real merge wasn't possible. #65 is being closed as superseded.\n\nCloses #51.\n",
       "createdAt": "2026-10-06T00:31:26Z",
-      "updatedAt": "2026-10-07T13:02:27Z",
+      "updatedAt": "2026-10-12T09:28:59Z",
       "baseRepository": "IETF-OPSAWG-WG/veloce",
       "baseRefName": "main",
       "baseRefOid": "86da8211141b16b2f9e5c0c9990a24d241034bf4",
       "headRepository": "IETF-OPSAWG-WG/veloce",
       "headRefName": "readme-contributing-refresh",
-      "headRefOid": "6396f42f441e6c07a2127086c7fbab5a17ad8a48",
+      "headRefOid": "10f818a6cc7d344bf4f64953656bfb994919905e",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
