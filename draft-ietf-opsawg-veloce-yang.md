@@ -255,7 +255,7 @@ to the YANG module.
 # Revising existing YANG modules
 
 YANG modules whose full text appears in already published RFCs will not have any of the indirection text in the RFC.
-When revisions to those modules are desired (and no new RFC is waranteed), then there will need to be a way to document the existence of the new revisions.
+When revisions to those modules are desired (and no new RFC is waranted), then there will need to be a way to document the existence of the new revisions.
 
 During the experiment, this will be done by adding a Note to the existing YANG
 Modules Parameters registry at:
