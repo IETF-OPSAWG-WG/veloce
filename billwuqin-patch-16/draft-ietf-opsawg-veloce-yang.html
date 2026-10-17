@@ -1195,7 +1195,7 @@ of YANG modules or YANG modules update within the IETF.<a href="#section-abstrac
                     <p id="section-toc.1-1.2.2.1.2.3.1"><a href="#section-2.1.3" class="auto internal xref">2.1.3</a>.  <a href="#name-create-and-approve-prs" class="internal xref">Create and Approve PRs</a></p>
 </li>
                   <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.2.2.1.2.4">
-                    <p id="section-toc.1-1.2.2.1.2.4.1"><a href="#section-2.1.4" class="auto internal xref">2.1.4</a>.  <a href="#name-iana-section-documentation" class="internal xref">IANA section documentation</a></p>
+                    <p id="section-toc.1-1.2.2.1.2.4.1"><a href="#section-2.1.4" class="auto internal xref">2.1.4</a>.  <a href="#name-iana-section-documentation" class="internal xref">IANA Section Documentation</a></p>
 </li>
                   <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.2.2.1.2.5">
                     <p id="section-toc.1-1.2.2.1.2.5.1"><a href="#section-2.1.5" class="auto internal xref">2.1.5</a>.  <a href="#name-internet-draft-publication" class="internal xref">Internet-Draft Publication</a></p>
@@ -1203,7 +1203,7 @@ of YANG modules or YANG modules update within the IETF.<a href="#section-abstrac
                 </ul>
 </li>
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.2.2.2">
-                <p id="section-toc.1-1.2.2.2.1"><a href="#section-2.2" class="auto internal xref">2.2</a>.  <a href="#name-the-existing-yang-module-up" class="internal xref">The existing YANG Module Update/Maintenance</a></p>
+                <p id="section-toc.1-1.2.2.2.1"><a href="#section-2.2" class="auto internal xref">2.2</a>.  <a href="#name-the-existing-yang-module-up" class="internal xref">The Existing YANG Module Update/Maintenance</a></p>
 </li>
             </ul>
 </li>
@@ -1425,7 +1425,7 @@ to the WG to prepare for a new release.<a href="#section-2.1.3-2" class="pilcrow
 <div id="iana-section-documentation">
 <section id="section-2.1.4">
           <h4 id="name-iana-section-documentation">
-<a href="#section-2.1.4" class="section-number selfRef">2.1.4. </a><a href="#name-iana-section-documentation" class="section-name selfRef">IANA section documentation</a>
+<a href="#section-2.1.4" class="section-number selfRef">2.1.4. </a><a href="#name-iana-section-documentation" class="section-name selfRef">IANA Section Documentation</a>
           </h4>
 <p id="section-2.1.4-1">The YANG module MUST NOT be inserted in the
 document; instead, a link to the above repository
@@ -1466,19 +1466,14 @@ to the version of the draft.<a href="#section-2.1.5-1" class="pilcrow">¶</a></p
 <div id="the-existing-yang-module-updatemaintenance">
 <section id="section-2.2">
         <h3 id="name-the-existing-yang-module-up">
-<a href="#section-2.2" class="section-number selfRef">2.2. </a><a href="#name-the-existing-yang-module-up" class="section-name selfRef">The existing YANG Module Update/Maintenance</a>
+<a href="#section-2.2" class="section-number selfRef">2.2. </a><a href="#name-the-existing-yang-module-up" class="section-name selfRef">The Existing YANG Module Update/Maintenance</a>
         </h3>
 <p id="section-2.2-1">When updating an existing module in the published RFC, it is RECOMMENDED
 to use the same WG repository of the initial version of YANG module for
 the updated module maintenance, so previous history is preserved as much
 as possible. If no existing repository exists, then a new one MUST be
 created, initialized with the last published YANG module.<a href="#section-2.2-1" class="pilcrow">¶</a></p>
-<p id="section-2.2-2">A bis version of the initial RFC MAY be considered if a major change needs
-to be added in the document. Such a decision is left to the WG. WG may
-decide to update an adopted YANG module in the IETF repository and only
-update the RFC to change the reference to the YANG module, i.e.,the link
-MUST point to a specific tagged version of the YANG module.<a href="#section-2.2-2" class="pilcrow">¶</a></p>
-<p id="section-2.2-3">When updating an existing, published module, IETF errata reports can
+<p id="section-2.2-2">When updating an existing, published module, IETF errata reports can
 be used to keep track of changes to the YANG module. In the case the
 errata only pertains to the YANG module, once the Area Director (AD)
 verifies the errata using the existing IETF process, a Pull Request
@@ -1486,7 +1481,14 @@ verifies the errata using the existing IETF process, a Pull Request
 the errata only pertains to RFC text associated with YANG module,
 when an RFC Errata is verified, the datatracker allow building a
 version of the RFC with the applied errata, which is independent from
-VELOCE process.<a href="#section-2.2-3" class="pilcrow">¶</a></p>
+VELOCE process.<a href="#section-2.2-2" class="pilcrow">¶</a></p>
+<p id="section-2.2-3">A bis version of the initial RFC MAY be considered if a major change needs
+to be added in the document. Such a decision is left to the WG. WG may
+decide to update an adopted YANG module in the IETF repository and only
+update the RFC to change the reference to the YANG module, i.e., the link
+MUST point to a specific tagged version of the YANG module. In such case,
+a normal process including WGLC, IETF LC, IESG review should be followed
+on this RFCbis document.<a href="#section-2.2-3" class="pilcrow">¶</a></p>
 </section>
 </div>
 </section>
