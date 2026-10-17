@@ -5,12 +5,12 @@
 Operations and Management Area Working Group             M. Jethanandani
 Internet-Draft                                                    Arrcus
 Intended status: Experimental                                      Q. Wu
-Expires: 9 April 2027                                             Huawei
+Expires: 20 April 2027                                            Huawei
                                                            M. Richardson
                                                 Sandelman Software Works
                                                                 D. Dhody
                                                                   Huawei
-                                                          6 October 2026
+                                                         17 October 2026
 
 
             YANG deVELpment PrOCEss and maintenance (VELOCE)
@@ -62,7 +62,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 9 April 2027.
+   This Internet-Draft will expire on 20 April 2027.
 
 Copyright Notice
 
@@ -276,11 +276,10 @@ Table of Contents
 
 3.  Revising existing YANG modules
 
-   YANG modules already publishes (by value) in already published RFCs
-   will not have any of the indirection text in the RFC.  When revisions
-   to those modules are desired (and no new RFC is waranteed), then
-   there will need to be a way to document the existence of the new
-   revisions.
+   YANG modules whose full text appears in already published RFCs will
+   not have any of the indirection text in the RFC.  When revisions to
+   those modules are desired (and no new RFC is waranteed), then there
+   will need to be a way to document the existence of the new revisions.
 
    During the experiment, this will be done by adding a Note to the
    existing YANG Modules Parameters registry at:
