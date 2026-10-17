@@ -128,6 +128,8 @@ The following practices should provide the necessary guidance
 on how a WG develops a new YANG module or updates an existing
 YANG module:
 
+## New YANG Module Draft Development
+
 ### Setup a Repo
 
 It is RECOMMENDED that IETF-controlled repositories
