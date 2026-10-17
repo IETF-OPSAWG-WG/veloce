@@ -266,13 +266,18 @@ created, initialized with the last published YANG module.
 A bis version of the initial RFC MAY be considered if a major change needs
 to be added in the document. Such a decision is left to the WG. WG may
 decide to update an adopted YANG module in the IETF repository and only
-update the RFC to change the reference to the YANG module.
+update the RFC to change the reference to the YANG module, i.e.,the link
+MUST point to a specific tagged version of the YANG module.
 
 When updating an existing, published module, IETF errata reports can
 be used to keep track of changes to the YANG module. In the case the
 errata only pertains to the YANG module, once the Area Director (AD)
 verifies the errata using the existing IETF process, a Pull Request
-(PR) is opened to merge the changes into the WG repository.
+(PR) is opened to merge the changes into the WG repository. In the case
+the errata only pertains to RFC text associated with YANG module,
+when an RFC Errata is verified, the datatracker allow building a
+version of the RFC with the applied errata, which is independent from
+VELOCE process.
 
 # Experimental Plan {#sec-experiment}
 
