@@ -279,7 +279,7 @@ and building a version of the RFC with the applied errata.
 
 A bis version of the initial RFC MAY be considered if a major change needs
 to be added (e.g., add a new function ) in the document. Such a decision is
-left to the WG. 
+left to the WG.
 
 In the case of Narrative Text Update Only, an updating RFC MUST be published
 following normal Working Group Last Call (WG LC), IETF Last Call (IETF LC),
