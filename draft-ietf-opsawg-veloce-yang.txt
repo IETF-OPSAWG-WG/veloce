@@ -5,12 +5,12 @@
 Operations and Management Area Working Group             M. Jethanandani
 Internet-Draft                                                    Arrcus
 Intended status: Experimental                                      Q. Wu
-Expires: 9 April 2027                                             Huawei
+Expires: 24 April 2027                                            Huawei
                                                            M. Richardson
                                                 Sandelman Software Works
                                                                 D. Dhody
                                                                   Huawei
-                                                          6 October 2026
+                                                         21 October 2026
 
 
             YANG deVELpment PrOCEss and maintenance (VELOCE)
@@ -62,7 +62,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 9 April 2027.
+   This Internet-Draft will expire on 24 April 2027.
 
 Copyright Notice
 
@@ -206,10 +206,15 @@ Table of Contents
    in Section 4 of Working Group GitHub Usage Guidance [RFC8874].  This
    includes the use of Issues to track open issues regarding the module,
    email notifications of activity on working group repositories,
-   Editor's reporting or change log about the changes to the document
-   (refer to to Section 4.3 of [RFC8874] for monitoring activity).
-   They, along with corresponding links to the Pull Request (PR), are a
-   useful way to record decisions made by the WG.
+   Editor's summary report or change log about the changes to the
+   document (refer to to Section 4.3 of [RFC8874] for monitoring
+   activity).  They, along with corresponding links to the Pull Request
+   (PR), are a useful way to record decisions made by the WG. please
+   note that Editor's summary report SHOULD be posted to the WG list
+   perodically (e.g., use weekly github digest to report the status of
+   issue tickets and PRs) and is mandatory for the VELOCE experiement.
+   Alternatively, Editor's summary report can be reported by the Editor
+   on demand to solicit inputs and comments on the key open issues.
 
    PRs allow for a user to request a change to the repository.  A user
    does not need to have write access to the repository.  A fork of the
@@ -420,8 +425,9 @@ Table of Contents
               Clarke, J., Wilton, R., Rahman, R., Lengyel, B., Sterne,
               J., and B. Claise, "YANG Semantic Versioning", Work in
               Progress, Internet-Draft, draft-ietf-netmod-yang-semver-
-              28, 21 July 2026, <https://datatracker.ietf.org/doc/html/
-              draft-ietf-netmod-yang-semver-28>.
+              29, 6 October 2026,
+              <https://datatracker.ietf.org/doc/html/draft-ietf-netmod-
+              yang-semver-29>.
 
 Acknowledgments
 
