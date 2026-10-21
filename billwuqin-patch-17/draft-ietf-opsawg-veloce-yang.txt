@@ -5,12 +5,12 @@
 Operations and Management Area Working Group             M. Jethanandani
 Internet-Draft                                                    Arrcus
 Intended status: Experimental                                      Q. Wu
-Expires: 20 April 2027                                            Huawei
+Expires: 24 April 2027                                            Huawei
                                                            M. Richardson
                                                 Sandelman Software Works
                                                                 D. Dhody
                                                                   Huawei
-                                                         17 October 2026
+                                                         21 October 2026
 
 
             YANG deVELpment PrOCEss and maintenance (VELOCE)
@@ -62,7 +62,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 20 April 2027.
+   This Internet-Draft will expire on 24 April 2027.
 
 Copyright Notice
 
@@ -312,12 +312,12 @@ Table of Contents
    needs to be added (e.g., add a new function ) in the document.  Such
    a decision is left to the WG.
 
-   In the case of Narrative Text Update Only, an updating RFC MUST be
+   In the case of narrative text update only, an updating RFC MUST be
    published following normal Working Group Last Call (WG LC), IETF Last
    Call (IETF LC), and IESG review.  There is no change to this process
    under VELOCE.
 
-   In the case of YANG Module Update Only, WG may decide to update an
+   In the case of YANG module update only, WG may decide to update an
    adopted YANG module in the IETF WG repository and only update the RFC
    to change the reference to the YANG module , i.e., the link MUST
    point to a specific tagged version of the YANG module.  In such case,
@@ -325,7 +325,7 @@ Table of Contents
    and IESG review should be followed to review and approve this YANG
    Module Update.
 
-   In the case of Combined Narrative and YANG Module Updates, YANG
+   In the case of combined narrative and YANG module updates, YANG
    module needs to be updated in the WG repository and make sure the
    updated RFC reference to updated YANG module. an updating RFC MUST be
    published following normal Working Group Last Call (WG LC), IETF Last
