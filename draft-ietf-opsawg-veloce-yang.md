@@ -130,8 +130,6 @@ YANG module:
 
 ## New YANG Module Draft Development
 
-### Setup a Repo
-
 It is RECOMMENDED that IETF-controlled repositories
 be used. See Section 1.3 of Working Group GitHub Usage
 Guidance {{!RFC8874}}. Integration using third-party hosted
@@ -183,8 +181,6 @@ intermediate versions referenced by WG I-Ds and by the RFC,
 once published. This can come in the form of a 'git tag' or by
 having a branch that corresponds to the version of the draft.
 
-### Create and Track issues
-
 Contribution methods for the YANG module are similar to those
 defined in Section 4 of Working Group GitHub Usage
 Guidance {{!RFC8874}}. This includes the use of Issues to track open
@@ -192,8 +188,6 @@ issues regarding the module, email notifications of activity on working group re
  Editor's reporting or change log about the changes to the document (refer to
 to Section 4.3 of {{!RFC8874}} for monitoring activity). They, along with corresponding
 links to the Pull Request (PR), are a useful way to record decisions made by the WG.
-
-### Create and Approve PRs
 
 PRs allow for a user to request a change to the repository. A
 user does not need to have write access to the repository. A
@@ -222,8 +216,6 @@ or user that open those issues. Working group chairs should be involved to
 make sure the consensus has been reached when Editors summarize the issues
 to the WG to prepare for a new release.
 
-### IANA Section Documentation
-
 The YANG module MUST NOT be inserted in the
 document; instead, a link to the above repository
 MUST be included in the document.  The link
@@ -247,8 +239,6 @@ for YANG/CBOR encoding), SHOULD reside in the
 SCM repository rather than in the document.  The use of RFC 8792
 folding for SID files in Internet-Drafts is discouraged, as it
 is not compatible with current YANG Doctor tooling.
-
-### Internet-Draft Publication
 
 A release tagging mechanism should be defined to track the intermediate
 versions referenced by WG I-Ds and by the RFC, once published. This can
