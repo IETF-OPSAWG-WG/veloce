@@ -281,18 +281,18 @@ A bis version of the initial RFC MAY be considered if a major change needs
 to be added (e.g., add a new function ) in the document. Such a decision is
 left to the WG.
 
-In the case of Narrative Text Update Only, an updating RFC MUST be published
+In the case of narrative text update only, an updating RFC MUST be published
 following normal Working Group Last Call (WG LC), IETF Last Call (IETF LC),
 and IESG review. There is no change to this process under VELOCE.
 
-In the case of YANG Module Update Only,
+In the case of YANG module update only,
 WG may decide to update an adopted YANG module in the IETF
 WG repository and only update the RFC to change the reference to the YANG module
 , i.e., the link MUST point to a specific tagged version of the YANG module.
 In such case, a normal Working Group Last Call (WG LC), IETF Last Call (IETF LC),
 and IESG review should be followed to review and approve this YANG Module Update.
 
-In the case of Combined Narrative and YANG Module Updates, YANG module needs to be updated
+In the case of combined narrative and YANG module updates, YANG module needs to be updated
 in the WG repository and make sure the updated RFC reference to updated YANG module.
 an updating RFC MUST be published following normal Working Group Last Call (WG LC),
 IETF Last Call (IETF LC), and IESG review.
