@@ -263,8 +263,6 @@ Modules Parameters registry at:
    https://www.iana.org/assignments/yang-parameters#yang-parameters-1
 to indicate further revisions of this YANG module can be found at specific URL link.
 
-Should this experiment prove successful, a new column may be added to this registry.
-
 # Experimental Plan {#sec-experiment}
 
 Much like other experimental documents, this document tries to
