@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-10-18T03:09:10.714494+00:00",
+  "timestamp": "2026-10-22T03:24:43.038415+00:00",
   "repo": "IETF-OPSAWG-WG/veloce",
   "labels": [
     {
@@ -460,7 +460,7 @@
       "id": "I_kwDORMlxH88AAAABAwiLrA",
       "title": "Summary report should be a must if one agrees to partipcate in the experiment",
       "url": "https://github.com/IETF-OPSAWG-WG/veloce/issues/13",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "mjethanandani",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
@@ -470,8 +470,8 @@
       ],
       "body": "From Joe Clarke \"The summary report, though, MUST be mandatory if one agrees to participate in the experiment.\"\n",
       "createdAt": "2026-04-28T20:01:05Z",
-      "updatedAt": "2026-07-01T02:50:18Z",
-      "closedAt": null,
+      "updatedAt": "2026-10-21T00:02:42Z",
+      "closedAt": "2026-10-21T00:02:42Z",
       "comments": [
         {
           "author": "mjethanandani",
@@ -969,15 +969,14 @@
       "author": "italobusi",
       "authorAssociation": "COLLABORATOR",
       "assignees": [
-        "italobusi",
-        "billwuqin"
+        "italobusi"
       ],
       "labels": [
         "new-module-scope"
       ],
       "body": "In IETF protocols, adding TLVs after the base RFC (i.e., the RFC with the base protocol specification) it is possible, but not required, to publish an RFC-bis which obsoletes the base RFC. In many cases, an RFC which updates the base RFC (RFC-update) is published defining only the new TLVs.\n\nThe datatracker provides tagging to show whether an RFC has been update by one or more RFC-update or replaced by an RFC-bis.\n\nAlso bug fixing can be easily done with Errata and the datatracker provides tagging to show whether there are errata as well as to retrieve the text of the RFC with the verified errata inline.\n\nI am wondering whether we can rely as much as possible on this process and focus on the adjustments that are needed because of the nature of the YANG language which requires a new revision of the whole YANG module when something gets changed\n\nAfter the initial revision of a YANG module is published, there are three cases which might have an impact on that module:\n- a bug is discovered (bug fixing)\n- a new functionality needs to be added through a revision of that YANG module\n- a new functionality needs to be added in another YANG module which augments that YANG module\n\nI think that the decision about whether a new functionality needs to be added in a new revision or in an augmentation model is a design choice to be taken purely on the basis of technical considerations (e.g., modular design) and not being impacted by the process\n\nFrom a process point of view, defining a new YANG module which augments an existing YANG module is actually the design of the initial revision of a YANG module and outside the scope of this issue which focuses only on the process to update a YANG module after the publication of its initial revision\n\nA common assumption is that the base RFC will no longer contain the YANG module but a pointer to a stable repository (e.g., a github release)\n\nWe therefore have two cases left: bug fixing and new functionalities\n\n## Bug fixing\n\nA bug fix may impact the narrative text or the YANG module (or both)\n\nMy suggestion is to submit an errata for fixing bug\n\nIf the bug is affecting the narrative text, the proposed changes to the narrative text should be provided in the errata.\n\nIf the bug is affecting the YANG model:\n- the proposed changes to the YANG module shall be provided in a specific working repository (e.g., a github PR)\n- a link to that working repository (e.g., the github PR) shall be provided in the errata\n\nThe approval of the errata follows the existing process already in place for the approval of errata with some minor updates required to ensure that  the proposed changes to the YANG module, if any, have been reviewed and approved. The review of the YANG should only focus on the changes as marked in the working repository.\n\nWhen an errata proposing changes to the YANG module is verified:\n- the proposed changes to the YANG module in the working repository are merged into a stable repository (e.g., a github release tagged after the PR has been merged)\n- the verified text in the errata is updated to point to the stable repository\n- the verified text in the narrative sections, if any, are updated following existing errata process\n\nAn user of the base RFC can check the errata database (or the RFC with inline errata) to get the latest version of the YANG module(s) within that RFC.\n\n## New functionalities: RFC-update or RFC-bis\n\nThe home WG can decide whether the changes in the YANG module revision are significant enough to justify the development of an RFC-bis or an RFC-update is sufficient.\n\nWe therefore have three cases:\n1. RFC-update with no changes to the narrative text\n2. RFC-update with changes to the narrative text\n3. RFC-bis\n\n###  RFC-update\n\nAn RFC-update may impact the narrative text or the YANG module (or both)\n\nMy suggestion is to submit an I-D proposing an RFC-update\n\nIf the RFC-update requires some narrative text to describe the changes, this text can be provided in the narrative sections of the I-D.\n\nIf the RFC-update requires changes to the YANG model:\n- the proposed changes to the YANG module shall be provided in a specific working repository (e.g., a github PR)\n- a link to that working repository (e.g., the github PR) shall be provided in the I-D\n\nIf the RFC-update just requires changes to the YANG module, the I-D can be quite slim: an abstract and an introduction briefly summarizing the need for the change and a section pointing to the working repository (e.g., a github PR) with the updated YANG model\n\nThe approval of the RFC-update I-D follows the normal IETF process (including the IESG review), with some minor updates required to ensure that  the proposed changes to the YANG module, if any, have been reviewed and approved. The review of the YANG should only focus on the changes as marked in the working repository.\n\nNote: it is also possible to publish RFC-update to just update the narrative text of the base RFC (in case for example the narrative text of the base RFC has proven not to be clear or reduced to speed-up the publication of the initial revision of the YANG model). In this case, no YANG model changes are proposed and the RFC-update I-D will not provide any replacement to the pointer to the stable repository where the latest YANG model is available.\n\nWhen an RFC-update I-D proposing changes to the YANG module is approved by the IESG:\n- the proposed changes to the YANG module in the working repository are merged into a stable repository (e.g., a github release tagged after the PR has been merged)\n- the text in the published RFC-update points to the stable repository\n- the the narrative sections, if any, are edited in the published RFC-update\n\nAn user of the base RFC can check the RFCs updating the base RFC to get the latest version of the YANG module(s) within that RFC.\n\n### RFC-bis\n\nAn I-D which obsoletes the base RFC (and all the other RFCs updating it) is submitted to the WG and approved as RFC following the normal IETF process (no big changes to the current process for updating YANG modules)\n\n## Standard Conformance Considerations\n\nA side effect of this process, which keeps a 1:1 mapping between an RFC and a YANG module revision, would be to address the standard conformance issue highlighted in:\n\nhttps://mailarchive.ietf.org/arch/msg/opsawg/tDYaMcVe-RCzYccJMCV90su3cDo/\n\n## Items for future discussion\n\nThere are some open issues (e.g., which repository to use or how the PR in github are managed, considering also that github may be used by the editors during the development cycle). I think these issues are applicable to any other proposal and can be refined after the main direction is taken.\n\nWe can discuss at a later stage whether the stable repository is a github release or something else (e.g., an IANA hosted repository).\n\nWe can discuss at a later stage whether this working repository is a github PR or something else (e.g., an IANA hosted repository). IMHO, the key requirement is that this working repository should provide a diff compared with the latest revision of the YANG module to ensure that the revision is focused only on the proposed changes.\n\nWe can discuss at a later stage whether the initial revision or the revision in an RFC-bis should be embedded with an I-D (as in the current process) or a pointer to a working repository (e.g., a github PR) is preferable or allowed.\n",
       "createdAt": "2026-06-17T18:46:17Z",
-      "updatedAt": "2026-10-17T05:19:00Z",
+      "updatedAt": "2026-10-22T02:46:31Z",
       "closedAt": null,
       "comments": [
         {
@@ -2948,7 +2947,7 @@
       "labels": [],
       "body": "this chunk of text, including some IANA Consideration is a suggestion of how to use existing IANA, WG and IESG process to manage (and approve) updates to YANG modules (and related SID files)\r\n",
       "createdAt": "2026-06-15T19:02:56Z",
-      "updatedAt": "2026-10-17T04:14:05Z",
+      "updatedAt": "2026-10-22T02:03:33Z",
       "baseRepository": "IETF-OPSAWG-WG/veloce",
       "baseRefName": "main",
       "baseRefOid": "86da8211141b16b2f9e5c0c9990a24d241034bf4",
@@ -3116,6 +3115,86 @@
               "body": "Have a second think, it is possible to include tree diagram by reference\nhere is the example:\n~~~ yang-tree\n{::include ./yang/trees/ietf-power-energy-network.tree}\n~~~\nSee GREEN Controller Repo example:\nhttps://github.com/ietf-wg-green/green-controller/blob/main/yang/trees/ietf-power-energy-network.tree ",
               "createdAt": "2026-10-17T04:12:09Z",
               "updatedAt": "2026-10-17T04:14:05Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDORMlxH88AAAABJCnYig",
+          "commit": {
+            "abbreviatedOid": "19b49da"
+          },
+          "author": "mjethanandani",
+          "authorAssociation": "COLLABORATOR",
+          "state": "CHANGES_REQUESTED",
+          "body": "",
+          "createdAt": "2026-08-10T23:20:23Z",
+          "updatedAt": "2026-10-20T15:30:33Z",
+          "comments": [
+            {
+              "originalPosition": 17,
+              "body": "s/indirects/redirects/",
+              "createdAt": "2026-08-10T23:20:23Z",
+              "updatedAt": "2026-10-20T15:30:33Z"
+            },
+            {
+              "originalPosition": 19,
+              "body": "s/On the other Hand/On the other hand,/\n\nI agree that tree diagrams are instructive and should be included in the prose by value. If the tree diagram changes because the underlying module hass changed, the tree diagram should be updated in the prose.",
+              "createdAt": "2026-08-10T23:23:28Z",
+              "updatedAt": "2026-10-20T15:30:33Z"
+            },
+            {
+              "originalPosition": 33,
+              "body": "I do not understand.\n\nAre we talking about a module that was previously published as part of an RFC and now needs to be moved to a repository?",
+              "createdAt": "2026-08-10T23:34:16Z",
+              "updatedAt": "2026-10-20T15:30:33Z"
+            },
+            {
+              "originalPosition": 34,
+              "body": "Again, not clear on what kind of \"Revision of a Module\" we are talking about.",
+              "createdAt": "2026-08-10T23:48:51Z",
+              "updatedAt": "2026-10-20T15:30:33Z"
+            },
+            {
+              "originalPosition": 52,
+              "body": "You mean a -bis version of the document??",
+              "createdAt": "2026-08-10T23:50:35Z",
+              "updatedAt": "2026-10-20T15:30:33Z"
+            },
+            {
+              "originalPosition": 53,
+              "body": "Do not understand.",
+              "createdAt": "2026-08-10T23:50:56Z",
+              "updatedAt": "2026-10-20T15:30:33Z"
+            },
+            {
+              "originalPosition": 55,
+              "body": "The second sentence sounds incomplete.",
+              "createdAt": "2026-08-10T23:51:40Z",
+              "updatedAt": "2026-10-20T15:30:33Z"
+            },
+            {
+              "originalPosition": 11,
+              "body": "\"At a high-level ...\" is correct.",
+              "createdAt": "2026-10-20T14:55:06Z",
+              "updatedAt": "2026-10-20T15:30:34Z"
+            },
+            {
+              "originalPosition": 33,
+              "body": "s/MODULE/module",
+              "createdAt": "2026-10-20T14:58:18Z",
+              "updatedAt": "2026-10-20T15:30:33Z"
+            },
+            {
+              "originalPosition": 39,
+              "body": "I am not sure we need this text here. This is being covered in other parts of the draft.",
+              "createdAt": "2026-10-20T15:13:15Z",
+              "updatedAt": "2026-10-20T15:30:34Z"
+            },
+            {
+              "originalPosition": 59,
+              "body": "I am not sure we need the last two sentences. We are not reviewing the contents of the I-D, so why discuss what should or should not go into the I-D here?",
+              "createdAt": "2026-10-20T15:23:38Z",
+              "updatedAt": "2026-10-20T15:30:34Z"
             }
           ]
         }
@@ -4697,24 +4776,26 @@
       "id": "PR_kwDORMlxH88AAAABDcAQDw",
       "title": "Make summary report mandatory",
       "url": "https://github.com/IETF-OPSAWG-WG/veloce/pull/75",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "billwuqin",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "",
       "createdAt": "2026-09-14T11:06:27Z",
-      "updatedAt": "2026-10-06T14:16:34Z",
+      "updatedAt": "2026-10-21T00:02:41Z",
       "baseRepository": "IETF-OPSAWG-WG/veloce",
       "baseRefName": "main",
       "baseRefOid": "86da8211141b16b2f9e5c0c9990a24d241034bf4",
       "headRepository": "IETF-OPSAWG-WG/veloce",
       "headRefName": "billwuqin-patch-15",
       "headRefOid": "f29adf1ffcf6d799576ff7a01922fb066c44503c",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2026-10-21T00:02:41Z",
+      "mergedAt": "2026-10-21T00:02:41Z",
+      "mergedBy": "billwuqin",
+      "mergeCommit": {
+        "oid": "8ca133f4158440e60884b02cdb8fd2fb4a2c3c86"
+      },
       "comments": [],
       "reviews": [
         {
@@ -4723,7 +4804,7 @@
             "abbreviatedOid": "698448d"
           },
           "author": "github-actions",
-          "authorAssociation": "NONE",
+          "authorAssociation": "CONTRIBUTOR",
           "state": "COMMENTED",
           "body": "",
           "createdAt": "2026-09-14T11:06:50Z",
@@ -4749,6 +4830,19 @@
           "createdAt": "2026-10-06T14:16:34Z",
           "updatedAt": "2026-10-06T14:16:34Z",
           "comments": []
+        },
+        {
+          "id": "PRR_kwDORMlxH88AAAABTQ8bTw",
+          "commit": {
+            "abbreviatedOid": "f29adf1"
+          },
+          "author": "mjethanandani",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-10-20T15:56:02Z",
+          "updatedAt": "2026-10-20T15:56:02Z",
+          "comments": []
         }
       ]
     },
@@ -4764,13 +4858,13 @@
       "labels": [],
       "body": "",
       "createdAt": "2026-09-21T03:52:50Z",
-      "updatedAt": "2026-10-17T03:47:35Z",
+      "updatedAt": "2026-10-22T02:03:10Z",
       "baseRepository": "IETF-OPSAWG-WG/veloce",
       "baseRefName": "main",
       "baseRefOid": "b9571663676dcf0282fee6956bb5138a981a675e",
       "headRepository": "IETF-OPSAWG-WG/veloce",
       "headRefName": "billwuqin-patch-16",
-      "headRefOid": "1b7e8a0a4bb8f8de9ad31386c3541ff04f2cb92b",
+      "headRefOid": "23a1b2e52e8931ba0fd41792efad24c2bcb5d380",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
@@ -4812,7 +4906,7 @@
             "abbreviatedOid": "6dcd15c"
           },
           "author": "github-actions",
-          "authorAssociation": "NONE",
+          "authorAssociation": "CONTRIBUTOR",
           "state": "COMMENTED",
           "body": "",
           "createdAt": "2026-09-21T03:53:18Z",
@@ -5068,6 +5162,46 @@
           "createdAt": "2026-10-17T03:47:34Z",
           "updatedAt": "2026-10-17T03:47:34Z",
           "comments": []
+        },
+        {
+          "id": "PRR_kwDORMlxH88AAAABTQ7ixg",
+          "commit": {
+            "abbreviatedOid": "1b7e8a0"
+          },
+          "author": "mjethanandani",
+          "authorAssociation": "COLLABORATOR",
+          "state": "CHANGES_REQUESTED",
+          "body": "",
+          "createdAt": "2026-10-20T15:55:02Z",
+          "updatedAt": "2026-10-20T15:55:11Z",
+          "comments": [
+            {
+              "originalPosition": 82,
+              "body": "With the proposal to provide an indirect reference to the YANG module using the IANA registry, the link in the RFC will not change.",
+              "createdAt": "2026-10-20T15:55:03Z",
+              "updatedAt": "2026-10-20T15:55:11Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDORMlxH88AAAABTWmr-g",
+          "commit": {
+            "abbreviatedOid": "1b7e8a0"
+          },
+          "author": "billwuqin",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2026-10-21T01:08:49Z",
+          "updatedAt": "2026-10-21T01:08:50Z",
+          "comments": [
+            {
+              "originalPosition": 82,
+              "body": "> With the proposal to provide an indirect reference to the YANG module using the IANA registry, the link in the RFC will not change.\r\n\r\nSame as PR #80 ,\r\n@mjethanandani \r\nIn case of revising the existing module without issuing new RFC, we have PR #79 \r\nIn case of file indirection tracking via IANA, we have PR #49, file indirection can be applied to both new YANG module draft and RFCbis, in both circumstances, I think RFC needs to be changed.\r\nPlease note that we also add assumption paragraph before this paragraph, i.e.,\r\n\"\r\nA bis version of the initial RFC MAY be considered if a major change needs\r\nto be added (e.g., add a new function ) in the document.\r\n\"\r\nMake sense?",
+              "createdAt": "2026-10-21T01:08:49Z",
+              "updatedAt": "2026-10-21T01:08:50Z"
+            }
+          ]
         }
       ]
     },
@@ -5184,13 +5318,13 @@
       "labels": [],
       "body": "close #78 \r\n",
       "createdAt": "2026-10-06T14:39:38Z",
-      "updatedAt": "2026-10-17T04:04:35Z",
+      "updatedAt": "2026-10-21T01:25:56Z",
       "baseRepository": "IETF-OPSAWG-WG/veloce",
       "baseRefName": "main",
       "baseRefOid": "b9571663676dcf0282fee6956bb5138a981a675e",
       "headRepository": "IETF-OPSAWG-WG/veloce",
       "headRefName": "revising-legacy-yang-modules",
-      "headRefOid": "879e4e010204310f2cbb59ea9a6b5e8d596f07e4",
+      "headRefOid": "647745f82c6d6e4787389b330eb5b12a5085a1d6",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
@@ -5262,6 +5396,46 @@
           "createdAt": "2026-10-17T04:02:13Z",
           "updatedAt": "2026-10-17T04:02:13Z",
           "comments": []
+        },
+        {
+          "id": "PRR_kwDORMlxH88AAAABTQ0eTQ",
+          "commit": {
+            "abbreviatedOid": "879e4e0"
+          },
+          "author": "mjethanandani",
+          "authorAssociation": "COLLABORATOR",
+          "state": "CHANGES_REQUESTED",
+          "body": "",
+          "createdAt": "2026-10-20T15:46:52Z",
+          "updatedAt": "2026-10-20T15:47:00Z",
+          "comments": [
+            {
+              "originalPosition": 15,
+              "body": "We agreed to move to a new registry and not add another column to the existing registry.",
+              "createdAt": "2026-10-20T15:46:52Z",
+              "updatedAt": "2026-10-20T15:47:00Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDORMlxH88AAAABTWuHjg",
+          "commit": {
+            "abbreviatedOid": "879e4e0"
+          },
+          "author": "billwuqin",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2026-10-21T01:25:46Z",
+          "updatedAt": "2026-10-21T01:25:47Z",
+          "comments": [
+            {
+              "originalPosition": 15,
+              "body": "@mjethanandani  \r\nDelete the last sentence, please review",
+              "createdAt": "2026-10-21T01:25:46Z",
+              "updatedAt": "2026-10-21T01:25:47Z"
+            }
+          ]
         }
       ]
     },
@@ -5277,13 +5451,13 @@
       "labels": [],
       "body": "Once an initial version of a YANG model is published within an RFC, subsequent maintenance requests fall into one of six distinct categories based on whether the modification addresses a bug fix or a functional update, and whether it alters the narrative text, the YANG module, or both.",
       "createdAt": "2026-10-17T06:07:21Z",
-      "updatedAt": "2026-10-17T06:10:23Z",
+      "updatedAt": "2026-10-22T02:02:43Z",
       "baseRepository": "IETF-OPSAWG-WG/veloce",
       "baseRefName": "billwuqin-patch-16",
       "baseRefOid": "1b7e8a0a4bb8f8de9ad31386c3541ff04f2cb92b",
       "headRepository": "IETF-OPSAWG-WG/veloce",
       "headRefName": "billwuqin-patch-17",
-      "headRefOid": "de79a6629f8879f158443544afd4ee759e9f0c28",
+      "headRefOid": "2c8b6d893afe7e7fac4e694e8ffe8b84b73777d1",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
@@ -5304,7 +5478,7 @@
             "abbreviatedOid": "805dbab"
           },
           "author": "github-actions",
-          "authorAssociation": "NONE",
+          "authorAssociation": "CONTRIBUTOR",
           "state": "COMMENTED",
           "body": "",
           "createdAt": "2026-10-17T06:07:46Z",
@@ -5315,6 +5489,58 @@
               "body": "````suggestion\nleft to the WG.\n````",
               "createdAt": "2026-10-17T06:07:46Z",
               "updatedAt": "2026-10-17T06:07:46Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDORMlxH88AAAABTQwReg",
+          "commit": {
+            "abbreviatedOid": "de79a66"
+          },
+          "author": "mjethanandani",
+          "authorAssociation": "COLLABORATOR",
+          "state": "CHANGES_REQUESTED",
+          "body": "",
+          "createdAt": "2026-10-20T15:41:46Z",
+          "updatedAt": "2026-10-20T15:43:46Z",
+          "comments": [
+            {
+              "originalPosition": 32,
+              "body": "s/Narrative Text Update Only/narrative text update only/",
+              "createdAt": "2026-10-20T15:41:46Z",
+              "updatedAt": "2026-10-20T15:43:46Z"
+            },
+            {
+              "originalPosition": 38,
+              "body": "If we are providing indirection through the IANA registry, there is no change in the RFC.",
+              "createdAt": "2026-10-20T15:43:06Z",
+              "updatedAt": "2026-10-20T15:43:46Z"
+            },
+            {
+              "originalPosition": 44,
+              "body": "Same comment as above.",
+              "createdAt": "2026-10-20T15:43:40Z",
+              "updatedAt": "2026-10-20T15:43:46Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDORMlxH88AAAABTWmDJQ",
+          "commit": {
+            "abbreviatedOid": "de79a66"
+          },
+          "author": "billwuqin",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2026-10-21T01:07:09Z",
+          "updatedAt": "2026-10-21T01:07:09Z",
+          "comments": [
+            {
+              "originalPosition": 38,
+              "body": "@mjethanandani \r\nIn case of revising the existing module without issuing new RFC, we have PR #79 \r\nIn case of file indirection tracking via IANA, we have PR #49, file indirection can be applied to both new YANG module draft and RFCbis, in both circumstances, I think RFC needs to be changed.\r\nPlease note that we also add assumption paragraph before this paragraph, i.e.,\r\n\"\r\nA bis version of the initial RFC MAY be considered if a major change needs\r\nto be added (e.g., add a new function ) in the document.\r\n\"\r\nMake sense?",
+              "createdAt": "2026-10-21T01:07:09Z",
+              "updatedAt": "2026-10-21T01:07:09Z"
             }
           ]
         }
