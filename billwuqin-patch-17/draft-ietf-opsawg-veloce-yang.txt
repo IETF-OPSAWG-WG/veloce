@@ -5,12 +5,12 @@
 Operations and Management Area Working Group             M. Jethanandani
 Internet-Draft                                                    Arrcus
 Intended status: Experimental                                      Q. Wu
-Expires: 24 April 2027                                            Huawei
+Expires: 28 April 2027                                            Huawei
                                                            M. Richardson
                                                 Sandelman Software Works
                                                                 D. Dhody
                                                                   Huawei
-                                                         21 October 2026
+                                                         25 October 2026
 
 
             YANG deVELpment PrOCEss and maintenance (VELOCE)
@@ -62,7 +62,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 24 April 2027.
+   This Internet-Draft will expire on 28 April 2027.
 
 Copyright Notice
 
@@ -293,8 +293,8 @@ Table of Contents
    then a new one MUST be created, initialized with the last published
    YANG module.
 
-   When updating an existing, published module with bug fix change, IETF
-   errata reports can be used to keep track of changes to the YANG
+   When updating an existing, published module with bug fix changes,
+   IETF errata reports can be used to keep track of changes to the YANG
    module.  In the case the errata only pertains to the YANG module,
    once the Area Director (AD) verifies the errata using the existing
    IETF process, a Pull Request (PR) is opened to merge the changes into
