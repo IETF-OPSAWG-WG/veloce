@@ -516,7 +516,7 @@ Table of Contents
    added, maintained by IANA)
 
    The field is named fileversion rather than filerevision, matching the
-   Semantic Versioning terminology established by
+   YANG Semantic Versioning terminology established by
    [I-D.ietf-netmod-yang-semver], which this registry uses exclusively
    for the fileversion field rather than YANG's YYYY-MM-DD revision-date
    format.
