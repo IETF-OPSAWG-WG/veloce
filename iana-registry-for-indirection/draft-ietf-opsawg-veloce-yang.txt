@@ -5,12 +5,12 @@
 Operations and Management Area Working Group             M. Jethanandani
 Internet-Draft                                                    Arrcus
 Intended status: Experimental                                      Q. Wu
-Expires: 9 April 2027                                             Huawei
+Expires: 28 April 2027                                            Huawei
                                                            M. Richardson
                                                 Sandelman Software Works
                                                                 D. Dhody
                                                                   Huawei
-                                                          6 October 2026
+                                                         25 October 2026
 
 
            YANG deVELopment PrOCEss and maintenance (VELOCE)
@@ -62,7 +62,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 9 April 2027.
+   This Internet-Draft will expire on 28 April 2027.
 
 Copyright Notice
 
@@ -426,10 +426,11 @@ Table of Contents
    The filetag and filetype will be the same as in the module that is
    being updated.
 
-   For a module with Semantic Version X.Y.Z, a new PROPOSED entry X.Y.VV
-   will be proposed, with identical X and Y, and VV >= Z+1.  Note that
-   many revisions might require a higher X or Y when published, but that
-   decision is deferred to the WG consensus process described below.
+   For a module with YANG Semantic Version X.Y.Z, a new PROPOSED entry
+   X.Y.VV will be proposed, with identical X and Y, and VV >= Z+1.  Note
+   that many revisions might require a higher X or Y when published, but
+   that decision is deferred to the WG consensus process described
+   below.
 
    The entrytype is set to PROPOSED.  The URL is the new stable
    reference from above.  The controllingcontact is set by IANA to the
@@ -662,8 +663,9 @@ Table of Contents
               Clarke, J., Wilton, R., Rahman, R., Lengyel, B., Sterne,
               J., and B. Claise, "YANG Semantic Versioning", Work in
               Progress, Internet-Draft, draft-ietf-netmod-yang-semver-
-              28, 21 July 2026, <https://datatracker.ietf.org/doc/html/
-              draft-ietf-netmod-yang-semver-28>.
+              29, 6 October 2026,
+              <https://datatracker.ietf.org/doc/html/draft-ietf-netmod-
+              yang-semver-29>.
 
    [I-D.palet-v6ops-nat64-std]
               Martinez, J. P., "Reclassifying NAT64 (RFC6146) to
