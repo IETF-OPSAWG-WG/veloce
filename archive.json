@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-10-22T03:24:43.038415+00:00",
+  "timestamp": "2026-10-25T03:19:34.292284+00:00",
   "repo": "IETF-OPSAWG-WG/veloce",
   "labels": [
     {
@@ -2947,13 +2947,13 @@
       "labels": [],
       "body": "this chunk of text, including some IANA Consideration is a suggestion of how to use existing IANA, WG and IESG process to manage (and approve) updates to YANG modules (and related SID files)\r\n",
       "createdAt": "2026-06-15T19:02:56Z",
-      "updatedAt": "2026-10-22T02:03:33Z",
+      "updatedAt": "2026-10-25T01:57:53Z",
       "baseRepository": "IETF-OPSAWG-WG/veloce",
       "baseRefName": "main",
       "baseRefOid": "86da8211141b16b2f9e5c0c9990a24d241034bf4",
       "headRepository": "IETF-OPSAWG-WG/veloce",
       "headRefName": "iana-registry-for-indirection",
-      "headRefOid": "19b49da13fbfce4436b6d180484ac89a9f68db73",
+      "headRefOid": "e319356b1e2df22942f03459c7fa7c97a1e98d42",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
@@ -3195,6 +3195,62 @@
               "body": "I am not sure we need the last two sentences. We are not reviewing the contents of the I-D, so why discuss what should or should not go into the I-D here?",
               "createdAt": "2026-10-20T15:23:38Z",
               "updatedAt": "2026-10-20T15:30:34Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDORMlxH88AAAABUBJbdg",
+          "commit": {
+            "abbreviatedOid": "19b49da"
+          },
+          "author": "xorrkaz",
+          "authorAssociation": "MEMBER",
+          "state": "CHANGES_REQUESTED",
+          "body": "",
+          "createdAt": "2026-10-24T13:05:55Z",
+          "updatedAt": "2026-10-24T13:10:59Z",
+          "comments": [
+            {
+              "originalPosition": 27,
+              "body": "Again, I think \"by value\" and \"by reference\" may confuse non-programmers.  I suggest, \"included in their entirety\".",
+              "createdAt": "2026-10-24T13:05:55Z",
+              "updatedAt": "2026-10-24T13:10:59Z"
+            },
+            {
+              "originalPosition": 39,
+              "body": "Moreover, the text is hard to understand.  I guess it's trying to state one would create a new branch to propose their change.  If it's been covered elsewhere more clearly, then I suggest removing it here.",
+              "createdAt": "2026-10-24T13:07:05Z",
+              "updatedAt": "2026-10-24T13:10:59Z"
+            },
+            {
+              "originalPosition": 62,
+              "body": "```suggestion\nFor a module with YANG Semantic Version X.Y.Z, a new PROPOSED entry X.Y.VV will\n```",
+              "createdAt": "2026-10-24T13:07:25Z",
+              "updatedAt": "2026-10-24T13:10:59Z"
+            },
+            {
+              "originalPosition": 62,
+              "body": "We may also need a reference to the YANG Semver draft here.",
+              "createdAt": "2026-10-24T13:07:50Z",
+              "updatedAt": "2026-10-24T13:10:59Z"
+            },
+            {
+              "originalPosition": 64,
+              "body": "Well, the decision as to what version to use will depend on the changes being made.  THAT process is described in YANG Semver.",
+              "createdAt": "2026-10-24T13:08:47Z",
+              "updatedAt": "2026-10-24T13:10:59Z"
+            },
+            {
+              "originalPosition": 141,
+              "body": "```suggestion\nYANG Semantic Versioning terminology established by\n```",
+              "createdAt": "2026-10-24T13:09:26Z",
+              "updatedAt": "2026-10-24T13:10:59Z"
+            },
+            {
+              "originalPosition": 151,
+              "body": "Don't we want this to align to YANG Semver?  In which case, \"42\" is not a valid YANG Semver.",
+              "createdAt": "2026-10-24T13:10:07Z",
+              "updatedAt": "2026-10-24T13:10:59Z"
             }
           ]
         }
@@ -4858,7 +4914,7 @@
       "labels": [],
       "body": "",
       "createdAt": "2026-09-21T03:52:50Z",
-      "updatedAt": "2026-10-22T02:03:10Z",
+      "updatedAt": "2026-10-25T01:54:21Z",
       "baseRepository": "IETF-OPSAWG-WG/veloce",
       "baseRefName": "main",
       "baseRefOid": "b9571663676dcf0282fee6956bb5138a981a675e",
@@ -5202,6 +5258,46 @@
               "updatedAt": "2026-10-21T01:08:50Z"
             }
           ]
+        },
+        {
+          "id": "PRR_kwDORMlxH88AAAABUBLLdA",
+          "commit": {
+            "abbreviatedOid": "23a1b2e"
+          },
+          "author": "xorrkaz",
+          "authorAssociation": "MEMBER",
+          "state": "CHANGES_REQUESTED",
+          "body": "",
+          "createdAt": "2026-10-24T13:14:11Z",
+          "updatedAt": "2026-10-24T13:14:27Z",
+          "comments": [
+            {
+              "originalPosition": 40,
+              "body": "I think it may be better to have the errata report turn into a branch and PR in all cases where it pertains to the YANG module.  Who does this is the question, though.  This way, it's easier to review the YANG changes in line.  People can comment using GitHub-y tools.  Only IF the errata are approved does the PR get merged.",
+              "createdAt": "2026-10-24T13:14:11Z",
+              "updatedAt": "2026-10-24T13:14:27Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDORMlxH88AAAABUDsHOQ",
+          "commit": {
+            "abbreviatedOid": "23a1b2e"
+          },
+          "author": "billwuqin",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2026-10-25T01:54:10Z",
+          "updatedAt": "2026-10-25T01:54:11Z",
+          "comments": [
+            {
+              "originalPosition": 40,
+              "body": "@xorrkaz Good question, since PR#76 adds dependency to PR#80, I think this issue can be furthe addressed in https://github.com/IETF-OPSAWG-WG/veloce/pull/80\r\nor in a new PR, in the latter case, issue ticket needs to be filed for this.\r\nregarding your question, I think chairs or AD can appoint Editor or YANG doctor to do this.\r\n\r\n",
+              "createdAt": "2026-10-25T01:54:10Z",
+              "updatedAt": "2026-10-25T01:54:11Z"
+            }
+          ]
         }
       ]
     },
@@ -5451,13 +5547,13 @@
       "labels": [],
       "body": "Once an initial version of a YANG model is published within an RFC, subsequent maintenance requests fall into one of six distinct categories based on whether the modification addresses a bug fix or a functional update, and whether it alters the narrative text, the YANG module, or both.",
       "createdAt": "2026-10-17T06:07:21Z",
-      "updatedAt": "2026-10-22T02:02:43Z",
+      "updatedAt": "2026-10-25T01:49:23Z",
       "baseRepository": "IETF-OPSAWG-WG/veloce",
       "baseRefName": "billwuqin-patch-16",
       "baseRefOid": "1b7e8a0a4bb8f8de9ad31386c3541ff04f2cb92b",
       "headRepository": "IETF-OPSAWG-WG/veloce",
       "headRefName": "billwuqin-patch-17",
-      "headRefOid": "2c8b6d893afe7e7fac4e694e8ffe8b84b73777d1",
+      "headRefOid": "00bcba398800e4a2340a24e22db2b7b4afeac26c",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
@@ -5543,6 +5639,66 @@
               "updatedAt": "2026-10-21T01:07:09Z"
             }
           ]
+        },
+        {
+          "id": "PRR_kwDORMlxH88AAAABUBLXaw",
+          "commit": {
+            "abbreviatedOid": "2c8b6d8"
+          },
+          "author": "xorrkaz",
+          "authorAssociation": "MEMBER",
+          "state": "CHANGES_REQUESTED",
+          "body": "",
+          "createdAt": "2026-10-24T13:15:12Z",
+          "updatedAt": "2026-10-24T13:15:50Z",
+          "comments": [
+            {
+              "originalPosition": 7,
+              "body": "```suggestion\nWhen updating an existing, published module with bug fix changes, IETF\n```",
+              "createdAt": "2026-10-24T13:15:12Z",
+              "updatedAt": "2026-10-24T13:15:51Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 81,
+      "id": "PR_kwDORMlxH88AAAABKbTStQ",
+      "title": "Update authors and contributors team",
+      "url": "https://github.com/IETF-OPSAWG-WG/veloce/pull/81",
+      "state": "OPEN",
+      "author": "billwuqin",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2026-10-24T10:39:20Z",
+      "updatedAt": "2026-10-24T13:04:28Z",
+      "baseRepository": "IETF-OPSAWG-WG/veloce",
+      "baseRefName": "main",
+      "baseRefOid": "8ca133f4158440e60884b02cdb8fd2fb4a2c3c86",
+      "headRepository": "IETF-OPSAWG-WG/veloce",
+      "headRefName": "billwuqin-patch-18",
+      "headRefOid": "0ed45af40efdb56be8faebfae6fefe0bf68fe88a",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDORMlxH88AAAABUBJJyw",
+          "commit": {
+            "abbreviatedOid": "0ed45af"
+          },
+          "author": "xorrkaz",
+          "authorAssociation": "MEMBER",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-10-24T13:04:28Z",
+          "updatedAt": "2026-10-24T13:04:28Z",
+          "comments": []
         }
       ]
     }
