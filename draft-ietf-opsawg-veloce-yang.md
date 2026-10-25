@@ -471,7 +471,7 @@ The primary key for this registry is the composite key (filetag,fileversion,file
 (Should a composite key be a problem for IANA, then a new, arbitrary index for each line would need to be added, maintained by IANA)
 
 The field is named fileversion rather than filerevision, matching the
-Semantic Versioning terminology established by
+YANG Semantic Versioning terminology established by
 {{?I-D.ietf-netmod-yang-semver}}, which this registry uses exclusively
 for the fileversion field rather than YANG's YYYY-MM-DD revision-date
 format.
