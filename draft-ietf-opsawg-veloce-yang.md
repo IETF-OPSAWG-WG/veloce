@@ -263,7 +263,7 @@ the updated module maintenance, so previous history is preserved as much
 as possible. If no existing repository exists, then a new one MUST be
 created, initialized with the last published YANG module.
 
-When updating an existing, published module with bug fix change, IETF
+When updating an existing, published module with bug fix changes, IETF
 errata reports can be used to keep track of changes to the YANG module.
 In the case the errata only pertains to the YANG module, once the Area Director (AD)
 verifies the errata using the existing IETF process, a Pull Request
