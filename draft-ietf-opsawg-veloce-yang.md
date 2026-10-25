@@ -392,7 +392,7 @@ IANA will be contacted, and the following template is filled out by the proposer
 
 The filetag and filetype will be the same as in the module that is being updated.
 
-For a module with Semantic Version X.Y.Z, a new PROPOSED entry X.Y.VV will
+For a module with YANG Semantic Version X.Y.Z, a new PROPOSED entry X.Y.VV will
 be proposed, with identical X and Y, and VV >= Z+1.  Note that many
 revisions might require a higher X or Y when published, but that decision
 is deferred to the WG consensus process described below.
