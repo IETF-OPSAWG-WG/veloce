@@ -26,11 +26,6 @@ venue:
 author:
 
  -
-   fullname: "Mahesh Jethanandani"
-   organization: Arrcus
-   email: "mjethanandani@gmail.com"
-
- -
    fullname: "Qin Wu"
    organization: Huawei
    email: "bill.wu@huawei.com"
@@ -48,9 +43,18 @@ author:
 contributor:
 
  -
+   fullname: "Mahesh Jethanandani"
+   organization: Arrcus
+   email: "mjethanandani@gmail.com"
+ -
   fullname: Italo Busi
   organization: Huawei
   email: Italo.Busi@huawei.com
+
+ -
+   fullname: "Reshad Rahman"
+   organization: Equinix
+   email: "reshad@yahoo.com"
 
 normative:
 
