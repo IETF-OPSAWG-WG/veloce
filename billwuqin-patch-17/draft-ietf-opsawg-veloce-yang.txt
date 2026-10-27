@@ -288,10 +288,10 @@ Table of Contents
    datatracker allow building a version of the RFC with the applied
    errata, which is independent from VELOCE process.  In the case the
    errata pertains to both RFC text and YANG module, when an RFC Errata
-   is verified, the YANG module change needs to be verified by the Area
-   Director and incorporated into WG repository while the RFC Narrative
-   text also needs to be verified by Area Director and building a
-   version of the RFC with the applied errata.
+   is verified, the YANG module change needs to be submitted as a PR and
+   verified by the Area Director and incorporated into WG repository
+   while the RFC Narrative text also needs to be verified by Area
+   Director and building a version of the RFC with the applied errata.
 
    A bis version of the initial RFC MAY be considered if a major change
    needs to be added (e.g., add a new function ) in the document.  Such
