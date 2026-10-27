@@ -2,15 +2,13 @@
 
 
 
-Operations and Management Area Working Group             M. Jethanandani
-Internet-Draft                                                    Arrcus
-Intended status: Experimental                                      Q. Wu
-Expires: 24 April 2027                                            Huawei
-                                                           M. Richardson
-                                                Sandelman Software Works
+Operations and Management Area Working Group                       Q. Wu
+Internet-Draft                                                    Huawei
+Intended status: Experimental                              M. Richardson
+Expires: 30 April 2027                          Sandelman Software Works
                                                                 D. Dhody
                                                                   Huawei
-                                                         21 October 2026
+                                                         27 October 2026
 
 
             YANG deVELpment PrOCEss and maintenance (VELOCE)
@@ -62,7 +60,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 24 April 2027.
+   This Internet-Draft will expire on 30 April 2027.
 
 Copyright Notice
 
@@ -440,17 +438,22 @@ Acknowledgments
 
 Contributors
 
+   Mahesh Jethanandani
+   Arrcus
+   Email: mjethanandani@gmail.com
+
+
    Italo Busi
    Huawei
    Email: Italo.Busi@huawei.com
 
 
+   Reshad Rahman
+   Equinix
+   Email: reshad@yahoo.com
+
+
 Authors' Addresses
-
-   Mahesh Jethanandani
-   Arrcus
-   Email: mjethanandani@gmail.com
-
 
    Qin Wu
    Huawei
