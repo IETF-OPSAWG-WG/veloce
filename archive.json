@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-10-25T03:19:34.292284+00:00",
+  "timestamp": "2026-10-27T03:49:09.432846+00:00",
   "repo": "IETF-OPSAWG-WG/veloce",
   "labels": [
     {
@@ -5414,7 +5414,7 @@
       "labels": [],
       "body": "close #78 \r\n",
       "createdAt": "2026-10-06T14:39:38Z",
-      "updatedAt": "2026-10-21T01:25:56Z",
+      "updatedAt": "2026-10-26T09:23:45Z",
       "baseRepository": "IETF-OPSAWG-WG/veloce",
       "baseRefName": "main",
       "baseRefOid": "b9571663676dcf0282fee6956bb5138a981a675e",
@@ -5532,6 +5532,26 @@
               "updatedAt": "2026-10-21T01:25:47Z"
             }
           ]
+        },
+        {
+          "id": "PRR_kwDORMlxH88AAAABUMFNEA",
+          "commit": {
+            "abbreviatedOid": "647745f"
+          },
+          "author": "dhruvdhody",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2026-10-26T09:23:45Z",
+          "updatedAt": "2026-10-26T09:23:45Z",
+          "comments": [
+            {
+              "originalPosition": 10,
+              "body": "And this will be done via errata process? ",
+              "createdAt": "2026-10-26T09:23:45Z",
+              "updatedAt": "2026-10-26T09:23:45Z"
+            }
+          ]
         }
       ]
     },
@@ -5547,13 +5567,13 @@
       "labels": [],
       "body": "Once an initial version of a YANG model is published within an RFC, subsequent maintenance requests fall into one of six distinct categories based on whether the modification addresses a bug fix or a functional update, and whether it alters the narrative text, the YANG module, or both.",
       "createdAt": "2026-10-17T06:07:21Z",
-      "updatedAt": "2026-10-25T01:49:23Z",
+      "updatedAt": "2026-10-27T03:34:58Z",
       "baseRepository": "IETF-OPSAWG-WG/veloce",
       "baseRefName": "billwuqin-patch-16",
       "baseRefOid": "1b7e8a0a4bb8f8de9ad31386c3541ff04f2cb92b",
       "headRepository": "IETF-OPSAWG-WG/veloce",
       "headRefName": "billwuqin-patch-17",
-      "headRefOid": "00bcba398800e4a2340a24e22db2b7b4afeac26c",
+      "headRefOid": "8d3ae50e00489a597371662f757648db3e76c19b",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
@@ -5659,6 +5679,124 @@
               "updatedAt": "2026-10-24T13:15:51Z"
             }
           ]
+        },
+        {
+          "id": "PRR_kwDORMlxH88AAAABUL_uaw",
+          "commit": {
+            "abbreviatedOid": "00bcba3"
+          },
+          "author": "dhruvdhody",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2026-10-26T09:15:20Z",
+          "updatedAt": "2026-10-26T09:21:09Z",
+          "comments": [
+            {
+              "originalPosition": 16,
+              "body": "This gives an impression that there is no PR in case of \"errata pertains to both RFC text and YANG\", that is not the intention as we say 'incorporated into WG repository', lets just make the PR explicit.",
+              "createdAt": "2026-10-26T09:15:20Z",
+              "updatedAt": "2026-10-26T09:21:10Z"
+            },
+            {
+              "originalPosition": 37,
+              "body": "'adopted'? do you mean published? ",
+              "createdAt": "2026-10-26T09:17:42Z",
+              "updatedAt": "2026-10-26T09:21:10Z"
+            },
+            {
+              "originalPosition": 38,
+              "body": "I am also lost on 'update the RFC to change the reference to the YANG module'",
+              "createdAt": "2026-10-26T09:19:53Z",
+              "updatedAt": "2026-10-26T09:21:10Z"
+            },
+            {
+              "originalPosition": 41,
+              "body": "What is the advantage of VELOCE if we have to do the full process for only YANG module update?",
+              "createdAt": "2026-10-26T09:20:23Z",
+              "updatedAt": "2026-10-26T09:21:10Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDORMlxH88AAAABUXgRNg",
+          "commit": {
+            "abbreviatedOid": "de79a66"
+          },
+          "author": "billwuqin",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2026-10-27T03:10:55Z",
+          "updatedAt": "2026-10-27T03:10:56Z",
+          "comments": [
+            {
+              "originalPosition": 38,
+              "body": "This is proposed PR based on Italo's proposal on Maintenance Classification (https://mailarchive.ietf.org/arch/msg/opsawg/E8ekVYCBc1nl1TDjzQLrgDoYsho/), feel free to edit or make correction @dhruvdhody @italobusi ",
+              "createdAt": "2026-10-27T03:10:56Z",
+              "updatedAt": "2026-10-27T03:16:34Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDORMlxH88AAAABUXhQGg",
+          "commit": {
+            "abbreviatedOid": "00bcba3"
+          },
+          "author": "billwuqin",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2026-10-27T03:13:49Z",
+          "updatedAt": "2026-10-27T03:13:49Z",
+          "comments": [
+            {
+              "originalPosition": 37,
+              "body": "Yes, fixed as you suggested.",
+              "createdAt": "2026-10-27T03:13:49Z",
+              "updatedAt": "2026-10-27T03:13:49Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDORMlxH88AAAABUXnWNQ",
+          "commit": {
+            "abbreviatedOid": "00bcba3"
+          },
+          "author": "billwuqin",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2026-10-27T03:32:11Z",
+          "updatedAt": "2026-10-27T03:32:12Z",
+          "comments": [
+            {
+              "originalPosition": 41,
+              "body": "Okay, I have check the Italo's proposal on the list, Quoted his text as follows:\r\n\"\r\n  1.  The YANG module needs to be updated\r\n\r\nThe only available option today is to publish a new RFC-bis which replaces RFC XXX but this process has been proven to be too cumbersome and slow and the VELOCE process should define a lighter and faster approach\r\n\r\nMy understanding from the previous discussion is that, in this case, people prefer to publish a new revision of the YANG model without publishing any new RFC\r\n\"\r\nHere is the change to align with what he said.\r\nPlease review @dhruvdhody @italobusi ",
+              "createdAt": "2026-10-27T03:32:12Z",
+              "updatedAt": "2026-10-27T03:32:12Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDORMlxH88AAAABUXoRZg",
+          "commit": {
+            "abbreviatedOid": "8d3ae50"
+          },
+          "author": "billwuqin",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2026-10-27T03:34:58Z",
+          "updatedAt": "2026-10-27T03:34:58Z",
+          "comments": [
+            {
+              "originalPosition": 16,
+              "body": "Done as you suggested.",
+              "createdAt": "2026-10-27T03:34:58Z",
+              "updatedAt": "2026-10-27T03:34:58Z"
+            }
+          ]
         }
       ]
     },
@@ -5667,24 +5805,26 @@
       "id": "PR_kwDORMlxH88AAAABKbTStQ",
       "title": "Update authors and contributors team",
       "url": "https://github.com/IETF-OPSAWG-WG/veloce/pull/81",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "billwuqin",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "",
       "createdAt": "2026-10-24T10:39:20Z",
-      "updatedAt": "2026-10-24T13:04:28Z",
+      "updatedAt": "2026-10-27T03:04:18Z",
       "baseRepository": "IETF-OPSAWG-WG/veloce",
       "baseRefName": "main",
       "baseRefOid": "8ca133f4158440e60884b02cdb8fd2fb4a2c3c86",
       "headRepository": "IETF-OPSAWG-WG/veloce",
       "headRefName": "billwuqin-patch-18",
       "headRefOid": "0ed45af40efdb56be8faebfae6fefe0bf68fe88a",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2026-10-27T03:04:17Z",
+      "mergedAt": "2026-10-27T03:04:17Z",
+      "mergedBy": "billwuqin",
+      "mergeCommit": {
+        "oid": "db9e7114134da8b60f2b364f5f40f9413cb57711"
+      },
       "comments": [],
       "reviews": [
         {
@@ -5698,6 +5838,19 @@
           "body": "",
           "createdAt": "2026-10-24T13:04:28Z",
           "updatedAt": "2026-10-24T13:04:28Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDORMlxH88AAAABUL9QbQ",
+          "commit": {
+            "abbreviatedOid": "0ed45af"
+          },
+          "author": "dhruvdhody",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-10-26T09:11:43Z",
+          "updatedAt": "2026-10-26T09:11:43Z",
           "comments": []
         }
       ]
