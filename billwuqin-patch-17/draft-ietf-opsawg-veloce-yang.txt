@@ -312,10 +312,10 @@ Table of Contents
    RFC.
 
    In the case of combined narrative and YANG module updates, YANG
-   module needs to be updated in the WG repository and make sure the
-   updating RFC references the updated YANG module. an updating RFC MUST
-   be published following normal Working Group Last Call (WG LC), IETF
-   Last Call (IETF LC), and IESG review.
+   module needs to be updated in the WG repository with a PR approved by
+   AD and make sure the updating RFC references the updated YANG module.
+   an updating RFC MUST be published following normal Working Group Last
+   Call (WG LC), IETF Last Call (IETF LC), and IESG review.
 
 3.  Experimental Plan
 
