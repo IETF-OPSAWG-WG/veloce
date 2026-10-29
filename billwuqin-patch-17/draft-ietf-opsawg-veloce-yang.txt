@@ -5,12 +5,12 @@
 Operations and Management Area Working Group             M. Jethanandani
 Internet-Draft                                                    Arrcus
 Intended status: Experimental                                      Q. Wu
-Expires: 30 April 2027                                            Huawei
+Expires: 2 May 2027                                               Huawei
                                                            M. Richardson
                                                 Sandelman Software Works
                                                                 D. Dhody
                                                                   Huawei
-                                                         27 October 2026
+                                                         29 October 2026
 
 
             YANG deVELpment PrOCEss and maintenance (VELOCE)
@@ -62,7 +62,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 30 April 2027.
+   This Internet-Draft will expire on 2 May 2027.
 
 Copyright Notice
 
@@ -302,7 +302,7 @@ Table of Contents
    Call (IETF LC), and IESG review.  There is no change to this process
    under VELOCE.
 
-   In the case of YANG module update only, WG may decide to update an
+   In the case of YANG module update only, WG may decide to update a
    published YANG module in the IETF WG repository and only update the
    IANA to change the reference to the YANG module , i.e., the link MUST
    point to a specific tagged version of the YANG module.  In such case,
