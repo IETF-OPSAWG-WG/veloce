@@ -284,7 +284,7 @@ with AD's approval. The IANA should be updated with corresponding version of the
 without republishing a new RFC.
 
 In the case of combined narrative and YANG module updates, YANG module needs to be updated
-in the WG repository and make sure the updated RFCbis reference to updated YANG module.
+in the WG repository and make sure the updating RFC references the updated YANG module.
 an updating RFC MUST be published following normal Working Group Last Call (WG LC),
 IETF Last Call (IETF LC), and IESG review.
 
