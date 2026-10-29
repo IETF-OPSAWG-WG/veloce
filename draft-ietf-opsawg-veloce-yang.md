@@ -276,7 +276,7 @@ following normal Working Group Last Call (WG LC), IETF Last Call (IETF LC),
 and IESG review. There is no change to this process under VELOCE.
 
 In the case of YANG module update only,
-WG may decide to update an published YANG module in the IETF
+WG may decide to update a published YANG module in the IETF
 WG repository and only update the IANA to change the reference to the YANG module
 , i.e., the link MUST point to a specific tagged version of the YANG module.
 In such case, YANG module update should be submited as a PR and incorporated into WG repository
