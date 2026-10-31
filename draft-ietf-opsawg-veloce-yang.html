@@ -1351,13 +1351,9 @@ having a branch that corresponds to the version of the draft.<a href="#section-2
 defined in Section 4 of Working Group GitHub Usage
 Guidance <span>[<a href="#RFC8874" class="cite xref">RFC8874</a>]</span>. This includes the use of Issues to track open
 issues regarding the module, email notifications of activity on working group repositories,
-Editor's summary report or change log about the changes to the document (refer to
+ Editor's reporting or change log about the changes to the document (refer to
 to Section 4.3 of <span>[<a href="#RFC8874" class="cite xref">RFC8874</a>]</span> for monitoring activity). They, along with corresponding
-links to the Pull Request (PR), are a useful way to record decisions made by the WG.
-please note that Editor's summary report SHOULD be posted to the WG list perodically
-(e.g., use weekly github digest to report the status of issue tickets and PRs) and
-is mandatory for the VELOCE experiement. Alternatively, Editor's summary report can be
-reported by the Editor on demand to solicit inputs and comments on the key open issues.<a href="#section-2.1-6" class="pilcrow">¶</a></p>
+links to the Pull Request (PR), are a useful way to record decisions made by the WG.<a href="#section-2.1-6" class="pilcrow">¶</a></p>
 <p id="section-2.1-7">PRs allow for a user to request a change to the repository. A
 user does not need to have write access to the repository. A
 fork of the repository allows the user to make changes,
@@ -1420,22 +1416,36 @@ to use the same WG repository of the initial version of YANG module for
 the updated module maintenance, so previous history is preserved as much
 as possible. If no existing repository exists, then a new one MUST be
 created, initialized with the last published YANG module.<a href="#section-2.2-1" class="pilcrow">¶</a></p>
-<p id="section-2.2-2">When updating an existing, published module, IETF errata reports can
-be used to keep track of changes to the YANG module. In the case the
-errata only pertains to the YANG module, once the Area Director (AD)
+<p id="section-2.2-2">When updating an existing, published module with bug fix changes, IETF
+errata reports can be used to keep track of changes to the YANG module.
+In the case the errata only pertains to the YANG module, once the Area Director (AD)
 verifies the errata using the existing IETF process, a Pull Request
 (PR) is opened to merge the changes into the WG repository. In the case
 the errata only pertains to RFC text associated with YANG module,
 when an RFC Errata is verified, the datatracker allow building a
 version of the RFC with the applied errata, which is independent from
-VELOCE process.<a href="#section-2.2-2" class="pilcrow">¶</a></p>
+VELOCE process. In the case the errata pertains to both RFC text and
+YANG module, when an RFC Errata is verified, the YANG module change needs
+to be submitted as a PR and verified by the Area Director and incorporated
+into WG repository while the RFC Narrative text also needs to be verified by
+Area Director and building a version of the RFC with the applied errata.<a href="#section-2.2-2" class="pilcrow">¶</a></p>
 <p id="section-2.2-3">A bis version of the initial RFC MAY be considered if a major change needs
-to be added in the document. Such a decision is left to the WG. WG may
-decide to update an adopted YANG module in the IETF repository and only
-update the RFC to change the reference to the YANG module, i.e., the link
-MUST point to a specific tagged version of the YANG module. In such case,
-a normal process including WGLC, IETF LC, IESG review should be followed
-on this RFCbis document.<a href="#section-2.2-3" class="pilcrow">¶</a></p>
+to be added (e.g., add a new function ) in the document. Such a decision is
+left to the WG.<a href="#section-2.2-3" class="pilcrow">¶</a></p>
+<p id="section-2.2-4">In the case of narrative text update only, an updating RFC MUST be published
+following normal Working Group Last Call (WG LC), IETF Last Call (IETF LC),
+and IESG review. There is no change to this process under VELOCE.<a href="#section-2.2-4" class="pilcrow">¶</a></p>
+<p id="section-2.2-5">In the case of YANG module update only,
+WG may decide to update a published YANG module in the IETF
+WG repository and only update the IANA to change the reference to the YANG module
+, i.e., the link MUST point to a specific tagged version of the YANG module.
+In such case, YANG module update should be submited as a PR and incorporated into WG repository
+with AD's approval. The IANA should be updated with corresponding version of the YANG module
+without republishing a new RFC.<a href="#section-2.2-5" class="pilcrow">¶</a></p>
+<p id="section-2.2-6">In the case of combined narrative and YANG module updates, YANG module needs to be updated
+in the WG repository with a PR approved by AD and make sure the updating RFC references the updated YANG module.
+an updating RFC MUST be published following normal Working Group Last Call (WG LC),
+IETF Last Call (IETF LC), and IESG review.<a href="#section-2.2-6" class="pilcrow">¶</a></p>
 </section>
 </div>
 </section>
