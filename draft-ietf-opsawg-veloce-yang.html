@@ -1314,19 +1314,8 @@ chairs. However, once the document is adopted as a WG item,
 the repository SHOULD reside under the auspecies
 of IETF-controlled repository and managed by the WG. The
 name of the repository SHOULD reflect the name
-of the draft. When updating an existing module, it is RECOMMENDED to use the
-same WG repository of the initial version of YANG module for the
-updated module maintenance, so previous history is preserved as much as possible.
-If no existing repository exists, then a new one MUST
-be created, initialized with the last published YANG module.
-If there is an existing repository but the responsible WG was concluded,
-then such repository MUST be moved to the new responsible working group's GitHub,
-initialized with the last published YANG module and associated git history.
-In the latter case, a new repository should be created under the new WG, a new remote
-should be added to a checkout of the existing repository, and then pushed to the new
-repository. Then, the existing/old repository should be archived with a message added
-to the README pointing to the new repository.
-In addition, the chairs MAY make sure that an appropriate CI/CD YANG validation is
+of the draft.<a href="#section-2.1-2" class="pilcrow">¶</a></p>
+<p id="section-2.1-3">In addition, the chairs MAY make sure that an appropriate CI/CD YANG validation is
 in place.  It is RECOMMENDED that a real time collaborative working environment
 be provided in the repository to enable online validation of YANG
 modules (e.g., via yanglint) using the YANG template with the CI/CD
@@ -1334,27 +1323,27 @@ pipeline (e.g., https://github.com/IETF-OPS-AD/I-D-with-yang-template),
 and to ensure a consistent development environment across all
 contributors. In addition, a containerized build environment for local
 validation of YANG modules MAY also be provided in the repository as
-a backup.<a href="#section-2.1-2" class="pilcrow">¶</a></p>
-<p id="section-2.1-3">The procedure for managing WG documents (e.g., assign editors)
+a backup.<a href="#section-2.1-3" class="pilcrow">¶</a></p>
+<p id="section-2.1-4">The procedure for managing WG documents (e.g., assign editors)
 applies for managing YANG modules (Section 6.1 of IETF Working
 Group Guidelines and Procedures <span>[<a href="#RFC2418" class="cite xref">RFC2418</a>]</span>). For considerations
 related to granting editors write and administrators' right refer to
-Section 3.3 of Working Group GitHub Usage Guidance <span>[<a href="#RFC8874" class="cite xref">RFC8874</a>]</span>.<a href="#section-2.1-3" class="pilcrow">¶</a></p>
-<p id="section-2.1-4">Other administrative policies such as ones relate to migration,
+Section 3.3 of Working Group GitHub Usage Guidance <span>[<a href="#RFC8874" class="cite xref">RFC8874</a>]</span>.<a href="#section-2.1-4" class="pilcrow">¶</a></p>
+<p id="section-2.1-5">Other administrative policies such as ones relate to migration,
 personnel changes or the WG closing are defined in the Working
-Group GitHub Administration <span>[<a href="#RFC8875" class="cite xref">RFC8875</a>]</span>.<a href="#section-2.1-4" class="pilcrow">¶</a></p>
-<p id="section-2.1-5">A release tagging mechanism should be defined to track the
+Group GitHub Administration <span>[<a href="#RFC8875" class="cite xref">RFC8875</a>]</span>.<a href="#section-2.1-5" class="pilcrow">¶</a></p>
+<p id="section-2.1-6">A release tagging mechanism should be defined to track the
 intermediate versions referenced by WG I-Ds and by the RFC,
 once published. This can come in the form of a 'git tag' or by
-having a branch that corresponds to the version of the draft.<a href="#section-2.1-5" class="pilcrow">¶</a></p>
-<p id="section-2.1-6">Contribution methods for the YANG module are similar to those
+having a branch that corresponds to the version of the draft.<a href="#section-2.1-6" class="pilcrow">¶</a></p>
+<p id="section-2.1-7">Contribution methods for the YANG module are similar to those
 defined in Section 4 of Working Group GitHub Usage
 Guidance <span>[<a href="#RFC8874" class="cite xref">RFC8874</a>]</span>. This includes the use of Issues to track open
 issues regarding the module, email notifications of activity on working group repositories,
  Editor's reporting or change log about the changes to the document (refer to
 to Section 4.3 of <span>[<a href="#RFC8874" class="cite xref">RFC8874</a>]</span> for monitoring activity). They, along with corresponding
-links to the Pull Request (PR), are a useful way to record decisions made by the WG.<a href="#section-2.1-6" class="pilcrow">¶</a></p>
-<p id="section-2.1-7">PRs allow for a user to request a change to the repository. A
+links to the Pull Request (PR), are a useful way to record decisions made by the WG.<a href="#section-2.1-7" class="pilcrow">¶</a></p>
+<p id="section-2.1-8">PRs allow for a user to request a change to the repository. A
 user does not need to have write access to the repository. A
 fork of the repository allows the user to make changes,
 validate them, and post the changes as a PR against the WG
@@ -1367,8 +1356,8 @@ the changes and make sure that they are in line with the WG
 consensus before they are merged into the main branch.
 This also allows the editors to make sure that the changes are properly
 validated before they are merged into the main branch,e.g., one editor
-creates a pull request and another editor merges it (refer to Section 4.2 of <span>[<a href="#RFC8874" class="cite xref">RFC8874</a>]</span>.<a href="#section-2.1-7" class="pilcrow">¶</a></p>
-<p id="section-2.1-8">A procedure for assessing consensus is discussed in Section 7 of Working
+creates a pull request and another editor merges it (refer to Section 4.2 of <span>[<a href="#RFC8874" class="cite xref">RFC8874</a>]</span>.<a href="#section-2.1-8" class="pilcrow">¶</a></p>
+<p id="section-2.1-9">A procedure for assessing consensus is discussed in Section 7 of Working
 Group GitHub Usage Guidance <span>[<a href="#RFC8874" class="cite xref">RFC8874</a>]</span> and SHOULD be
 followed when accepting changes to the module in the ongoing
 working group document. This include approving and merging
@@ -1378,15 +1367,15 @@ consensus regarding changes to document, recording details of
 decisions in issue comments, closing issues by document editor
 or user that open those issues. Working group chairs should be involved to
 make sure the consensus has been reached when Editors summarize the issues
-to the WG to prepare for a new release.<a href="#section-2.1-8" class="pilcrow">¶</a></p>
-<p id="section-2.1-9">The YANG module MUST NOT be inserted in the
+to the WG to prepare for a new release.<a href="#section-2.1-9" class="pilcrow">¶</a></p>
+<p id="section-2.1-10">The YANG module MUST NOT be inserted in the
 document; instead, a link to the above repository
 MUST be included in the document.  The link
 MUST point to a specific tagged version of the
 YANG module (e.g., a git tag or commit hash), not to the HEAD of
 a branch, so that the module's contents at RFC publication time
-are permanently retrievable and verifiable.<a href="#section-2.1-9" class="pilcrow">¶</a></p>
-<p id="section-2.1-10">VELOCE does not mandate which version of a YANG module
+are permanently retrievable and verifiable.<a href="#section-2.1-10" class="pilcrow">¶</a></p>
+<p id="section-2.1-11">VELOCE does not mandate which version of a YANG module
 implementations must support. The link in the published RFC
 identifies the module version current at the time of
 publication in the IANA section, but implementations MAY track a
@@ -1394,16 +1383,16 @@ later version at their discretion.
 Conformance to the module SHOULD be indicated by
 citing the specific module version (e.g., its revision-date or
 YANG Semver <span>[<a href="#I-D.ietf-netmod-yang-semver" class="cite xref">I-D.ietf-netmod-yang-semver</a>]</span>) rather than the RFC
-number alone, since the module may evolve independently of the RFC text.<a href="#section-2.1-10" class="pilcrow">¶</a></p>
-<p id="section-2.1-11">YANG SID files <span>[<a href="#RFC9595" class="cite xref">RFC9595</a>]</span>, when applicable (e.g.,
+number alone, since the module may evolve independently of the RFC text.<a href="#section-2.1-11" class="pilcrow">¶</a></p>
+<p id="section-2.1-12">YANG SID files <span>[<a href="#RFC9595" class="cite xref">RFC9595</a>]</span>, when applicable (e.g.,
 for YANG/CBOR encoding), SHOULD reside in the
 SCM repository rather than in the document.  The use of RFC 8792
 folding for SID files in Internet-Drafts is discouraged, as it
-is not compatible with current YANG Doctor tooling.<a href="#section-2.1-11" class="pilcrow">¶</a></p>
-<p id="section-2.1-12">A release tagging mechanism should be defined to track the intermediate
+is not compatible with current YANG Doctor tooling.<a href="#section-2.1-12" class="pilcrow">¶</a></p>
+<p id="section-2.1-13">A release tagging mechanism should be defined to track the intermediate
 versions referenced by WG I-Ds and by the RFC, once published. This can
 come in the form of a 'git tag' or by having a branch that corresponds
-to the version of the draft.<a href="#section-2.1-12" class="pilcrow">¶</a></p>
+to the version of the draft.<a href="#section-2.1-13" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="the-existing-yang-module-updatemaintenance">
@@ -1411,11 +1400,18 @@ to the version of the draft.<a href="#section-2.1-12" class="pilcrow">¶</a></p>
         <h3 id="name-the-existing-yang-module-up">
 <a href="#section-2.2" class="section-number selfRef">2.2. </a><a href="#name-the-existing-yang-module-up" class="section-name selfRef">The Existing YANG Module Update/Maintenance</a>
         </h3>
-<p id="section-2.2-1">When updating an existing module in the published RFC, it is RECOMMENDED
-to use the same WG repository of the initial version of YANG module for
-the updated module maintenance, so previous history is preserved as much
-as possible. If no existing repository exists, then a new one MUST be
-created, initialized with the last published YANG module.<a href="#section-2.2-1" class="pilcrow">¶</a></p>
+<p id="section-2.2-1">When updating an existing module, it is RECOMMENDED to use the
+same WG repository of the initial version of YANG module for the
+updated module maintenance, so previous history is preserved as much as possible.
+If no existing repository exists, then a new one MUST
+be created, initialized with the last published YANG module.
+If there is an existing repository but the responsible WG was concluded,
+then such repository MUST be moved to the new responsible working group's GitHub,
+initialized with the last published YANG module and associated git history.
+In the latter case, a new repository should be created under the new WG, a new remote
+should be added to a checkout of the existing repository, and then pushed to the new
+repository. Then, the existing/old repository should be archived with a message added
+to the README pointing to the new repository.<a href="#section-2.2-1" class="pilcrow">¶</a></p>
 <p id="section-2.2-2">When updating an existing, published module with bug fix changes, IETF
 errata reports can be used to keep track of changes to the YANG module.
 In the case the errata only pertains to the YANG module, once the Area Director (AD)
