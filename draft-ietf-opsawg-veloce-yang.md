@@ -132,6 +132,8 @@ The following practices should provide the necessary guidance
 on how a WG develops a new YANG module or updates an existing
 YANG module:
 
+## New YANG Module Draft Development
+
 It is RECOMMENDED that IETF-controlled repositories
 be used. See Section 1.3 of Working Group GitHub Usage
 Guidance {{!RFC8874}}. Integration using third-party hosted
@@ -246,19 +248,36 @@ SCM repository rather than in the document.  The use of RFC 8792
 folding for SID files in Internet-Drafts is discouraged, as it
 is not compatible with current YANG Doctor tooling.
 
-When updating an existing, published module, IETF errata reports can
-be used to keep track of changes for both the YANG module and its
-corresponding RFC text. In the case the errata pertains to the YANG
-module, once the Area Director (AD) verifies the errata using the
-existing IETF process, a Pull Request (PR) is opened to merge the changes
-into the WG repository.
+A release tagging mechanism should be defined to track the intermediate
+versions referenced by WG I-Ds and by the RFC, once published. This can
+come in the form of a 'git tag' or by having a branch that corresponds
+to the version of the draft.
 
-A bis version of the initial RFC MAY be
-considered if a major change needs to be added in the
-document. Such a decision is left to the WG. WG may
-decide to update an adopted YANG module in the IETF
-repository and only update the RFC to change the reference
-to the YANG module.
+## The Existing YANG Module Update/Maintenance
+
+When updating an existing module in the published RFC, it is RECOMMENDED
+to use the same WG repository of the initial version of YANG module for
+the updated module maintenance, so previous history is preserved as much
+as possible. If no existing repository exists, then a new one MUST be
+created, initialized with the last published YANG module.
+
+When updating an existing, published module, IETF errata reports can
+be used to keep track of changes to the YANG module. In the case the
+errata only pertains to the YANG module, once the Area Director (AD)
+verifies the errata using the existing IETF process, a Pull Request
+(PR) is opened to merge the changes into the WG repository. In the case
+the errata only pertains to RFC text associated with YANG module,
+when an RFC Errata is verified, the datatracker allow building a
+version of the RFC with the applied errata, which is independent from
+VELOCE process.
+
+A bis version of the initial RFC MAY be considered if a major change needs
+to be added in the document. Such a decision is left to the WG. WG may
+decide to update an adopted YANG module in the IETF repository and only
+update the RFC to change the reference to the YANG module, i.e., the link
+MUST point to a specific tagged version of the YANG module. In such case,
+a normal process including WGLC, IETF LC, IESG review should be followed
+on this RFCbis document.
 
 # Experimental Plan {#sec-experiment}
 
