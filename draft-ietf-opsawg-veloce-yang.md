@@ -279,6 +279,17 @@ MUST point to a specific tagged version of the YANG module. In such case,
 a normal process including WGLC, IETF LC, IESG review should be followed
 on this RFCbis document.
 
+# Revising existing YANG modules
+
+YANG modules whose full text appears in already published RFCs will not have any of the indirection text in the RFC.
+When revisions to those modules are desired (and no new RFC is waranted), then there will need
+to be a way to document the existence of the new revisions.
+
+During the experiment, this will be done by adding a Note to the existing YANG
+Modules Parameters registry at:
+   https://www.iana.org/assignments/yang-parameters#yang-parameters-1
+to indicate further revisions of this YANG module can be found at specific URL link.
+
 # Experimental Plan {#sec-experiment}
 
 Much like other experimental documents, this document tries to
