@@ -289,6 +289,17 @@ in the WG repository with a PR approved by AD and make sure the updating RFC ref
 an updating RFC MUST be published following normal Working Group Last Call (WG LC),
 IETF Last Call (IETF LC), and IESG review.
 
+# Revising existing YANG modules
+
+YANG modules whose full text appears in already published RFCs will not have any of the indirection text in the RFC.
+When revisions to those modules are desired (and no new RFC is waranted), then there will need
+to be a way to document the existence of the new revisions.
+
+During the experiment, this will be done by adding a Note to the existing YANG
+Modules Parameters registry at:
+   https://www.iana.org/assignments/yang-parameters#yang-parameters-1
+to indicate further revisions of this YANG module can be found at specific URL link.
+
 # Experimental Plan {#sec-experiment}
 
 Much like other experimental documents, this document tries to
