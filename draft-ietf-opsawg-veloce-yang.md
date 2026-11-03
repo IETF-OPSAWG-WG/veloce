@@ -378,7 +378,7 @@ IANA will be contacted, and the following template is filled out by the proposer
 ~~~
    File Tag:              <same filetag as the entry being updated,
                             or a new tag for a net-new module>
-   File Type:             <MODULE | SID>
+   File Type:             <YANG | SID | Tree>
    Proposed File Version: <the new fileversion value being requested>
    Related Document:      <RFC number, or a revision-specific URL
                             for a non-RFC document>
@@ -483,7 +483,7 @@ It shall include the following columns:
 |---|---|
 | filetag | Unique slug allocated per YANG module file. Usually related to the YANG module name, but not exclusively -- the use of an Internet-Draft file name is also appropriate. |
 | fileversion | A Semantic Version string X.Y.Z (e.g. "1.4.2"). |
-| filetype | One of "MODULE" or "SID". |
+| filetype | One of "YANG" or "SID" or "TREE". |
 | url | An HTTP, HTTPS, or git URL that uniquely identifies the file. MUST return the raw file, with no HTML or other markup around it. |
 | sha256hash | A SHA2-256 hash of the file's contents. |
 | entrytype | `PERMANENT` once approved by the appropriate change controller; `PROPOSED` otherwise. The date an entry became `PROPOSED` is retained, to determine when it should be sunset. |
