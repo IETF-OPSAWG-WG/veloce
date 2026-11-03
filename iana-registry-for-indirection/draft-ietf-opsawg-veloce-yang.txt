@@ -392,7 +392,7 @@ Table of Contents
 
    The Lifecycle of the references is detailed below.  In order to
    provide the best introduction to the life cycle, the process will be
-   started from the state of a published RFC with a published MODULE,
+   started from the state of a published RFC with a published module,
    and then follow the update process through a life cycle of updates.
    Following that, the process for a new module is explained.
 
