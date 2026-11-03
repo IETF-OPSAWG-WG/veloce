@@ -363,7 +363,7 @@ structure of a module at the time the RFC was published. They are expected to be
 whichever module revision the document currently describes.
 
 The Lifecycle of the references is detailed below.
-In order to provide the best introduction to the life cycle, the process will be started from the state of a published RFC with a published MODULE, and then follow the update process through a life cycle of updates.  Following that, the process for a new module is explained.
+In order to provide the best introduction to the life cycle, the process will be started from the state of a published RFC with a published module, and then follow the update process through a life cycle of updates.  Following that, the process for a new module is explained.
 
 ### Revision of a Module
 
