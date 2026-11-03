@@ -359,7 +359,7 @@ In place of including a YANG module or SID file into an Internet-Draft or RFC by
 YANG Tree diagrams are not managed through this indirection. They remain
 included by value directly in the document, marked non-normative, since
 they are quite instructive and give a compact, useful overview of the
-structure of a module. They are expected to be regenerated to match
+structure of a module at the time the RFC was published. They are expected to be regenerated to match
 whichever module revision the document currently describes.
 
 The Lifecycle of the references is detailed below.
