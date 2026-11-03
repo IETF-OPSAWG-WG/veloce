@@ -5,12 +5,12 @@
 Operations and Management Area Working Group             M. Jethanandani
 Internet-Draft                                                    Arrcus
 Intended status: Experimental                                      Q. Wu
-Expires: 28 April 2027                                            Huawei
+Expires: 7 May 2027                                               Huawei
                                                            M. Richardson
                                                 Sandelman Software Works
                                                                 D. Dhody
                                                                   Huawei
-                                                         25 October 2026
+                                                         3 November 2026
 
 
            YANG deVELopment PrOCEss and maintenance (VELOCE)
@@ -62,7 +62,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 28 April 2027.
+   This Internet-Draft will expire on 7 May 2027.
 
 Copyright Notice
 
@@ -386,9 +386,9 @@ Table of Contents
    YANG Tree diagrams are not managed through this indirection.  They
    remain included by value directly in the document, marked non-
    normative, since they are quite instructive and give a compact,
-   useful overview of the structure of a module.  They are expected to
-   be regenerated to match whichever module revision the document
-   currently describes.
+   useful overview of the structure of a module at the time the RFC was
+   published.  They are expected to be regenerated to match whichever
+   module revision the document currently describes.
 
    The Lifecycle of the references is detailed below.  In order to
    provide the best introduction to the life cycle, the process will be
