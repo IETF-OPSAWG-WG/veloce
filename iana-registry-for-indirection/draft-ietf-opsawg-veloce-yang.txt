@@ -412,7 +412,7 @@ Table of Contents
 
       File Tag:              <same filetag as the entry being updated,
                                or a new tag for a net-new module>
-      File Type:             <MODULE | SID>
+      File Type:             <YANG | SID | Tree>
       Proposed File Version: <the new fileversion value being requested>
       Related Document:      <RFC number, or a revision-specific URL
                                for a non-RFC document>
@@ -533,7 +533,7 @@ Table of Contents
     | fileversion        | A Semantic Version string X.Y.Z (e.g.     |
     |                    | "1.4.2").                                 |
     +--------------------+-------------------------------------------+
-    | filetype           | One of "MODULE" or "SID".                 |
+    | filetype           | One of "YANG" or "SID" or "TREE".         |
     +--------------------+-------------------------------------------+
     | url                | An HTTP, HTTPS, or git URL that uniquely  |
     |                    | identifies the file.  MUST return the raw |
