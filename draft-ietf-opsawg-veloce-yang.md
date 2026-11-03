@@ -413,7 +413,7 @@ The I-D SHOULD reference the YANG module and SID file using the proposed syntax 
 
 The WG process continues as for any I-D: reviews, WGLC, AD evaluation.
 Reviewers need to understand that they are reviewing the YANG modules (and SID files),
-not the contents of the I-D itself.  
+not the contents of the I-D itself.
 
 When it reaches the IESG, the I-D serves as the request to update the module entry,
 in the same way that a Proposed Standard may be advanced to Internet Standard without
