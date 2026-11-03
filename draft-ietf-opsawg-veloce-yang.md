@@ -481,7 +481,7 @@ It shall include the following columns:
 | Field | Purpose |
 |---|---|
 | filetag | Unique slug allocated per YANG module file. Usually related to the YANG module name, but not exclusively -- the use of an Internet-Draft file name is also appropriate. |
-| fileversion | A Semantic Version string X.Y.Z (e.g. "1.4.2"). A plain integer (e.g. "24") is also a valid Semantic Version. The literal string "latest" MAY be used in a query, but not as a table entry. `PROPOSED` entries MUST change only the Z (patch) component. |
+| fileversion | A Semantic Version string X.Y.Z (e.g. "1.4.2"). |
 | filetype | One of "MODULE" or "SID". |
 | url | An HTTP, HTTPS, or git URL that uniquely identifies the file. MUST return the raw file, with no HTML or other markup around it. |
 | sha256hash | A SHA2-256 hash of the file's contents. |
