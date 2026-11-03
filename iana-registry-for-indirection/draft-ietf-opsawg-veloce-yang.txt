@@ -533,12 +533,7 @@ Table of Contents
     |                    | appropriate.                              |
     +--------------------+-------------------------------------------+
     | fileversion        | A Semantic Version string X.Y.Z (e.g.     |
-    |                    | "1.4.2").  A plain integer (e.g. "24") is |
-    |                    | also a valid Semantic Version.  The       |
-    |                    | literal string "latest" MAY be used in a  |
-    |                    | query, but not as a table entry.          |
-    |                    | PROPOSED entries MUST change only the Z   |
-    |                    | (patch) component.                        |
+    |                    | "1.4.2").                                 |
     +--------------------+-------------------------------------------+
     | filetype           | One of "MODULE" or "SID".                 |
     +--------------------+-------------------------------------------+
