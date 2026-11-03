@@ -404,12 +404,13 @@ The sha256hash SHOULD be included by the proposer, but IANA is expected to retri
 
 ### Official Revision of the module
 
-When a YANG module is related to an RFC, then updates to it are controlled by a WG
-Consensus Call.
-The rational for the changes to the YANG module are to be described in a regular  internet-draft, and the WG SHOULD adopt that internet-draft like any other I-D.
-(The intended status of the internet-draft MAY be set to Experimental, but ideally, a new status will be added: "For IESG Approval Consideration")
+When a YANG module is related to an RFC, then updates to it are controlled by a WG Consensus Call.
+The rational for the changes to the YANG module are to be described in a regular internet-draft
+(e.g., RFCbis or RFC update), and the WG SHOULD adopt that internet-draft like any other I-D.
 
-The I-D SHOULD reference the YANG module and SID file using the proposed syntax below, as a normative reference. The tree diagram continues to be included by value, as described above, and is not referenced through this syntax.
+The I-D SHOULD reference the YANG module and SID file using the proposed syntax below, as a
+normative reference. The tree diagram continues to be included by value, as described above,
+and is not referenced through this syntax.
 
 The WG process continues as for any I-D: reviews, WGLC, AD evaluation.
 Reviewers need to understand that they are reviewing the YANG modules (and SID files),
