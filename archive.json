@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-11-01T04:32:15.084830+00:00",
+  "timestamp": "2026-11-05T05:15:56.492606+00:00",
   "repo": "IETF-OPSAWG-WG/veloce",
   "labels": [
     {
@@ -3011,13 +3011,13 @@
       "labels": [],
       "body": "this chunk of text, including some IANA Consideration is a suggestion of how to use existing IANA, WG and IESG process to manage (and approve) updates to YANG modules (and related SID files)\r\n",
       "createdAt": "2026-06-15T19:02:56Z",
-      "updatedAt": "2026-10-29T11:17:25Z",
+      "updatedAt": "2026-11-03T14:07:32Z",
       "baseRepository": "IETF-OPSAWG-WG/veloce",
       "baseRefName": "main",
       "baseRefOid": "86da8211141b16b2f9e5c0c9990a24d241034bf4",
       "headRepository": "IETF-OPSAWG-WG/veloce",
       "headRefName": "iana-registry-for-indirection",
-      "headRefOid": "e319356b1e2df22942f03459c7fa7c97a1e98d42",
+      "headRefOid": "f0ee5432041dae140cd290ad42eb8fc7e1fcc258",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
@@ -3355,6 +3355,26 @@
               "body": "```suggestion\nstructure of a module at the time the RFC was published. They are expected to be regenerated to match\nwhichever module revision the document currently describes.\n```\n\nMoreover, I am not sure what do you mean with the last sentence, Are you expecting the YANG trees to be regenerated in the YANG repository or by the user of the RFC (as of today)?",
               "createdAt": "2026-10-29T11:14:37Z",
               "updatedAt": "2026-10-29T11:17:25Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDORMlxH88AAAABVvBKKw",
+          "commit": {
+            "abbreviatedOid": "b27a65b"
+          },
+          "author": "billwuqin",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2026-11-03T14:07:31Z",
+          "updatedAt": "2026-11-03T14:07:31Z",
+          "comments": [
+            {
+              "originalPosition": 104,
+              "body": "See https://github.com/IETF-OPSAWG-WG/veloce/pull/79",
+              "createdAt": "2026-11-03T14:07:31Z",
+              "updatedAt": "2026-11-03T14:07:32Z"
             }
           ]
         }
